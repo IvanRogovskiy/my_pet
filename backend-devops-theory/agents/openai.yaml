@@ -1,0 +1,14 @@
+interface:
+  display_name: Теория Python Backend и DevOps
+  short_description: Теория курса с примерами и разбором типичных ошибок
+  default_prompt: 'Используй $backend-devops-theory: объясни теорию темы 1 курса Python
+    Backend и DevOps.'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
