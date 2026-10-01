@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Почему файл доступен, а открыть его нельзя?</title>
+  <link rel="stylesheet" href="../assets/lesson-ui.css">
+  <script src="../assets/lesson-ui.js" defer></script>
+</head>
+<body><main>
+  <header><p class="eyebrow">02 / Linux · короткий шаг</p><h1>Почему файл доступен, а открыть его нельзя?</h1><p>Найди препятствие на пути к конфигурации OrderFlow. Учебная симуляция: команды не запускаются, права машины не меняются.</p></header>
+  <p class="note" data-static-help>Автопроверка отключена. Прочитайте задания и отправьте ответы с объяснением в чат.</p>
+  <section aria-label="Объяснение"><h2>Доступ проверяется по всему пути</h2>
+<p>Чтобы открыть известный файл, процесс должен пройти через каждый родительский каталог. Право <code>x</code> у каталога разрешает такой проход; <code>r</code> позволяет читать список имён. У самого файла право <code>r</code> разрешает чтение содержимого.</p>
+<p>Ниже обычный пользователь <code>orderflow</code>, без прав root, ACL и дополнительных привилегий. Проверяем только обычные права доступа; другие ограничения системы исключены условием.</p>
+<p class="note">Успешное чтение от root не доказывает, что файл откроет процесс приложения.</p></section>
+  <section class="card">
+    <h2>01 · Право прохода</h2><p>Путь к файлу уже известен. Нужно пройти через его родительский каталог.</p>
+    <form data-exercise data-title="01 · Право прохода" data-answers="x">
+      <label for="answer-1">Какая латинская буква обозначает нужное право каталога?</label>
+      <input id="answer-1" data-answer autocomplete="off" aria-describedby="feedback-1">
+      <div class="actions">
+        <button type="submit" disabled>Проверить</button>
+        <button type="button" class="secondary" data-show-hint aria-controls="hint-1" aria-expanded="false" disabled>Подсказка</button>
+        <button type="reset" class="secondary" disabled>Очистить ответ</button>
+      </div>
+      <p id="hint-1" data-hint hidden>Не путай просмотр списка имён с проходом по пути. Для прохода нужно x.</p>
+      <p id="feedback-1" data-feedback role="status" aria-live="polite"></p>
+    </form>
+  </section>
+<section class="card"><h2>02 · Найди препятствие</h2><p>Процесс работает от <code>orderflow</code> и не входит в группу <code>root</code>. Все компоненты пути — обычные каталоги и файл, без символьных ссылок.</p>
+<div class="table-scroll"><table><caption>Условные права в учебном примере</caption><thead><tr><th>Путь</th><th>Владелец:группа</th><th>Права</th></tr></thead><tbody>
+<tr><td><code>/</code></td><td>root:root</td><td>755</td></tr>
+<tr><td><code>/srv</code></td><td>root:root</td><td>755</td></tr>
+<tr><td><code>/srv/orderflow</code></td><td>root:root</td><td>700</td></tr>
+<tr><td><code>/srv/orderflow/config.ini</code></td><td>orderflow:orderflow</td><td>640</td></tr>
+</tbody></table></div>
+<p>Три цифры задают права владельца, группы и остальных: r = 4, w = 2, x = 1. Например, 7 = rwx, 5 = r-x.</p>
+<form data-exercise data-title="Найди препятствие" data-answers="/srv/orderflow|/srv/orderflow/">
+<label for="answer-2">Введи полный путь к первому недоступному каталогу.</label>
+<input id="answer-2" data-answer autocomplete="off" aria-describedby="feedback-2">
+<div class="actions"><button type="submit" disabled>Проверить</button>
+<button type="button" class="secondary" data-show-hint aria-controls="hint-2" aria-expanded="false" disabled>Подсказка</button>
+<button type="reset" class="secondary" disabled>Очистить ответ</button></div>
+<p id="hint-2" data-hint hidden>Проверяй каталоги от корня. У /srv/orderflow права остальных равны 0; до файла процесс не дойдёт.</p>
+<p id="feedback-2" data-feedback role="status" aria-live="polite"></p></form></section><section class="card"><h2>03 · Изменённое условие</h2><p>Теперь каталог <code>/srv/orderflow</code> принадлежит <code>root:orderflow</code> с правами <code>740</code>. Процесс входит в группу <code>orderflow</code>. Оставь владельцу rwx, дай группе чтение списка и проход, остальным — никаких прав.</p>
+<form data-exercise data-title="Изменённое условие" data-answers="750">
+<label for="answer-3">Какие три цифры прав нужны каталогу?</label>
+<input id="answer-3" data-answer autocomplete="off" aria-describedby="feedback-3">
+<div class="actions"><button type="submit" disabled>Проверить</button>
+<button type="button" class="secondary" data-show-hint aria-controls="hint-3" aria-expanded="false" disabled>Подсказка</button>
+<button type="reset" class="secondary" disabled>Очистить ответ</button></div>
+<p id="hint-3" data-hint hidden>Для группы сложи r (4) и x (1). Права владельца и остальных менять не нужно.</p>
+<p id="feedback-3" data-feedback role="status" aria-live="polite"></p></form></section>
+  <section data-summary-section>
+    <h2>Обсудить результат</h2>
+    <p>Скопируйте отчёт в чат и добавьте объяснение или вопрос преподавателю. Отчёт учитывает только текущую загрузку страницы; перезагрузка сбрасывает историю. Файлы прогресса автоматически не изменяются.</p>
+    <label for="summary">Отчёт для копирования</label><textarea id="summary" data-summary readonly></textarea>
+  </section>
+  <footer><p>Основа: <a href="https://man7.org/linux/man-pages/man7/path_resolution.7.html">Linux path_resolution(7)</a>. Проверено 2026-10-01. <a href="../assignments/02-01-service-observation.md">Задание о службе</a>.</p><p>Короткое упражнение не закрывает практику всей части.</p></footer>
+</main></body>
+</html>

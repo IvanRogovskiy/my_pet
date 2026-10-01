@@ -1,8 +1,7 @@
 interface:
-  display_name: Теория Python Backend и DevOps
-  short_description: Теория курса с примерами и разбором типичных ошибок
-  default_prompt: 'Используй $backend-devops-theory: объясни теорию темы 1 курса Python
-    Backend и DevOps.'
+  display_name: "Обучение Python Backend и DevOps"
+  short_description: "Уроки, практика, ревью и сохранение прогресса курса"
+  default_prompt: "Используй $backend-devops-theory: продолжи обучение по сохранённому прогрессу, а если его нет — начни тему 1."
   icon_small: assets/icon.svg
   icon_large: assets/icon.svg
 policy:
