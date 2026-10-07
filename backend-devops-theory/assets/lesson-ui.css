@@ -1,0 +1,30 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #203b3b; background: #f5f2e9; line-height: 1.65; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 860px; margin: auto; padding: 40px 22px 72px; }
+header { border-bottom: 2px solid #216b61; padding-bottom: 24px; margin-bottom: 28px; }
+.eyebrow { font-size: .85rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #216b61; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.12; letter-spacing: -.03em; margin: 16px 0; }
+h2 { line-height: 1.25; margin-top: 0; }
+section { margin: 28px 0; }
+.card { border: 1px solid #c6d1c9; border-radius: 16px; background: #fffef9; padding: 24px; }
+.note { border-left: 4px solid #b86328; padding: 8px 16px; background: #fff5e5; }
+code { font-family: ui-monospace, monospace; background: #e8efea; padding: 2px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+a { color: #135c54; text-underline-offset: 3px; }
+label { display: block; font-weight: 650; margin: 16px 0 8px; }
+input, textarea { font: inherit; color: inherit; width: 100%; padding: 12px; border: 1px solid #789089; border-radius: 8px; background: white; }
+textarea { min-height: 220px; font-size: .9rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+button { font: inherit; font-weight: 650; padding: 10px 16px; border: 1px solid #216b61; border-radius: 8px; background: #216b61; color: white; cursor: pointer; }
+button.secondary { color: #203b3b; background: transparent; }
+button:disabled { opacity: .5; cursor: default; }
+:focus-visible { outline: 3px solid #b86328; outline-offset: 4px; }
+[data-feedback] { min-height: 1.7em; font-weight: 600; }
+[data-kind="incorrect"] { color: #9d2d23; }
+[data-kind="correct"] { color: #126348; }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid #c6d1c9; }
+footer { font-size: .9rem; border-top: 1px solid #c6d1c9; margin-top: 32px; padding-top: 20px; }
+@media (max-width: 480px) { main { padding: 24px 16px; } .card { padding: 18px; } }
+@media print { body { background: white; } main { max-width: none; padding: 0; } .actions, [data-summary-section] { display: none; } .card { break-inside: avoid; } }

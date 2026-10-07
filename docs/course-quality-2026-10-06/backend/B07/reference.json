@@ -1,0 +1,61 @@
+{
+  "case": "B07",
+  "schema": "probe_435f8cfca1a448ce8f902c746549fb4f",
+  "submission_sha256": "5218cb5f192dc8253bd29d81133ada6aa755d29de31663c1f10a172f3b074980",
+  "level": "real PostgreSQL and RabbitMQ / HTTP fixture as applicable",
+  "criteria": {
+    "http_matrix": true,
+    "denied_preserves_data": true
+  },
+  "detail": {
+    "http": [
+      {
+        "actor": "fixture-b",
+        "request_owner": 20,
+        "method": "GET",
+        "status": 403,
+        "expected": 403,
+        "before": "original",
+        "after": "original"
+      },
+      {
+        "actor": "fixture-b",
+        "request_owner": 20,
+        "method": "PATCH",
+        "status": 403,
+        "expected": 403,
+        "before": "original",
+        "after": "original"
+      },
+      {
+        "actor": "fixture-a",
+        "request_owner": 20,
+        "method": "GET",
+        "status": 200,
+        "expected": 200,
+        "before": "original",
+        "after": "original"
+      },
+      {
+        "actor": "fixture-a",
+        "request_owner": 20,
+        "method": "PATCH",
+        "status": 200,
+        "expected": 200,
+        "before": "original",
+        "after": "fixture-a"
+      },
+      {
+        "actor": "missing",
+        "request_owner": 10,
+        "method": "GET",
+        "status": 401,
+        "expected": 401,
+        "before": "fixture-a",
+        "after": "fixture-a"
+      }
+    ]
+  },
+  "passed": true,
+  "exit": 0
+}

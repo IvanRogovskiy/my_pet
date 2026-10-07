@@ -1,0 +1,8 @@
+{
+  "postgres": "16.15",
+  "rabbitmq": "3.13.7",
+  "python": "3.12.14",
+  "marker": "9a39ec49aa114ca7bf4b1f58df5f7a8e",
+  "data_preserved": true,
+  "passed": true
+}

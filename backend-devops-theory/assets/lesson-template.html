@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <link rel="stylesheet" href="../assets/lesson-ui.css">
+  <script src="../assets/lesson-ui.js" defer></script>
+</head>
+<body><main>
+  <header><p class="eyebrow">{{TOPIC}}</p><h1>{{TITLE}}</h1><p>{{OBJECTIVE}}</p></header>
+  <p class="note" data-static-help>Автопроверка отключена. Прочитайте задания и отправьте ответы с объяснением в чат.</p>
+  <section aria-label="Объяснение">{{MATERIAL_HTML}}</section>
+  <section class="card">
+    <h2>{{EXERCISE_TITLE}}</h2><p>{{CONDITIONS}}</p>
+    <form data-exercise data-title="{{EXERCISE_TITLE}}" data-answers="{{EXACT_ANSWERS}}">
+      <label for="answer-1">{{QUESTION}}</label>
+      <input id="answer-1" data-answer autocomplete="off" aria-describedby="feedback-1">
+      <div class="actions">
+        <button type="submit" disabled>Проверить</button>
+        <button type="button" class="secondary" data-show-hint aria-controls="hint-1" aria-expanded="false" disabled>Подсказка</button>
+        <button type="reset" class="secondary" disabled>Очистить ответ</button>
+      </div>
+      <p id="hint-1" data-hint hidden>{{HINT}}</p>
+      <p id="feedback-1" data-feedback role="status" aria-live="polite"></p>
+    </form>
+  </section>
+  <section data-summary-section>
+    <h2>Обсудить результат</h2>
+    <p>Скопируйте отчёт в чат и добавьте объяснение или вопрос преподавателю. Отчёт учитывает только текущую загрузку страницы; перезагрузка сбрасывает историю. Файлы прогресса автоматически не изменяются.</p>
+    <label for="summary">Отчёт для копирования</label><textarea id="summary" data-summary readonly></textarea>
+  </section>
+  <footer>{{SOURCES_HTML}}<p>Короткое упражнение не закрывает практику всей части.</p></footer>
+</main></body>
+</html>

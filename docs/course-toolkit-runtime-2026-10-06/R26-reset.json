@@ -1,0 +1,102 @@
+{
+  "case": "R26",
+  "version": "2026-10-06.1",
+  "time": "2026-10-06T11:23:13Z",
+  "platform": "darwin",
+  "python": "3.12.3",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "app.py": "1135394c5458a9b1b20d965f453e61191a117c18e70f4423063c4b17df7a415b",
+    "Dockerfile": "55470e18d6b6503c6c6dcf92dead852e7e4d91797964078d06558f9187511c0c",
+    "version.txt": "81db67b6a5702b9b68f0016f061c409bf3fb16d062fc854d1b424bb4e9c28c56"
+  },
+  "status": "failed",
+  "detail": {
+    "level": "two actual Docker image IDs and SQLite expand/rollback; not PostgreSQL production",
+    "image_ids": [
+      "sha256:65b83c2e07c18f9639eb2c535daef7bc0068270a2181a59174118e09fde83bf8",
+      "sha256:fad9575cbf8639221088c80eb4b72b6317b013839356ce2b02b9d9e8cd3dfdc9"
+    ],
+    "new_logs": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": "/usr/local/bin/python: No module named missing_app\n"
+    },
+    "before": {
+      "version": "v1",
+      "rows": [
+        [
+          1,
+          250
+        ],
+        [
+          2,
+          100
+        ],
+        [
+          3,
+          100
+        ],
+        [
+          4,
+          100
+        ],
+        [
+          5,
+          100
+        ],
+        [
+          6,
+          100
+        ],
+        [
+          7,
+          100
+        ]
+      ]
+    },
+    "new_healthy": false,
+    "new_http": null,
+    "rollback_http": {
+      "version": "v1",
+      "rows": [
+        [
+          1,
+          250
+        ],
+        [
+          2,
+          100
+        ],
+        [
+          3,
+          100
+        ],
+        [
+          4,
+          100
+        ],
+        [
+          5,
+          100
+        ],
+        [
+          6,
+          100
+        ],
+        [
+          7,
+          100
+        ],
+        [
+          8,
+          100
+        ]
+      ]
+    },
+    "schema_kept": true,
+    "prior_rows_preserved": true,
+    "production_promoted": false
+  },
+  "exit": 1
+}

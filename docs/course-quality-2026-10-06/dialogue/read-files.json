@@ -1,0 +1,48 @@
+{
+  "skill_reference_files": [
+    {
+      "path": "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/SKILL.md",
+      "read_scope": "полностью"
+    },
+    {
+      "path": "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/references/course-context.md",
+      "read_scope": "полностью"
+    },
+    {
+      "path": "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/references/curriculum-index.md",
+      "read_scope": "полностью"
+    },
+    {
+      "path": "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/references/topics-05-09.md",
+      "read_scope": "полностью запрошен; разделы 08–09 дополнительно прочитаны отдельным диапазоном после усечения общего вывода"
+    },
+    {
+      "path": "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/references/learning-workspace.md",
+      "read_scope": "полностью, повторно отдельным чтением после усечения общего вывода"
+    },
+    {
+      "path": "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/references/lessons/README.md",
+      "read_scope": "полностью"
+    },
+    {
+      "path": "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/references/lessons/08-transactions.md",
+      "read_scope": "полностью"
+    },
+    {
+      "path": "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/references/practice-review.md",
+      "read_scope": "полностью"
+    },
+    {
+      "path": "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/references/course-delivery.md",
+      "read_scope": "полностью"
+    },
+    {
+      "path": "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/references/business-contract.md",
+      "read_scope": "фрагменты по совпадениям Идемпотент|Idempotency|канони|ключ с окружающими строками"
+    },
+    {
+      "path": "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/references/electives.md",
+      "read_scope": "раздел Ф2 и окружающий фрагмент через поиск ^## Ф2 с контекстом"
+    }
+  ]
+}

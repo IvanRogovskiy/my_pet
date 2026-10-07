@@ -1,0 +1,258 @@
+{
+  "schema": 1,
+  "date": "2026-10-06",
+  "kind": "author_runtime_validation",
+  "assignment_version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "cases": {
+    "D10": [
+      {
+        "phase": "broken",
+        "exit": 1,
+        "time": "2026-10-06T11:22:32Z",
+        "file": "D10-broken.json"
+      },
+      {
+        "phase": "reference",
+        "exit": 0,
+        "time": "2026-10-06T11:22:42Z",
+        "file": "D10-reference.json"
+      },
+      {
+        "phase": "reset",
+        "exit": 1,
+        "time": "2026-10-06T11:22:46Z",
+        "file": "D10-reset.json"
+      }
+    ],
+    "R26": [
+      {
+        "phase": "broken",
+        "exit": 1,
+        "time": "2026-10-06T11:22:56Z",
+        "file": "R26-broken.json"
+      },
+      {
+        "phase": "reference",
+        "exit": 0,
+        "time": "2026-10-06T11:23:04Z",
+        "file": "R26-reference.json"
+      },
+      {
+        "phase": "reset",
+        "exit": 1,
+        "time": "2026-10-06T11:23:13Z",
+        "file": "R26-reset.json"
+      }
+    ],
+    "K27": [
+      {
+        "phase": "broken",
+        "exit": 1,
+        "time": "2026-10-06T12:12:18Z",
+        "file": "K27-broken.json"
+      },
+      {
+        "phase": "reference",
+        "exit": 0,
+        "time": "2026-10-06T12:12:33Z",
+        "file": "K27-reference.json"
+      },
+      {
+        "phase": "reset",
+        "exit": 1,
+        "time": "2026-10-06T12:12:37Z",
+        "file": "K27-reset.json"
+      }
+    ],
+    "H28": [
+      {
+        "phase": "broken",
+        "exit": 1,
+        "time": "2026-10-06T11:24:46Z",
+        "file": "H28-broken.json"
+      },
+      {
+        "phase": "reference",
+        "exit": 0,
+        "time": "2026-10-06T11:25:06Z",
+        "file": "H28-reference.json"
+      },
+      {
+        "phase": "reset",
+        "exit": 1,
+        "time": "2026-10-06T11:25:25Z",
+        "file": "H28-reset.json"
+      }
+    ],
+    "L02a": [
+      {
+        "phase": "broken",
+        "exit": 1,
+        "time": "2026-10-06T12:18:52Z",
+        "file": "L02a-broken.json"
+      },
+      {
+        "phase": "reference",
+        "exit": 0,
+        "time": "2026-10-06T12:18:57Z",
+        "file": "L02a-reference.json"
+      },
+      {
+        "phase": "reset",
+        "exit": 1,
+        "time": "2026-10-06T12:18:57Z",
+        "file": "L02a-reset.json"
+      }
+    ],
+    "L02b": [
+      {
+        "phase": "broken",
+        "exit": 1,
+        "time": "2026-10-06T12:19:02Z",
+        "file": "L02b-broken.json"
+      },
+      {
+        "phase": "reference",
+        "exit": 0,
+        "time": "2026-10-06T12:19:02Z",
+        "file": "L02b-reference.json"
+      },
+      {
+        "phase": "reset",
+        "exit": 1,
+        "time": "2026-10-06T12:19:03Z",
+        "file": "L02b-reset.json"
+      }
+    ],
+    "L02c": [
+      {
+        "phase": "broken",
+        "exit": 1,
+        "time": "2026-10-06T12:19:03Z",
+        "file": "L02c-broken.json"
+      },
+      {
+        "phase": "reference",
+        "exit": 0,
+        "time": "2026-10-06T12:19:03Z",
+        "file": "L02c-reference.json"
+      },
+      {
+        "phase": "reset",
+        "exit": 1,
+        "time": "2026-10-06T12:19:03Z",
+        "file": "L02c-reset.json"
+      }
+    ],
+    "A25": [
+      {
+        "phase": "broken",
+        "exit": 1,
+        "time": "2026-10-06T12:19:03Z",
+        "file": "A25-broken.json"
+      },
+      {
+        "phase": "reference",
+        "exit": 0,
+        "time": "2026-10-06T12:19:11Z",
+        "file": "A25-reference.json"
+      },
+      {
+        "phase": "reset",
+        "exit": 1,
+        "time": "2026-10-06T12:19:17Z",
+        "file": "A25-reset.json"
+      }
+    ]
+  },
+  "source_sha256": {
+    "backend-devops-theory/assets/labs/catalog.py": "49ae029f90866a6b2d382f58fa0352a78b89e18afb7f4d23fa7ad6ce3ebe839b",
+    "backend-devops-theory/assets/labs/infrastructure.py": "4a8fec251f8f741437a866ee12b75eec9456388e522cb3c4289e413759712f10",
+    "backend-devops-theory/assets/labs/replay_probe.py": "3b9369ef03915c7788b2b8bf42d989c462644b2a3005a0d1e670bb736c410751",
+    "backend-devops-theory/assets/labs/lab.py": "3cf57bf3a26a87b3c12754c84d0fb7d6589f63b5bc31ae0048e7cabbc4c40b76",
+    "backend-devops-theory/assets/examples/mechanisms.py": "3b83444c36e15141a503ca638291451bacc75891ad6576bc82a52d017a973960",
+    "backend-devops-theory/tests/test_labs.py": "c879e2b24681f22421e76f2d8f34460a43cacc447d128afe7d13f7ba8fa4f73c",
+    "backend-devops-theory/tests/test_review_benchmark.py": "5c313a10507aceb6808feeeb717bc9592d0935bb6f89f08f6a61e6f6360cbe05",
+    "backend-devops-theory/tests/test_examples.py": "bbf5af81602d6e7dd586cd64938b46abb5d5a3caf205c8cb99663ab39da90ead",
+    "backend-devops-theory/tests/test_materials.py": "c191e7cfe6969bd91d3627d39c99301b22e7b6d478309573fe9e451f47cea79d"
+  },
+  "evidence_sha256": {
+    "L02c-reference.json": "b47c679cbdd9665b4ec8888c06c4d35520e73889e37a7227805facd728be9af9",
+    "R26-reset.json": "aca95799e9d3ff702c8394169f1d4365ef9e91a826670038af9059e1dea8e216",
+    "L02b-reference.json": "888e042850fdac15d01718aee430e38c971a7a197602babd4eebbabc491b0381",
+    "H28-broken.json": "b0e60fc9b7a88481b2dee53a30169fd9355b0e2c3e55bce172f9bd574111274b",
+    "D10-reset.json": "0ac5717dfe7169e0137aea11112a4e32c5c7c9c3697fb84fe48662966d229719",
+    "H28-reset.json": "ab985949713614a1de04355826a1bd50e0bd106f20321dc88bfec84f8903624f",
+    "K27-after-repair.json": "d737cf4d4433139438bb4603178ffba629f9cb870d76adaed78fc038d945b6f2",
+    "R26-broken.json": "c194730829365e3d8dadcd8ecc8852bb9956e789d614409a208b9ac7a5f220a1",
+    "L02c-broken.json": "e6e1b117933206fa4d75ef348ce41c5cd7d9ec59b31d25667f5e1fe2b6a94f1f",
+    "K27-broken.json": "d2735cf444b03fa51ab46b78f59ac1304f88b4450d8d68af53f39a9f09e8decb",
+    "A25-reference.json": "0a740d29ff20c1afb6273f345ec74fa1e6c780721c4c30e1535c906abe35873c",
+    "L02a-reference.json": "ffafe3f357ed363d0e0f3bd205ec6efeb3b7a4dec7cb11230bb9130817d2523e",
+    "K27-reference.json": "185f7e61956d02ba5800cf71d9efbaa5cee3a907c0f73a4bc1761780fe4c8269",
+    "L02b-reset.json": "cb72f5b548913346ddbf2879f2c35f56fc62056c8d1153977d4caa806ba4b0b3",
+    "L02a-broken.json": "d2c4c2e153e5b0ad76245e1d8dd637995c5660fd0046f5022b105193c28ae4f1",
+    "A25-reset.json": "107ba7004c664ab682284cb003e6e067d6afb99dc987dbea6b337375db8a9952",
+    "L02a-reset.json": "680ac48a74dd938cc29cecf0b25d19be895b973f7a45929860b8e1d25923d246",
+    "H28-reference.json": "e834f2b1b5c862f2face28509fc6b196f57cb68df60251d31b4d0976a5c13f33",
+    "K27-reset.json": "387f7eae0583b26d59e619b3db5b7213d598c4d6613355fe281a097823347543",
+    "K27-after-loss.json": "77ea486a34f5fc7ddd91eaa9b73df1461b170a03d8e39ba4f3a7f0488dbe70f0",
+    "L02c-reset.json": "e6e1b117933206fa4d75ef348ce41c5cd7d9ec59b31d25667f5e1fe2b6a94f1f",
+    "K27-before-loss.json": "6d1a800332a9caaf39eef2e754e40f27dadc5c3d34c616637f06dfa2e9f2c7ef",
+    "D10-reference.json": "e83f41f3c209fe5d0aae997ca29f0db26737dfc9f71acabd408f347d793c6f0d",
+    "D10-broken.json": "0109846ff0ace88d88132771d28994f3f7161e19b8ec0e9df75d3a5e90d56fbf",
+    "R26-reference.json": "0204a22c6bfc49da3a366f17e48929aa580b93203754abd3b70fe81d2655a2ba",
+    "A25-broken.json": "90dc7626259576e9a4bb4011d2eee21857ef65498c3ee17c091fa95b55f3fd04",
+    "L02b-broken.json": "3774182b4273587fed527a6b07d60fdfc3c12048336c0c069507465c8ca08ecf"
+  },
+  "tests": {
+    "linux_python_3_11_2": {
+      "run": 38,
+      "passed": 38,
+      "skipped": 0
+    },
+    "macos_python_3_12_3": {
+      "run": 38,
+      "passed": 37,
+      "skipped": 1,
+      "skip_reason": "unprivileged Linux permissions test"
+    }
+  },
+  "marker_loss_check": {
+    "before": 0,
+    "after_confirmed_delete": 1,
+    "after_explicit_repair": 0,
+    "sql_counts_before_after_delete": [
+      1,
+      0
+    ],
+    "note": "Deletion was confirmed with a separate SELECT before the negative check; the first automatic injection attempt did not establish loss."
+  },
+  "runtime": {
+    "docker": "24.0.5 linux/aarch64",
+    "kind": "0.29.0",
+    "kubernetes": "1.33.1",
+    "helm": "3.18.3",
+    "linux": "Debian 12, unprivileged UID 1500 inside dedicated kind node",
+    "systemd": "252.39-1~deb12u2",
+    "ansible_core": "2.19.13",
+    "python_image": "3.12.14",
+    "postgres_image": "16.15",
+    "python_docker_ref": "python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f",
+    "python_node_ref": "docker.io/library/python@sha256:d9c066a2a8594c709062de5210aea67dc81a3c008ce44b5daa28bbec53ad0a77",
+    "postgres_docker_ref": "postgres@sha256:721873c34ceb9f8d8fc265984940dc982404c105f19ad51be9fdc5970a6080ea",
+    "postgres_node_ref": "docker.io/library/postgres@sha256:24b5c241a22e2daa0ebde55a41277efdf13e9eb391068b69192cc970ebca67c8",
+    "node_image_id": "sha256:071dd73121e8f3e4c35ded279d1cfb1cf6618dfeb8da98b910613ed0342a9b25"
+  },
+  "working_environment": {
+    "directory": "/private/tmp/of-toolkit-runtime-98k64g3u",
+    "node": "orderflow-toolkit-98k64-control-plane",
+    "context": "kind-orderflow-toolkit-98k64",
+    "namespaces": {
+      "K27": "daa584f8eaed418e8cf891f263b415d3",
+      "H28": "db67dd170f504e6ebeae3eb723031aa4"
+    },
+    "kubeconfig_included": false
+  }
+}

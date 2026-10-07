@@ -1,0 +1,33 @@
+{
+  "prefix": "ofstand-fd09142c3df7",
+  "preflight": {
+    "host_free_gib": 14.43,
+    "docker_memory_gib": 7.67,
+    "architecture": "aarch64",
+    "server_version": "24.0.5"
+  },
+  "client_image_id": "sha256:12e25b63aab84a5e3d75786cefe019a345c48f30483fa4b06a4c7082b90272c4",
+  "dockerfile_sha256": "79ad7eeac8dc86cf6cb2237bf6ff768b7501ccb2d81729ae1e7f35d7586a1e2d",
+  "resources": {
+    "ofstand-fd09142c3df7-net": {
+      "kind": "network",
+      "identity": "a6ed815d6daa3f476d10b09e0ad77d4e93a9584825ccc7de6d2746c43b0372ae"
+    },
+    "ofstand-fd09142c3df7-pg-data": {
+      "kind": "volume",
+      "identity": "ofstand-fd09142c3df7-pg-data"
+    },
+    "ofstand-fd09142c3df7-pg": {
+      "kind": "container",
+      "identity": "09ae21b18f356e00b7e2d05021c7ee9223dae5f6a2747cf605cd90b2a95ac1b0"
+    },
+    "ofstand-fd09142c3df7-mq-data": {
+      "kind": "volume",
+      "identity": "ofstand-fd09142c3df7-mq-data"
+    },
+    "ofstand-fd09142c3df7-mq": {
+      "kind": "container",
+      "identity": "8697013da573f8279c348eecf729a1afc4c5db1df8208594d21f2d0b1b22e436"
+    }
+  }
+}

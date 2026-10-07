@@ -1,0 +1,50 @@
+{
+  "case": "B08I",
+  "schema": "probe_ece299c0b3e44ed09ac0af384514e58c",
+  "submission_sha256": "5e211b666c7748d2446db8234759b625f1ac195380beee69fa7a1d01d990754f",
+  "level": "real PostgreSQL and RabbitMQ / HTTP fixture as applicable",
+  "criteria": {
+    "same_result_one_effect": true,
+    "changed_body_rejected": true,
+    "owner_scope": true,
+    "shortage_rollback": true,
+    "concurrent_sessions": true
+  },
+  "detail": {
+    "concurrent": [
+      {
+        "pid": 178,
+        "isolation": "read committed",
+        "barrier_arrivals_ns": [
+          80074213392943
+        ],
+        "value": 1
+      },
+      {
+        "pid": 179,
+        "isolation": "read committed",
+        "barrier_arrivals_ns": [
+          80074215968026
+        ],
+        "value": 1
+      }
+    ],
+    "after": {
+      "stock": 9,
+      "orders": 1,
+      "requests": 1
+    },
+    "after_other": {
+      "stock": 8,
+      "orders": 2,
+      "requests": 2
+    },
+    "after_shortage": {
+      "stock": 8,
+      "orders": 2,
+      "requests": 2
+    }
+  },
+  "passed": true,
+  "exit": 0
+}

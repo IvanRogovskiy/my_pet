@@ -1,0 +1,37 @@
+{
+  "case": "L02a",
+  "version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "time": "2026-10-06T13:46:27Z",
+  "platform": "linux",
+  "python": "3.11.2",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "config.json": "b0684289457b375b19f1bda770a40cecdff4347d8792053566b735bd197569a5"
+  },
+  "status": "passed",
+  "detail": {
+    "level": "Linux systemd user service",
+    "start": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Running as unit: oflab-1bee01770d8e419e8229c93097f9f656.service\n"
+    },
+    "http": {
+      "identity": "1bee01770d8e419e8229c93097f9f656",
+      "pid": 3713,
+      "config_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "status": {
+      "exit": 0,
+      "stdout": "MainPID=3713\nExecMainStatus=0\nActiveState=active\n",
+      "stderr": ""
+    },
+    "journal": {
+      "exit": 0,
+      "stdout": "{\"_MACHINE_ID\":\"d348a55551a94659a4c879f655f48d1e\",\"_AUDIT_LOGINUID\":\"1500\",\"_HOSTNAME\":\"ofbootstrap-b95b1fb4a6-control-plane\",\"TID\":\"3411\",\"PRIORITY\":\"6\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"JOB_ID\":\"19\",\"MESSAGE_ID\":\"7d4958e842da4a758f6c1cdc7b36dcc5\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_UID\":\"1500\",\"_RUNTIME_SCOPE\":\"system\",\"SYSLOG_FACILITY\":\"3\",\"MESSAGE\":\"Starting oflab-1bee01770d8e419e8229c93097f9f656.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-337766a792/L02a/work/server.py /home/learner/checks-337766a792/L02a/data 36071...\",\"JOB_TYPE\":\"start\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_CAP_EFFECTIVE\":\"0\",\"_AUDIT_SESSION\":\"4\",\"USER_UNIT\":\"oflab-1bee01770d8e419e8229c93097f9f656.service\",\"_COMM\":\"systemd\",\"_GID\":\"1500\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"CODE_LINE\":\"580\",\"CODE_FILE\":\"src/core/job.c\",\"_TRANSPORT\":\"journal\",\"__CURSOR\":\"s=9fe70f2dddbc4272a22c3bd45dc979b0;i=286;b=556aeb0af82d4d589f49b653dd990409;m=12d23def41;t=65d2c39a0b50c;x=29322e332575a746\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"__MONOTONIC_TIMESTAMP\":\"80836685633\",\"CODE_FUNC\":\"job_emit_start_message\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"__REALTIME_TIMESTAMP\":\"1791294387041548\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_PID\":\"3411\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791294387041430\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"USER_INVOCATION_ID\":\"154c9dc074924d8091997f41935a954f\"}\n{\"JOB_TYPE\":\"start\",\"_CAP_EFFECTIVE\":\"0\",\"__MONOTONIC_TIMESTAMP\":\"80836687251\",\"_RUNTIME_SCOPE\":\"system\",\"_GID\":\"1500\",\"_UID\":\"1500\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"MESSAGE_ID\":\"39f53479d3a045ac8e11786248231fbf\",\"_COMM\":\"systemd\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_MACHINE_ID\":\"d348a55551a94659a4c879f655f48d1e\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791294387042741\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_HOSTNAME\":\"ofbootstrap-b95b1fb4a6-control-plane\",\"USER_UNIT\":\"oflab-1bee01770d8e419e8229c93097f9f656.service\",\"JOB_ID\":\"19\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"CODE_FUNC\":\"job_emit_done_message\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_TRANSPORT\":\"journal\",\"CODE_FILE\":\"src/core/job.c\",\"_AUDIT_SESSION\":\"4\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"CODE_LINE\":\"767\",\"_PID\":\"3411\",\"MESSAGE\":\"Started oflab-1bee01770d8e419e8229c93097f9f656.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-337766a792/L02a/work/server.py /home/learner/checks-337766a792/L02a/data 36071.\",\"PRIORITY\":\"6\",\"USER_INVOCATION_ID\":\"154c9dc074924d8091997f41935a954f\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"SYSLOG_FACILITY\":\"3\",\"_AUDIT_LOGINUID\":\"1500\",\"__CURSOR\":\"s=9fe70f2dddbc4272a22c3bd45dc979b0;i=287;b=556aeb0af82d4d589f49b653dd990409;m=12d23df593;t=65d2c39a0bb64;x=3dea05e61c8bbec1\",\"TID\":\"3411\",\"JOB_RESULT\":\"done\",\"__REALTIME_TIMESTAMP\":\"1791294387043172\"}\n",
+      "stderr": ""
+    }
+  },
+  "exit": 0
+}

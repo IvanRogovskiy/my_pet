@@ -1,0 +1,30 @@
+[
+  {
+    "workspace": "/private/tmp/of-course-quality-9w0jcxh9/stand",
+    "prefix": "ofstand-9a39ec49aa11",
+    "profile": "postgres-rabbitmq",
+    "state": "stopped",
+    "data_retained": true
+  },
+  {
+    "workspace": "/private/tmp/of-course-quality-9w0jcxh9/fresh-backend",
+    "prefix": "ofstand-fd09142c3df7",
+    "profile": "postgres-rabbitmq",
+    "state": "stopped",
+    "data_retained": true
+  },
+  {
+    "workspace": "/private/tmp/of-course-quality-9w0jcxh9/clean-linux",
+    "prefix": "ofbootstrap-f6cfc98aec",
+    "profile": "kind-linux",
+    "state": "stopped",
+    "data_retained": true
+  },
+  {
+    "workspace": "/private/tmp/of-course-quality-9w0jcxh9/fresh-linux",
+    "prefix": "ofbootstrap-b95b1fb4a6",
+    "profile": "kind-linux",
+    "state": "stopped",
+    "data_retained": true
+  }
+]

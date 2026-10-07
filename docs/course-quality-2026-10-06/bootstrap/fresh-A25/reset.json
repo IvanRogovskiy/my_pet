@@ -1,0 +1,101 @@
+{
+  "case": "A25",
+  "version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "time": "2026-10-06T13:46:47Z",
+  "platform": "linux",
+  "python": "3.11.2",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "playbook.json": "4e3e06bc4bdd8f318391f3d770c79744ca47b4d26147ed79a8ab38ab0d7d2954"
+  },
+  "status": "failed",
+  "detail": {
+    "level": "Linux systemd user service",
+    "start": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Running as unit: oflab-e8826df90e8e4d8e8f254914decffd37.service\n"
+    },
+    "http": {
+      "identity": "e8826df90e8e4d8e8f254914decffd37",
+      "pid": 4412,
+      "config_sha": "81db67b6a5702b9b68f0016f061c409bf3fb16d062fc854d1b424bb4e9c28c56"
+    },
+    "runs": [
+      {
+        "exit": 0,
+        "stdout": "\nPLAY [localhost] ***************************************************************\n\nTASK [Write lab config] ********************************************************\nchanged: [localhost]\n\nTASK [Restart lab service] *****************************************************\nchanged: [localhost]\n\nPLAY RECAP *********************************************************************\nlocalhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \n\n",
+        "stderr": "[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.11', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.\n"
+      },
+      {
+        "exit": 0,
+        "stdout": "\nPLAY [localhost] ***************************************************************\n\nTASK [Write lab config] ********************************************************\nok: [localhost]\n\nTASK [Restart lab service] *****************************************************\nchanged: [localhost]\n\nPLAY RECAP *********************************************************************\nlocalhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \n\n",
+        "stderr": "[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.11', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.\n"
+      },
+      {
+        "exit": 0,
+        "stdout": "\nPLAY [localhost] ***************************************************************\n\nTASK [Write lab config] ********************************************************\nchanged: [localhost]\n\nTASK [Restart lab service] *****************************************************\nchanged: [localhost]\n\nPLAY RECAP *********************************************************************\nlocalhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \n\n",
+        "stderr": "[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.11', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.\n"
+      },
+      {
+        "exit": 0,
+        "stdout": "\nPLAY [localhost] ***************************************************************\n\nTASK [Write lab config] ********************************************************\nok: [localhost]\n\nTASK [Restart lab service] *****************************************************\nchanged: [localhost]\n\nPLAY RECAP *********************************************************************\nlocalhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \n\n",
+        "stderr": "[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.11', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.\n"
+      }
+    ],
+    "snapshots": [
+      {
+        "identity": "e8826df90e8e4d8e8f254914decffd37",
+        "pid": 4479,
+        "config_sha": "2d27fbdf4e8ca207afbfa388ca9172fbcc6c70e534af2476b3b704f87debadcf"
+      },
+      {
+        "identity": "e8826df90e8e4d8e8f254914decffd37",
+        "pid": 4547,
+        "config_sha": "2d27fbdf4e8ca207afbfa388ca9172fbcc6c70e534af2476b3b704f87debadcf"
+      },
+      {
+        "identity": "e8826df90e8e4d8e8f254914decffd37",
+        "pid": 4625,
+        "config_sha": "81db67b6a5702b9b68f0016f061c409bf3fb16d062fc854d1b424bb4e9c28c56"
+      },
+      {
+        "identity": "e8826df90e8e4d8e8f254914decffd37",
+        "pid": 4693,
+        "config_sha": "81db67b6a5702b9b68f0016f061c409bf3fb16d062fc854d1b424bb4e9c28c56"
+      }
+    ],
+    "changed": [
+      [
+        "2"
+      ],
+      [
+        "1"
+      ],
+      [
+        "2"
+      ],
+      [
+        "1"
+      ]
+    ],
+    "check_mode": {
+      "exit": 0,
+      "stdout": "\nPLAY [localhost] ***************************************************************\n\nTASK [Write lab config] ********************************************************\n--- before: /home/learner/checks-337766a792/A25/data/service.conf\n+++ after: /home/learner/checks-337766a792/A25/data/service.conf\n@@ -1 +1 @@\n-v2\n+v3\n\nchanged: [localhost]\n\nTASK [Restart lab service] *****************************************************\nchanged: [localhost]\n\nPLAY RECAP *********************************************************************\nlocalhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \n\n",
+      "stderr": "[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.11', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.\n"
+    },
+    "check_mode_unchanged": true,
+    "status": {
+      "exit": 0,
+      "stdout": "MainPID=4693\nExecMainStatus=0\nActiveState=active\n",
+      "stderr": ""
+    },
+    "journal": {
+      "exit": 0,
+      "stdout": "f53479d3a045ac8e11786248231fbf\",\"__REALTIME_TIMESTAMP\":\"1791294410343027\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_HOSTNAME\":\"ofbootstrap-b95b1fb4a6-control-plane\",\"_UID\":\"1500\"}\n{\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"USER_INVOCATION_ID\":\"a4f99e5c3a4140cf8a77328c6f417694\",\"MESSAGE_ID\":\"de5b426a63be47a7b6ac3eaac82e2f6f\",\"_PID\":\"3411\",\"PRIORITY\":\"6\",\"_COMM\":\"systemd\",\"__REALTIME_TIMESTAMP\":\"1791294412055175\",\"_CAP_EFFECTIVE\":\"0\",\"__CURSOR\":\"s=9fe70f2dddbc4272a22c3bd45dc979b0;i=2e0;b=556aeb0af82d4d589f49b653dd990409;m=12d3bb9a45;t=65d2c3b1e6287;x=1fa6ca1a61253fa0\",\"_MACHINE_ID\":\"d348a55551a94659a4c879f655f48d1e\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"TID\":\"3411\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791294412055152\",\"_AUDIT_LOGINUID\":\"1500\",\"SYSLOG_FACILITY\":\"3\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_RUNTIME_SCOPE\":\"system\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"CODE_FUNC\":\"job_emit_start_message\",\"USER_UNIT\":\"oflab-e8826df90e8e4d8e8f254914decffd37.service\",\"JOB_ID\":\"139\",\"_TRANSPORT\":\"journal\",\"CODE_LINE\":\"580\",\"_GID\":\"1500\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"__MONOTONIC_TIMESTAMP\":\"80861698629\",\"_AUDIT_SESSION\":\"4\",\"MESSAGE\":\"Stopping oflab-e8826df90e8e4d8e8f254914decffd37.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-337766a792/A25/work/server.py /home/learner/checks-337766a792/A25/data 57993...\",\"_HOSTNAME\":\"ofbootstrap-b95b1fb4a6-control-plane\",\"CODE_FILE\":\"src/core/job.c\",\"JOB_TYPE\":\"stop\",\"_UID\":\"1500\"}\n{\"MESSAGE_ID\":\"9d1aaa27d60140bd96365438aad20286\",\"_AUDIT_LOGINUID\":\"1500\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"__REALTIME_TIMESTAMP\":\"1791294412056500\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"TID\":\"3411\",\"USER_INVOCATION_ID\":\"a4f99e5c3a4140cf8a77328c6f417694\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"_UID\":\"1500\",\"_GID\":\"1500\",\"JOB_TYPE\":\"restart\",\"CODE_FILE\":\"src/core/job.c\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_CAP_EFFECTIVE\":\"0\",\"_MACHINE_ID\":\"d348a55551a94659a4c879f655f48d1e\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"MESSAGE\":\"Stopped oflab-e8826df90e8e4d8e8f254914decffd37.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-337766a792/A25/work/server.py /home/learner/checks-337766a792/A25/data 57993.\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"SYSLOG_FACILITY\":\"3\",\"CODE_FUNC\":\"job_emit_done_message\",\"CODE_LINE\":\"767\",\"_PID\":\"3411\",\"JOB_ID\":\"139\",\"_TRANSPORT\":\"journal\",\"_RUNTIME_SCOPE\":\"system\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"__MONOTONIC_TIMESTAMP\":\"80861699954\",\"USER_UNIT\":\"oflab-e8826df90e8e4d8e8f254914decffd37.service\",\"PRIORITY\":\"6\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791294412056477\",\"_COMM\":\"systemd\",\"_AUDIT_SESSION\":\"4\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_HOSTNAME\":\"ofbootstrap-b95b1fb4a6-control-plane\",\"__CURSOR\":\"s=9fe70f2dddbc4272a22c3bd45dc979b0;i=2e1;b=556aeb0af82d4d589f49b653dd990409;m=12d3bb9f72;t=65d2c3b1e67b4;x=de02f2b783d5eac8\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"JOB_RESULT\":\"done\"}\n{\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_HOSTNAME\":\"ofbootstrap-b95b1fb4a6-control-plane\",\"_UID\":\"1500\",\"TID\":\"3411\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"CODE_FUNC\":\"job_emit_start_message\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"__CURSOR\":\"s=9fe70f2dddbc4272a22c3bd45dc979b0;i=2e2;b=556aeb0af82d4d589f49b653dd990409;m=12d3bba426;t=65d2c3b1e6c68;x=58b5fbd0cef8d6dc\",\"_PID\":\"3411\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"JOB_ID\":\"139\",\"_MACHINE_ID\":\"d348a55551a94659a4c879f655f48d1e\",\"_AUDIT_LOGINUID\":\"1500\",\"SYSLOG_FACILITY\":\"3\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"MESSAGE\":\"Starting oflab-e8826df90e8e4d8e8f254914decffd37.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-337766a792/A25/work/server.py /home/learner/checks-337766a792/A25/data 57993...\",\"USER_INVOCATION_ID\":\"4d5264e4979f48d689726204d030eb20\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_COMM\":\"systemd\",\"PRIORITY\":\"6\",\"_GID\":\"1500\",\"CODE_FILE\":\"src/core/job.c\",\"_CAP_EFFECTIVE\":\"0\",\"CODE_LINE\":\"580\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791294412057636\",\"MESSAGE_ID\":\"7d4958e842da4a758f6c1cdc7b36dcc5\",\"USER_UNIT\":\"oflab-e8826df90e8e4d8e8f254914decffd37.service\",\"_TRANSPORT\":\"journal\",\"JOB_TYPE\":\"start\",\"__REALTIME_TIMESTAMP\":\"1791294412057704\",\"_RUNTIME_SCOPE\":\"system\",\"__MONOTONIC_TIMESTAMP\":\"80861701158\",\"_AUDIT_SESSION\":\"4\"}\n{\"_AUDIT_SESSION\":\"4\",\"_PID\":\"3411\",\"USER_INVOCATION_ID\":\"4d5264e4979f48d689726204d030eb20\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"TID\":\"3411\",\"CODE_FILE\":\"src/core/job.c\",\"USER_UNIT\":\"oflab-e8826df90e8e4d8e8f254914decffd37.service\",\"MESSAGE\":\"Started oflab-e8826df90e8e4d8e8f254914decffd37.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-337766a792/A25/work/server.py /home/learner/checks-337766a792/A25/data 57993.\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791294412059005\",\"MESSAGE_ID\":\"39f53479d3a045ac8e11786248231fbf\",\"JOB_ID\":\"139\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"SYSLOG_FACILITY\":\"3\",\"CODE_FUNC\":\"job_emit_done_message\",\"__MONOTONIC_TIMESTAMP\":\"80861702518\",\"JOB_TYPE\":\"start\",\"CODE_LINE\":\"767\",\"_UID\":\"1500\",\"JOB_RESULT\":\"done\",\"_RUNTIME_SCOPE\":\"system\",\"_MACHINE_ID\":\"d348a55551a94659a4c879f655f48d1e\",\"_GID\":\"1500\",\"__REALTIME_TIMESTAMP\":\"1791294412059064\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"PRIORITY\":\"6\",\"_AUDIT_LOGINUID\":\"1500\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"__CURSOR\":\"s=9fe70f2dddbc4272a22c3bd45dc979b0;i=2e3;b=556aeb0af82d4d589f49b653dd990409;m=12d3bba976;t=65d2c3b1e71b8;x=20a083b0b86e157\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"_TRANSPORT\":\"journal\",\"_COMM\":\"systemd\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_HOSTNAME\":\"ofbootstrap-b95b1fb4a6-control-plane\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_CAP_EFFECTIVE\":\"0\"}\n{\"_RUNTIME_SCOPE\":\"system\",\"PRIORITY\":\"6\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"SYSLOG_FACILITY\":\"3\",\"CODE_FUNC\":\"job_emit_start_message\",\"USER_INVOCATION_ID\":\"4d5264e4979f48d689726204d030eb20\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791294413451599\",\"__CURSOR\":\"s=9fe70f2dddbc4272a22c3bd45dc979b0;i=2e7;b=556aeb0af82d4d589f49b653dd990409;m=12d3d0e941;t=65d2c3b33b182;x=5e21c268aaf9f26a\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"JOB_TYPE\":\"stop\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_COMM\":\"systemd\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"TID\":\"3411\",\"_HOSTNAME\":\"ofbootstrap-b95b1fb4a6-control-plane\",\"_MACHINE_ID\":\"d348a55551a94659a4c879f655f48d1e\",\"USER_UNIT\":\"oflab-e8826df90e8e4d8e8f254914decffd37.service\",\"_UID\":\"1500\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"__REALTIME_TIMESTAMP\":\"1791294413451650\",\"JOB_ID\":\"148\",\"_CAP_EFFECTIVE\":\"0\",\"CODE_FILE\":\"src/core/job.c\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_TRANSPORT\":\"journal\",\"__MONOTONIC_TIMESTAMP\":\"80863095105\",\"CODE_LINE\":\"580\",\"_GID\":\"1500\",\"_AUDIT_LOGINUID\":\"1500\",\"_PID\":\"3411\",\"_AUDIT_SESSION\":\"4\",\"MESSAGE\":\"Stopping oflab-e8826df90e8e4d8e8f254914decffd37.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-337766a792/A25/work/server.py /home/learner/checks-337766a792/A25/data 57993...\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"MESSAGE_ID\":\"de5b426a63be47a7b6ac3eaac82e2f6f\"}\n{\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_COMM\":\"systemd\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"MESSAGE_ID\":\"9d1aaa27d60140bd96365438aad20286\",\"_UID\":\"1500\",\"_AUDIT_SESSION\":\"4\",\"CODE_LINE\":\"767\",\"JOB_ID\":\"148\",\"_RUNTIME_SCOPE\":\"system\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791294413453905\",\"JOB_RESULT\":\"done\",\"_AUDIT_LOGINUID\":\"1500\",\"CODE_FUNC\":\"job_emit_done_message\",\"USER_UNIT\":\"oflab-e8826df90e8e4d8e8f254914decffd37.service\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_CAP_EFFECTIVE\":\"0\",\"_PID\":\"3411\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"__REALTIME_TIMESTAMP\":\"1791294413453932\",\"__CURSOR\":\"s=9fe70f2dddbc4272a22c3bd45dc979b0;i=2e8;b=556aeb0af82d4d589f49b653dd990409;m=12d3d0f22a;t=65d2c3b33ba6c;x=cd159a3db43022b8\",\"SYSLOG_FACILITY\":\"3\",\"JOB_TYPE\":\"restart\",\"CODE_FILE\":\"src/core/job.c\",\"_TRANSPORT\":\"journal\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"TID\":\"3411\",\"_GID\":\"1500\",\"MESSAGE\":\"Stopped oflab-e8826df90e8e4d8e8f254914decffd37.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-337766a792/A25/work/server.py /home/learner/checks-337766a792/A25/data 57993.\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"PRIORITY\":\"6\",\"USER_INVOCATION_ID\":\"4d5264e4979f48d689726204d030eb20\",\"_HOSTNAME\":\"ofbootstrap-b95b1fb4a6-control-plane\",\"__MONOTONIC_TIMESTAMP\":\"80863097386\",\"_MACHINE_ID\":\"d348a55551a94659a4c879f655f48d1e\",\"_SYSTEMD_USER_SLICE\":\"-.slice\"}\n{\"JOB_ID\":\"148\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"__MONOTONIC_TIMESTAMP\":\"80863099609\",\"_COMM\":\"systemd\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791294413455981\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"TID\":\"3411\",\"CODE_FILE\":\"src/core/job.c\",\"MESSAGE_ID\":\"7d4958e842da4a758f6c1cdc7b36dcc5\",\"_RUNTIME_SCOPE\":\"system\",\"_GID\":\"1500\",\"_AUDIT_SESSION\":\"4\",\"_AUDIT_LOGINUID\":\"1500\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"_UID\":\"1500\",\"_CAP_EFFECTIVE\":\"0\",\"__REALTIME_TIMESTAMP\":\"1791294413456155\",\"CODE_FUNC\":\"job_emit_start_message\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"__CURSOR\":\"s=9fe70f2dddbc4272a22c3bd45dc979b0;i=2e9;b=556aeb0af82d4d589f49b653dd990409;m=12d3d0fad9;t=65d2c3b33c31b;x=1078b3adcfa0b07e\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"PRIORITY\":\"6\",\"_MACHINE_ID\":\"d348a55551a94659a4c879f655f48d1e\",\"_TRANSPORT\":\"journal\",\"CODE_LINE\":\"580\",\"USER_INVOCATION_ID\":\"e82723c4d86444a7b75143ae7802b74e\",\"_HOSTNAME\":\"ofbootstrap-b95b1fb4a6-control-plane\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"USER_UNIT\":\"oflab-e8826df90e8e4d8e8f254914decffd37.service\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"JOB_TYPE\":\"start\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"SYSLOG_FACILITY\":\"3\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_PID\":\"3411\",\"MESSAGE\":\"Starting oflab-e8826df90e8e4d8e8f254914decffd37.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-337766a792/A25/work/server.py /home/learner/checks-337766a792/A25/data 57993...\"}\n{\"_CAP_EFFECTIVE\":\"0\",\"__REALTIME_TIMESTAMP\":\"1791294413457935\",\"__MONOTONIC_TIMESTAMP\":\"80863101389\",\"PRIORITY\":\"6\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"CODE_FILE\":\"src/core/job.c\",\"USER_UNIT\":\"oflab-e8826df90e8e4d8e8f254914decffd37.service\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_AUDIT_LOGINUID\":\"1500\",\"_PID\":\"3411\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_COMM\":\"systemd\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"_UID\":\"1500\",\"JOB_TYPE\":\"start\",\"_GID\":\"1500\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791294413457902\",\"USER_INVOCATION_ID\":\"e82723c4d86444a7b75143ae7802b74e\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_MACHINE_ID\":\"d348a55551a94659a4c879f655f48d1e\",\"__CURSOR\":\"s=9fe70f2dddbc4272a22c3bd45dc979b0;i=2ea;b=556aeb0af82d4d589f49b653dd990409;m=12d3d101cd;t=65d2c3b33ca0f;x=7021637ccc03ec31\",\"_RUNTIME_SCOPE\":\"system\",\"_TRANSPORT\":\"journal\",\"MESSAGE_ID\":\"39f53479d3a045ac8e11786248231fbf\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"JOB_ID\":\"148\",\"SYSLOG_FACILITY\":\"3\",\"MESSAGE\":\"Started oflab-e8826df90e8e4d8e8f254914decffd37.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-337766a792/A25/work/server.py /home/learner/checks-337766a792/A25/data 57993.\",\"CODE_LINE\":\"767\",\"_AUDIT_SESSION\":\"4\",\"_HOSTNAME\":\"ofbootstrap-b95b1fb4a6-control-plane\",\"CODE_FUNC\":\"job_emit_done_message\",\"TID\":\"3411\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"JOB_RESULT\":\"done\"}\n",
+      "stderr": ""
+    }
+  },
+  "exit": 1
+}

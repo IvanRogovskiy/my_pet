@@ -1,0 +1,77 @@
+test_conditional_update_uses_affected_rows (test_examples.Mechanisms.test_conditional_update_uses_affected_rows) ... ok
+test_demo_does_not_leave_cancellation_on_its_caller (test_examples.Mechanisms.test_demo_does_not_leave_cancellation_on_its_caller) ... ok
+test_old_client_reads_writes_after_expand_and_backfill_is_repeatable (test_examples.Mechanisms.test_old_client_reads_writes_after_expand_and_backfill_is_repeatable) ... ok
+test_publish_before_mark_crash_delivers_twice_effect_once (test_examples.Mechanisms.test_publish_before_mark_crash_delivers_twice_effect_once) ... ok
+test_restore_marks_loss_and_does_not_invent_rpo (test_examples.Mechanisms.test_restore_marks_loss_and_does_not_invent_rpo) ... ok
+test_sibling_failure_waits_for_cleanup (test_examples.Mechanisms.test_sibling_failure_waits_for_cleanup) ... ok
+test_artifact_exact_commit_and_corruption (test_hosted_gitlab.Hosted.test_artifact_exact_commit_and_corruption) ... ok
+test_refuses_public_project_before_commit (test_hosted_gitlab.Hosted.test_refuses_public_project_before_commit) ... ok
+test_sensitive_response_fields_and_urls_are_redacted (test_hosted_gitlab.Hosted.test_sensitive_response_fields_and_urls_are_redacted) ... ok
+test_all_cases_prepare_without_runtime_and_reset_preserves_data (test_labs.Labs.test_all_cases_prepare_without_runtime_and_reset_preserves_data) ... ok
+test_cli_infrastructure_unavailable_has_json_and_exit_two (test_labs.Labs.test_cli_infrastructure_unavailable_has_json_and_exit_two) ... ok
+test_concurrent_cli_reset_is_refused (test_labs.Labs.test_concurrent_cli_reset_is_refused) ... ok
+test_container_cleanup_refuses_wrong_owner (test_labs.Labs.test_container_cleanup_refuses_wrong_owner) ... ok
+test_dag_bad_fixed_and_valid_stage_based_alternative (test_labs.Labs.test_dag_bad_fixed_and_valid_stage_based_alternative) ... ok
+test_directory_symlink_cannot_redirect_reset (test_labs.Labs.test_directory_symlink_cannot_redirect_reset) ... ok
+test_disk_preflight_precedes_docker (test_labs.Labs.test_disk_preflight_precedes_docker) ... ok
+test_failed_fixture_seed_is_not_recorded (test_labs.Labs.test_failed_fixture_seed_is_not_recorded) ... ok
+test_hardlink_cannot_redirect_reset (test_labs.Labs.test_hardlink_cannot_redirect_reset) ... ok
+test_loopback_bad_fixed_and_cleanup (test_labs.Labs.test_loopback_bad_fixed_and_cleanup) ... FAIL
+test_missing_runtime_is_exit_two_with_evidence (test_labs.Labs.test_missing_runtime_is_exit_two_with_evidence) ... ok
+test_moved_workspace_rejected (test_labs.Labs.test_moved_workspace_rejected) ... ok
+test_optional_gate_not_accepted (test_labs.Labs.test_optional_gate_not_accepted) ... ok
+test_permissions_can_be_rechecked_after_read_only_fixture (test_labs.Labs.test_permissions_can_be_rechecked_after_read_only_fixture) ... skipped 'requires unprivileged Linux UID'
+test_postgres_fixture_does_not_repair_deleted_marker (test_labs.Labs.test_postgres_fixture_does_not_repair_deleted_marker) ... ok
+test_prepare_never_adopts_existing_directory (test_labs.Labs.test_prepare_never_adopts_existing_directory) ... ok
+test_prepare_refuses_protected_directory_before_writing (test_labs.Labs.test_prepare_refuses_protected_directory_before_writing) ... ok
+test_projection_bad_fixed_reset (test_labs.Labs.test_projection_bad_fixed_reset) ... ok
+test_release_fixture_writes_only_on_post (test_labs.Labs.test_release_fixture_writes_only_on_post) ... ERROR
+test_remote_cluster_refused_before_creation (test_labs.Labs.test_remote_cluster_refused_before_creation) ... ok
+test_service_convergence_retried_and_persistent_failure_retained (test_labs.Labs.test_service_convergence_retried_and_persistent_failure_retained) ... ok
+test_symlink_cannot_redirect_reset (test_labs.Labs.test_symlink_cannot_redirect_reset) ... ok
+test_unsupported_ci_rules_are_not_claimed_verified (test_labs.Labs.test_unsupported_ci_rules_are_not_claimed_verified) ... ok
+test_local_links_resolve (test_materials.Materials.test_local_links_resolve) ... ok
+test_topic_parts_and_prerequisites_match_index (test_materials.Materials.test_topic_parts_and_prerequisites_match_index) ... ok
+test_backend_reset_preserves_evidence_and_refuses_symlink (test_new_stands.NewStands.test_backend_reset_preserves_evidence_and_refuses_symlink) ... ok
+test_harness_traceback_is_not_a_detected_student_defect (test_new_stands.NewStands.test_harness_traceback_is_not_a_detected_student_defect) ... ok
+test_missing_recorded_volume_is_not_recreated (test_new_stands.NewStands.test_missing_recorded_volume_is_not_recreated) ... ok
+test_partial_docker_info_is_environment_error (test_new_stands.NewStands.test_partial_docker_info_is_environment_error) ... ok
+test_replaced_container_is_never_stopped (test_new_stands.NewStands.test_replaced_container_is_never_stopped) ... ok
+test_all_fixtures_demonstrate_authored_behavior (test_review_benchmark.ReviewBenchmark.test_all_fixtures_demonstrate_authored_behavior) ... ok
+test_duplicate_cannot_inflate_score (test_review_benchmark.ReviewBenchmark.test_duplicate_cannot_inflate_score) ... ok
+test_export_has_no_oracle_and_does_not_overwrite (test_review_benchmark.ReviewBenchmark.test_export_has_no_oracle_and_does_not_overwrite) ... ok
+test_false_positive_and_missing_bug_counted (test_review_benchmark.ReviewBenchmark.test_false_positive_and_missing_bug_counted) ... ok
+test_label_without_repro_card_does_not_get_full_match (test_review_benchmark.ReviewBenchmark.test_label_without_repro_card_does_not_get_full_match) ... ok
+test_malformed_answers_rejected (test_review_benchmark.ReviewBenchmark.test_malformed_answers_rejected) ... ok
+test_perfect_labels_are_not_claimed_semantic_review (test_review_benchmark.ReviewBenchmark.test_perfect_labels_are_not_claimed_semantic_review) ... ok
+
+======================================================================
+ERROR: test_release_fixture_writes_only_on_post (test_labs.Labs.test_release_fixture_writes_only_on_post)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/assets/labs/lab.py", line 139, in port
+    sock.bind(("127.0.0.1", 0))
+PermissionError: [Errno 1] Operation not permitted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/tests/test_labs.py", line 214, in test_release_fixture_writes_only_on_post
+    number = lab.port()
+             ^^^^^^^^^^
+  File "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/assets/labs/lab.py", line 142, in port
+    raise Unavailable("loopback bind unavailable") from exc
+lab.Unavailable: loopback bind unavailable
+
+======================================================================
+FAIL: test_loopback_bad_fixed_and_cleanup (test_labs.Labs.test_loopback_bad_fixed_and_cleanup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory/tests/test_labs.py", line 154, in test_loopback_bad_fixed_and_cleanup
+    self.assertEqual(self.result(root, state), 1)
+AssertionError: 2 != 1
+
+----------------------------------------------------------------------
+Ran 46 tests in 1.733s
+
+FAILED (failures=1, errors=1, skipped=1)

@@ -1,0 +1,22 @@
+{
+  "case": "L02b",
+  "version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "time": "2026-10-06T12:19:02Z",
+  "platform": "linux",
+  "python": "3.11.2",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "config.json": "a734d3d6909195f7ea513f19c9437c268f300c32a09bdb5c1cc70ac72016d814"
+  },
+  "status": "passed",
+  "detail": {
+    "level": "real loopback processes",
+    "occupied_port": 43345,
+    "target_port": 39207,
+    "target_exit": null,
+    "diagnostic": "",
+    "own_blocker_survived": true
+  },
+  "exit": 0
+}

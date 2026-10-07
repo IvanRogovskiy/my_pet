@@ -1,0 +1,72 @@
+{
+  "workflow": {
+    "rules": [
+      {
+        "if": "$CI_PIPELINE_SOURCE == \"push\""
+      },
+      {
+        "when": "never"
+      }
+    ]
+  },
+  "stages": [
+    "build",
+    "verify",
+    "promote"
+  ],
+  "default": {
+    "image": "python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f",
+    "timeout": "2 minutes"
+  },
+  "build": {
+    "stage": "build",
+    "script": [
+      "python -c 'import hashlib, json, os\nfrom pathlib import Path\nbody = ('\"'\"'synthetic-course-release:'\"'\"' + os.environ['\"'\"'CI_COMMIT_SHA'\"'\"']).encode()\nPath('\"'\"'release.txt'\"'\"').write_bytes(body)\nPath('\"'\"'manifest.json'\"'\"').write_text(json.dumps({'\"'\"'commit'\"'\"':os.environ['\"'\"'CI_COMMIT_SHA'\"'\"'],'\"'\"'sha256'\"'\"':hashlib.sha256(body).hexdigest()}))\n'"
+    ],
+    "artifacts": {
+      "paths": [
+        "release.txt",
+        "manifest.json"
+      ],
+      "expire_in": "7 days"
+    }
+  },
+  "gate": {
+    "stage": "verify",
+    "needs": [
+      "build"
+    ],
+    "when": "manual",
+    "allow_failure": false,
+    "script": [
+      "exit 0"
+    ]
+  },
+  "promote_marker": {
+    "stage": "promote",
+    "needs": [
+      {
+        "job": "build",
+        "artifacts": true
+      },
+      {
+        "job": "gate",
+        "artifacts": false
+      }
+    ],
+    "variables": {
+      "GIT_STRATEGY": "none",
+      "AUDIT_CORRUPT": "true"
+    },
+    "script": [
+      "python -c 'import hashlib, json, os\nfrom pathlib import Path\nm=json.loads(Path('\"'\"'manifest.json'\"'\"').read_text())\nbody=Path('\"'\"'release.txt'\"'\"').read_bytes()\nif os.environ.get('\"'\"'AUDIT_CORRUPT'\"'\"') == '\"'\"'true'\"'\"':\n    body += b'\"'\"'corruption'\"'\"'\nok = m['\"'\"'commit'\"'\"']==os.environ['\"'\"'CI_COMMIT_SHA'\"'\"'] and hashlib.sha256(body).hexdigest()==m['\"'\"'sha256'\"'\"']\nPath('\"'\"'promotion.json'\"'\"').write_text(json.dumps({'\"'\"'commit'\"'\"':m['\"'\"'commit'\"'\"'],'\"'\"'sha256'\"'\"':m['\"'\"'sha256'\"'\"'],'\"'\"'verified'\"'\"':ok,'\"'\"'synthetic_only'\"'\"':True}))\nraise SystemExit(0 if ok else 1)\n'"
+    ],
+    "artifacts": {
+      "paths": [
+        "promotion.json"
+      ],
+      "when": "always",
+      "expire_in": "7 days"
+    }
+  }
+}

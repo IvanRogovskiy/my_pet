@@ -1,0 +1,22 @@
+{
+  "case": "L02b",
+  "version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "time": "2026-10-06T12:19:03Z",
+  "platform": "linux",
+  "python": "3.11.2",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "config.json": "d1b4322f245ea371ee3f824465fac6c04e283609ce21072e3fced257d2555c99"
+  },
+  "status": "failed",
+  "detail": {
+    "level": "real loopback processes",
+    "occupied_port": 37503,
+    "target_port": 37503,
+    "target_exit": 1,
+    "diagnostic": "Traceback (most recent call last):\n  File \"/home/learner/of-labs/L02b/work/server.py\", line 18, in <module>\n    HTTPServer((sys.argv[3] if len(sys.argv)>3 else \"127.0.0.1\", port), Handler).serve_forever()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.11/socketserver.py\", line 456, in __init__\n    self.server_bind()\n  File \"/usr/lib/python3.11/http/server.py\", line 136, in server_bind\n    socketserver.TCPServer.server_bind(self)\n  File \"/usr/lib/python3.11/socketserver.py\", line 472, in server_bind\n    self.socket.bind(self.server_address)\nOSError: [Errno 98] Address already in use\n",
+    "own_blocker_survived": true
+  },
+  "exit": 1
+}

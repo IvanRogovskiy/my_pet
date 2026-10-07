@@ -1,0 +1,21 @@
+{
+  "case": "L02c",
+  "version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "time": "2026-10-06T13:32:02Z",
+  "platform": "linux",
+  "python": "3.11.2",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "config.json": "21fe2b8a370efb4292db11b0731f6ffed515b5c25ba8c8fd12a70b37b6a73837"
+  },
+  "status": "passed",
+  "detail": {
+    "mode": "0o500",
+    "exit": 0,
+    "stdout": "orderflow\n",
+    "stderr": "",
+    "level": "Linux current UID traversal"
+  },
+  "exit": 0
+}

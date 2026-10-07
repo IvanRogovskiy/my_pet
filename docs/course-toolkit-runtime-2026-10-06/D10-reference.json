@@ -1,0 +1,38 @@
+{
+  "case": "D10",
+  "version": "2026-10-06.1",
+  "time": "2026-10-06T11:22:42Z",
+  "platform": "darwin",
+  "python": "3.12.3",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "config.json": "0afde03c69a3e9cc77b36f9fe32bd44c5fdb05e07fbac55c8e0c4f81abffaa47"
+  },
+  "status": "passed",
+  "detail": {
+    "level": "real Docker container and host HTTP",
+    "start": {
+      "exit": 0,
+      "stdout": "3080267310f25d870e868759196da40b70a1dc41d2e52e5c2919dc3c9b150192\n",
+      "stderr": ""
+    },
+    "healthy": true,
+    "before_recreate": {
+      "identity": "a452efd34efc47cbaf479b4cae0e4c9c",
+      "pid": 1,
+      "config_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "after_recreate": {
+      "identity": "a452efd34efc47cbaf479b4cae0e4c9c",
+      "pid": 1,
+      "config_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "marker_preserved": true,
+    "logs": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "exit": 0
+}
