@@ -1,0 +1,328 @@
+{
+  "version": 1,
+  "root": "/private/tmp/of-course-quality-9w0jcxh9/gitlab",
+  "id": "936584d995ce43df897c0ce4d942912e",
+  "project": "ivanrg/orderflow-course-audit",
+  "runs": {
+    "bypass": {
+      "ref": "course-quality-936584d995ce-bypass",
+      "fixture_sha256": "ae23dc3bf0e6cc06fe0f4faf7c7612f74761b5eceea8bbed5a2aed23f59f2758",
+      "publication": "committed",
+      "sha": "9b6cce2d300dac03cac7dc6dcc9a206b99c4ad99",
+      "pipeline": {
+        "id": 2917828095,
+        "sha": "9b6cce2d300dac03cac7dc6dcc9a206b99c4ad99",
+        "ref": "course-quality-936584d995ce-bypass",
+        "status": "failed",
+        "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/pipelines/2917828095"
+      },
+      "jobs": [
+        {
+          "id": 16968907000,
+          "name": "promote_marker",
+          "status": "success",
+          "stage": "promote",
+          "started_at": "2026-10-06T12:43:44.603Z",
+          "finished_at": "2026-10-06T12:43:57.062Z",
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968907000",
+          "failure_reason": null
+        },
+        {
+          "id": 16968906999,
+          "name": "gate",
+          "status": "failed",
+          "stage": "verify",
+          "started_at": "2026-10-06T12:49:12.089Z",
+          "finished_at": "2026-10-06T12:49:24.368Z",
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968906999",
+          "failure_reason": "script_failure"
+        },
+        {
+          "id": 16968906998,
+          "name": "build",
+          "status": "success",
+          "stage": "build",
+          "started_at": "2026-10-06T12:43:29.273Z",
+          "finished_at": "2026-10-06T12:43:41.597Z",
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968906998",
+          "failure_reason": null
+        }
+      ],
+      "before_gate": {
+        "promote_marker": "success",
+        "gate": "manual",
+        "build": "success"
+      },
+      "gate_play_requested": true,
+      "artifact": {
+        "commit": "9b6cce2d300dac03cac7dc6dcc9a206b99c4ad99",
+        "sha256": "e8181999bde68a33f7efa32136dc536684ab942eea32588ab22042974b6993d3",
+        "verified": true,
+        "synthetic_only": true
+      },
+      "result": {
+        "passed": true,
+        "expected_gate_marker": [
+          "failed",
+          "success"
+        ],
+        "observed_gate_marker": [
+          "failed",
+          "success"
+        ],
+        "artifact_checked": true
+      },
+      "independent_artifact_check": {
+        "downloaded_from_build_job": 16968906998,
+        "computed_sha256": "e8181999bde68a33f7efa32136dc536684ab942eea32588ab22042974b6993d3",
+        "manifest": {
+          "commit": "9b6cce2d300dac03cac7dc6dcc9a206b99c4ad99",
+          "sha256": "e8181999bde68a33f7efa32136dc536684ab942eea32588ab22042974b6993d3"
+        },
+        "passed": true,
+        "ordering_confirmed": true
+      }
+    },
+    "blocked": {
+      "ref": "course-quality-936584d995ce-blocked",
+      "fixture_sha256": "d15510c7db59928b2b83685c657179db00fd0dbcf5092cfe294e846fee3710f6",
+      "publication": "committed",
+      "sha": "d6392b0fcfd62439f3f2c37ba511fbf6f7b643ea",
+      "pipeline": {
+        "id": 2917828303,
+        "sha": "d6392b0fcfd62439f3f2c37ba511fbf6f7b643ea",
+        "ref": "course-quality-936584d995ce-blocked",
+        "status": "failed",
+        "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/pipelines/2917828303"
+      },
+      "jobs": [
+        {
+          "id": 16968908856,
+          "name": "promote_marker",
+          "status": "skipped",
+          "stage": "promote",
+          "started_at": null,
+          "finished_at": null,
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968908856",
+          "failure_reason": null
+        },
+        {
+          "id": 16968908855,
+          "name": "gate",
+          "status": "failed",
+          "stage": "verify",
+          "started_at": "2026-10-06T12:49:16.475Z",
+          "finished_at": "2026-10-06T12:49:29.074Z",
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968908855",
+          "failure_reason": "script_failure"
+        },
+        {
+          "id": 16968908854,
+          "name": "build",
+          "status": "success",
+          "stage": "build",
+          "started_at": "2026-10-06T12:43:32.568Z",
+          "finished_at": "2026-10-06T12:43:44.684Z",
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968908854",
+          "failure_reason": null
+        }
+      ],
+      "before_gate": {
+        "promote_marker": "created",
+        "gate": "manual",
+        "build": "success"
+      },
+      "gate_play_requested": true,
+      "result": {
+        "passed": true,
+        "expected_gate_marker": [
+          "failed",
+          "skipped"
+        ],
+        "observed_gate_marker": [
+          "failed",
+          "skipped"
+        ],
+        "artifact_checked": true
+      },
+      "independent_artifact_check": {
+        "downloaded_from_build_job": 16968908854,
+        "computed_sha256": "0c3bdc52fb0c22a1fc73902d6d86826654eb138862aa801a1e7f8b97b8797fde",
+        "manifest": {
+          "commit": "d6392b0fcfd62439f3f2c37ba511fbf6f7b643ea",
+          "sha256": "0c3bdc52fb0c22a1fc73902d6d86826654eb138862aa801a1e7f8b97b8797fde"
+        },
+        "passed": true,
+        "ordering_confirmed": true
+      }
+    },
+    "success": {
+      "ref": "course-quality-936584d995ce-success",
+      "fixture_sha256": "ee76168a7d91b9999cc67728eec608fda1f749f2b4b9098c820e33f4bf3e87d2",
+      "publication": "committed",
+      "sha": "64ff57c3d5fa75491c4156288a03aa9d0347cdcf",
+      "pipeline": {
+        "id": 2917828533,
+        "sha": "64ff57c3d5fa75491c4156288a03aa9d0347cdcf",
+        "ref": "course-quality-936584d995ce-success",
+        "status": "success",
+        "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/pipelines/2917828533"
+      },
+      "jobs": [
+        {
+          "id": 16968910676,
+          "name": "promote_marker",
+          "status": "success",
+          "stage": "promote",
+          "started_at": "2026-10-06T12:49:35.456Z",
+          "finished_at": "2026-10-06T12:49:48.216Z",
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968910676",
+          "failure_reason": null
+        },
+        {
+          "id": 16968910675,
+          "name": "gate",
+          "status": "success",
+          "stage": "verify",
+          "started_at": "2026-10-06T12:49:21.619Z",
+          "finished_at": "2026-10-06T12:49:33.705Z",
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968910675",
+          "failure_reason": null
+        },
+        {
+          "id": 16968910674,
+          "name": "build",
+          "status": "success",
+          "stage": "build",
+          "started_at": "2026-10-06T12:43:36.765Z",
+          "finished_at": "2026-10-06T12:43:47.308Z",
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968910674",
+          "failure_reason": null
+        }
+      ],
+      "before_gate": {
+        "promote_marker": "created",
+        "gate": "manual",
+        "build": "success"
+      },
+      "gate_play_requested": true,
+      "artifact": {
+        "commit": "64ff57c3d5fa75491c4156288a03aa9d0347cdcf",
+        "sha256": "865e4630df554003fc65d6dd571067e757a937c36095ddc7be64f97a639bcee8",
+        "verified": true,
+        "synthetic_only": true
+      },
+      "result": {
+        "passed": true,
+        "expected_gate_marker": [
+          "success",
+          "success"
+        ],
+        "observed_gate_marker": [
+          "success",
+          "success"
+        ],
+        "artifact_checked": true
+      },
+      "independent_artifact_check": {
+        "downloaded_from_build_job": 16968910674,
+        "computed_sha256": "865e4630df554003fc65d6dd571067e757a937c36095ddc7be64f97a639bcee8",
+        "manifest": {
+          "commit": "64ff57c3d5fa75491c4156288a03aa9d0347cdcf",
+          "sha256": "865e4630df554003fc65d6dd571067e757a937c36095ddc7be64f97a639bcee8"
+        },
+        "passed": true,
+        "ordering_confirmed": true
+      }
+    },
+    "corrupt": {
+      "ref": "course-quality-936584d995ce-corrupt",
+      "fixture_sha256": "45212839ee5337be68ea50b650a8a0b1e5b720b61f36bfb3c14b7892c881a329",
+      "publication": "committed",
+      "sha": "899cc503f7bd69194a492f29a1acec6c54f30f82",
+      "pipeline": {
+        "id": 2917828743,
+        "sha": "899cc503f7bd69194a492f29a1acec6c54f30f82",
+        "ref": "course-quality-936584d995ce-corrupt",
+        "status": "failed",
+        "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/pipelines/2917828743"
+      },
+      "jobs": [
+        {
+          "id": 16968912352,
+          "name": "promote_marker",
+          "status": "failed",
+          "stage": "promote",
+          "started_at": "2026-10-06T12:49:37.468Z",
+          "finished_at": "2026-10-06T12:49:48.506Z",
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968912352",
+          "failure_reason": "script_failure"
+        },
+        {
+          "id": 16968912351,
+          "name": "gate",
+          "status": "success",
+          "stage": "verify",
+          "started_at": "2026-10-06T12:49:25.602Z",
+          "finished_at": "2026-10-06T12:49:35.912Z",
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968912351",
+          "failure_reason": null
+        },
+        {
+          "id": 16968912350,
+          "name": "build",
+          "status": "success",
+          "stage": "build",
+          "started_at": "2026-10-06T12:43:40.292Z",
+          "finished_at": "2026-10-06T12:43:53.229Z",
+          "web_url": "https://gitlab.com/ivanrg/orderflow-course-audit/-/jobs/16968912350",
+          "failure_reason": null
+        }
+      ],
+      "before_gate": {
+        "promote_marker": "created",
+        "gate": "manual",
+        "build": "success"
+      },
+      "gate_play_requested": true,
+      "artifact": {
+        "commit": "899cc503f7bd69194a492f29a1acec6c54f30f82",
+        "sha256": "87ad4b30ee56c68dcf6bf9221cf492d54e7de848b50827fe282e203337d36a3e",
+        "verified": false,
+        "synthetic_only": true
+      },
+      "result": {
+        "passed": true,
+        "expected_gate_marker": [
+          "success",
+          "failed"
+        ],
+        "observed_gate_marker": [
+          "success",
+          "failed"
+        ],
+        "artifact_checked": true
+      },
+      "independent_artifact_check": {
+        "downloaded_from_build_job": 16968912350,
+        "computed_sha256": "87ad4b30ee56c68dcf6bf9221cf492d54e7de848b50827fe282e203337d36a3e",
+        "manifest": {
+          "commit": "899cc503f7bd69194a492f29a1acec6c54f30f82",
+          "sha256": "87ad4b30ee56c68dcf6bf9221cf492d54e7de848b50827fe282e203337d36a3e"
+        },
+        "passed": true,
+        "ordering_confirmed": true
+      }
+    }
+  },
+  "project_id": 87194850,
+  "project_snapshot": {
+    "id": 87194850,
+    "path_with_namespace": "ivanrg/orderflow-course-audit",
+    "visibility": "private",
+    "default_branch": "main",
+    "shared_runners_enabled": true
+  },
+  "base_sha": "1e5edf141889483f490c7a04b342cdfdb3459ba7",
+  "default_branch_unchanged": true
+}

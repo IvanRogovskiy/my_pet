@@ -1,0 +1,472 @@
+{
+  "RV09": {
+    "syntax": "ok",
+    "runtime": "not run: unavailable external environment"
+  },
+  "RV01": [
+    {
+      "input": "0",
+      "outcome": {
+        "returned": 0,
+        "type": "int"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "1",
+      "outcome": {
+        "returned": 1,
+        "type": "int"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "125",
+      "outcome": {
+        "returned": 125,
+        "type": "int"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "-1",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "'1'",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "1.5",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "True",
+      "outcome": {
+        "returned": true,
+        "type": "bool"
+      },
+      "contract_pass": false
+    },
+    {
+      "input": "False",
+      "outcome": {
+        "returned": false,
+        "type": "bool"
+      },
+      "contract_pass": false
+    }
+  ],
+  "RV05": [
+    {
+      "input": "0",
+      "outcome": {
+        "returned": 0,
+        "type": "int"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "1",
+      "outcome": {
+        "returned": 1,
+        "type": "int"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "125",
+      "outcome": {
+        "returned": 125,
+        "type": "int"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "-1",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "'1'",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "1.5",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "True",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "False",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    }
+  ],
+  "RV06": [
+    {
+      "input": "0",
+      "outcome": {
+        "returned": 0,
+        "type": "int"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "1",
+      "outcome": {
+        "returned": 1,
+        "type": "int"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "125",
+      "outcome": {
+        "returned": 125,
+        "type": "int"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "-1",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "'1'",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "1.5",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "True",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    },
+    {
+      "input": "False",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass": true
+    }
+  ],
+  "RV02": [
+    {
+      "scenario": "admin any owner",
+      "actual": true,
+      "expected": true,
+      "type": "bool",
+      "contract_pass": true
+    },
+    {
+      "scenario": "buyer owns order and request matches",
+      "actual": true,
+      "expected": true,
+      "type": "bool",
+      "contract_pass": true
+    },
+    {
+      "scenario": "buyer owns order and request differs",
+      "actual": false,
+      "expected": true,
+      "type": "bool",
+      "contract_pass": false
+    },
+    {
+      "scenario": "buyer does not own and request matches",
+      "actual": true,
+      "expected": false,
+      "type": "bool",
+      "contract_pass": false
+    },
+    {
+      "scenario": "buyer does not own and request differs",
+      "actual": false,
+      "expected": false,
+      "type": "bool",
+      "contract_pass": true
+    }
+  ],
+  "RV07": [
+    {
+      "scenario": "admin any owner",
+      "actual": true,
+      "expected": true,
+      "type": "bool",
+      "contract_pass": true
+    },
+    {
+      "scenario": "buyer owns order and request matches",
+      "actual": true,
+      "expected": true,
+      "type": "bool",
+      "contract_pass": true
+    },
+    {
+      "scenario": "buyer owns order and request differs",
+      "actual": true,
+      "expected": true,
+      "type": "bool",
+      "contract_pass": true
+    },
+    {
+      "scenario": "buyer does not own and request matches",
+      "actual": false,
+      "expected": false,
+      "type": "bool",
+      "contract_pass": true
+    },
+    {
+      "scenario": "buyer does not own and request differs",
+      "actual": false,
+      "expected": false,
+      "type": "bool",
+      "contract_pass": true
+    }
+  ],
+  "RV03": {
+    "first": {
+      "id": 1,
+      "payload": {
+        "sku": 1,
+        "qty": 1
+      }
+    },
+    "same_scope_same_payload": {
+      "id": 1,
+      "payload": {
+        "sku": 1,
+        "qty": 1
+      }
+    },
+    "same_scope_changed_payload": {
+      "returned": {
+        "id": 1,
+        "payload": {
+          "sku": 1,
+          "qty": 1
+        }
+      }
+    },
+    "other_buyer_changed_payload": {
+      "id": 1,
+      "payload": {
+        "sku": 1,
+        "qty": 1
+      }
+    },
+    "state_entry_count": 1
+  },
+  "RV04": {
+    "sufficient": {
+      "returned": 1,
+      "stock": [
+        1
+      ]
+    },
+    "insufficient": {
+      "raised": "ValueError",
+      "stock": [
+        -1
+      ]
+    }
+  },
+  "RV08": {
+    "returned": [
+      [
+        2,
+        200
+      ],
+      [
+        1,
+        100
+      ]
+    ],
+    "pairs_match_ignoring_order": true,
+    "attached_test": "AssertionError"
+  },
+  "RV10": [
+    {
+      "input": "1",
+      "outcome": {
+        "returned": 1
+      },
+      "contract_pass_v1": true
+    },
+    {
+      "input": "100",
+      "outcome": {
+        "returned": 100
+      },
+      "contract_pass_v1": true
+    },
+    {
+      "input": "101",
+      "outcome": {
+        "returned": 101
+      },
+      "contract_pass_v1": true
+    },
+    {
+      "input": "1000000",
+      "outcome": {
+        "returned": 1000000
+      },
+      "contract_pass_v1": true
+    },
+    {
+      "input": "0",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass_v1": true
+    },
+    {
+      "input": "-1",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass_v1": true
+    },
+    {
+      "input": "True",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass_v1": true
+    },
+    {
+      "input": "False",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass_v1": true
+    },
+    {
+      "input": "'1'",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass_v1": true
+    },
+    {
+      "input": "1.5",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass_v1": true
+    },
+    {
+      "input": "None",
+      "outcome": {
+        "raised": "ValueError"
+      },
+      "contract_pass_v1": true
+    }
+  ],
+  "RV11": {
+    "fake_sequential_only": [
+      {
+        "rowcount": 1,
+        "returned": true,
+        "calls": [
+          {
+            "sql": "UPDATE stock SET qty=qty-1 WHERE sku=%s AND qty>=1",
+            "args": [
+              "sku-1"
+            ]
+          }
+        ]
+      },
+      {
+        "rowcount": 0,
+        "returned": false,
+        "calls": [
+          {
+            "sql": "UPDATE stock SET qty=qty-1 WHERE sku=%s AND qty>=1",
+            "args": [
+              "sku-1"
+            ]
+          }
+        ]
+      }
+    ],
+    "postgresql_concurrency": "not run"
+  },
+  "RV12": [
+    {
+      "items": [],
+      "returned": 0,
+      "expected": 0,
+      "contract_pass": true
+    },
+    {
+      "items": [
+        {
+          "price": 10,
+          "qty": 2
+        },
+        {
+          "price": 7,
+          "qty": 3
+        }
+      ],
+      "returned": 41,
+      "expected": 41,
+      "contract_pass": true
+    },
+    {
+      "items": [
+        {
+          "price": 0,
+          "qty": 8
+        },
+        {
+          "price": 12,
+          "qty": 0
+        }
+      ],
+      "returned": 0,
+      "expected": 0,
+      "contract_pass": true
+    }
+  ]
+}

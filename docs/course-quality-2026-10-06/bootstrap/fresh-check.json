@@ -1,0 +1,11 @@
+{
+  "node_id": "a4776ee2af89b635a43a3c877314691c4f01b779feef8449f9bf3c0c9388aa17",
+  "linux": "Python 3.11.2",
+  "linux_identity": "uid=1500(learner) gid=1500(learner) groups=1500(learner),999(systemd-journal)",
+  "ansible": "ansible-playbook [core 2.19.13]",
+  "kubernetes": "v1.33.1",
+  "helm": "v3.18.3+g6838ebc",
+  "terraform": "1.13.5",
+  "node_ready": true,
+  "data_preserved": false
+}

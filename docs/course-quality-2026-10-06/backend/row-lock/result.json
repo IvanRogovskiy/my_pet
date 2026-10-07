@@ -1,0 +1,45 @@
+{
+  "case": "B08R",
+  "schema": "probe_c7190509d2f24cfc8f6662758683d0d4",
+  "submission_sha256": "d251aa55c49db1d6f770411f4399b822df95f1377d50c031a4daf003b619c838",
+  "level": "real PostgreSQL and RabbitMQ / HTTP fixture as applicable",
+  "criteria": {
+    "one_order": true,
+    "stock_zero": true,
+    "rollback": true,
+    "concurrent_sessions": true
+  },
+  "detail": {
+    "concurrent": [
+      {
+        "pid": 241,
+        "isolation": "read committed",
+        "barrier_arrivals_ns": [
+          80458138031700
+        ],
+        "value": true
+      },
+      {
+        "pid": 242,
+        "isolation": "read committed",
+        "barrier_arrivals_ns": [
+          80458138098950
+        ],
+        "value": false
+      }
+    ],
+    "after": {
+      "stock": 0,
+      "orders": 1,
+      "requests": 0
+    },
+    "rollback": {
+      "stock": 1,
+      "orders": 0,
+      "requests": 0
+    },
+    "isolation": "read committed"
+  },
+  "passed": true,
+  "exit": 0
+}

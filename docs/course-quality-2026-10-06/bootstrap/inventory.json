@@ -1,0 +1,54 @@
+{
+  "profile": "kind-linux",
+  "prefix": "ofbootstrap-f6cfc98aec",
+  "node_id": "309040b2be51819b7c620b2bbb3c91e6ec25442e9b8d4672f5013ce722977eb0",
+  "preflight": {
+    "host_free_gib": 15.95,
+    "docker_memory_gib": 7.67,
+    "architecture": "aarch64",
+    "server_version": "24.0.5"
+  },
+  "tools": {
+    "kind": {
+      "url": "https://github.com/kubernetes-sigs/kind/releases/download/v0.29.0/kind-darwin-amd64",
+      "checksum_url": "https://github.com/kubernetes-sigs/kind/releases/download/v0.29.0/kind-darwin-amd64.sha256sum",
+      "archive_sha256": "3eb0d4de25b854f34ea8ce8a3cbe15054fc03bc962b03e96fd10664b829fb6ed",
+      "binary_sha256": "3eb0d4de25b854f34ea8ce8a3cbe15054fc03bc962b03e96fd10664b829fb6ed"
+    },
+    "kubectl": {
+      "url": "https://dl.k8s.io/release/v1.33.1/bin/darwin/amd64/kubectl",
+      "checksum_url": "https://dl.k8s.io/release/v1.33.1/bin/darwin/amd64/kubectl.sha256",
+      "archive_sha256": "8d36a5c66142547ad16e332942fd16a0ca2b3346d9ebaab6c348de2c70d9d875",
+      "binary_sha256": "8d36a5c66142547ad16e332942fd16a0ca2b3346d9ebaab6c348de2c70d9d875"
+    },
+    "helm": {
+      "url": "https://get.helm.sh/helm-v3.18.3-darwin-amd64.tar.gz",
+      "checksum_url": "https://get.helm.sh/helm-v3.18.3-darwin-amd64.tar.gz.sha256sum",
+      "archive_sha256": "d186851d40b1999c5d75696bc0b754e4d29e860c8d0cf4c132ac1b1940c5cffc",
+      "binary_sha256": "745cf7e967cc969a2bc443e882ed738c7d05c9cab2275bbcbb71107fd3e54380"
+    },
+    "terraform": {
+      "url": "https://releases.hashicorp.com/terraform/1.13.5/terraform_1.13.5_darwin_amd64.zip",
+      "checksum_url": "https://releases.hashicorp.com/terraform/1.13.5/terraform_1.13.5_SHA256SUMS",
+      "archive_sha256": "92f76865230cbe6bb747e49cb3dc5b44a054324bbdd1a080bb127b326b94c404",
+      "binary_sha256": "f9ebc400e229738b593bb4691263c0a55f6e4ba420199571a25f204db85281db"
+    }
+  },
+  "images": {
+    "py": {
+      "registry": "python@sha256:f77ac9e44ae96ef2c90b8053ea08c31f8be030f824196b0ae4db6d462c84e51f",
+      "manifest": "docker.io/library/python@sha256:d9c066a2a8594c709062de5210aea67dc81a3c008ce44b5daa28bbec53ad0a77",
+      "temporary_tag": "ofbootstrap-f6cfc98aec-py:fixture"
+    },
+    "pg": {
+      "registry": "postgres@sha256:721873c34ceb9f8d8fc265984940dc982404c105f19ad51be9fdc5970a6080ea",
+      "manifest": "docker.io/library/postgres@sha256:24b5c241a22e2daa0ebde55a41277efdf13e9eb391068b69192cc970ebca67c8",
+      "temporary_tag": "ofbootstrap-f6cfc98aec-pg:fixture"
+    }
+  },
+  "debian_packages": [
+    "dbus-user-session\t1.14.10-1~deb12u1",
+    "python3\t3.11.2-1+b1",
+    "systemd\t252.39-1~deb12u2"
+  ]
+}

@@ -1,0 +1,24 @@
+ok
+test_remote_cluster_refused_before_creation (test_labs.Labs.test_remote_cluster_refused_before_creation) ... ok
+test_service_convergence_retried_and_persistent_failure_retained (test_labs.Labs.test_service_convergence_retried_and_persistent_failure_retained) ... ok
+test_symlink_cannot_redirect_reset (test_labs.Labs.test_symlink_cannot_redirect_reset) ... ok
+test_unsupported_ci_rules_are_not_claimed_verified (test_labs.Labs.test_unsupported_ci_rules_are_not_claimed_verified) ... ok
+test_local_links_resolve (test_materials.Materials.test_local_links_resolve) ... ok
+test_topic_parts_and_prerequisites_match_index (test_materials.Materials.test_topic_parts_and_prerequisites_match_index) ... ok
+test_backend_reset_preserves_evidence_and_refuses_symlink (test_new_stands.NewStands.test_backend_reset_preserves_evidence_and_refuses_symlink) ... ok
+test_harness_traceback_is_not_a_detected_student_defect (test_new_stands.NewStands.test_harness_traceback_is_not_a_detected_student_defect) ... ok
+test_missing_recorded_volume_is_not_recreated (test_new_stands.NewStands.test_missing_recorded_volume_is_not_recreated) ... ok
+test_partial_docker_info_is_environment_error (test_new_stands.NewStands.test_partial_docker_info_is_environment_error) ... ok
+test_replaced_container_is_never_stopped (test_new_stands.NewStands.test_replaced_container_is_never_stopped) ... ok
+test_all_fixtures_demonstrate_authored_behavior (test_review_benchmark.ReviewBenchmark.test_all_fixtures_demonstrate_authored_behavior) ... ok
+test_duplicate_cannot_inflate_score (test_review_benchmark.ReviewBenchmark.test_duplicate_cannot_inflate_score) ... ok
+test_export_has_no_oracle_and_does_not_overwrite (test_review_benchmark.ReviewBenchmark.test_export_has_no_oracle_and_does_not_overwrite) ... ok
+test_false_positive_and_missing_bug_counted (test_review_benchmark.ReviewBenchmark.test_false_positive_and_missing_bug_counted) ... ok
+test_label_without_repro_card_does_not_get_full_match (test_review_benchmark.ReviewBenchmark.test_label_without_repro_card_does_not_get_full_match) ... ok
+test_malformed_answers_rejected (test_review_benchmark.ReviewBenchmark.test_malformed_answers_rejected) ... ok
+test_perfect_labels_are_not_claimed_semantic_review (test_review_benchmark.ReviewBenchmark.test_perfect_labels_are_not_claimed_semantic_review) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 1.060s
+
+OK

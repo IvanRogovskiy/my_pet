@@ -1,0 +1,77 @@
+{
+  "case": "H28",
+  "version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "time": "2026-10-06T13:33:13Z",
+  "platform": "darwin",
+  "python": "3.12.3",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "chart/Chart.yaml": "8672d3c6cf3db76dbbd483416c618caf13cedf36e75c22d1c48ad32407bcba33",
+    "chart/values.yaml": "de5ed632b88be5a5c009b170774b94ac354e5750e8236e388e48caab2909c911",
+    "chart/templates/web.yaml": "748a93f2e8840ad3a0630b5609f19d9c2a3730889bcc02df5ffe9b89a4eb324b"
+  },
+  "status": "failed",
+  "detail": {
+    "level": "real local Kubernetes",
+    "namespace": "oflab-d28ae92d085449a8812b2ed2ce8a0b48",
+    "helm": {
+      "exit": 0,
+      "stdout": "Release \"web\" does not exist. Installing it now.\nNAME: web\nLAST DEPLOYED: Tue Oct  6 16:33:14 2026\nNAMESPACE: oflab-d28ae92d085449a8812b2ed2ce8a0b48\nSTATUS: deployed\nREVISION: 1\nTEST SUITE: None\n",
+      "stderr": ""
+    },
+    "route": {
+      "exit": 1,
+      "stdout": "",
+      "stderr": "E1006 16:33:29.289293   93675 websocket.go:297] Unknown stream id 1, discarding message\nTraceback (most recent call last):\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 1344, in do_open\n    h.request(req.get_method(), req.selector, req.data, headers,\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1386, in request\n    self._send_request(method, url, body, headers, encode_chunked)\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1432, in _send_request\n    self.endheaders(body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1381, in endheaders\n    self._send_output(message_body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1141, in _send_output\n    self.send(msg)\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1085, in send\n    self.connect()\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1051, in connect\n    self.sock = self._create_connection(\n                ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/socket.py\", line 865, in create_connection\n    raise exceptions[0]\n  File \"/usr/local/lib/python3.12/socket.py\", line 850, in create_connection\n    sock.connect(sa)\nConnectionRefusedError: [Errno 111] Connection refused\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 515, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 532, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 1373, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 1347, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n"
+    },
+    "endpoints": {
+      "exit": 0,
+      "stdout": "NAME        ADDRESSTYPE   PORTS     ENDPOINTS   AGE\nweb-p7cdz   IPv4          <unset>   <unset>     16s\n",
+      "stderr": ""
+    },
+    "diagnostics": {
+      "pods": {
+        "exit": 0,
+        "stdout": "NAME                   READY   STATUS    RESTARTS   AGE   IP           NODE                                   NOMINATED NODE   READINESS GATES\nweb-67949b4997-nght2   1/1     Running   0          16s   10.244.0.9   ofbootstrap-f6cfc98aec-control-plane   <none>           <none>\n",
+        "stderr": ""
+      },
+      "pvc": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": "No resources found in oflab-d28ae92d085449a8812b2ed2ce8a0b48 namespace.\n"
+      },
+      "events": {
+        "exit": 0,
+        "stdout": "LAST SEEN   TYPE      REASON              OBJECT                      SUBOBJECT              SOURCE                                          MESSAGE                                                                                                                                         FIRST SEEN   COUNT   NAME\n17s         Normal    Scheduled           pod/web-67949b4997-nght2                           default-scheduler                               Successfully assigned oflab-d28ae92d085449a8812b2ed2ce8a0b48/web-67949b4997-nght2 to ofbootstrap-f6cfc98aec-control-plane                       17s          1       web-67949b4997-nght2.18dbf408abf92adc\n16s         Normal    Pulled              pod/web-67949b4997-nght2    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Container image \"docker.io/library/python@sha256:d9c066a2a8594c709062de5210aea67dc81a3c008ce44b5daa28bbec53ad0a77\" already present on machine   16s          1       web-67949b4997-nght2.18dbf408c799053b\n16s         Normal    Created             pod/web-67949b4997-nght2    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Created container: web                                                                                                                          16s          1       web-67949b4997-nght2.18dbf408cd5d9d34\n16s         Normal    Started             pod/web-67949b4997-nght2    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Started container web                                                                                                                           16s          1       web-67949b4997-nght2.18dbf408e429b1aa\n14s         Warning   Unhealthy           pod/web-67949b4997-nght2    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Readiness probe failed: Get \"http://10.244.0.9:8000/\": dial tcp 10.244.0.9:8000: connect: connection refused                                    15s          2       web-67949b4997-nght2.18dbf409030daa42\n17s         Normal    SuccessfulCreate    replicaset/web-67949b4997                          replicaset-controller                           Created pod: web-67949b4997-nght2                                                                                                               17s          1       web-67949b4997.18dbf408abb35d65\n17s         Normal    ScalingReplicaSet   deployment/web                                     deployment-controller                           Scaled up replica set web-67949b4997 from 0 to 1                                                                                                17s          1       web.18dbf408ab4796bc\n",
+        "stderr": ""
+      },
+      "services": {
+        "exit": 0,
+        "stdout": "NAME   TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE   SELECTOR\nweb    ClusterIP   10.96.238.73   <none>        8000/TCP   17s   app=orderflow-lab-mismatch\n",
+        "stderr": ""
+      },
+      "endpointslices": {
+        "exit": 0,
+        "stdout": "NAME        ADDRESSTYPE   PORTS     ENDPOINTS   AGE\nweb-p7cdz   IPv4          <unset>   <unset>     17s\n",
+        "stderr": ""
+      },
+      "web-67949b4997-nght2-current": {
+        "exit": 0,
+        "stdout": "10.244.0.1 - - [06/Oct/2026 13:33:27] \"GET / HTTP/1.1\" 200 -\n",
+        "stderr": ""
+      },
+      "web-67949b4997-nght2-previous": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": "Error from server (BadRequest): previous terminated container \"web\" in pod \"web-67949b4997-nght2\" not found\n"
+      }
+    },
+    "stop": {
+      "exit": 0,
+      "stdout": "deployment.apps/web scaled\n",
+      "stderr": ""
+    }
+  },
+  "exit": 1
+}

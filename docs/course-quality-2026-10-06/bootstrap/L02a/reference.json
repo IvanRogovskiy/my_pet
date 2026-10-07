@@ -1,0 +1,37 @@
+{
+  "case": "L02a",
+  "version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "time": "2026-10-06T13:37:07Z",
+  "platform": "linux",
+  "python": "3.11.2",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "config.json": "b0684289457b375b19f1bda770a40cecdff4347d8792053566b735bd197569a5"
+  },
+  "status": "passed",
+  "detail": {
+    "level": "Linux systemd user service",
+    "start": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Running as unit: oflab-1b8da2974c6248e29ea4149deed266d1.service\n"
+    },
+    "http": {
+      "identity": "1b8da2974c6248e29ea4149deed266d1",
+      "pid": 7829,
+      "config_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "status": {
+      "exit": 0,
+      "stdout": "MainPID=7829\nExecMainStatus=0\nActiveState=active\n",
+      "stderr": ""
+    },
+    "journal": {
+      "exit": 0,
+      "stdout": "{\"_UID\":\"1500\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_CAP_EFFECTIVE\":\"0\",\"_MACHINE_ID\":\"35c61123922649e48d763db18b6088df\",\"CODE_FUNC\":\"job_emit_start_message\",\"_HOSTNAME\":\"ofbootstrap-f6cfc98aec-control-plane\",\"PRIORITY\":\"6\",\"MESSAGE_ID\":\"7d4958e842da4a758f6c1cdc7b36dcc5\",\"_TRANSPORT\":\"journal\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"JOB_ID\":\"167\",\"__REALTIME_TIMESTAMP\":\"1791293827163724\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"SYSLOG_FACILITY\":\"3\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791293827163657\",\"TID\":\"3667\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"JOB_TYPE\":\"start\",\"__CURSOR\":\"s=36e5165977494d4c8904c5d2a2470953;i=4c5;b=556aeb0af82d4d589f49b653dd990409;m=12b0def880;t=65d2c1841a64c;x=f39a37e21ef5e910\",\"USER_INVOCATION_ID\":\"738378acbe9d4e07a558e286a8dc18aa\",\"__MONOTONIC_TIMESTAMP\":\"80276813952\",\"CODE_FILE\":\"src/core/job.c\",\"_AUDIT_SESSION\":\"2\",\"_AUDIT_LOGINUID\":\"1500\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_PID\":\"3667\",\"CODE_LINE\":\"580\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"MESSAGE\":\"Starting oflab-1b8da2974c6248e29ea4149deed266d1.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-d53c8c4650/L02a/work/server.py /home/learner/checks-d53c8c4650/L02a/data 42929...\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_COMM\":\"systemd\",\"_GID\":\"1500\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"USER_UNIT\":\"oflab-1b8da2974c6248e29ea4149deed266d1.service\",\"_RUNTIME_SCOPE\":\"system\"}\n{\"_EXE\":\"/usr/lib/systemd/systemd\",\"TID\":\"3667\",\"SYSLOG_FACILITY\":\"3\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"PRIORITY\":\"6\",\"_AUDIT_SESSION\":\"2\",\"_CAP_EFFECTIVE\":\"0\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791293827165298\",\"_GID\":\"1500\",\"_HOSTNAME\":\"ofbootstrap-f6cfc98aec-control-plane\",\"MESSAGE_ID\":\"39f53479d3a045ac8e11786248231fbf\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_TRANSPORT\":\"journal\",\"_AUDIT_LOGINUID\":\"1500\",\"USER_INVOCATION_ID\":\"738378acbe9d4e07a558e286a8dc18aa\",\"MESSAGE\":\"Started oflab-1b8da2974c6248e29ea4149deed266d1.service - /usr/bin/env /usr/bin/python3 /home/learner/checks-d53c8c4650/L02a/work/server.py /home/learner/checks-d53c8c4650/L02a/data 42929.\",\"_MACHINE_ID\":\"35c61123922649e48d763db18b6088df\",\"__MONOTONIC_TIMESTAMP\":\"80276815567\",\"CODE_FILE\":\"src/core/job.c\",\"CODE_FUNC\":\"job_emit_done_message\",\"USER_UNIT\":\"oflab-1b8da2974c6248e29ea4149deed266d1.service\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_COMM\":\"systemd\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_RUNTIME_SCOPE\":\"system\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_UID\":\"1500\",\"JOB_ID\":\"167\",\"__REALTIME_TIMESTAMP\":\"1791293827165345\",\"JOB_TYPE\":\"start\",\"__CURSOR\":\"s=36e5165977494d4c8904c5d2a2470953;i=4c6;b=556aeb0af82d4d589f49b653dd990409;m=12b0defecf;t=65d2c1841aca1;x=9b94f8e7a0a0bbd3\",\"JOB_RESULT\":\"done\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_PID\":\"3667\",\"CODE_LINE\":\"767\"}\n",
+      "stderr": ""
+    }
+  },
+  "exit": 0
+}

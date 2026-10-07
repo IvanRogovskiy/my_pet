@@ -1,0 +1,30 @@
+{
+  "case": "D10",
+  "version": "2026-10-06.1",
+  "time": "2026-10-06T11:22:46Z",
+  "platform": "darwin",
+  "python": "3.12.3",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "config.json": "ff60c42b799a5df9d1a49bba07ff9c68d01b5df012707ceea0271dbf80ba1d59"
+  },
+  "status": "failed",
+  "detail": {
+    "level": "real Docker container and host HTTP",
+    "start": {
+      "exit": 0,
+      "stdout": "88c2a89e1a76e57c168b2152a0546d52a715fdbe6b32b2ca78b8a156ed8d51c8\n",
+      "stderr": ""
+    },
+    "healthy": true,
+    "before_recreate": null,
+    "after_recreate": null,
+    "marker_preserved": true,
+    "logs": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  },
+  "exit": 1
+}

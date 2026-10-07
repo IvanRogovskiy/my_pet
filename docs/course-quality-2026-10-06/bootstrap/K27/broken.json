@@ -1,0 +1,85 @@
+{
+  "case": "K27",
+  "version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "time": "2026-10-06T13:32:28Z",
+  "platform": "darwin",
+  "python": "3.12.3",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "config.json": "bad01d896e0338a092e8bc8e4b25d14d6211eda081ac2074e5240196cd31d6fb"
+  },
+  "status": "failed",
+  "detail": {
+    "level": "real local Kubernetes",
+    "namespace": "oflab-f69416849c74487da583f73a1f01dc91",
+    "local": {
+      "exit": 0,
+      "stdout": "127.0.0.1:5432 - accepting connections\n",
+      "stderr": ""
+    },
+    "ready": {
+      "exit": 1,
+      "stdout": "Waiting for deployment \"db\" rollout to finish: 0 of 1 updated replicas are available...\n",
+      "stderr": "error: timed out waiting for the condition\n"
+    },
+    "service": {
+      "exit": 2,
+      "stdout": "db:5432 - no response\n",
+      "stderr": "command terminated with exit code 2\n"
+    },
+    "marker": {
+      "exit": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    "service_sql": {
+      "exit": 2,
+      "stdout": "",
+      "stderr": "psql: error: connection to server at \"db\" (10.96.4.223), port 5432 failed: Connection refused\n\tIs the server running on that host and accepting TCP/IP connections?\ncommand terminated with exit code 2\n"
+    },
+    "diagnostics": {
+      "pods": {
+        "exit": 0,
+        "stdout": "NAME                  READY   STATUS    RESTARTS   AGE   IP           NODE                                   NOMINATED NODE   READINESS GATES\ndb-5f4f88457b-d4rq7   0/1     Running   0          20s   10.244.0.6   ofbootstrap-f6cfc98aec-control-plane   <none>           <none>\n",
+        "stderr": ""
+      },
+      "pvc": {
+        "exit": 0,
+        "stdout": "NAME   STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE\ndb     Bound    pvc-91bdffe9-52b3-4b8c-a5f8-5f70fce23f62   128Mi      RWO            standard       <unset>                 20s   Filesystem\n",
+        "stderr": ""
+      },
+      "events": {
+        "exit": 0,
+        "stdout": "LAST SEEN   TYPE      REASON                  OBJECT                     SUBOBJECT             SOURCE                                                                                               MESSAGE                                                                                                                                                                                                                                         FIRST SEEN   COUNT   NAME\n16s         Normal    Scheduled               pod/db-5f4f88457b-d4rq7                          default-scheduler                                                                                    Successfully assigned oflab-f69416849c74487da583f73a1f01dc91/db-5f4f88457b-d4rq7 to ofbootstrap-f6cfc98aec-control-plane                                                                                                                        16s          1       db-5f4f88457b-d4rq7.18dbf3ff31174fc9\n16s         Normal    Pulled                  pod/db-5f4f88457b-d4rq7    spec.containers{db}   kubelet, ofbootstrap-f6cfc98aec-control-plane                                                        Container image \"docker.io/library/postgres@sha256:24b5c241a22e2daa0ebde55a41277efdf13e9eb391068b69192cc970ebca67c8\" already present on machine                                                                                                 16s          1       db-5f4f88457b-d4rq7.18dbf3ff4c3cb07a\n16s         Normal    Created                 pod/db-5f4f88457b-d4rq7    spec.containers{db}   kubelet, ofbootstrap-f6cfc98aec-control-plane                                                        Created container: db                                                                                                                                                                                                                           16s          1       db-5f4f88457b-d4rq7.18dbf3ff4d25c0b3\n16s         Normal    Started                 pod/db-5f4f88457b-d4rq7    spec.containers{db}   kubelet, ofbootstrap-f6cfc98aec-control-plane                                                        Started container db                                                                                                                                                                                                                            16s          1       db-5f4f88457b-d4rq7.18dbf3ff5309c134\n0s          Warning   Unhealthy               pod/db-5f4f88457b-d4rq7    spec.containers{db}   kubelet, ofbootstrap-f6cfc98aec-control-plane                                                        Readiness probe failed: db:5432 - no response                                                                                                                                                                                                   15s          9       db-5f4f88457b-d4rq7.18dbf3ff6ff1390a\n20s         Normal    SuccessfulCreate        replicaset/db-5f4f88457b                         replicaset-controller                                                                                Created pod: db-5f4f88457b-d4rq7                                                                                                                                                                                                                20s          1       db-5f4f88457b.18dbf3fe3ff4c6b0\n20s         Normal    WaitForFirstConsumer    persistentvolumeclaim/db                         persistentvolume-controller                                                                          waiting for first consumer to be created before binding                                                                                                                                                                                         20s          1       db.18dbf3fe3bc38257\n20s         Normal    ScalingReplicaSet       deployment/db                                    deployment-controller                                                                                Scaled up replica set db-5f4f88457b from 0 to 1                                                                                                                                                                                                 20s          1       db.18dbf3fe3f9fd3f1\n20s         Normal    ExternalProvisioning    persistentvolumeclaim/db                         persistentvolume-controller                                                                          Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.   20s          1       db.18dbf3fe41ca8b44\n20s         Normal    Provisioning            persistentvolumeclaim/db                         rancher.io/local-path_local-path-provisioner-7dc846544d-wb7c8_bd0cf095-dd75-4cf8-9d4f-e06d107a869e   External provisioner is provisioning volume for claim \"oflab-f69416849c74487da583f73a1f01dc91/db\"                                                                                                                                               20s          1       db.18dbf3fe42bef7b2\n17s         Normal    ProvisioningSucceeded   persistentvolumeclaim/db                         rancher.io/local-path_local-path-provisioner-7dc846544d-wb7c8_bd0cf095-dd75-4cf8-9d4f-e06d107a869e   Successfully provisioned volume pvc-91bdffe9-52b3-4b8c-a5f8-5f70fce23f62                                                                                                                                                                        17s          1       db.18dbf3fef89d9d89\n",
+        "stderr": ""
+      },
+      "services": {
+        "exit": 0,
+        "stdout": "NAME   TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)    AGE   SELECTOR\ndb     ClusterIP   10.96.4.223   <none>        5432/TCP   20s   app=db\n",
+        "stderr": ""
+      },
+      "endpointslices": {
+        "exit": 0,
+        "stdout": "NAME       ADDRESSTYPE   PORTS   ENDPOINTS    AGE\ndb-spp8n   IPv4          5432    10.244.0.6   20s\n",
+        "stderr": ""
+      },
+      "db-5f4f88457b-d4rq7-current": {
+        "exit": 0,
+        "stdout": "2026-10-06 13:32:36.334 UTC [76] LOG:  database system was shut down at 2026-10-06 13:32:36 UTC\n2026-10-06 13:32:36.338 UTC [73] LOG:  database system is ready to accept connections\n done\nserver started\n\n/usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*\n\nwaiting for server to shut down....2026-10-06 13:32:36.416 UTC [73] LOG:  received fast shutdown request\n2026-10-06 13:32:36.417 UTC [73] LOG:  aborting any active transactions\n2026-10-06 13:32:36.421 UTC [73] LOG:  background worker \"logical replication launcher\" (PID 79) exited with exit code 1\n2026-10-06 13:32:36.422 UTC [74] LOG:  shutting down\n2026-10-06 13:32:36.423 UTC [74] LOG:  checkpoint starting: shutdown immediate\n2026-10-06 13:32:36.428 UTC [74] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/14F7160, redo lsn=0/14F7160\n2026-10-06 13:32:36.433 UTC [73] LOG:  database system is shut down\n done\nserver stopped\n\nPostgreSQL init process complete; ready for start up.\n\n2026-10-06 13:32:36.537 UTC [1] LOG:  starting PostgreSQL 16.15 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit\n2026-10-06 13:32:36.537 UTC [1] LOG:  listening on IPv4 address \"0.0.0.0\", port 5432\n2026-10-06 13:32:36.537 UTC [1] LOG:  listening on IPv6 address \"::\", port 5432\n2026-10-06 13:32:36.538 UTC [1] LOG:  listening on Unix socket \"/var/run/postgresql/.s.PGSQL.5432\"\n2026-10-06 13:32:36.543 UTC [87] LOG:  database system was shut down at 2026-10-06 13:32:36 UTC\n2026-10-06 13:32:36.547 UTC [1] LOG:  database system is ready to accept connections\n",
+        "stderr": ""
+      },
+      "db-5f4f88457b-d4rq7-previous": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": "Error from server (BadRequest): previous terminated container \"db\" in pod \"db-5f4f88457b-d4rq7\" not found\n"
+      }
+    },
+    "stop": {
+      "exit": 0,
+      "stdout": "deployment.apps/db scaled\n",
+      "stderr": ""
+    }
+  },
+  "exit": 1
+}

@@ -1,0 +1,84 @@
+{
+  "case": "K27",
+  "version": "2026-10-06.1",
+  "time": "2026-10-06T12:12:33Z",
+  "platform": "darwin",
+  "python": "3.12.3",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "config.json": "0241c976edf3a9ac660929302b87af1c5824838b759ede94e23a7894b3662e63"
+  },
+  "status": "passed",
+  "detail": {
+    "level": "real local Kubernetes",
+    "namespace": "oflab-daa584f8eaed418e8cf891f263b415d3",
+    "local": {
+      "exit": 0,
+      "stdout": "127.0.0.1:5432 - accepting connections\n",
+      "stderr": ""
+    },
+    "ready": {
+      "exit": 0,
+      "stdout": "Waiting for deployment \"db\" rollout to finish: 0 of 1 updated replicas are available...\ndeployment \"db\" successfully rolled out\n",
+      "stderr": ""
+    },
+    "service": {
+      "exit": 0,
+      "stdout": "db:5432 - accepting connections\n",
+      "stderr": ""
+    },
+    "marker": {
+      "exit": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    "service_sql": {
+      "exit": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    "diagnostics": {
+      "pods": {
+        "exit": 0,
+        "stdout": "NAME                  READY   STATUS    RESTARTS   AGE   IP            NODE                                    NOMINATED NODE   READINESS GATES\ndb-77d56759f5-bk2tr   1/1     Running   0          3s    10.244.0.12   orderflow-toolkit-98k64-control-plane   <none>           <none>\n",
+        "stderr": ""
+      },
+      "pvc": {
+        "exit": 0,
+        "stdout": "NAME   STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE\ndb     Bound    pvc-f2815d11-b0c5-4d76-a167-48f57d35c010   128Mi      RWO            standard       <unset>                 48m   Filesystem\n",
+        "stderr": ""
+      },
+      "events": {
+        "exit": 0,
+        "stdout": "                        Stopping container db                                                                                                                                                                                                                           47m          1       db-5f4f88457b-rr4vc.18dbed05267446dd\n48m         Normal    SuccessfulCreate        replicaset/db-5f4f88457b                         replicaset-controller                                                                                Created pod: db-5f4f88457b-rr4vc                                                                                                                                                                                                                48m          1       db-5f4f88457b.18dbed0064385121\n47m         Normal    SuccessfulDelete        replicaset/db-5f4f88457b                         replicaset-controller                                                                                Deleted pod: db-5f4f88457b-rr4vc                                                                                                                                                                                                                47m          1       db-5f4f88457b.18dbed05247ce2dd\n17s         Normal    SuccessfulCreate        replicaset/db-5f4f88457b                         replicaset-controller                                                                                Created pod: db-5f4f88457b-jr5kz                                                                                                                                                                                                                17s          1       db-5f4f88457b.18dbef9e293bd5de\n3s          Normal    SuccessfulDelete        replicaset/db-5f4f88457b                         replicaset-controller                                                                                Deleted pod: db-5f4f88457b-jr5kz                                                                                                                                                                                                                3s           1       db-5f4f88457b.18dbefa162d9377a\n47m         Normal    Scheduled               pod/db-77d56759f5-54v26                          default-scheduler                                                                                    Successfully assigned oflab-daa584f8eaed418e8cf891f263b415d3/db-77d56759f5-54v26 to orderflow-toolkit-98k64-control-plane                                                                                                                       47m          1       db-77d56759f5-54v26.18dbed054c32b703\n47m         Normal    Pulled                  pod/db-77d56759f5-54v26    spec.containers{db}   kubelet, orderflow-toolkit-98k64-control-plane                                                       Container image \"docker.io/library/postgres@sha256:24b5c241a22e2daa0ebde55a41277efdf13e9eb391068b69192cc970ebca67c8\" already present on machine                                                                                                 47m          1       db-77d56759f5-54v26.18dbed056c629acc\n47m         Normal    Created                 pod/db-77d56759f5-54v26    spec.containers{db}   kubelet, orderflow-toolkit-98k64-control-plane                                                       Created container: db                                                                                                                                                                                                                           47m          1       db-77d56759f5-54v26.18dbed056e896c13\n47m         Normal    Started                 pod/db-77d56759f5-54v26    spec.containers{db}   kubelet, orderflow-toolkit-98k64-control-plane                                                       Started container db                                                                                                                                                                                                                            47m          1       db-77d56759f5-54v26.18dbed0578bee370\n47m         Normal    Killing                 pod/db-77d56759f5-54v26    spec.containers{db}   kubelet, orderflow-toolkit-98k64-control-plane                                                       Stopping container db                                                                                                                                                                                                                           47m          1       db-77d56759f5-54v26.18dbed06424442d7\n3s          Normal    Scheduled               pod/db-77d56759f5-bk2tr                          default-scheduler                                                                                    Successfully assigned oflab-daa584f8eaed418e8cf891f263b415d3/db-77d56759f5-bk2tr to orderflow-toolkit-98k64-control-plane                                                                                                                       3s           1       db-77d56759f5-bk2tr.18dbefa181720d0b\n2s          Normal    Pulled                  pod/db-77d56759f5-bk2tr    spec.containers{db}   kubelet, orderflow-toolkit-98k64-control-plane                                                       Container image \"docker.io/library/postgres@sha256:24b5c241a22e2daa0ebde55a41277efdf13e9eb391068b69192cc970ebca67c8\" already present on machine                                                                                                 2s           1       db-77d56759f5-bk2tr.18dbefa19aa64d93\n2s          Normal    Created                 pod/db-77d56759f5-bk2tr    spec.containers{db}   kubelet, orderflow-toolkit-98k64-control-plane                                                       Created container: db                                                                                                                                                                                                                           2s           1       db-77d56759f5-bk2tr.18dbefa19b33f75c\n2s          Normal    Started                 pod/db-77d56759f5-bk2tr    spec.containers{db}   kubelet, orderflow-toolkit-98k64-control-plane                                                       Started container db                                                                                                                                                                                                                            2s           1       db-77d56759f5-bk2tr.18dbefa19f65314b\n47m         Normal    SuccessfulCreate        replicaset/db-77d56759f5                         replicaset-controller                                                                                Created pod: db-77d56759f5-54v26                                                                                                                                                                                                                47m          1       db-77d56759f5.18dbed054b734e33\n47m         Normal    SuccessfulDelete        replicaset/db-77d56759f5                         replicaset-controller                                                                                Deleted pod: db-77d56759f5-54v26                                                                                                                                                                                                                47m          1       db-77d56759f5.18dbed05d22b508b\n3s          Normal    SuccessfulCreate        replicaset/db-77d56759f5                         replicaset-controller                                                                                Created pod: db-77d56759f5-bk2tr                                                                                                                                                                                                                3s           1       db-77d56759f5.18dbefa18120a48c\n48m         Normal    WaitForFirstConsumer    persistentvolumeclaim/db                         persistentvolume-controller                                                                          waiting for first consumer to be created before binding                                                                                                                                                                                         48m          1       db.18dbed0060e2e702\n17s         Normal    ScalingReplicaSet       deployment/db                                    deployment-controller                                                                                Scaled up replica set db-5f4f88457b from 0 to 1                                                                                                                                                                                                 48m          2       db.18dbed0063bf3fcd\n48m         Normal    ExternalProvisioning    persistentvolumeclaim/db                         persistentvolume-controller                                                                          Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.   48m          1       db.18dbed0067621184\n48m         Normal    Provisioning            persistentvolumeclaim/db                         rancher.io/local-path_local-path-provisioner-7dc846544d-vkx22_652bf889-b97a-4845-9b85-8ffecd01cea0   External provisioner is provisioning volume for claim \"oflab-daa584f8eaed418e8cf891f263b415d3/db\"                                                                                                                                               48m          1       db.18dbed0067f6e1df\n48m         Normal    ProvisioningSucceeded   persistentvolumeclaim/db                         rancher.io/local-path_local-path-provisioner-7dc846544d-vkx22_652bf889-b97a-4845-9b85-8ffecd01cea0   Successfully provisioned volume pvc-f2815d11-b0c5-4d76-a167-48f57d35c010                                                                                                                                                                        48m          1       db.18dbed01209d7c9d\n3s          Normal    ScalingReplicaSet       deployment/db                                    deployment-controller                                                                                Scaled down replica set db-5f4f88457b from 1 to 0                                                                                                                                                                                               47m          2       db.18dbed052333506c\n3s          Normal    ScalingReplicaSet       deployment/db                                    deployment-controller                                                                                Scaled up replica set db-77d56759f5 from 0 to 1                                                                                                                                                                                                 47m          2       db.18dbed054af51fa1\n47m         Normal    ScalingReplicaSet       deployment/db                                    deployment-controller                                                                                Scaled down replica set db-77d56759f5 from 1 to 0                                                                                                                                                                                               47m          1       db.18dbed05d1d98788\n",
+        "stderr": ""
+      },
+      "services": {
+        "exit": 0,
+        "stdout": "NAME   TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE   SELECTOR\ndb     ClusterIP   10.96.159.82   <none>        5432/TCP   48m   app=db\n",
+        "stderr": ""
+      },
+      "endpointslices": {
+        "exit": 0,
+        "stdout": "NAME       ADDRESSTYPE   PORTS   ENDPOINTS     AGE\ndb-k2kxk   IPv4          5432    10.244.0.12   48m\n",
+        "stderr": ""
+      },
+      "db-77d56759f5-bk2tr-current": {
+        "exit": 0,
+        "stdout": "\nPostgreSQL Database directory appears to contain a database; Skipping initialization\n\n2026-10-06 12:12:34.309 UTC [1] LOG:  starting PostgreSQL 16.15 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit\n2026-10-06 12:12:34.309 UTC [1] LOG:  listening on IPv4 address \"0.0.0.0\", port 5432\n2026-10-06 12:12:34.309 UTC [1] LOG:  listening on IPv6 address \"::\", port 5432\n2026-10-06 12:12:34.311 UTC [1] LOG:  listening on Unix socket \"/var/run/postgresql/.s.PGSQL.5432\"\n2026-10-06 12:12:34.314 UTC [34] LOG:  database system was shut down at 2026-10-06 12:12:33 UTC\n2026-10-06 12:12:34.318 UTC [1] LOG:  database system is ready to accept connections\n",
+        "stderr": ""
+      },
+      "db-77d56759f5-bk2tr-previous": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": "Error from server (BadRequest): previous terminated container \"db\" in pod \"db-77d56759f5-bk2tr\" not found\n"
+      }
+    },
+    "stop": {
+      "exit": 0,
+      "stdout": "deployment.apps/db scaled\n",
+      "stderr": ""
+    }
+  },
+  "exit": 0
+}

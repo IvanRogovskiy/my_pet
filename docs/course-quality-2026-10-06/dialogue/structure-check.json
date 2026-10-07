@@ -1,0 +1,20 @@
+{
+  "transcript_complete": true,
+  "errors": [],
+  "turns": 12,
+  "sha256": {
+    "01.json": "89772b37a931c3e024f305f93d54c631d79e7eb323d5de674bfd34a06bcee421",
+    "02.json": "cdaf5d598b1a7bf0cc6d253d41e0a0d4988bf30e0365b573dfb32c5d4473fdcd",
+    "03.json": "7374475b1059c3f2c411f5661405110b67ae8fc4e606755b3348e8917b06c88c",
+    "04.json": "d7b432013fa734e96c3a95c7000da662251d6e17ba8e8ec37a06fd554c73deaa",
+    "05.json": "d9d639149582af5e274ea750e514d2860d93a6373bcd8951e2707e590ee5ae59",
+    "06.json": "da351ab38a82356a1a8f2d418b8aeea28274a150052a4c63838cc1cec012bf86",
+    "07.json": "1e4fe446185d38e27e1f5ab7824aaa7fbd7a1db97c41d70c580c8f9397f5b75d",
+    "08.json": "57ee3215c0bed811cee33cdeaccbde818c503a8a2683d5d94642de6ee5b226f8",
+    "09.json": "2f9c2e789c255be62f480bafe6b032b7f90c66ea7456a22d85a71114e988ed00",
+    "10.json": "40576abf8c7704bcd22c80c81b0ede6d5a0c62d991141bc94eab6249e25545d5",
+    "11.json": "bbacdb6298caea6dca80f024328ab43847cf020e0ee72946a82ffb603155718f",
+    "12.json": "e7ee4c46093dd201383de6185e5cc73d259de1e066a99161c5a46d9243fb3308"
+  },
+  "semantic_assessment": "required separately; not computed here"
+}

@@ -1,0 +1,37 @@
+{
+  "case": "L02a",
+  "version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "time": "2026-10-06T12:18:57Z",
+  "platform": "linux",
+  "python": "3.11.2",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "config.json": "b0684289457b375b19f1bda770a40cecdff4347d8792053566b735bd197569a5"
+  },
+  "status": "passed",
+  "detail": {
+    "level": "Linux systemd user service",
+    "start": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Running as unit: oflab-57dde0fd0b4a40ecbf92fc1f1a0e899d.service\n"
+    },
+    "http": {
+      "identity": "57dde0fd0b4a40ecbf92fc1f1a0e899d",
+      "pid": 11075,
+      "config_sha": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "status": {
+      "exit": 0,
+      "stdout": "MainPID=11075\nExecMainStatus=0\nActiveState=active\n",
+      "stderr": ""
+    },
+    "journal": {
+      "exit": 0,
+      "stdout": "{\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"TID\":\"6054\",\"USER_INVOCATION_ID\":\"f92639556acf4e989284adb83f4b7911\",\"_UID\":\"1500\",\"_MACHINE_ID\":\"16e129767e3d4a07ba8a5fb8154da042\",\"MESSAGE_ID\":\"7d4958e842da4a758f6c1cdc7b36dcc5\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791289137341210\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"_AUDIT_SESSION\":\"1\",\"PRIORITY\":\"6\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"CODE_FUNC\":\"job_emit_start_message\",\"CODE_LINE\":\"580\",\"_COMM\":\"systemd\",\"USER_UNIT\":\"oflab-57dde0fd0b4a40ecbf92fc1f1a0e899d.service\",\"MESSAGE\":\"Starting oflab-57dde0fd0b4a40ecbf92fc1f1a0e899d.service - /usr/bin/env /usr/bin/python3 /home/learner/of-labs/L02a/work/server.py /home/learner/of-labs/L02a/data 43045...\",\"JOB_TYPE\":\"start\",\"_PID\":\"6054\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"__REALTIME_TIMESTAMP\":\"1791289137341220\",\"_RUNTIME_SCOPE\":\"system\",\"SYSLOG_FACILITY\":\"3\",\"__CURSOR\":\"s=fa6f534cb2ce4fc5b602c67cc061afed;i=650;b=556aeb0af82d4d589f49b653dd990409;m=11995776f8;t=65d2b00b8a324;x=cb90841fe4407aad\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_CAP_EFFECTIVE\":\"0\",\"JOB_ID\":\"297\",\"CODE_FILE\":\"src/core/job.c\",\"__MONOTONIC_TIMESTAMP\":\"75587090168\",\"_GID\":\"1500\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_TRANSPORT\":\"journal\",\"_HOSTNAME\":\"orderflow-toolkit-98k64-control-plane\",\"_AUDIT_LOGINUID\":\"1500\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"_SYSTEMD_SLICE\":\"user-1500.slice\"}\n{\"_AUDIT_SESSION\":\"1\",\"_GID\":\"1500\",\"CODE_FUNC\":\"job_emit_done_message\",\"_UID\":\"1500\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791289137342446\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"MESSAGE\":\"Started oflab-57dde0fd0b4a40ecbf92fc1f1a0e899d.service - /usr/bin/env /usr/bin/python3 /home/learner/of-labs/L02a/work/server.py /home/learner/of-labs/L02a/data 43045.\",\"JOB_ID\":\"297\",\"_PID\":\"6054\",\"TID\":\"6054\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"SYSLOG_FACILITY\":\"3\",\"_CAP_EFFECTIVE\":\"0\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"JOB_TYPE\":\"start\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"_HOSTNAME\":\"orderflow-toolkit-98k64-control-plane\",\"USER_UNIT\":\"oflab-57dde0fd0b4a40ecbf92fc1f1a0e899d.service\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_RUNTIME_SCOPE\":\"system\",\"MESSAGE_ID\":\"39f53479d3a045ac8e11786248231fbf\",\"USER_INVOCATION_ID\":\"f92639556acf4e989284adb83f4b7911\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_AUDIT_LOGINUID\":\"1500\",\"JOB_RESULT\":\"done\",\"__REALTIME_TIMESTAMP\":\"1791289137342493\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_COMM\":\"systemd\",\"CODE_FILE\":\"src/core/job.c\",\"__MONOTONIC_TIMESTAMP\":\"75587091440\",\"__CURSOR\":\"s=fa6f534cb2ce4fc5b602c67cc061afed;i=651;b=556aeb0af82d4d589f49b653dd990409;m=1199577bf0;t=65d2b00b8a81d;x=55e8e148b3874db6\",\"_MACHINE_ID\":\"16e129767e3d4a07ba8a5fb8154da042\",\"PRIORITY\":\"6\",\"_TRANSPORT\":\"journal\",\"CODE_LINE\":\"767\"}\n",
+      "stderr": ""
+    }
+  },
+  "exit": 0
+}

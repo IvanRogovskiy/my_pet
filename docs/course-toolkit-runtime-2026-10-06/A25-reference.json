@@ -1,0 +1,101 @@
+{
+  "case": "A25",
+  "version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "time": "2026-10-06T12:19:11Z",
+  "platform": "linux",
+  "python": "3.11.2",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "playbook.json": "4aabfeea966ac383d6ccf9022e1c67a07b897bfde89a2234ceb1f57547773772"
+  },
+  "status": "passed",
+  "detail": {
+    "level": "Linux systemd user service",
+    "start": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": "Running as unit: oflab-bdb3941c78194b9aa488f258412d239d.service\n"
+    },
+    "http": {
+      "identity": "bdb3941c78194b9aa488f258412d239d",
+      "pid": 11594,
+      "config_sha": "81db67b6a5702b9b68f0016f061c409bf3fb16d062fc854d1b424bb4e9c28c56"
+    },
+    "runs": [
+      {
+        "exit": 0,
+        "stdout": "\nPLAY [localhost] ***************************************************************\n\nTASK [Write lab config] ********************************************************\nchanged: [localhost]\n\nRUNNING HANDLER [Restart lab service] ******************************************\nchanged: [localhost]\n\nPLAY RECAP *********************************************************************\nlocalhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \n\n",
+        "stderr": "[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.11', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.\n"
+      },
+      {
+        "exit": 0,
+        "stdout": "\nPLAY [localhost] ***************************************************************\n\nTASK [Write lab config] ********************************************************\nok: [localhost]\n\nPLAY RECAP *********************************************************************\nlocalhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \n\n",
+        "stderr": "[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.11', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.\n"
+      },
+      {
+        "exit": 0,
+        "stdout": "\nPLAY [localhost] ***************************************************************\n\nTASK [Write lab config] ********************************************************\nchanged: [localhost]\n\nRUNNING HANDLER [Restart lab service] ******************************************\nchanged: [localhost]\n\nPLAY RECAP *********************************************************************\nlocalhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \n\n",
+        "stderr": "[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.11', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.\n"
+      },
+      {
+        "exit": 0,
+        "stdout": "\nPLAY [localhost] ***************************************************************\n\nTASK [Write lab config] ********************************************************\nok: [localhost]\n\nPLAY RECAP *********************************************************************\nlocalhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \n\n",
+        "stderr": "[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.11', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.\n"
+      }
+    ],
+    "snapshots": [
+      {
+        "identity": "bdb3941c78194b9aa488f258412d239d",
+        "pid": 11661,
+        "config_sha": "2d27fbdf4e8ca207afbfa388ca9172fbcc6c70e534af2476b3b704f87debadcf"
+      },
+      {
+        "identity": "bdb3941c78194b9aa488f258412d239d",
+        "pid": 11661,
+        "config_sha": "2d27fbdf4e8ca207afbfa388ca9172fbcc6c70e534af2476b3b704f87debadcf"
+      },
+      {
+        "identity": "bdb3941c78194b9aa488f258412d239d",
+        "pid": 11773,
+        "config_sha": "81db67b6a5702b9b68f0016f061c409bf3fb16d062fc854d1b424bb4e9c28c56"
+      },
+      {
+        "identity": "bdb3941c78194b9aa488f258412d239d",
+        "pid": 11773,
+        "config_sha": "81db67b6a5702b9b68f0016f061c409bf3fb16d062fc854d1b424bb4e9c28c56"
+      }
+    ],
+    "changed": [
+      [
+        "2"
+      ],
+      [
+        "0"
+      ],
+      [
+        "2"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "check_mode": {
+      "exit": 0,
+      "stdout": "\nPLAY [localhost] ***************************************************************\n\nTASK [Write lab config] ********************************************************\n--- before: /home/learner/of-labs/A25/data/service.conf\n+++ after: /home/learner/of-labs/A25/data/service.conf\n@@ -1 +1 @@\n-v2\n+v3\n\nchanged: [localhost]\n\nRUNNING HANDLER [Restart lab service] ******************************************\nchanged: [localhost]\n\nPLAY RECAP *********************************************************************\nlocalhost                  : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   \n\n",
+      "stderr": "[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.11', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.19/reference_appendices/interpreter_discovery.html for more information.\n"
+    },
+    "check_mode_unchanged": true,
+    "status": {
+      "exit": 0,
+      "stdout": "MainPID=11773\nExecMainStatus=0\nActiveState=active\n",
+      "stderr": ""
+    },
+    "journal": {
+      "exit": 0,
+      "stdout": "7ba8a5fb8154da042\",\"__REALTIME_TIMESTAMP\":\"1791289151027946\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"_AUDIT_LOGINUID\":\"1500\",\"MESSAGE_ID\":\"39f53479d3a045ac8e11786248231fbf\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"__MONOTONIC_TIMESTAMP\":\"75600776936\"}\n{\"_GID\":\"1500\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"MESSAGE_ID\":\"de5b426a63be47a7b6ac3eaac82e2f6f\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_RUNTIME_SCOPE\":\"system\",\"_MACHINE_ID\":\"16e129767e3d4a07ba8a5fb8154da042\",\"_UID\":\"1500\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"TID\":\"6054\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"PRIORITY\":\"6\",\"_AUDIT_SESSION\":\"1\",\"JOB_TYPE\":\"stop\",\"__CURSOR\":\"s=fa6f534cb2ce4fc5b602c67cc061afed;i=6a8;b=556aeb0af82d4d589f49b653dd990409;m=119a3da2a4;t=65d2b019ecea5;x=f472d0c85799d6f0\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_CAP_EFFECTIVE\":\"0\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791289152425602\",\"USER_UNIT\":\"oflab-bdb3941c78194b9aa488f258412d239d.service\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_HOSTNAME\":\"orderflow-toolkit-98k64-control-plane\",\"_TRANSPORT\":\"journal\",\"CODE_FUNC\":\"job_emit_start_message\",\"CODE_FILE\":\"src/core/job.c\",\"_PID\":\"6054\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"USER_INVOCATION_ID\":\"a80962f3cbc84a308f555f4560193330\",\"SYSLOG_FACILITY\":\"3\",\"_AUDIT_LOGINUID\":\"1500\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_COMM\":\"systemd\",\"CODE_LINE\":\"580\",\"__REALTIME_TIMESTAMP\":\"1791289152425637\",\"JOB_ID\":\"371\",\"__MONOTONIC_TIMESTAMP\":\"75602174628\",\"MESSAGE\":\"Stopping oflab-bdb3941c78194b9aa488f258412d239d.service - /usr/bin/env /usr/bin/python3 /home/learner/of-labs/A25/work/server.py /home/learner/of-labs/A25/data 43789...\"}\n{\"JOB_RESULT\":\"done\",\"PRIORITY\":\"6\",\"__CURSOR\":\"s=fa6f534cb2ce4fc5b602c67cc061afed;i=6a9;b=556aeb0af82d4d589f49b653dd990409;m=119a3da8ff;t=65d2b019ed500;x=1f3c6cad4e4b09c5\",\"MESSAGE\":\"Stopped oflab-bdb3941c78194b9aa488f258412d239d.service - /usr/bin/env /usr/bin/python3 /home/learner/of-labs/A25/work/server.py /home/learner/of-labs/A25/data 43789.\",\"_PID\":\"6054\",\"_TRANSPORT\":\"journal\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_GID\":\"1500\",\"CODE_LINE\":\"767\",\"SYSLOG_FACILITY\":\"3\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791289152427218\",\"_CAP_EFFECTIVE\":\"0\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"_AUDIT_LOGINUID\":\"1500\",\"MESSAGE_ID\":\"9d1aaa27d60140bd96365438aad20286\",\"TID\":\"6054\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"JOB_ID\":\"371\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_AUDIT_SESSION\":\"1\",\"_HOSTNAME\":\"orderflow-toolkit-98k64-control-plane\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_UID\":\"1500\",\"__REALTIME_TIMESTAMP\":\"1791289152427264\",\"USER_INVOCATION_ID\":\"a80962f3cbc84a308f555f4560193330\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"USER_UNIT\":\"oflab-bdb3941c78194b9aa488f258412d239d.service\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_RUNTIME_SCOPE\":\"system\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"CODE_FUNC\":\"job_emit_done_message\",\"CODE_FILE\":\"src/core/job.c\",\"_MACHINE_ID\":\"16e129767e3d4a07ba8a5fb8154da042\",\"__MONOTONIC_TIMESTAMP\":\"75602176255\",\"JOB_TYPE\":\"restart\",\"_COMM\":\"systemd\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_EXE\":\"/usr/lib/systemd/systemd\"}\n{\"__REALTIME_TIMESTAMP\":\"1791289152428157\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"USER_UNIT\":\"oflab-bdb3941c78194b9aa488f258412d239d.service\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"__CURSOR\":\"s=fa6f534cb2ce4fc5b602c67cc061afed;i=6aa;b=556aeb0af82d4d589f49b653dd990409;m=119a3dac7b;t=65d2b019ed87d;x=3403d0b24827a690\",\"MESSAGE_ID\":\"7d4958e842da4a758f6c1cdc7b36dcc5\",\"_RUNTIME_SCOPE\":\"system\",\"__MONOTONIC_TIMESTAMP\":\"75602177147\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"CODE_FILE\":\"src/core/job.c\",\"CODE_FUNC\":\"job_emit_start_message\",\"_CAP_EFFECTIVE\":\"0\",\"_HOSTNAME\":\"orderflow-toolkit-98k64-control-plane\",\"_UID\":\"1500\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791289152428121\",\"_MACHINE_ID\":\"16e129767e3d4a07ba8a5fb8154da042\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_TRANSPORT\":\"journal\",\"JOB_ID\":\"371\",\"_AUDIT_SESSION\":\"1\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"JOB_TYPE\":\"start\",\"TID\":\"6054\",\"_PID\":\"6054\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_GID\":\"1500\",\"_COMM\":\"systemd\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_AUDIT_LOGINUID\":\"1500\",\"SYSLOG_FACILITY\":\"3\",\"PRIORITY\":\"6\",\"USER_INVOCATION_ID\":\"1d64a7e9ba044c34b6cf52b92352b64c\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"CODE_LINE\":\"580\",\"MESSAGE\":\"Starting oflab-bdb3941c78194b9aa488f258412d239d.service - /usr/bin/env /usr/bin/python3 /home/learner/of-labs/A25/work/server.py /home/learner/of-labs/A25/data 43789...\"}\n{\"JOB_ID\":\"371\",\"_AUDIT_SESSION\":\"1\",\"CODE_FUNC\":\"job_emit_done_message\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"_TRANSPORT\":\"journal\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"_COMM\":\"systemd\",\"USER_INVOCATION_ID\":\"1d64a7e9ba044c34b6cf52b92352b64c\",\"TID\":\"6054\",\"MESSAGE_ID\":\"39f53479d3a045ac8e11786248231fbf\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"JOB_TYPE\":\"start\",\"__MONOTONIC_TIMESTAMP\":\"75602178524\",\"USER_UNIT\":\"oflab-bdb3941c78194b9aa488f258412d239d.service\",\"JOB_RESULT\":\"done\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"CODE_LINE\":\"767\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791289152429492\",\"_AUDIT_LOGINUID\":\"1500\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"MESSAGE\":\"Started oflab-bdb3941c78194b9aa488f258412d239d.service - /usr/bin/env /usr/bin/python3 /home/learner/of-labs/A25/work/server.py /home/learner/of-labs/A25/data 43789.\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_GID\":\"1500\",\"_UID\":\"1500\",\"_HOSTNAME\":\"orderflow-toolkit-98k64-control-plane\",\"_CAP_EFFECTIVE\":\"0\",\"_RUNTIME_SCOPE\":\"system\",\"__CURSOR\":\"s=fa6f534cb2ce4fc5b602c67cc061afed;i=6ab;b=556aeb0af82d4d589f49b653dd990409;m=119a3db1dc;t=65d2b019eddde;x=75aad4a083d776e1\",\"PRIORITY\":\"6\",\"_MACHINE_ID\":\"16e129767e3d4a07ba8a5fb8154da042\",\"__REALTIME_TIMESTAMP\":\"1791289152429534\",\"_PID\":\"6054\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"CODE_FILE\":\"src/core/job.c\",\"SYSLOG_FACILITY\":\"3\"}\n{\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"TID\":\"6054\",\"__MONOTONIC_TIMESTAMP\":\"75604642759\",\"_TRANSPORT\":\"journal\",\"_PID\":\"6054\",\"_COMM\":\"systemd\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"__REALTIME_TIMESTAMP\":\"1791289154893769\",\"MESSAGE_ID\":\"de5b426a63be47a7b6ac3eaac82e2f6f\",\"_AUDIT_LOGINUID\":\"1500\",\"CODE_FUNC\":\"job_emit_start_message\",\"_MACHINE_ID\":\"16e129767e3d4a07ba8a5fb8154da042\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"SYSLOG_FACILITY\":\"3\",\"_HOSTNAME\":\"orderflow-toolkit-98k64-control-plane\",\"_AUDIT_SESSION\":\"1\",\"JOB_ID\":\"380\",\"PRIORITY\":\"6\",\"_GID\":\"1500\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791289154893733\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"JOB_TYPE\":\"stop\",\"MESSAGE\":\"Stopping oflab-bdb3941c78194b9aa488f258412d239d.service - /usr/bin/env /usr/bin/python3 /home/learner/of-labs/A25/work/server.py /home/learner/of-labs/A25/data 43789...\",\"_UID\":\"1500\",\"USER_INVOCATION_ID\":\"1d64a7e9ba044c34b6cf52b92352b64c\",\"_RUNTIME_SCOPE\":\"system\",\"CODE_LINE\":\"580\",\"USER_UNIT\":\"oflab-bdb3941c78194b9aa488f258412d239d.service\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"__CURSOR\":\"s=fa6f534cb2ce4fc5b602c67cc061afed;i=6b1;b=556aeb0af82d4d589f49b653dd990409;m=119a634bc7;t=65d2b01c477c9;x=aa0eea97c462c980\",\"CODE_FILE\":\"src/core/job.c\",\"_CAP_EFFECTIVE\":\"0\"}\n{\"_AUDIT_SESSION\":\"1\",\"_TRANSPORT\":\"journal\",\"_AUDIT_LOGINUID\":\"1500\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"__CURSOR\":\"s=fa6f534cb2ce4fc5b602c67cc061afed;i=6b2;b=556aeb0af82d4d589f49b653dd990409;m=119a635031;t=65d2b01c47c33;x=9b3c272aed342a2e\",\"__MONOTONIC_TIMESTAMP\":\"75604643889\",\"MESSAGE\":\"Stopped oflab-bdb3941c78194b9aa488f258412d239d.service - /usr/bin/env /usr/bin/python3 /home/learner/of-labs/A25/work/server.py /home/learner/of-labs/A25/data 43789.\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_MACHINE_ID\":\"16e129767e3d4a07ba8a5fb8154da042\",\"_CAP_EFFECTIVE\":\"0\",\"PRIORITY\":\"6\",\"JOB_ID\":\"380\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791289154894864\",\"_COMM\":\"systemd\",\"__REALTIME_TIMESTAMP\":\"1791289154894899\",\"USER_UNIT\":\"oflab-bdb3941c78194b9aa488f258412d239d.service\",\"CODE_LINE\":\"767\",\"_HOSTNAME\":\"orderflow-toolkit-98k64-control-plane\",\"_RUNTIME_SCOPE\":\"system\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"CODE_FILE\":\"src/core/job.c\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"_PID\":\"6054\",\"USER_INVOCATION_ID\":\"1d64a7e9ba044c34b6cf52b92352b64c\",\"JOB_TYPE\":\"restart\",\"MESSAGE_ID\":\"9d1aaa27d60140bd96365438aad20286\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_GID\":\"1500\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"SYSLOG_FACILITY\":\"3\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"TID\":\"6054\",\"_UID\":\"1500\",\"CODE_FUNC\":\"job_emit_done_message\",\"JOB_RESULT\":\"done\",\"SYSLOG_IDENTIFIER\":\"systemd\"}\n{\"_AUDIT_SESSION\":\"1\",\"_UID\":\"1500\",\"TID\":\"6054\",\"PRIORITY\":\"6\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"_SYSTEMD_OWNER_UID\":\"1500\",\"_HOSTNAME\":\"orderflow-toolkit-98k64-control-plane\",\"_RUNTIME_SCOPE\":\"system\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"CODE_FILE\":\"src/core/job.c\",\"MESSAGE_ID\":\"7d4958e842da4a758f6c1cdc7b36dcc5\",\"MESSAGE\":\"Starting oflab-bdb3941c78194b9aa488f258412d239d.service - /usr/bin/env /usr/bin/python3 /home/learner/of-labs/A25/work/server.py /home/learner/of-labs/A25/data 43789...\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"JOB_TYPE\":\"start\",\"SYSLOG_FACILITY\":\"3\",\"USER_UNIT\":\"oflab-bdb3941c78194b9aa488f258412d239d.service\",\"USER_INVOCATION_ID\":\"84d1e78d15c7489eaef508d99a6e6102\",\"__REALTIME_TIMESTAMP\":\"1791289154896065\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"CODE_FUNC\":\"job_emit_start_message\",\"_PID\":\"6054\",\"_MACHINE_ID\":\"16e129767e3d4a07ba8a5fb8154da042\",\"_AUDIT_LOGINUID\":\"1500\",\"CODE_LINE\":\"580\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"__MONOTONIC_TIMESTAMP\":\"75604645055\",\"_TRANSPORT\":\"journal\",\"_CAP_EFFECTIVE\":\"0\",\"JOB_ID\":\"380\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"__CURSOR\":\"s=fa6f534cb2ce4fc5b602c67cc061afed;i=6b3;b=556aeb0af82d4d589f49b653dd990409;m=119a6354bf;t=65d2b01c480c1;x=65f20a7e016037cc\",\"_COMM\":\"systemd\",\"_GID\":\"1500\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791289154896037\"}\n{\"_SYSTEMD_OWNER_UID\":\"1500\",\"_CAP_EFFECTIVE\":\"0\",\"CODE_FUNC\":\"job_emit_done_message\",\"_SYSTEMD_UNIT\":\"user@1500.service\",\"_GID\":\"1500\",\"USER_INVOCATION_ID\":\"84d1e78d15c7489eaef508d99a6e6102\",\"SYSLOG_FACILITY\":\"3\",\"_SYSTEMD_SLICE\":\"user-1500.slice\",\"MESSAGE_ID\":\"39f53479d3a045ac8e11786248231fbf\",\"__REALTIME_TIMESTAMP\":\"1791289154897275\",\"_RUNTIME_SCOPE\":\"system\",\"__CURSOR\":\"s=fa6f534cb2ce4fc5b602c67cc061afed;i=6b4;b=556aeb0af82d4d589f49b653dd990409;m=119a635979;t=65d2b01c4857b;x=4429358f7267c52a\",\"JOB_ID\":\"380\",\"_MACHINE_ID\":\"16e129767e3d4a07ba8a5fb8154da042\",\"_AUDIT_LOGINUID\":\"1500\",\"CODE_LINE\":\"767\",\"MESSAGE\":\"Started oflab-bdb3941c78194b9aa488f258412d239d.service - /usr/bin/env /usr/bin/python3 /home/learner/of-labs/A25/work/server.py /home/learner/of-labs/A25/data 43789.\",\"SYSLOG_IDENTIFIER\":\"systemd\",\"PRIORITY\":\"6\",\"_TRANSPORT\":\"journal\",\"_COMM\":\"systemd\",\"JOB_RESULT\":\"done\",\"_SOURCE_REALTIME_TIMESTAMP\":\"1791289154897259\",\"_PID\":\"6054\",\"_HOSTNAME\":\"orderflow-toolkit-98k64-control-plane\",\"_SYSTEMD_USER_UNIT\":\"init.scope\",\"USER_UNIT\":\"oflab-bdb3941c78194b9aa488f258412d239d.service\",\"_CMDLINE\":\"/lib/systemd/systemd --user\",\"__MONOTONIC_TIMESTAMP\":\"75604646265\",\"_SYSTEMD_CGROUP\":\"/user.slice/user-1500.slice/user@1500.service/init.scope\",\"_AUDIT_SESSION\":\"1\",\"CODE_FILE\":\"src/core/job.c\",\"_EXE\":\"/usr/lib/systemd/systemd\",\"_BOOT_ID\":\"556aeb0af82d4d589f49b653dd990409\",\"_UID\":\"1500\",\"_SYSTEMD_USER_SLICE\":\"-.slice\",\"JOB_TYPE\":\"start\",\"TID\":\"6054\"}\n",
+      "stderr": ""
+    }
+  },
+  "exit": 0
+}

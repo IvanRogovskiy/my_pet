@@ -1,0 +1,15 @@
+{
+  "project_id": 87194850,
+  "project": "ivanrg/orderflow-course-audit",
+  "status": "verified",
+  "timestamp_utc": "2026-10-07T11:06:35.333968+00:00",
+  "operation": "reset_project_runner_registration_token",
+  "user_authorized": true,
+  "token_changed_verified": true,
+  "project_runner_ids_unchanged": true,
+  "project_runner_count": 1,
+  "authentication_token_reset_called": false,
+  "token_values_persisted": false,
+  "closes_pending_item": "docs/course-quality-2026-10-06/README.md, item 10",
+  "api_reference": "https://docs.gitlab.com/api/runners/#reset-projects-runner-registration-token"
+}

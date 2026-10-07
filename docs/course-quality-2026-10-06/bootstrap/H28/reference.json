@@ -1,0 +1,87 @@
+{
+  "case": "H28",
+  "version": "2026-10-06.1",
+  "runner_revision": "2026-10-06.2",
+  "time": "2026-10-06T13:33:32Z",
+  "platform": "darwin",
+  "python": "3.12.3",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "chart/Chart.yaml": "8672d3c6cf3db76dbbd483416c618caf13cedf36e75c22d1c48ad32407bcba33",
+    "chart/values.yaml": "61b4e917d4998b412abb4f29ccf30d686286a7b50d6e95e161578f8477b93f64",
+    "chart/templates/web.yaml": "748a93f2e8840ad3a0630b5609f19d9c2a3730889bcc02df5ffe9b89a4eb324b"
+  },
+  "status": "passed",
+  "detail": {
+    "level": "real local Kubernetes",
+    "namespace": "oflab-d28ae92d085449a8812b2ed2ce8a0b48",
+    "helm": {
+      "exit": 0,
+      "stdout": "Release \"web\" has been upgraded. Happy Helming!\nNAME: web\nLAST DEPLOYED: Tue Oct  6 16:33:33 2026\nNAMESPACE: oflab-d28ae92d085449a8812b2ed2ce8a0b48\nSTATUS: deployed\nREVISION: 2\nTEST SUITE: None\n",
+      "stderr": ""
+    },
+    "route": {
+      "exit": 0,
+      "stdout": "200\n",
+      "stderr": ""
+    },
+    "endpoints": {
+      "exit": 0,
+      "stdout": "NAME        ADDRESSTYPE   PORTS   ENDPOINTS                AGE\nweb-p7cdz   IPv4          8000    10.244.0.9,10.244.0.10   25s\n",
+      "stderr": ""
+    },
+    "diagnostics": {
+      "pods": {
+        "exit": 0,
+        "stdout": "NAME                   READY   STATUS        RESTARTS   AGE   IP            NODE                                   NOMINATED NODE   READINESS GATES\nweb-67949b4997-nght2   1/1     Terminating   0          25s   10.244.0.9    ofbootstrap-f6cfc98aec-control-plane   <none>           <none>\nweb-67949b4997-vnmrg   1/1     Running       0          6s    10.244.0.10   ofbootstrap-f6cfc98aec-control-plane   <none>           <none>\n",
+        "stderr": ""
+      },
+      "pvc": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": "No resources found in oflab-d28ae92d085449a8812b2ed2ce8a0b48 namespace.\n"
+      },
+      "events": {
+        "exit": 0,
+        "stdout": "LAST SEEN   TYPE      REASON              OBJECT                      SUBOBJECT              SOURCE                                          MESSAGE                                                                                                                                         FIRST SEEN   COUNT   NAME\n25s         Normal    Scheduled           pod/web-67949b4997-nght2                           default-scheduler                               Successfully assigned oflab-d28ae92d085449a8812b2ed2ce8a0b48/web-67949b4997-nght2 to ofbootstrap-f6cfc98aec-control-plane                       25s          1       web-67949b4997-nght2.18dbf408abf92adc\n24s         Normal    Pulled              pod/web-67949b4997-nght2    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Container image \"docker.io/library/python@sha256:d9c066a2a8594c709062de5210aea67dc81a3c008ce44b5daa28bbec53ad0a77\" already present on machine   24s          1       web-67949b4997-nght2.18dbf408c799053b\n24s         Normal    Created             pod/web-67949b4997-nght2    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Created container: web                                                                                                                          24s          1       web-67949b4997-nght2.18dbf408cd5d9d34\n24s         Normal    Started             pod/web-67949b4997-nght2    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Started container web                                                                                                                           24s          1       web-67949b4997-nght2.18dbf408e429b1aa\n22s         Warning   Unhealthy           pod/web-67949b4997-nght2    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Readiness probe failed: Get \"http://10.244.0.9:8000/\": dial tcp 10.244.0.9:8000: connect: connection refused                                    23s          2       web-67949b4997-nght2.18dbf409030daa42\n7s          Normal    Killing             pod/web-67949b4997-nght2    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Stopping container web                                                                                                                          7s           1       web-67949b4997-nght2.18dbf40cb9e46917\n6s          Normal    Scheduled           pod/web-67949b4997-vnmrg                           default-scheduler                               Successfully assigned oflab-d28ae92d085449a8812b2ed2ce8a0b48/web-67949b4997-vnmrg to ofbootstrap-f6cfc98aec-control-plane                       6s           1       web-67949b4997-vnmrg.18dbf40d0434eeed\n5s          Normal    Pulled              pod/web-67949b4997-vnmrg    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Container image \"docker.io/library/python@sha256:d9c066a2a8594c709062de5210aea67dc81a3c008ce44b5daa28bbec53ad0a77\" already present on machine   5s           1       web-67949b4997-vnmrg.18dbf40d272c13ee\n5s          Normal    Created             pod/web-67949b4997-vnmrg    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Created container: web                                                                                                                          5s           1       web-67949b4997-vnmrg.18dbf40d2829464a\n5s          Normal    Started             pod/web-67949b4997-vnmrg    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Started container web                                                                                                                           5s           1       web-67949b4997-vnmrg.18dbf40d40131c11\n3s          Warning   Unhealthy           pod/web-67949b4997-vnmrg    spec.containers{web}   kubelet, ofbootstrap-f6cfc98aec-control-plane   Readiness probe failed: Get \"http://10.244.0.10:8000/\": dial tcp 10.244.0.10:8000: connect: connection refused                                  4s           2       web-67949b4997-vnmrg.18dbf40d75f47155\n25s         Normal    SuccessfulCreate    replicaset/web-67949b4997                          replicaset-controller                           Created pod: web-67949b4997-nght2                                                                                                               25s          1       web-67949b4997.18dbf408abb35d65\n7s          Normal    SuccessfulDelete    replicaset/web-67949b4997                          replicaset-controller                           Deleted pod: web-67949b4997-nght2                                                                                                               7s           1       web-67949b4997.18dbf40cb9d85163\n6s          Normal    SuccessfulCreate    replicaset/web-67949b4997                          replicaset-controller                           Created pod: web-67949b4997-vnmrg                                                                                                               6s           1       web-67949b4997.18dbf40d03696040\n6s          Normal    ScalingReplicaSet   deployment/web                                     deployment-controller                           Scaled up replica set web-67949b4997 from 0 to 1                                                                                                25s          2       web.18dbf408ab4796bc\n7s          Normal    ScalingReplicaSet   deployment/web                                     deployment-controller                           Scaled down replica set web-67949b4997 from 1 to 0                                                                                              7s           1       web.18dbf40cb9735627\n",
+        "stderr": ""
+      },
+      "services": {
+        "exit": 0,
+        "stdout": "NAME   TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE   SELECTOR\nweb    ClusterIP   10.96.238.73   <none>        8000/TCP   25s   app=orderflow-lab\n",
+        "stderr": ""
+      },
+      "endpointslices": {
+        "exit": 0,
+        "stdout": "NAME        ADDRESSTYPE   PORTS   ENDPOINTS                AGE\nweb-p7cdz   IPv4          8000    10.244.0.9,10.244.0.10   26s\n",
+        "stderr": ""
+      },
+      "web-67949b4997-nght2-current": {
+        "exit": 0,
+        "stdout": "10.244.0.1 - - [06/Oct/2026 13:33:27] \"GET / HTTP/1.1\" 200 -\n10.244.0.1 - - [06/Oct/2026 13:33:37] \"GET / HTTP/1.1\" 200 -\n",
+        "stderr": ""
+      },
+      "web-67949b4997-nght2-previous": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": "Error from server (BadRequest): previous terminated container \"web\" in pod \"web-67949b4997-nght2\" not found\n"
+      },
+      "web-67949b4997-vnmrg-current": {
+        "exit": 0,
+        "stdout": "10.244.0.1 - - [06/Oct/2026 13:33:37] \"GET / HTTP/1.1\" 200 -\n10.244.0.1 - - [06/Oct/2026 13:33:38] \"GET / HTTP/1.1\" 200 -\n",
+        "stderr": ""
+      },
+      "web-67949b4997-vnmrg-previous": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": "Error from server (BadRequest): previous terminated container \"web\" in pod \"web-67949b4997-vnmrg\" not found\n"
+      }
+    },
+    "stop": {
+      "exit": 0,
+      "stdout": "deployment.apps/web scaled\n",
+      "stderr": ""
+    }
+  },
+  "exit": 0
+}

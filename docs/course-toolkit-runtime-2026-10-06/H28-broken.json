@@ -1,0 +1,76 @@
+{
+  "case": "H28",
+  "version": "2026-10-06.1",
+  "time": "2026-10-06T11:24:46Z",
+  "platform": "darwin",
+  "python": "3.12.3",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "chart/Chart.yaml": "8672d3c6cf3db76dbbd483416c618caf13cedf36e75c22d1c48ad32407bcba33",
+    "chart/values.yaml": "de5ed632b88be5a5c009b170774b94ac354e5750e8236e388e48caab2909c911",
+    "chart/templates/web.yaml": "748a93f2e8840ad3a0630b5609f19d9c2a3730889bcc02df5ffe9b89a4eb324b"
+  },
+  "status": "failed",
+  "detail": {
+    "level": "real local Kubernetes",
+    "namespace": "oflab-db67dd170f504e6ebeae3eb723031aa4",
+    "helm": {
+      "exit": 0,
+      "stdout": "Release \"web\" does not exist. Installing it now.\nNAME: web\nLAST DEPLOYED: Tue Oct  6 14:24:46 2026\nNAMESPACE: oflab-db67dd170f504e6ebeae3eb723031aa4\nSTATUS: deployed\nREVISION: 1\nTEST SUITE: None\n",
+      "stderr": ""
+    },
+    "route": {
+      "exit": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 1344, in do_open\n    h.request(req.get_method(), req.selector, req.data, headers,\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1386, in request\n    self._send_request(method, url, body, headers, encode_chunked)\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1432, in _send_request\n    self.endheaders(body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1381, in endheaders\n    self._send_output(message_body, encode_chunked=encode_chunked)\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1141, in _send_output\n    self.send(msg)\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1085, in send\n    self.connect()\n  File \"/usr/local/lib/python3.12/http/client.py\", line 1051, in connect\n    self.sock = self._create_connection(\n                ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/socket.py\", line 865, in create_connection\n    raise exceptions[0]\n  File \"/usr/local/lib/python3.12/socket.py\", line 850, in create_connection\n    sock.connect(sa)\nConnectionRefusedError: [Errno 111] Connection refused\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 215, in urlopen\n    return opener.open(url, data, timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 515, in open\n    response = self._open(req, data)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 532, in _open\n    result = self._call_chain(self.handle_open, protocol, protocol +\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 492, in _call_chain\n    result = func(*args)\n             ^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 1373, in http_open\n    return self.do_open(http.client.HTTPConnection, req)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/urllib/request.py\", line 1347, in do_open\n    raise URLError(err)\nurllib.error.URLError: <urlopen error [Errno 111] Connection refused>\ncommand terminated with exit code 1\n"
+    },
+    "endpoints": {
+      "exit": 0,
+      "stdout": "NAME        ADDRESSTYPE   PORTS     ENDPOINTS   AGE\nweb-nswkr   IPv4          <unset>   <unset>     18s\n",
+      "stderr": ""
+    },
+    "diagnostics": {
+      "pods": {
+        "exit": 0,
+        "stdout": "NAME                   READY   STATUS    RESTARTS   AGE   IP           NODE                                    NOMINATED NODE   READINESS GATES\nweb-67949b4997-46v4q   1/1     Running   0          18s   10.244.0.8   orderflow-toolkit-98k64-control-plane   <none>           <none>\n",
+        "stderr": ""
+      },
+      "pvc": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": "No resources found in oflab-db67dd170f504e6ebeae3eb723031aa4 namespace.\n"
+      },
+      "events": {
+        "exit": 0,
+        "stdout": "LAST SEEN   TYPE      REASON              OBJECT                      SUBOBJECT              SOURCE                                           MESSAGE                                                                                                                                         FIRST SEEN   COUNT   NAME\n18s         Normal    Scheduled           pod/web-67949b4997-46v4q                           default-scheduler                                Successfully assigned oflab-db67dd170f504e6ebeae3eb723031aa4/web-67949b4997-46v4q to orderflow-toolkit-98k64-control-plane                      18s          1       web-67949b4997-46v4q.18dbed060b1e71b5\n18s         Normal    Pulled              pod/web-67949b4997-46v4q    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Container image \"docker.io/library/python@sha256:d9c066a2a8594c709062de5210aea67dc81a3c008ce44b5daa28bbec53ad0a77\" already present on machine   18s          1       web-67949b4997-46v4q.18dbed062da4ad99\n18s         Normal    Created             pod/web-67949b4997-46v4q    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Created container: web                                                                                                                          18s          1       web-67949b4997-46v4q.18dbed062e594cdb\n17s         Normal    Started             pod/web-67949b4997-46v4q    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Started container web                                                                                                                           17s          1       web-67949b4997-46v4q.18dbed064b4938ea\n15s         Warning   Unhealthy           pod/web-67949b4997-46v4q    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Readiness probe failed: Get \"http://10.244.0.8:8000/\": dial tcp 10.244.0.8:8000: connect: connection refused                                    17s          3       web-67949b4997-46v4q.18dbed06808a5d11\n18s         Normal    SuccessfulCreate    replicaset/web-67949b4997                          replicaset-controller                            Created pod: web-67949b4997-46v4q                                                                                                               18s          1       web-67949b4997.18dbed060abf4ba2\n18s         Normal    ScalingReplicaSet   deployment/web                                     deployment-controller                            Scaled up replica set web-67949b4997 from 0 to 1                                                                                                18s          1       web.18dbed060a648b36\n",
+        "stderr": ""
+      },
+      "services": {
+        "exit": 0,
+        "stdout": "NAME   TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE   SELECTOR\nweb    ClusterIP   10.96.70.227   <none>        8000/TCP   20s   app=orderflow-lab-mismatch\n",
+        "stderr": ""
+      },
+      "endpointslices": {
+        "exit": 0,
+        "stdout": "NAME        ADDRESSTYPE   PORTS     ENDPOINTS   AGE\nweb-nswkr   IPv4          <unset>   <unset>     19s\n",
+        "stderr": ""
+      },
+      "web-67949b4997-46v4q-current": {
+        "exit": 0,
+        "stdout": "10.244.0.1 - - [06/Oct/2026 11:25:01] \"GET / HTTP/1.1\" 200 -\n",
+        "stderr": ""
+      },
+      "web-67949b4997-46v4q-previous": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": "Error from server (BadRequest): previous terminated container \"web\" in pod \"web-67949b4997-46v4q\" not found\n"
+      }
+    },
+    "stop": {
+      "exit": 0,
+      "stdout": "deployment.apps/web scaled\n",
+      "stderr": ""
+    }
+  },
+  "exit": 1
+}

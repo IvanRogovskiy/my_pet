@@ -1,0 +1,86 @@
+{
+  "case": "H28",
+  "version": "2026-10-06.1",
+  "time": "2026-10-06T11:25:06Z",
+  "platform": "darwin",
+  "python": "3.12.3",
+  "source_sha256": {
+    "server.py": "df9961fd08574a4178da642eda35d6d3a49947430bb243108a5317afad1680b5",
+    "chart/Chart.yaml": "8672d3c6cf3db76dbbd483416c618caf13cedf36e75c22d1c48ad32407bcba33",
+    "chart/values.yaml": "61b4e917d4998b412abb4f29ccf30d686286a7b50d6e95e161578f8477b93f64",
+    "chart/templates/web.yaml": "748a93f2e8840ad3a0630b5609f19d9c2a3730889bcc02df5ffe9b89a4eb324b"
+  },
+  "status": "passed",
+  "detail": {
+    "level": "real local Kubernetes",
+    "namespace": "oflab-db67dd170f504e6ebeae3eb723031aa4",
+    "helm": {
+      "exit": 0,
+      "stdout": "Release \"web\" has been upgraded. Happy Helming!\nNAME: web\nLAST DEPLOYED: Tue Oct  6 14:25:06 2026\nNAMESPACE: oflab-db67dd170f504e6ebeae3eb723031aa4\nSTATUS: deployed\nREVISION: 2\nTEST SUITE: None\n",
+      "stderr": ""
+    },
+    "route": {
+      "exit": 0,
+      "stdout": "200\n",
+      "stderr": ""
+    },
+    "endpoints": {
+      "exit": 0,
+      "stdout": "NAME        ADDRESSTYPE   PORTS   ENDPOINTS               AGE\nweb-nswkr   IPv4          8000    10.244.0.8,10.244.0.9   37s\n",
+      "stderr": ""
+    },
+    "diagnostics": {
+      "pods": {
+        "exit": 0,
+        "stdout": "NAME                   READY   STATUS        RESTARTS   AGE   IP           NODE                                    NOMINATED NODE   READINESS GATES\nweb-67949b4997-46v4q   1/1     Terminating   0          38s   10.244.0.8   orderflow-toolkit-98k64-control-plane   <none>           <none>\nweb-67949b4997-88tpq   1/1     Running       0          19s   10.244.0.9   orderflow-toolkit-98k64-control-plane   <none>           <none>\n",
+        "stderr": ""
+      },
+      "pvc": {
+        "exit": 0,
+        "stdout": "",
+        "stderr": "No resources found in oflab-db67dd170f504e6ebeae3eb723031aa4 namespace.\n"
+      },
+      "events": {
+        "exit": 0,
+        "stdout": "LAST SEEN   TYPE      REASON              OBJECT                      SUBOBJECT              SOURCE                                           MESSAGE                                                                                                                                         FIRST SEEN   COUNT   NAME\n38s         Normal    Scheduled           pod/web-67949b4997-46v4q                           default-scheduler                                Successfully assigned oflab-db67dd170f504e6ebeae3eb723031aa4/web-67949b4997-46v4q to orderflow-toolkit-98k64-control-plane                      38s          1       web-67949b4997-46v4q.18dbed060b1e71b5\n38s         Normal    Pulled              pod/web-67949b4997-46v4q    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Container image \"docker.io/library/python@sha256:d9c066a2a8594c709062de5210aea67dc81a3c008ce44b5daa28bbec53ad0a77\" already present on machine   38s          1       web-67949b4997-46v4q.18dbed062da4ad99\n38s         Normal    Created             pod/web-67949b4997-46v4q    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Created container: web                                                                                                                          38s          1       web-67949b4997-46v4q.18dbed062e594cdb\n37s         Normal    Started             pod/web-67949b4997-46v4q    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Started container web                                                                                                                           37s          1       web-67949b4997-46v4q.18dbed064b4938ea\n35s         Warning   Unhealthy           pod/web-67949b4997-46v4q    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Readiness probe failed: Get \"http://10.244.0.8:8000/\": dial tcp 10.244.0.8:8000: connect: connection refused                                    37s          3       web-67949b4997-46v4q.18dbed06808a5d11\n19s         Normal    Killing             pod/web-67949b4997-46v4q    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Stopping container web                                                                                                                          19s          1       web-67949b4997-46v4q.18dbed0a8933f978\n19s         Normal    Scheduled           pod/web-67949b4997-88tpq                           default-scheduler                                Successfully assigned oflab-db67dd170f504e6ebeae3eb723031aa4/web-67949b4997-88tpq to orderflow-toolkit-98k64-control-plane                      19s          1       web-67949b4997-88tpq.18dbed0aacf0a822\n18s         Normal    Pulled              pod/web-67949b4997-88tpq    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Container image \"docker.io/library/python@sha256:d9c066a2a8594c709062de5210aea67dc81a3c008ce44b5daa28bbec53ad0a77\" already present on machine   18s          1       web-67949b4997-88tpq.18dbed0acfc22fbe\n18s         Normal    Created             pod/web-67949b4997-88tpq    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Created container: web                                                                                                                          18s          1       web-67949b4997-88tpq.18dbed0ad059b1e0\n17s         Normal    Started             pod/web-67949b4997-88tpq    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Started container web                                                                                                                           17s          1       web-67949b4997-88tpq.18dbed0af41611c3\n14s         Warning   Unhealthy           pod/web-67949b4997-88tpq    spec.containers{web}   kubelet, orderflow-toolkit-98k64-control-plane   Readiness probe failed: Get \"http://10.244.0.9:8000/\": dial tcp 10.244.0.9:8000: connect: connection refused                                    16s          3       web-67949b4997-88tpq.18dbed0b2d774b2b\n38s         Normal    SuccessfulCreate    replicaset/web-67949b4997                          replicaset-controller                            Created pod: web-67949b4997-46v4q                                                                                                               38s          1       web-67949b4997.18dbed060abf4ba2\n19s         Normal    SuccessfulDelete    replicaset/web-67949b4997                          replicaset-controller                            Deleted pod: web-67949b4997-46v4q                                                                                                               19s          1       web-67949b4997.18dbed0a891d16bf\n19s         Normal    SuccessfulCreate    replicaset/web-67949b4997                          replicaset-controller                            Created pod: web-67949b4997-88tpq                                                                                                               19s          1       web-67949b4997.18dbed0aacfc5705\n19s         Normal    ScalingReplicaSet   deployment/web                                     deployment-controller                            Scaled up replica set web-67949b4997 from 0 to 1                                                                                                38s          2       web.18dbed060a648b36\n19s         Normal    ScalingReplicaSet   deployment/web                                     deployment-controller                            Scaled down replica set web-67949b4997 from 1 to 0                                                                                              19s          1       web.18dbed0a88e76f65\n",
+        "stderr": ""
+      },
+      "services": {
+        "exit": 0,
+        "stdout": "NAME   TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE   SELECTOR\nweb    ClusterIP   10.96.70.227   <none>        8000/TCP   39s   app=orderflow-lab\n",
+        "stderr": ""
+      },
+      "endpointslices": {
+        "exit": 0,
+        "stdout": "NAME        ADDRESSTYPE   PORTS   ENDPOINTS               AGE\nweb-nswkr   IPv4          8000    10.244.0.8,10.244.0.9   38s\n",
+        "stderr": ""
+      },
+      "web-67949b4997-46v4q-current": {
+        "exit": 0,
+        "stdout": "10.244.0.1 - - [06/Oct/2026 11:25:01] \"GET / HTTP/1.1\" 200 -\n10.244.0.1 - - [06/Oct/2026 11:25:11] \"GET / HTTP/1.1\" 200 -\n10.244.0.1 - - [06/Oct/2026 11:25:21] \"GET / HTTP/1.1\" 200 -\n",
+        "stderr": ""
+      },
+      "web-67949b4997-46v4q-previous": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": "Error from server (BadRequest): previous terminated container \"web\" in pod \"web-67949b4997-46v4q\" not found\n"
+      },
+      "web-67949b4997-88tpq-current": {
+        "exit": 0,
+        "stdout": "10.244.0.1 - - [06/Oct/2026 11:25:21] \"GET / HTTP/1.1\" 200 -\n10.244.0.8 - - [06/Oct/2026 11:25:24] \"GET / HTTP/1.1\" 200 -\n",
+        "stderr": ""
+      },
+      "web-67949b4997-88tpq-previous": {
+        "exit": 1,
+        "stdout": "",
+        "stderr": "Error from server (BadRequest): previous terminated container \"web\" in pod \"web-67949b4997-88tpq\" not found\n"
+      }
+    },
+    "stop": {
+      "exit": 0,
+      "stdout": "deployment.apps/web scaled\n",
+      "stderr": ""
+    }
+  },
+  "exit": 0
+}

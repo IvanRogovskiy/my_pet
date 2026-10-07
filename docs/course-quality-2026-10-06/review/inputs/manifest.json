@@ -1,0 +1,33 @@
+{
+  "version": "2026-10-06.1",
+  "sha256": {
+    "RV01/assignment.md": "83b4f5248fb3bb8b977b9be04698f63fe9d3a8dc439032c0c89d8fb10bfe63fd",
+    "RV01/submission.py": "7b28dfd07a565c05fb862eb36fe2e05b0ea918b928985f1fc2958a5c792ef73a",
+    "RV02/assignment.md": "886cf6c919c5108d32c34b44a6eccf5a555c75ecde6e59f0694f6d65b6c83a2b",
+    "RV02/submission.py": "862ef89f8a5dff8c545698387a18b0dd6fd883319d95a2da49b7fe0970208b92",
+    "RV03/assignment.md": "0b673d2e2c9a16bd3f0b8f521da481b02bc94922b99923b7390b972bae69bd52",
+    "RV03/submission.py": "4717f6e1e628231a092f7b82e4566e9176728b9278e0c22acf05d0bfb253d6d0",
+    "RV04/assignment.md": "a9281efd014080e37ad1193fbf4abed8f0e5d65c42dd4d8ab960ee5da64b5288",
+    "RV04/submission.py": "62e08e87462a597c24585f136bc2e8dd9ab54b40339d09f24b027bd2a9509731",
+    "RV05/assignment.md": "96b31b70bb8805c68fdd9184277e21f324179d4eedb287f537b70389a823ece4",
+    "RV05/submission.py": "feb64d6bce9b35436fb025893a62c1181ccd99c341a06ac655739b3006d676cb",
+    "RV06/assignment.md": "1762ee0e795c85920b2f46734a490f97342f1a54480b4869cf5e8c32a6255618",
+    "RV06/submission.py": "73417dbac3f76087c4b4fad29ecc5ab9d67dccec1c2a6b0f5d7891b4d00caf29",
+    "RV07/assignment.md": "431b06912a64b904f73e772595002ffeea2bb16723ff6c27966e7d0a3706797e",
+    "RV07/submission.py": "13797d5bb47d6b92877b3d263991d291cf771ec7199b87df70930e01138fedec",
+    "RV08/assignment.md": "096cae86a36019bf98f3a636db330869480d79d11a598f5a84dece122ff9e45e",
+    "RV08/submission.py": "fd3fbfb0e253708cfd5e79788475a1def4fccd51afd2a439eb777e1cad6c7a23",
+    "RV08/test_submission.py": "e1cfbfe2e837e13ae22d25586cff31e21353cab24bbd047fee38de66c7346826",
+    "RV09/assignment.md": "ebbe8e622da67baf8897794630539815acae5ac40e93fa5f8e3546717abd7bb2",
+    "RV09/submission.py": "1dbd22a7d44f9b6f235e8d7449ca41a9361999a3fc65086ef93c9bb87bcb0255",
+    "RV09/environment.txt": "51fb45bc253e9c712c8a88e7211954dba6d5bc5bc718996459c13e54c025ccb4",
+    "RV10/assignment.md": "b0a6ab5c5152f6a1665390e37d262cc11b9bfadaaf9c3dc0c71cd8697bc59be5",
+    "RV10/submission.py": "0240ebc873397fa348e5c4d1f152699e901a109878f10d76c3c1bd2355d6ea0c",
+    "RV10/reviewer-note.md": "c3e0036a4b345985744f65ba36069a9e78c73ae78491a2fbe19fe823102579b6",
+    "RV11/assignment.md": "b0391a767d9774ae8f6f24949593d4b8fa83d2542f37a3fc3d63a29dced1f806",
+    "RV11/submission.py": "f26502f9648a5e7a9f05baf807db2282228989dea3a2e46712f9825581d7647d",
+    "RV11/evidence.txt": "a48ac8a34e1ee084c950f174dfb08168760acd51ed990498dde9abce70cf38ab",
+    "RV12/assignment.md": "bed70e5297b2458dee91f9e76dfcf72c766dac294f26b3271d418478ef07e850",
+    "RV12/submission.py": "e2497bca02d5cb9b80be5599883970c2bf37324965f473ff000a095eb31bc147"
+  }
+}
