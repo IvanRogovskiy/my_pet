@@ -1,0 +1,21 @@
+{
+  "scope": "repeat Linux suite after initial56/56; actual observed failure, summarized from tool output",
+  "exit_code": 1,
+  "tests": 56,
+  "errors": 1,
+  "failures": 1,
+  "case": "TLSFixture.test_new_generation_rejects_stale_ready_and_preserves_old_directory",
+  "error": "KeyError: id in tls.live when stale ready.json was observed before serve removed it",
+  "cleanup_failure": "thread remained alive after startup exception; disposable --rm container exited afterwards",
+  "cause": "readiness poll caught OSError/ValueError but malformed stale record raised KeyError before new server published ready; race between thread start and stale marker removal",
+  "sources": {
+    "backend-devops-theory/assets/network-lab/fixture.py": "29114b362398e1eeff269b2753acb9f5408231db83aa3de19bcd2fc3eb469450",
+    "backend-devops-theory/tests/test_course_revision.py": "7fd2ec10385c2e73cb95452c5ec551094ded10b369af5ecbdb96d5bfa81342e1"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "cryptography": "50.0.2",
+    "openssl": "OpenSSL 3.5.7 9 Jun 2026",
+    "uid": 10001
+  }
+}

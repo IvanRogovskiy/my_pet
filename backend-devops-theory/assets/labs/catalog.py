@@ -8,7 +8,7 @@ CASES = {
     "L02c": ("02/1", "linux-permissions", "Файл существует, но чтение через родительский каталог запрещено. Исправь минимальные права."),
     "D10": ("10/3", "docker", "Контейнер healthy, с хоста HTTP недоступен. Исправь mapping и сохрани маркер данных."),
     "C12": ("12/1", "dag-model", "Падающий gate не блокирует marker. Исправь зависимости, затем проверь успешный gate."),
-    "T24": ("24/3", "terraform", "Plan с изменениями считается пустым. Различи отсутствие изменений, diff и ошибку."),
+    "T24": ("24/1", "terraform", "Plan с изменениями считается пустым. Различи отсутствие изменений, diff и ошибку."),
     "A25": ("25/2", "ansible-systemd", "Неизменный повтор playbook перезапускает сервис. Сохрани PID, конфиг и HTTP."),
     "R26": ("26/3", "docker-release", "Новый образ не стартует после expand-миграции. Проверь запуск и настоящий откат к старому образу."),
     "K27": ("27/2", "kubernetes-postgres", "PostgreSQL готов локально, но Pod не Ready. Раздели локальную готовность и маршрут Service."),
@@ -84,10 +84,12 @@ def dump(value):
     return json.dumps(value, ensure_ascii=False, indent=2) + "\n"
 
 
-def files(case, reference=False):
+def files(case, reference=False, *, masked_restart=False):
     """Sources only. Persistent learner data and evidence never belong to reset."""
     if case not in CASES:
         raise ValueError("unknown case")
+    if masked_restart and (case != "A25" or reference):
+        raise ValueError("masked_restart is an author-only A25 negative variant")
     result = {"server.py": SERVER}
     if case == "L02a":
         result["config.json"] = dump({"python": "current" if reference else "pythno"})
@@ -112,6 +114,8 @@ def files(case, reference=False):
     elif case == "A25":
         restart = {"name": "Restart lab service", "ansible.builtin.systemd_service": {
             "name": "{{ lookup('env', 'COURSE_UNIT') }}", "scope": "user", "state": "restarted"}}
+        if masked_restart:
+            restart["changed_when"] = False
         copy = {"name": "Write lab config", "ansible.builtin.copy": {
             "content": "{{ lookup('env', 'COURSE_VALUE') }}\n",
             "dest": "{{ lookup('env', 'COURSE_DATA') }}/service.conf", "mode": "0600"}}

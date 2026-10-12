@@ -26,7 +26,7 @@ if __name__ == "__main__":
     sys.modules["lab"] = sys.modules[__name__]
 
 MARKER = ".orderflow-lab.json"
-RUNNER_REVISION = "2026-10-06.2"
+RUNNER_REVISION = "2026-10-12.1"
 
 
 class Unavailable(RuntimeError):
@@ -107,6 +107,11 @@ def prepare(path, case, reference=False):
           "Exit check: 0 — объявленные проверки пройдены, 1 — нарушение, 2 — среда/подготовка не проверена.\n"
           "Локальная модель C12 не подтверждает hosted GitLab; SQLite B29 не подтверждает восстановление PostgreSQL/offsite.\n")
     restore(root, state, reference)
+    if case == "L02a":
+        write(root, "work/CONFIG.md", "# Интерпретатор L02a\n\nПоле python: current — интерпретатор запускателя; "
+              "pythno — намеренно отсутствующий файл; либо абсолютный путь к существующему исполняемому "
+              "интерпретатору на Linux-стенде. Неизвестное имя даёт ошибку конфигурации до запуска unit "
+              "и не подменяется другим путём.\n")
     return root
 
 
@@ -300,13 +305,39 @@ def terraform(root, state, options):
             "version": must([binary, "version", "-json"])["stdout"]}
 
 
+def interpreter(root, choice):
+    """Resolve explicit configuration; never turn an unknown valid path into pythno."""
+    if choice == "current":
+        return sys.executable
+    if choice == "pythno":
+        return str(beneath(root, "work/pythno"))
+    if isinstance(choice, str):
+        path = Path(choice)
+        if path.is_absolute() and path.is_file() and os.access(path, os.X_OK):
+            return str(path)
+    raise ValueError("python: expected current, pythno, or an existing absolute executable path")
+
+
+def ansible_idempotent(runs, snapshots):
+    """A green recap cannot override an observed restart or wrong configuration."""
+    if len(runs) != 4 or len(snapshots) != 4:
+        return False
+    changed = [re.findall(r"\bchanged=(\d+)", r["stdout"]) for r in runs]
+    pids = [x.get("pid") if x else None for x in snapshots]
+    hashes = [x.get("config_sha") if x else None for x in snapshots]
+    return bool(all(r["exit"] == 0 for r in runs) and all(changed) and all(pids) and all(hashes)
+                and pids[0] == pids[1] and pids[1] != pids[2] and pids[2] == pids[3]
+                and hashes[0] == hashes[1] and hashes[1] != hashes[2] and hashes[2] == hashes[3]
+                and changed[1][-1] == changed[3][-1] == "0")
+
+
 def systemd(root, state, options):
+    executable = sys.executable if state["case"] == "A25" else interpreter(root, config(root)["python"])
     if sys.platform != "linux" or not shutil.which("systemd-run"):
         raise Unavailable("Linux with a running systemd user manager required")
     must(["systemctl", "--user", "show", "--property=Version"])
     name = "oflab-" + state["id"]
     number = port()
-    executable = sys.executable if state["case"] == "A25" or config(root)["python"] == "current" else str(beneath(root, "work/pythno"))
     # A fresh transient name; refuse to operate on a pre-existing unit.
     existing = command(["systemctl", "--user", "show", name, "--property=LoadState", "--value"])
     if existing["stdout"].strip() not in ("", "not-found"):
@@ -332,14 +363,10 @@ def systemd(root, state, options):
                 env["COURSE_VALUE"] = value
                 runs.append(command([options.ansible, "-i", "localhost,", "playbook.json"], cwd=beneath(root, "work"), env=env))
                 snapshots.append(wait_http(number))
-            pids = [x.get("pid") if x else None for x in snapshots]
-            hashes = [x.get("config_sha") if x else None for x in snapshots]
             changed = [re.findall(r"\bchanged=(\d+)", r["stdout"]) for r in runs]
             if not all(changed):
                 raise Unavailable("Ansible recap could not be read; idempotence not fully verified")
-            ok = all(r["exit"] == 0 for r in runs) and all(pids) and pids[0] == pids[1] and pids[1] != pids[2] and pids[2] == pids[3]
-            ok = ok and hashes[0] == hashes[1] and hashes[1] != hashes[2] and hashes[2] == hashes[3]
-            ok = ok and changed[1][-1] == changed[3][-1] == "0"
+            ok = ansible_idempotent(runs, snapshots)
             before_check = beneath(root, "data/service.conf").read_bytes()
             env["COURSE_VALUE"] = "v3"
             check_mode = command([options.ansible, "-i", "localhost,", "playbook.json", "--check", "--diff"], cwd=beneath(root, "work"), env=env)
