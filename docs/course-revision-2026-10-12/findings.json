@@ -1,0 +1,497 @@
+[
+  {
+    "id": "F01",
+    "title": "Исполнитель и перенос старого аудита",
+    "files": [
+      "references/learning-workspace.md",
+      "SKILL.md"
+    ],
+    "change": "Пример: отдельный указатель агента, карта92частей, историческая практика без фиктивной полной теории.",
+    "verification": "Редакторская сверка продолжения; новый диалоговый пилот не выполнялся.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F02",
+    "title": "Отказ проверяющей команды",
+    "files": [
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Fixture0/7/0, явная fail-fast/collect политика, exit и отсутствие ложного успеха.",
+    "verification": "Критерии задания; исходные subprocess evidence сохранены.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F03",
+    "title": "L02a interpreter",
+    "files": [
+      "assets/labs/lab.py",
+      "assets/labs/catalog.py",
+      "tests/test_course_revision.py"
+    ],
+    "change": "Поддержан абсолютный executable; неизвестное имя отвергается до unit; CONFIG.md рядом с новой выдачей.",
+    "verification": "Новые регрессии path/config и совместимость старого каталога; новый systemd запуск не заявлен.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F04",
+    "title": "Время диагностики",
+    "files": [
+      "assets/labs/README.md",
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Разделены ранний journal, поздний status transient unit и finally cleanup прав.",
+    "verification": "Уточнено объяснение существующих результатов.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F05",
+    "title": "TLS после паузы",
+    "files": [
+      "assets/network-lab/fixture.py",
+      "assets/network-lab/README.md",
+      "tests/test_course_revision.py"
+    ],
+    "change": "Новый локальный prepare/serve/check/stop, относительные сроки leaf, паспорт, fresh instance и собственная остановка.",
+    "verification": "Linux: пять настоящих TLS/HTTP исходов, stale readiness, обновление CA, expired generation, приватные modes и cleanup.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F06",
+    "title": "Число в схеме и валидаторе",
+    "files": [
+      "references/business-contract.md",
+      "assets/examples/numeric_contract.py",
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Математическая целочисленность1/1.0/1e0; парная таблица и цепочка до SQL.",
+    "verification": "Тест положительных/отрицательных raw JSON; историческое приложение не переписано.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F07",
+    "title": "Равные суммы SQL",
+    "files": [
+      "references/business-contract.md"
+    ],
+    "change": "Добавлен второй набор с gross400/refund300/net100 и контрпримером SUM DISTINCT.",
+    "verification": "Контрольная арифметика; ранее сохранённый PG опыт остаётся историческим.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F08",
+    "title": "Точность raw JSON",
+    "files": [
+      "assets/examples/numeric_contract.py",
+      "tests/test_course_revision.py"
+    ],
+    "change": "Decimal до округления, диапазон до int огромного exponent.",
+    "verification": "Регрессия1.0000000000000001,1e-10000,1e10000, граница1000.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F09",
+    "title": "Отзыв cookie",
+    "files": [
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Отдельный клиент повторяет старый cookie после logout; повторный login успешен.",
+    "verification": "Критерий07/1; значения credentials не сохранять.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F10",
+    "title": "Идемпотентный ответ",
+    "files": [
+      "references/lessons/08-transactions.md",
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Один эффект и два одинаковых ответа проверяются независимо.",
+    "verification": "Контрпример201/500 при одной строке.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F11",
+    "title": "Пересечение транзакций",
+    "files": [
+      "references/lessons/08-transactions.md",
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Две сессии/PID, чтения или lock wait; исключён барьер после одинакового FOR UPDATE.",
+    "verification": "Методика опыта; новый PG прогон не требовался для правки текста.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F12",
+    "title": "Слабые зелёные тесты",
+    "files": [
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Три пары: другой actor, ручная сумма, точный stock; setup failure не считается обнаружением.",
+    "verification": "Пример по сохранённым мутациям09.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F13",
+    "title": "Секрет в слое",
+    "files": [
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Синтетический canary, нижние layers/config/history, пределы scan.",
+    "verification": "Критерий10; реальных credentials в fixture нет.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F14",
+    "title": "Фактическая публикация порта",
+    "files": [
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Config→создание→effective bindings→hostHTTP→данные.",
+    "verification": "Версионные ограничения не обобщены на все Engine.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F15",
+    "title": "Стабильный inventory",
+    "files": [
+      "references/learning-workspace.md",
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Паспорт ID/owner/bootstrap/management path вне временной папки, проверка перед resume.",
+    "verification": "Уточнён checkpoint стенда.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F16",
+    "title": "Private open подUID",
+    "files": [
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Открытие без вывода содержимого, stat пути внутри Linux, сохранён publicCSS.",
+    "verification": "Критерий11; Desktop bind и host chmod различены.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F17",
+    "title": "Время gate",
+    "files": [
+      "references/review-cases-01-12.md"
+    ],
+    "change": "started/finished gate и marker; skipped либо старт после успеха.",
+    "verification": "Hosted и локальная DAG разведены.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F18",
+    "title": "Source pipeline",
+    "files": [
+      "references/review-cases-01-12.md"
+    ],
+    "change": "Добавлен schedule/main и разделены source/ref.",
+    "verification": "Официальная GitLab документация проверена.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F19",
+    "title": "Protocol composition",
+    "files": [
+      "references/review-cases-13-19.md"
+    ],
+    "change": "Typecheck включает реальную подстановку адаптера, отдельно runtime contract.",
+    "verification": "Пример к13/2.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F20",
+    "title": "Borrowed transaction",
+    "files": [
+      "references/review-cases-13-19.md"
+    ],
+    "change": "INTRANS/невидимость marker/rollback владельца при full/break/error.",
+    "verification": "Пример к13/3; conn.closed недостаточен.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F21",
+    "title": "Владелец deadline",
+    "files": [
+      "references/lessons/14-asyncio.md",
+      "references/review-cases-13-19.md"
+    ],
+    "change": "Опыт competing timeouts, cancelling/attempts; timeout=None только внутри общего бюджета.",
+    "verification": "Границы конкретного наблюдения сохранены; HTTPX/Python docs.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F22",
+    "title": "Semaphore против pool",
+    "files": [
+      "references/lessons/14-asyncio.md",
+      "references/review-cases-13-19.md"
+    ],
+    "change": "Неравные2/20 и3/1, два collect и aggregate limit.",
+    "verification": "Уточнён критерий14/3.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F23",
+    "title": "Nullable и optional",
+    "files": [
+      "references/review-cases-13-19.md"
+    ],
+    "change": "Absent/null/string, default, направление old client→new server и changed-field replay409.",
+    "verification": "Pydantic2 docs; без нового hosted запуска.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F24",
+    "title": "ASGI shutdown",
+    "files": [
+      "references/review-cases-13-19.md"
+    ],
+    "change": "exec после миграции, события cleanup/lifespan;143 сам по себе не доказательство.",
+    "verification": "Пример15 по исходному наблюдению.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F25",
+    "title": "Lease при публикации",
+    "files": [
+      "references/review-cases-13-19.md"
+    ],
+    "change": "Отдельно атомарные compare-publish и compare-delete; Lua helper и подтверждённый successor.",
+    "verification": "Объяснение ограничено кешем, не fencing транзакции; Redis docs.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F26",
+    "title": "Повреждённый кеш",
+    "files": [
+      "references/review-cases-13-19.md"
+    ],
+    "change": "Decode→miss→PG; удаление только прочитанной версии, ошибкаPG остаётся ошибкой.",
+    "verification": "Методика16, без обещания полной семантической валидации.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F27",
+    "title": "Hit ratio и правильность",
+    "files": [
+      "references/review-cases-13-19.md"
+    ],
+    "change": "Два товара, полный ключ и эталон результата наряду сSQL/hit.",
+    "verification": "Контрпример неверного общего ключа.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F28",
+    "title": "Фактический ack",
+    "files": [
+      "references/lessons/17-outbox.md",
+      "references/review-cases-13-19.md"
+    ],
+    "change": "Pool, наблюдение basic_ack, crash window, ready/unacked и эффект.",
+    "verification": "Celery docs; настройка не подменяет сетевое наблюдение.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F29",
+    "title": "Общий бюджет publisher",
+    "files": [
+      "references/lessons/17-outbox.md",
+      "references/review-cases-13-19.md"
+    ],
+    "change": "DNS отдельно, watchdog отдельно от прикладного deadline, pending сохраняется.",
+    "verification": "Не заявлено исправление runtime старого publisher.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F30",
+    "title": "Backpressure observer",
+    "files": [
+      "references/review-cases-13-19.md"
+    ],
+    "change": "Удержанный sender, настоящиеPG updates, реальный queue size и последний snapshot.",
+    "verification": "Назван моделью медленной отправки, неTCP stress.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F31",
+    "title": "Целевой JWT отказ",
+    "files": [
+      "references/review-cases-13-19.md"
+    ],
+    "change": "Правильная тестовая подпись, один неверный claim, exact scope; provider дляPKCE/code/rotation.",
+    "verification": "Критерии19 с границами mock.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F32",
+    "title": "ES data readiness",
+    "files": [
+      "references/review-cases-20-30.md"
+    ],
+    "change": "Малый create/active primary/write/refresh/search/delete доETL, allocation/explain.",
+    "verification": "Elastic docs; disk protection не отключается.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F33",
+    "title": "Transport и бизнес-агрегация",
+    "files": [
+      "references/review-cases-20-30.md"
+    ],
+    "change": "Отдельные send/key/partition и fixture для consumer; raw/unique/turnover.",
+    "verification": "Обход producer не выдан заend-to-end.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F34",
+    "title": "Grafana readback",
+    "files": [
+      "references/review-cases-20-30.md"
+    ],
+    "change": "Проверка API expressions/runbook, watcher/polling и reload→readback.",
+    "verification": "Grafana docs; периодический polling не объявлен измеренным.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F35",
+    "title": "Scrape при отказе",
+    "files": [
+      "references/review-cases-20-30.md"
+    ],
+    "change": "Handler/counter/dependency отдельно, без дублей series, прежние guard/for и sink.",
+    "verification": "Критерий22 по реальному слепому месту.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F36",
+    "title": "Dispatcher послеPGrestart",
+    "files": [
+      "references/review-cases-20-30.md"
+    ],
+    "change": "Прежние PID/StartedAt, close_old_connections и фактический effect/replay.",
+    "verification": "Django docs; функция и lifecycle процесса различены.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F37",
+    "title": "Полное сравнение нагрузки",
+    "files": [
+      "references/review-cases-20-30.md"
+    ],
+    "change": "Offered/drops/late starts/drain, quantiles endpoint/journey и оба повтора.",
+    "verification": "Неуспешный повтор сохраняется, capacity не выводится из одногоp95.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F38",
+    "title": "Исправность scrape",
+    "files": [
+      "references/review-cases-20-30.md"
+    ],
+    "change": "URL/status/content-type/parser/required series до нагрузки; ошибкаobserver отдельно.",
+    "verification": "HTML404 не принимается как метрики.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F39",
+    "title": "Этап T24",
+    "files": [
+      "assets/labs/catalog.py",
+      "tests/test_course_revision.py"
+    ],
+    "change": "T24 перенесена в24/1; все именованные labs сверяются с part-boundaries.",
+    "verification": "Новая регрессия каталога и реального prepare/ASSIGNMENT.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F40",
+    "title": "Ложный changed0",
+    "files": [
+      "assets/labs/catalog.py",
+      "assets/labs/lab.py",
+      "tests/test_course_revision.py"
+    ],
+    "change": "Авторский masked_restart variant, проверкаPID/config; простой learner fixture сохранён.",
+    "verification": "Predicate отвергает restart приchanged0; новый Ansible runtime не заявлен.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F41",
+    "title": "Private bind в26",
+    "files": [
+      "references/review-cases-20-30.md"
+    ],
+    "change": "КонтейнерныйUID/open отдельно отHTTP403; root-owned volume/tmpfs для опыта.",
+    "verification": "Методика26 по Desktop наблюдению.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F42",
+    "title": "EndpointSlice ready",
+    "files": [
+      "references/operations-labs.md",
+      "references/review-cases-20-30.md"
+    ],
+    "change": "Исправлена фраза про отсутствие endpoints; ready/serving/terminating и исключения.",
+    "verification": "Официальная Kubernetes документация.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F43",
+    "title": "Clean Helm install",
+    "files": [
+      "references/operations-labs.md",
+      "references/review-cases-20-30.md"
+    ],
+    "change": "ПустаяPG, конечныйSQLpreflight миграции, failedJob evidence.",
+    "verification": "Отдельно от upgrade тёплой БД.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F44",
+    "title": "Передача replicas",
+    "files": [
+      "references/operations-labs.md",
+      "references/review-cases-20-30.md"
+    ],
+    "change": "Render/patch/live replicas, default1, отдельноеHTTP наблюдение handoff.",
+    "verification": "Kubernetes docs; без обещания безразрывности.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F45",
+    "title": "Пригодность backup",
+    "files": [
+      "references/lessons/29-recovery.md",
+      "references/review-cases-20-30.md"
+    ],
+    "change": "Подлинный усечённыйdump, restore+данные+точныеSHA, goodA/B retention.",
+    "verification": "Decrypt/TOC отдельно отпригодности.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F46",
+    "title": "Внешний эффект послеcutoff",
+    "files": [
+      "references/lessons/29-recovery.md",
+      "references/review-cases-20-30.md"
+    ],
+    "change": "ПовторPK/новыеUUID, внешниеSMTP/деньги и утрата журнала.",
+    "verification": "Не обещаноexactly-once черезпотерю durable history.",
+    "status": "implemented_in_skill"
+  },
+  {
+    "id": "F47",
+    "title": "404 провайдера",
+    "files": [
+      "references/business-contract.md",
+      "references/review-cases-20-30.md"
+    ],
+    "change": "HTML404 и JSON not_found различены доPOST; прежнийeventUUID.",
+    "verification": "Финальная матрица30 усилена, реальныйprovider не заявлен.",
+    "status": "implemented_in_skill"
+  }
+]

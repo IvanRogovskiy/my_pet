@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "verified_utc": "2026-10-12T04:47:28.120780+00:00",
+  "skill_revision": "2026-10-12",
+  "runner_revision": "2026-10-12.1",
+  "compatible_workspace_version": "2026-10-06.1",
+  "findings_implemented": 47,
+  "mandatory_topics": 30,
+  "mandatory_parts": 92,
+  "original_audit_files_unchanged": 7011,
+  "local_links_checked": 265,
+  "source_files_before": 67,
+  "source_files_after": 75,
+  "changed_existing": [
+    "backend-devops-theory/SKILL.md",
+    "backend-devops-theory/assets/labs/README.md",
+    "backend-devops-theory/assets/labs/catalog.py",
+    "backend-devops-theory/assets/labs/lab.py",
+    "backend-devops-theory/references/business-contract.md",
+    "backend-devops-theory/references/course-maintenance.md",
+    "backend-devops-theory/references/learning-workspace.md",
+    "backend-devops-theory/references/lessons/08-transactions.md",
+    "backend-devops-theory/references/lessons/14-asyncio.md",
+    "backend-devops-theory/references/lessons/17-outbox.md",
+    "backend-devops-theory/references/lessons/29-recovery.md",
+    "backend-devops-theory/references/operations-labs.md",
+    "backend-devops-theory/references/topics-01-04.md",
+    "backend-devops-theory/references/topics-05-09.md",
+    "backend-devops-theory/references/topics-10-12.md",
+    "backend-devops-theory/references/topics-13-19.md",
+    "backend-devops-theory/references/topics-20-23.md",
+    "backend-devops-theory/references/topics-24-30.md"
+  ],
+  "added": [
+    "backend-devops-theory/assets/examples/numeric_contract.py",
+    "backend-devops-theory/assets/network-lab/README.md",
+    "backend-devops-theory/assets/network-lab/fixture.py",
+    "backend-devops-theory/assets/network-lab/requirements.txt",
+    "backend-devops-theory/references/review-cases-01-12.md",
+    "backend-devops-theory/references/review-cases-13-19.md",
+    "backend-devops-theory/references/review-cases-20-30.md",
+    "backend-devops-theory/tests/test_course_revision.py"
+  ],
+  "removed": [],
+  "linux": {
+    "tests": 56,
+    "passed": 56,
+    "skipped": 0,
+    "versions": {
+      "python": "3.12.14",
+      "platform": "Linux-5.15.49-linuxkit-pr-aarch64-with-glibc2.41",
+      "uid": 10001,
+      "cryptography": "50.0.2",
+      "openssl": "OpenSSL 3.5.7 9 Jun 2026"
+    }
+  },
+  "macos": {
+    "tests": 56,
+    "passed": 52,
+    "skipped": 4,
+    "python": "3.12.3"
+  },
+  "tls_cli": {
+    "passed": true,
+    "prepare_exit": 0,
+    "duplicate_prepare_exit": 2,
+    "check_exit": 0,
+    "checks": [
+      {
+        "case": "trusted",
+        "http": 200,
+        "passed": true
+      },
+      {
+        "case": "tls-with-http-denial",
+        "http": 403,
+        "passed": true
+      },
+      {
+        "case": "unknown-ca",
+        "verify_code": 20,
+        "passed": true
+      },
+      {
+        "case": "wrong-name",
+        "verify_code": 64,
+        "passed": true
+      },
+      {
+        "case": "expired",
+        "verify_code": 10,
+        "passed": true
+      }
+    ],
+    "stop_exit": 0,
+    "server_exit": 0,
+    "ready_removed": true
+  },
+  "known_new_fixture_failure": "tls-startup-failure.json; fixed in final sources and deterministic regression",
+  "diff_check_exit": 0,
+  "temporary_containers_absent": true,
+  "new_cloud_calls": 0,
+  "new_hosted_jobs": 0,
+  "source_scope": "skill code and teaching material; course audit unchanged; no claim of fresh integration runs for documentation-only changes"
+}
