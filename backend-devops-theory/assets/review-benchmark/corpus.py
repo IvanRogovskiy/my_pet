@@ -1,4 +1,8 @@
 """Author-only oracle and synthetic submissions. Exported bundles do not include this file."""
+from audit_cases import AUDIT_CASES, verify_audit_case
+
+VERSION = "2026-10-12.1"
+LEGACY_VERSION = "2026-10-06.1"
 MONEY_CONTRACT = "C1: validate принимает целое число >=0 и возвращает его; boolean, строка, дробь и отрицательное число дают ValueError. Архитектура функции не предписана."
 OWN_CONTRACT = "C1: can_read(actor, order, request) разрешает admin любой заказ, buyer только свой. request.user_id не даёт прав. Возвращается boolean."
 GOOD_MONEY = '''def validate(value):
@@ -92,6 +96,16 @@ def health(url):
 ''', "classes":["valid"], "verdict":"accepted", "criterion":"confirmed",
      "reason":"Цикл корректен. sum(), dataclass и service class могут быть советами, но не условиями приёмки.", "probe":"total_good"},
 ]
+LEGACY_CASES = tuple(CASES)
+CASES += AUDIT_CASES
+
+
+def cases_for(version):
+    if version == VERSION:
+        return CASES
+    if version == LEGACY_VERSION:
+        return LEGACY_CASES
+    raise ValueError("unknown benchmark version")
 
 
 def rejected(function, value):
@@ -138,4 +152,6 @@ def verify_case(case):
         return namespace["quantity"](101) == 101 and rejected(namespace["quantity"],0)
     if probe == "total_good":
         return namespace["total"]([]) == 0 and namespace["total"]([{"price":100,"qty":2},{"price":300,"qty":1}]) == 500
-    return probe == "no_runtime"  # Deliberately no network/DB evidence fabricated.
+    if probe == "no_runtime":
+        return True  # Deliberately no network/DB evidence fabricated.
+    return verify_audit_case(case, namespace)
