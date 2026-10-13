@@ -1,0 +1,88 @@
+{
+  "verified_utc": "2026-10-12T05:24:19.933525+00:00",
+  "source_sha256": {
+    "backend-devops-theory/assets/review-benchmark/ASSESSMENT.md": "14783ee152675d486f6d94a289dd7b461970c2e8674235549fb6c5a9fae94f07",
+    "backend-devops-theory/assets/review-benchmark/README.md": "92ee275c23de7661c3fb2a5350806cfaf8dfe0dc21e66e67d80d85ec74526b5d",
+    "backend-devops-theory/assets/review-benchmark/assessment.py": "54a6d98a9ea687a0ed589e894051d52e4967bf82a066ecf2f70216fd04ca14a5",
+    "backend-devops-theory/assets/review-benchmark/audit_cases.py": "d9d97ea892ed1ac6160316c7f7eb12b20ccf34c9e7ac163dc5b6e66252d12f8b",
+    "backend-devops-theory/assets/review-benchmark/benchmark.py": "75718c6f3235fee499cd54ab343ad49353f5a76940a3492117e75b6c35103e20",
+    "backend-devops-theory/assets/review-benchmark/corpus.py": "f3993182c93be75b01fb500a65b7382ebea3e7a8e4f90be0385675c524237d5c",
+    "backend-devops-theory/references/course-maintenance.md": "33ba3c4ddaf800072a5e2cd09164873f48cf0b2ceb78bf7cecfbebf55039a08f",
+    "backend-devops-theory/references/practice-review.md": "1127c91752c3a903547ba8ed83c85c1dfa36da52305aabfb35116821be59bde0",
+    "backend-devops-theory/tests/test_review_benchmark.py": "c62d50c393955602500a64ae9e40090c1b60219eb18319a767afe0fd780af4a2"
+  },
+  "evidence_sha256": {
+    "cli-smoke-before-path-fix.json": "c7b642355fd68e107cc5c569016ad6be76efac2ebae951cfa1e9b54b7805b36b",
+    "legacy-score.json": "eac7ba080c8948946128ae5476d6bfc910511af8559b81fe9c8f6a7c100844d7",
+    "tests-linux-before-path-fix.txt": "d5b4a2c5e5154004ab85a211905553cb5d6fefc1bb217e9e8cf3e151d8073e41",
+    "tests-linux.txt": "53649cc93d18a4a6061e7d260ecb5e80e4f0e15f645fbcc9d60f1ee31fd39481",
+    "tests-macos-sandbox.txt": "4d1ce6882749e4f4aceec46d2611ab229fe1a80bca25288d4da86cefbbc7a290",
+    "tests-review-macos.txt": "d0f3a318af17ae3b3c402d75ced1484e9e4c44d37c7445ad84a87c7244eae079"
+  },
+  "branch": "codex/review-benchmark-expansion-2026-10-12",
+  "base_commit": "a8f3df4fa816fbd6f281bdced9681ee64cd30972",
+  "benchmark_version": "2026-10-12.1",
+  "cases": 20,
+  "added_cases": [
+    "RV13",
+    "RV14",
+    "RV15",
+    "RV16",
+    "RV17",
+    "RV18",
+    "RV19",
+    "RV20"
+  ],
+  "legacy_cases_unchanged": true,
+  "linux_full_suite": {
+    "tests": 67,
+    "passed": 67,
+    "skipped": 0,
+    "exit": 0,
+    "log": "tests-linux.txt",
+    "image_id": "sha256:9f9ef3aae1e00e04295448895839e5f03933b84309297ad2942d8c5c8d827377",
+    "uid": 10001,
+    "network": "none",
+    "skill_mount": "read-only"
+  },
+  "macos_review_suite": {
+    "tests": 18,
+    "passed": 18,
+    "exit": 0,
+    "log": "tests-review-macos.txt"
+  },
+  "macos_full_suite_before_path_fix": {
+    "tests": 66,
+    "passed": 60,
+    "skipped": 4,
+    "failures": 1,
+    "errors": 1,
+    "exit": 1,
+    "reason": "Sandbox forbids loopback bind in two existing network tests. Three skips require cryptography, one requires unprivileged Linux.",
+    "log": "tests-macos-sandbox.txt"
+  },
+  "known_fixed_regression": {
+    "symptom": "New file validation rejected valid RV01/submission.py-style paths in the historical answer; rubric matches fell from 12 to 4.",
+    "fix": "Accept own-case-relative and bundle-relative paths; reject other case IDs and traversal. Added regression for both corpus versions.",
+    "before": "cli-smoke-before-path-fix.json",
+    "after": "legacy-score.json"
+  },
+  "cli_smoke": {
+    "checks": 9,
+    "exit_codes_as_expected": true,
+    "synthetic_grading_inputs_only": true,
+    "log": "cli-smoke-before-path-fix.json",
+    "historical_answer_final_matches": 12,
+    "historical_answer_total": 12
+  },
+  "new_blind_review_performed": false,
+  "new_human_semantic_assessment_performed": false,
+  "limitations": [
+    "New service examples are local models; new SQL fixtures run in SQLite.",
+    "New concurrency case demonstrates harness submission order, not a PostgreSQL race.",
+    "Explanation ratings require an external assessor; automated tests check arithmetic and integrity only.",
+    "No new cloud or hosted CI runs."
+  ],
+  "temporary_containers_absent": true,
+  "diff_check_exit": 0
+}

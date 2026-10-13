@@ -1,0 +1,108 @@
+{
+  "purpose": "CLI and score arithmetic smoke; not a new blind review or semantic assessment",
+  "benchmark_version": "2026-10-12.1",
+  "passed": true,
+  "checks": [
+    {
+      "action": "validate",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "action": "export",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "action": "export",
+      "exit": 2,
+      "expected_exit": 2
+    },
+    {
+      "action": "export",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "action": "score",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "action": "assessment-template",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "action": "score",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "action": "score",
+      "exit": 2,
+      "expected_exit": 2
+    },
+    {
+      "action": "score",
+      "exit": 0,
+      "expected_exit": 0
+    }
+  ],
+  "fixture_results": {
+    "RV01": true,
+    "RV02": true,
+    "RV03": true,
+    "RV04": true,
+    "RV05": true,
+    "RV06": true,
+    "RV07": true,
+    "RV08": true,
+    "RV09": true,
+    "RV10": true,
+    "RV11": true,
+    "RV12": true,
+    "RV13": true,
+    "RV14": true,
+    "RV15": true,
+    "RV16": true,
+    "RV17": true,
+    "RV18": true,
+    "RV19": true,
+    "RV20": true
+  },
+  "case_classes": {
+    "code_defect": 7,
+    "valid": 7,
+    "test_defect": 2,
+    "environment": 2,
+    "new_requirement": 1,
+    "hypothesis": 1
+  },
+  "exported_files_hashed": 52,
+  "synthetic_perfect_labels": {
+    "matches": 20,
+    "tp": 7,
+    "explanations_assessed": 0
+  },
+  "synthetic_partial_assessment": {
+    "assessed": 1,
+    "pending": 19,
+    "changed_answer_rejected": true
+  },
+  "historical_answer_rescore": {
+    "version": "2026-10-06.1",
+    "cases": 12,
+    "rubric_matches": 4,
+    "format_errors": [
+      "RV01",
+      "RV02",
+      "RV03",
+      "RV04",
+      "RV08",
+      "RV09",
+      "RV10",
+      "RV11"
+    ]
+  }
+}
