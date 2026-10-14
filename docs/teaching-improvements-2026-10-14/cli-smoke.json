@@ -1,0 +1,871 @@
+{
+  "purpose": "Synthetic tooling smoke only; no actual teacher responses or learner outcomes",
+  "execution_root": "/private/tmp/course-teaching-cli-dft8mtz5",
+  "checks": 58,
+  "all_expected_exit_codes": true,
+  "historical_exports": [
+    {
+      "version": "2026-10-06.1",
+      "files": 30,
+      "byte_identical_to_HEAD": true
+    },
+    {
+      "version": "2026-10-12.1",
+      "files": 53,
+      "byte_identical_to_HEAD": true
+    }
+  ],
+  "unchanged_files": [
+    "backend-devops-theory/assets/review-benchmark/corpus.py",
+    "backend-devops-theory/assets/review-benchmark/audit_cases.py",
+    "backend-devops-theory/assets/dialogue-benchmark/prompts.json",
+    "backend-devops-theory/assets/dialogue-benchmark/check.py"
+  ],
+  "rows": [
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "list"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "[\n  {\n    \"id\": \"RS01\",\n    \"suite\": \"resume\",\n    \"topic\": \"08/1\"\n  },\n  {\n    \"id\": \"RS02\",\n    \"suite\": \"resume\",\n    \"topic\": \"08/2\"\n  },\n  {\n    \"id\": \"RS03\",\n    \"suite\": \"resume\",\n    \"topic\": \"08/3\"\n  },\n  {\n    \"id\": \"HS01\",\n    \"suite\": \"hints\",\n    \"topic\": \"08/1\"\n  },\n  {\n    \"id\": \"HS02\",\n    \"suite\": \"hints\",\n    \"topic\": \"08/2\"\n  },\n  {\n    \"id\": \"HS03\",\n    \"suite\": \"hints\",\n    \"topic\": \"08/1\"\n  },\n  {\n    \"id\": \"TR01\",\n    \"suite\": \"transfer\",\n    \"topic\": \"07/2\"\n  },\n  {\n    \"id\": \"TR02\",\n    \"suite\": \"transfer\",\n    \"topic\": \"08/2\"\n  },\n  {\n    \"id\": \"TR03\",\n    \"suite\": \"transfer\",\n    \"topic\": \"08/3\"\n  },\n  {\n    \"id\": \"TR04\",\n    \"suite\": \"transfer\",\n    \"topic\": \"17/3\"\n  },\n  {\n    \"id\": \"TR05\",\n    \"suite\": \"transfer\",\n    \"topic\": \"25/2\"\n  },\n  {\n    \"id\": \"TR06\",\n    \"suite\": \"transfer\",\n    \"topic\": \"29/3\"\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS01",
+        "--case",
+        "RS01"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/RS01\",\n  \"input_sha256\": \"caba924fc054c7159f1e59cadcc73622be5ff2990b49bc14a70d5c5e36cbd749\",\n  \"case_id\": \"RS01\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS01",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS01-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"RS01\",\n  \"suite\": \"resume\",\n  \"structured_state_matches\": {\n    \"part\": true,\n    \"practice\": true,\n    \"issues\": true\n  },\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS01",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS01-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"RS01\",\n  \"answer_sha256\": \"c0f16a6a7479301b4a73cec186ba45f03fd717b33a1611ccb8f1d5e7643369a0\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Восстановлены текущая часть и полный маршрут из файлов без истории чата.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Следующий шаг соответствует сохранённому действию: Продолжить самостоятельную реализацию reserve; попросить первую попытку, если она ещё не готова.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Нет новой приёмки, выдуманного запуска или потери истории замечаний.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Ответ даёт одно полезное действие; отсутствующие данные не заменены догадкой.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS01",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS01-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS01-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"RS01\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 4,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Восстановлены текущая часть и полный маршрут из файлов без истории чата.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Следующий шаг соответствует сохранённому действию: Продолжить самостоятельную реализацию reserve; попросить первую попытку, если она ещё не готова.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Нет новой приёмки, выдуманного запуска или потери истории замечаний.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Ответ даёт одно полезное действие; отсутствующие данные не заменены догадкой.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS02",
+        "--case",
+        "RS02"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/RS02\",\n  \"input_sha256\": \"7a9517fc7a6eb1e0188ce9bb18da0958710e6888060924dbec6e5dfd9628ad03\",\n  \"case_id\": \"RS02\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS02",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS02-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"RS02\",\n  \"suite\": \"resume\",\n  \"structured_state_matches\": {\n    \"part\": true,\n    \"practice\": true,\n    \"issues\": true\n  },\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS02",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS02-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"RS02\",\n  \"answer_sha256\": \"702ef36be80cea74b05529cde85fc925399b36835064a0b1b6b34c0507669a3f\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Восстановлены текущая часть и полный маршрут из файлов без истории чата.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Следующий шаг соответствует сохранённому действию: Вернуться к R1: попросить расписание двух чтений и план защиты общего остатка; затем изменённый код и PostgreSQL evidence.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Нет новой приёмки, выдуманного запуска или потери истории замечаний.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Ответ даёт одно полезное действие; отсутствующие данные не заменены догадкой.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS02",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS02-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS02-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"RS02\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 4,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Восстановлены текущая часть и полный маршрут из файлов без истории чата.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Следующий шаг соответствует сохранённому действию: Вернуться к R1: попросить расписание двух чтений и план защиты общего остатка; затем изменённый код и PostgreSQL evidence.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Нет новой приёмки, выдуманного запуска или потери истории замечаний.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Ответ даёт одно полезное действие; отсутствующие данные не заменены догадкой.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS03",
+        "--case",
+        "RS03"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/RS03\",\n  \"input_sha256\": \"fe07a1fc5fb11def037ba10884cab4fdf08b0418efc5dfdac191d51eaa83501f\",\n  \"case_id\": \"RS03\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS03",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS03-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"RS03\",\n  \"suite\": \"resume\",\n  \"structured_state_matches\": {\n    \"part\": true,\n    \"practice\": true,\n    \"issues\": true\n  },\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS03",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS03-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"RS03\",\n  \"answer_sha256\": \"eff7c83ea3a3c816095f29ea2cfd5ed3126b4e3b0b46ddfe34084ed4a34c2410\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Восстановлены текущая часть и полный маршрут из файлов без истории чата.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Следующий шаг соответствует сохранённому действию: Продолжить R2: проверить изменение тела при прежних buyer/key; сохранить закрытый R1 и повторить проверку независимости покупателей после исправления.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Нет новой приёмки, выдуманного запуска или потери истории замечаний.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Ответ даёт одно полезное действие; отсутствующие данные не заменены догадкой.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS03",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS03-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS03-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"RS03\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 4,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Восстановлены текущая часть и полный маршрут из файлов без истории чата.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Следующий шаг соответствует сохранённому действию: Продолжить R2: проверить изменение тела при прежних buyer/key; сохранить закрытый R1 и повторить проверку независимости покупателей после исправления.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Нет новой приёмки, выдуманного запуска или потери истории замечаний.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Ответ даёт одно полезное действие; отсутствующие данные не заменены догадкой.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS01",
+        "--case",
+        "HS01"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/HS01\",\n  \"input_sha256\": \"20bffede58c5a23cbec8c5922a76ad67b8a323a829869d262bdc2508f21a5ee2\",\n  \"case_id\": \"HS01\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS01",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS01-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"HS01\",\n  \"suite\": \"hints\",\n  \"structured_state_matches\": null,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS01",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS01-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"HS01\",\n  \"answer_sha256\": \"fe902b46340bbfecf89b2a8dfdf2a83160393fa09a4416d792afb268ec6ca08f\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Различает выход функции и состояние после исключения.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Один пример нехватки с ожидаемым неизменным списком.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Просит ученика назвать ожидаемое поведение конкретного вызова.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Не выдаёт реализацию и не диагностирует ещё не предъявленный код.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS01",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS01-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS01-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"HS01\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 4,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Различает выход функции и состояние после исключения.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Один пример нехватки с ожидаемым неизменным списком.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Просит ученика назвать ожидаемое поведение конкретного вызова.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Не выдаёт реализацию и не диагностирует ещё не предъявленный код.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS02",
+        "--case",
+        "HS02"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/HS02\",\n  \"input_sha256\": \"ffe6d9531b0f68810cdd15a5097d6bd816621ae8f1dc21ce7983f3b53a5c578e\",\n  \"case_id\": \"HS02\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS02",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS02-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"HS02\",\n  \"suite\": \"hints\",\n  \"structured_state_matches\": null,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS02",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS02-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"HS02\",\n  \"answer_sha256\": \"4cdcbe032deaba222518de6a42b3bb2e0aab989ce5fb4deb07d66791339dced7\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Исправляет смешение атомарности и сериализации без заявления о запуске.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Предлагает рассмотреть два чтения прежнего остатка до записей.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Одно диагностическое действие: ученик строит расписание.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Не выдаёт готовый SQL/функцию и не требует изменения несуществующего кода.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS02",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS02-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS02-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"HS02\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 4,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Исправляет смешение атомарности и сериализации без заявления о запуске.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Предлагает рассмотреть два чтения прежнего остатка до записей.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Одно диагностическое действие: ученик строит расписание.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Не выдаёт готовый SQL/функцию и не требует изменения несуществующего кода.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS03",
+        "--case",
+        "HS03"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/HS03\",\n  \"input_sha256\": \"db13e60211be3094544ace59adef02358009e20246ac0835ebd9f963b86b1731\",\n  \"case_id\": \"HS03\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS03",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS03-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"HS03\",\n  \"suite\": \"hints\",\n  \"structured_state_matches\": null,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS03",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS03-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"HS03\",\n  \"answer_sha256\": \"b13e020c1b05474a039ae0ca9d90347c93052e2a39cca9f9ca4c403ca71539a2\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Связывает строку мутации до проверки с остатком -1, не повторяет весь урок.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Отличает приложенный журнал от собственного запуска.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Предлагает проследить состояние до вычитания и перед raise.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Сохраняет реализацию за учеником; не навязывает БД или новый контракт.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS03",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS03-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/HS03-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"HS03\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 4,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Связывает строку мутации до проверки с остатком -1, не повторяет весь урок.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Отличает приложенный журнал от собственного запуска.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Предлагает проследить состояние до вычитания и перед raise.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Сохраняет реализацию за учеником; не навязывает БД или новый контракт.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR01",
+        "--case",
+        "TR01"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/TR01\",\n  \"input_sha256\": \"05f1fd7f81a388d8d07b9cdb8dd8e8ad78aadb00312058fe3fe3e49483650e6c\",\n  \"case_id\": \"TR01\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR01",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR01-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"TR01\",\n  \"suite\": \"transfer\",\n  \"structured_state_matches\": null,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR01",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR01-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"TR01\",\n  \"answer_sha256\": \"2a8a499087d880fbaae2d2a9bd4f9ef7d0f9939d3b423d9944eab137109efad7\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Отказ для чужой заметки, независимо от request.team_id.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Проверяет сохранённого владельца; admin выделен явно.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Три проверки содержат входы и ожидаемые результаты.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR01",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR01-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR01-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"TR01\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 3,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Отказ для чужой заметки, независимо от request.team_id.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Проверяет сохранённого владельца; admin выделен явно.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Три проверки содержат входы и ожидаемые результаты.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR02",
+        "--case",
+        "TR02"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/TR02\",\n  \"input_sha256\": \"fe2bdd47dc5bd711e2862bb3fbb14a5e491d1f5170365ea23d20e85ae2702061\",\n  \"case_id\": \"TR02\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR02",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR02-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"TR02\",\n  \"suite\": \"transfer\",\n  \"structured_state_matches\": null,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR02",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR02-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"TR02\",\n  \"answer_sha256\": \"f92f693853a94a15e5503a2eadd53c0e0fbd7db6b561bcc98b1b21b99b00799f\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Один успех, один отказ, остаток 1.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Объяснено пересечение операций, atomic не выдан за сериализацию.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"План включает разные сессии, наблюдаемое пересечение и итог БД; runtime остаётся непроверенным.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR02",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR02-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR02-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"TR02\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 3,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Один успех, один отказ, остаток 1.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Объяснено пересечение операций, atomic не выдан за сериализацию.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"План включает разные сессии, наблюдаемое пересечение и итог БД; runtime остаётся непроверенным.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR03",
+        "--case",
+        "TR03"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/TR03\",\n  \"input_sha256\": \"06919b6fb6a1fdfc47872965c5aafdf592f9897fbba0d290128c029235920145\",\n  \"case_id\": \"TR03\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR03",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR03-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"TR03\",\n  \"suite\": \"transfer\",\n  \"structured_state_matches\": null,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR03",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR03-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"TR03\",\n  \"answer_sha256\": \"5a4c4947129069ff0600aa5f5ff384d0ab2326e8ab7453f4bd4850e0136b0b42\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Точный повтор возвращает job=7 без нового эффекта.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Изменённое тело в той же области — конфликт; другая организация независима.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"План сверяет и ответы, и количество эффектов; не подменяет область глобальным ключом.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR03",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR03-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR03-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"TR03\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 3,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Точный повтор возвращает job=7 без нового эффекта.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Изменённое тело в той же области — конфликт; другая организация независима.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"План сверяет и ответы, и количество эффектов; не подменяет область глобальным ключом.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR04",
+        "--case",
+        "TR04"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/TR04\",\n  \"input_sha256\": \"76db6900506c083917dc8b7959bb216055e32e25544a05edd8cf32db6feab2dc\",\n  \"case_id\": \"TR04\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR04",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR04-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"TR04\",\n  \"suite\": \"transfer\",\n  \"structured_state_matches\": null,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR04",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR04-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"TR04\",\n  \"answer_sha256\": \"85870326350cb386db682c68161c07e172e8105d3a62f281565958800e3c2f0a\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Повтор доставки допустим; durable event_id связывается с бизнес-эффектом.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"ack после надёжной фиксации обработки; in-memory set недостаточен.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Для внешнего неидемпотентного письма нет необоснованной гарантии exactly-once.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR04",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR04-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR04-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"TR04\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 3,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Повтор доставки допустим; durable event_id связывается с бизнес-эффектом.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"ack после надёжной фиксации обработки; in-memory set недостаточен.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Для внешнего неидемпотентного письма нет необоснованной гарантии exactly-once.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR05",
+        "--case",
+        "TR05"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/TR05\",\n  \"input_sha256\": \"6e4e7ce7ff3c0c501b27814272945952dcc2afeaf648b346bd31ad8dc456ffb9\",\n  \"case_id\": \"TR05\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR05",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR05-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"TR05\",\n  \"suite\": \"transfer\",\n  \"structured_state_matches\": null,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR05",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR05-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"TR05\",\n  \"answer_sha256\": \"70a011a4c5daa610250e5e919705597118d7dbc83aa5c97d110293b2192f22e5\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Приёмка отклонена: повтор вызвал наблюдаемый перезапуск.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Проверяются конфигурация, generation и recap, а не один changed.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Изменение и повтор имеют разные ожидаемые эффекты; модель не названа реальным запуском Ansible.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR05",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR05-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR05-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"TR05\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 3,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Приёмка отклонена: повтор вызвал наблюдаемый перезапуск.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Проверяются конфигурация, generation и recap, а не один changed.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Изменение и повтор имеют разные ожидаемые эффекты; модель не названа реальным запуском Ansible.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR06",
+        "--case",
+        "TR06"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/TR06\",\n  \"input_sha256\": \"f738aa766b3534ab7f8b485336473c16dfcc0b8c5670c5ad21a9ab71e0859bb2\",\n  \"case_id\": \"TR06\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR06",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR06-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"TR06\",\n  \"suite\": \"transfer\",\n  \"structured_state_matches\": null,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR06",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR06-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"teaching-2026-10-14.1\",\n  \"case_id\": \"TR06\",\n  \"answer_sha256\": \"0feeb0f9ed81878477f8d821d464ba0ebce597e033f3d59f3c554d23228381f9\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Доступная подтверждённая точка отстаёт на 40 минут, требование 15 минут не подтверждено; реальное число потерянных записей неизвестно.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Читаемый backup не доказывает restore или работоспособность.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"План проверяет восстановление в отдельной среде, инварианты данных и пользовательскую операцию; RTO не выдуман.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "assess",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR06",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR06-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/TR06-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"TR06\",\n  \"assessor\": {\n    \"name\": \"Synthetic CLI smoke, not a teacher evaluation\",\n    \"kind\": \"self_review\"\n  },\n  \"counts\": {\n    \"pending\": 3,\n    \"confirmed\": 0,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Доступная подтверждённая точка отстаёт на 40 минут, требование 15 минут не подтверждено; реальное число потерянных записей неизвестно.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Читаемый backup не доказывает restore или работоспособность.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"План проверяет восстановление в отдельной среде, инварианты данных и пользовательскую операцию; RTO не выдуман.\",\n      \"result\": \"pending\",\n      \"evidence\": \"\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check-resume-run",
+        "/private/tmp/course-teaching-cli-dft8mtz5/index.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"resume_cases\": 3,\n  \"missing\": [],\n  \"rows\": [\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS01\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    },\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS02\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    },\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS03\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    }\n  ],\n  \"structured_state_matches\": true,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"distinct declared IDs only; verify real session evidence separately\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS03",
+        "/private/tmp/course-teaching-cli-dft8mtz5/wrong-state.json"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"RS03\",\n  \"suite\": \"resume\",\n  \"structured_state_matches\": {\n    \"part\": true,\n    \"practice\": true,\n    \"issues\": false\n  },\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+        "check",
+        "/private/tmp/course-teaching-cli-dft8mtz5/RS03",
+        "/private/tmp/course-teaching-cli-dft8mtz5/invalid.json"
+      ],
+      "exit_code": 2,
+      "expected_exit_code": 2,
+      "stdout": "",
+      "stderr": "Invalid input: record does not match issued inputs\n"
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/review-benchmark/review_holdout.py",
+        "validate"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"HC01\": true,\n  \"HC02\": true,\n  \"HC03\": true,\n  \"HC04\": true,\n  \"HC05\": true,\n  \"HC06\": true,\n  \"HC07\": true,\n  \"HC08\": true,\n  \"HC09\": true,\n  \"HC10\": true,\n  \"HC11\": true,\n  \"HC12\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/review-benchmark/review_holdout.py",
+        "export",
+        "/private/tmp/course-teaching-cli-dft8mtz5/holdout"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"path\": \"/private/tmp/course-teaching-cli-dft8mtz5/holdout\",\n  \"input_sha256\": \"b18d7f2e1fb5f1b2f523eab6f7e81d5ebeacccc7fdb13c8808fddebb9f94925e\",\n  \"version\": \"holdout-2026-10-14.1\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/review-benchmark/review_holdout.py",
+        "score",
+        "/private/tmp/course-teaching-cli-dft8mtz5/holdout-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"holdout-2026-10-14.1\",\n  \"cases\": 12,\n  \"submitted\": 12,\n  \"missing\": [],\n  \"format_errors\": [],\n  \"rubric_matches\": 12,\n  \"code_defect_tp\": 4,\n  \"code_defect_fp\": 0,\n  \"code_defect_fn\": 0,\n  \"code_defect_precision\": 1.0,\n  \"code_defect_recall\": 1.0,\n  \"false_code_defect_claims\": [],\n  \"missed_code_defects\": [],\n  \"incorrect_rejections\": [],\n  \"explanation_assessment\": {\n    \"source\": \"external_assessment\",\n    \"assessor\": null,\n    \"assessed\": 0,\n    \"pending\": [\n      \"HC01\",\n      \"HC02\",\n      \"HC03\",\n      \"HC04\",\n      \"HC05\",\n      \"HC06\",\n      \"HC07\",\n      \"HC08\",\n      \"HC09\",\n      \"HC10\",\n      \"HC11\",\n      \"HC12\"\n    ],\n    \"complete\": false,\n    \"mean_scores\": {\n      \"accuracy\": null,\n      \"evidence\": null,\n      \"guidance\": null,\n      \"agency\": null\n    },\n    \"max_score\": 2,\n    \"rows\": []\n  },\n  \"human_review_required\": true,\n  \"rows\": [\n    {\n      \"case_id\": \"HC01\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC02\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC03\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC04\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC05\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC06\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC07\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC08\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC09\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC10\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC11\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC12\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    }\n  ],\n  \"limitation\": \"Classification/format only. A matching label is not evidence that the explanation or reproduction is true.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/review-benchmark/review_holdout.py",
+        "assessment-template",
+        "/private/tmp/course-teaching-cli-dft8mtz5/holdout-synthetic.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"holdout-2026-10-14.1\",\n  \"answer_sha256\": \"0f50c8cad1554a22fc24f3ea11385fc7f00e9c7194185a73afe439330b3dc1ed\",\n  \"assessor\": {\n    \"name\": \"\",\n    \"kind\": \"\"\n  },\n  \"reviews\": [\n    {\n      \"case_id\": \"HC01\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    },\n    {\n      \"case_id\": \"HC02\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    },\n    {\n      \"case_id\": \"HC03\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    },\n    {\n      \"case_id\": \"HC04\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    },\n    {\n      \"case_id\": \"HC05\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    },\n    {\n      \"case_id\": \"HC06\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    },\n    {\n      \"case_id\": \"HC07\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    },\n    {\n      \"case_id\": \"HC08\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    },\n    {\n      \"case_id\": \"HC09\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    },\n    {\n      \"case_id\": \"HC10\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    },\n    {\n      \"case_id\": \"HC11\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    },\n    {\n      \"case_id\": \"HC12\",\n      \"status\": \"pending\",\n      \"ratings\": {\n        \"accuracy\": null,\n        \"evidence\": null,\n        \"guidance\": null,\n        \"agency\": null\n      },\n      \"notes\": {\n        \"accuracy\": \"\",\n        \"evidence\": \"\",\n        \"guidance\": \"\",\n        \"agency\": \"\"\n      }\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/review-benchmark/review_holdout.py",
+        "score",
+        "/private/tmp/course-teaching-cli-dft8mtz5/holdout-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/holdout-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"holdout-2026-10-14.1\",\n  \"cases\": 12,\n  \"submitted\": 12,\n  \"missing\": [],\n  \"format_errors\": [],\n  \"rubric_matches\": 12,\n  \"code_defect_tp\": 4,\n  \"code_defect_fp\": 0,\n  \"code_defect_fn\": 0,\n  \"code_defect_precision\": 1.0,\n  \"code_defect_recall\": 1.0,\n  \"false_code_defect_claims\": [],\n  \"missed_code_defects\": [],\n  \"incorrect_rejections\": [],\n  \"explanation_assessment\": {\n    \"source\": \"external_assessment\",\n    \"assessor\": {\n      \"name\": \"Synthetic CLI smoke\",\n      \"kind\": \"self_review\"\n    },\n    \"assessed\": 0,\n    \"pending\": [\n      \"HC01\",\n      \"HC02\",\n      \"HC03\",\n      \"HC04\",\n      \"HC05\",\n      \"HC06\",\n      \"HC07\",\n      \"HC08\",\n      \"HC09\",\n      \"HC10\",\n      \"HC11\",\n      \"HC12\"\n    ],\n    \"complete\": false,\n    \"mean_scores\": {\n      \"accuracy\": null,\n      \"evidence\": null,\n      \"guidance\": null,\n      \"agency\": null\n    },\n    \"max_score\": 2,\n    \"rows\": []\n  },\n  \"human_review_required\": true,\n  \"rows\": [\n    {\n      \"case_id\": \"HC01\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC02\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC03\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC04\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC05\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC06\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC07\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC08\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC09\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC10\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC11\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    },\n    {\n      \"case_id\": \"HC12\",\n      \"classification_matches\": true,\n      \"verdict_matches\": true,\n      \"criterion_matches\": true,\n      \"format_valid\": true,\n      \"explanation_verified\": false\n    }\n  ],\n  \"limitation\": \"Classification/format only. A matching label is not evidence that the explanation or reproduction is true.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "backend-devops-theory/assets/review-benchmark/review_holdout.py",
+        "compare",
+        "/private/tmp/course-teaching-cli-dft8mtz5/holdout-synthetic.json",
+        "/private/tmp/course-teaching-cli-dft8mtz5/holdout-synthetic.json",
+        "--assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/holdout-assessment.json",
+        "--candidate-assessment",
+        "/private/tmp/course-teaching-cli-dft8mtz5/holdout-assessment.json"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "stdout": "{\n  \"benchmark_version\": \"holdout-2026-10-14.1\",\n  \"cases\": 12,\n  \"runs\": {\n    \"baseline\": {\n      \"name\": \"Synthetic scorer test\",\n      \"date\": \"2026-10-14\",\n      \"kind\": \"self_review\",\n      \"key_seen\": true,\n      \"tools\": \"No actual reviewer\",\n      \"source_sha256\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n      \"input_sha256\": \"b18d7f2e1fb5f1b2f523eab6f7e81d5ebeacccc7fdb13c8808fddebb9f94925e\"\n    },\n    \"candidate\": {\n      \"name\": \"Synthetic scorer test\",\n      \"date\": \"2026-10-14\",\n      \"kind\": \"self_review\",\n      \"key_seen\": true,\n      \"tools\": \"No actual reviewer\",\n      \"source_sha256\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n      \"input_sha256\": \"b18d7f2e1fb5f1b2f523eab6f7e81d5ebeacccc7fdb13c8808fddebb9f94925e\"\n    }\n  },\n  \"scores\": {\n    \"baseline\": {\n      \"benchmark_version\": \"holdout-2026-10-14.1\",\n      \"cases\": 12,\n      \"submitted\": 12,\n      \"missing\": [],\n      \"format_errors\": [],\n      \"rubric_matches\": 12,\n      \"code_defect_tp\": 4,\n      \"code_defect_fp\": 0,\n      \"code_defect_fn\": 0,\n      \"code_defect_precision\": 1.0,\n      \"code_defect_recall\": 1.0,\n      \"false_code_defect_claims\": [],\n      \"missed_code_defects\": [],\n      \"incorrect_rejections\": [],\n      \"explanation_assessment\": {\n        \"source\": \"external_assessment\",\n        \"assessor\": {\n          \"name\": \"Synthetic CLI smoke\",\n          \"kind\": \"self_review\"\n        },\n        \"assessed\": 0,\n        \"pending\": [\n          \"HC01\",\n          \"HC02\",\n          \"HC03\",\n          \"HC04\",\n          \"HC05\",\n          \"HC06\",\n          \"HC07\",\n          \"HC08\",\n          \"HC09\",\n          \"HC10\",\n          \"HC11\",\n          \"HC12\"\n        ],\n        \"complete\": false,\n        \"mean_scores\": {\n          \"accuracy\": null,\n          \"evidence\": null,\n          \"guidance\": null,\n          \"agency\": null\n        },\n        \"max_score\": 2,\n        \"rows\": []\n      },\n      \"human_review_required\": true,\n      \"rows\": [\n        {\n          \"case_id\": \"HC01\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC02\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC03\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC04\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC05\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC06\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC07\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC08\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC09\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC10\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC11\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC12\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        }\n      ],\n      \"limitation\": \"Classification/format only. A matching label is not evidence that the explanation or reproduction is true.\"\n    },\n    \"candidate\": {\n      \"benchmark_version\": \"holdout-2026-10-14.1\",\n      \"cases\": 12,\n      \"submitted\": 12,\n      \"missing\": [],\n      \"format_errors\": [],\n      \"rubric_matches\": 12,\n      \"code_defect_tp\": 4,\n      \"code_defect_fp\": 0,\n      \"code_defect_fn\": 0,\n      \"code_defect_precision\": 1.0,\n      \"code_defect_recall\": 1.0,\n      \"false_code_defect_claims\": [],\n      \"missed_code_defects\": [],\n      \"incorrect_rejections\": [],\n      \"explanation_assessment\": {\n        \"source\": \"external_assessment\",\n        \"assessor\": {\n          \"name\": \"Synthetic CLI smoke\",\n          \"kind\": \"self_review\"\n        },\n        \"assessed\": 0,\n        \"pending\": [\n          \"HC01\",\n          \"HC02\",\n          \"HC03\",\n          \"HC04\",\n          \"HC05\",\n          \"HC06\",\n          \"HC07\",\n          \"HC08\",\n          \"HC09\",\n          \"HC10\",\n          \"HC11\",\n          \"HC12\"\n        ],\n        \"complete\": false,\n        \"mean_scores\": {\n          \"accuracy\": null,\n          \"evidence\": null,\n          \"guidance\": null,\n          \"agency\": null\n        },\n        \"max_score\": 2,\n        \"rows\": []\n      },\n      \"human_review_required\": true,\n      \"rows\": [\n        {\n          \"case_id\": \"HC01\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC02\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC03\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC04\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC05\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC06\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC07\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC08\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC09\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC10\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC11\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        },\n        {\n          \"case_id\": \"HC12\",\n          \"classification_matches\": true,\n          \"verdict_matches\": true,\n          \"criterion_matches\": true,\n          \"format_valid\": true,\n          \"explanation_verified\": false\n        }\n      ],\n      \"limitation\": \"Classification/format only. A matching label is not evidence that the explanation or reproduction is true.\"\n    }\n  },\n  \"delta_candidate_minus_baseline\": {\n    \"rubric_matches\": 0,\n    \"code_defect_tp\": 0,\n    \"code_defect_fp\": 0,\n    \"code_defect_fn\": 0\n  },\n  \"answer_sha256\": {\n    \"baseline\": \"0f50c8cad1554a22fc24f3ea11385fc7f00e9c7194185a73afe439330b3dc1ed\",\n    \"candidate\": \"0f50c8cad1554a22fc24f3ea11385fc7f00e9c7194185a73afe439330b3dc1ed\"\n  },\n  \"semantic_assessment_required\": true,\n  \"limitation\": \"Provenance is declared, not independently attested. One comparison does not establish teaching effectiveness. Preserve each run; do not select only the best.\"\n}\n",
+      "stderr": ""
+    }
+  ]
+}

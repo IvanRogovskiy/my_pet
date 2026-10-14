@@ -1,0 +1,26 @@
+test_answer_cannot_move_between_scenarios_or_inputs (test_teaching_benchmark.TeachingBenchmark.test_answer_cannot_move_between_scenarios_or_inputs) ... ok
+test_assessment_is_bound_to_verbatim_answer_and_rubric (test_teaching_benchmark.TeachingBenchmark.test_assessment_is_bound_to_verbatim_answer_and_rubric) ... ok
+test_assessment_requires_evidence_for_success_and_failure (test_teaching_benchmark.TeachingBenchmark.test_assessment_requires_evidence_for_success_and_failure) ... ok
+test_changed_extra_missing_and_symlink_inputs_rejected (test_teaching_benchmark.TeachingBenchmark.test_changed_extra_missing_and_symlink_inputs_rejected) ... ok
+test_empty_run_is_incomplete_and_paths_cannot_escape (test_teaching_benchmark.TeachingBenchmark.test_empty_run_is_incomplete_and_paths_cannot_escape) ... ok
+test_existing_context_or_blank_snapshot_is_not_restart (test_teaching_benchmark.TeachingBenchmark.test_existing_context_or_blank_snapshot_is_not_restart) ... ok
+test_export_never_overwrites_existing_or_symlink_destination (test_teaching_benchmark.TeachingBenchmark.test_export_never_overwrites_existing_or_symlink_destination) ... ok
+test_exports_all_scenarios_without_author_rubrics_or_answers (test_teaching_benchmark.TeachingBenchmark.test_exports_all_scenarios_without_author_rubrics_or_answers) ... ok
+test_fabricated_acceptance_and_wrong_part_are_visible (test_teaching_benchmark.TeachingBenchmark.test_fabricated_acceptance_and_wrong_part_are_visible) ... ok
+test_lost_open_issue_and_lost_closed_history_are_visible (test_teaching_benchmark.TeachingBenchmark.test_lost_open_issue_and_lost_closed_history_are_visible) ... ok
+test_rehashed_changed_scenario_cannot_claim_original_version (test_teaching_benchmark.TeachingBenchmark.test_rehashed_changed_scenario_cannot_claim_original_version) ... ok
+test_same_context_cannot_stand_for_three_new_sessions (test_teaching_benchmark.TeachingBenchmark.test_same_context_cannot_stand_for_three_new_sessions) ... ok
+test_all_authored_counterexamples_and_valid_alternatives (test_review_holdout.ReviewHoldout.test_all_authored_counterexamples_and_valid_alternatives) ... ok
+test_comparison_requires_full_inputs_and_honest_key_provenance (test_review_holdout.ReviewHoldout.test_comparison_requires_full_inputs_and_honest_key_provenance) ... ok
+test_control_and_training_answers_cannot_be_mixed (test_review_holdout.ReviewHoldout.test_control_and_training_answers_cannot_be_mixed) ... ok
+test_explanation_failure_remains_visible_with_perfect_labels (test_review_holdout.ReviewHoldout.test_explanation_failure_remains_visible_with_perfect_labels) ... ok
+test_export_exact_allowlist_and_fingerprint (test_review_holdout.ReviewHoldout.test_export_exact_allowlist_and_fingerprint) ... ok
+test_regression_compare_reports_lost_defect_false_alarm_and_rejection (test_review_holdout.ReviewHoldout.test_regression_compare_reports_lost_defect_false_alarm_and_rejection) ... ok
+test_repaired_cases_no_longer_match_bad_counterexamples (test_review_holdout.ReviewHoldout.test_repaired_cases_no_longer_match_bad_counterexamples) ... ok
+test_local_links_resolve (test_materials.Materials.test_local_links_resolve) ... ok
+test_topic_parts_and_prerequisites_match_index (test_materials.Materials.test_topic_parts_and_prerequisites_match_index) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.252s
+
+OK

@@ -1,0 +1,85 @@
+{
+  "verified_utc": "2026-10-13T09:44:42.962815+00:00",
+  "base_commit": "a6d6620e95234a289e0fbe6950b1fc450c02b287",
+  "source_sha256": {
+    "backend-devops-theory/SKILL.md": "3fa1d3cb7f167fba0aacdfb396c31e3541d770a1cc519862fed8cae5814d4431",
+    "backend-devops-theory/assets/dialogue-benchmark/README.md": "4d563ae73488a3355d5b6b1d5dfd3b2f79902d5630a0bd3b34a21c99754415b1",
+    "backend-devops-theory/assets/review-benchmark/README.md": "ee325cc0244a43893b917359cd2d111de22258a9c104cb2de887b240fdc1757e",
+    "backend-devops-theory/assets/review-benchmark/CYCLES.md": "b99e6a0a287ef52a1a59f6facb102282ed077d2932b6da1852d3647f98418a6f",
+    "backend-devops-theory/assets/review-benchmark/cycle_corpus.py": "451bc895286c346b6ec571aad92fe24da6a35b03f018b8297c919624e44fa49e",
+    "backend-devops-theory/assets/review-benchmark/review_cycles.py": "fd04f45607018f3bc6581d1068b5bbe5ba1a20fe5f2aaed68605f270abe47e6f",
+    "backend-devops-theory/references/course-maintenance.md": "07e9c7cf4ba03f475e1fe2968fb267f1b25a38f7b33da2bf946794382464e454",
+    "backend-devops-theory/references/practice-review.md": "06972ce78a81c39a11b9f7f4cbab80bdbbc01c37c0f228e0551645fb9eb93b36",
+    "backend-devops-theory/tests/test_review_cycles.py": "465ed3d03fa5eb4f3352be521c8bc60749e2be29cefe4eb6d68a75ca256c364d"
+  },
+  "existing_benchmark_files_unchanged": [
+    "backend-devops-theory/assets/review-benchmark/corpus.py",
+    "backend-devops-theory/assets/review-benchmark/audit_cases.py",
+    "backend-devops-theory/assets/review-benchmark/benchmark.py",
+    "backend-devops-theory/assets/review-benchmark/assessment.py",
+    "backend-devops-theory/assets/dialogue-benchmark/prompts.json",
+    "backend-devops-theory/assets/dialogue-benchmark/check.py"
+  ],
+  "evidence_sha256": {
+    "cli-smoke.json": "3969f60511c6c34bb5b691bb7df9474f2835eaa032d26711747eaf0f597a3aaf",
+    "tests-linux.txt": "6e5cb7c63d01f73df75002cf03f2b1ef29011b980cf3da427c5ad60d2e7346e1",
+    "tests-review-macos.txt": "02f5b899b2423214757efc0a0e1cfe82f8ddd456b06d788914baccfee9c09b6f"
+  },
+  "branch": "codex/review-cycle-benchmark-2026-10-13",
+  "benchmark_version": "review-cycles-2026-10-13.1",
+  "cycles": 3,
+  "turns_per_cycle": 3,
+  "authored_submissions": 9,
+  "scenarios": {
+    "RC01": "Partial idempotency fix preserves the remaining finding",
+    "RC02": "Admin fix introduces a buyer authorization regression",
+    "RC03": "Withdraw a false requirement, detect its accidental implementation, accept its removal"
+  },
+  "linux_full_suite": {
+    "tests": 81,
+    "passed": 81,
+    "skipped": 0,
+    "exit": 0,
+    "log": "tests-linux.txt",
+    "image_id": "sha256:9f9ef3aae1e00e04295448895839e5f03933b84309297ad2942d8c5c8d827377",
+    "uid": 10001,
+    "network": "none",
+    "skill_mount": "read-only"
+  },
+  "macos_review_suites": {
+    "tests": 32,
+    "passed": 32,
+    "exit": 0,
+    "log": "tests-review-macos.txt"
+  },
+  "new_regression_tests": 14,
+  "cli_smoke": {
+    "checks": 29,
+    "passed": 29,
+    "log": "cli-smoke.json",
+    "purpose": "Synthetic transcripts test commands and score arithmetic; they are not actual model or human conversations."
+  },
+  "checked_properties": [
+    "Partial fixes leave outstanding criteria and findings open",
+    "Previously confirmed behavior is rechecked for regressions",
+    "Finding IDs and their criterion bindings survive across revisions",
+    "Wrong reviewer requirements are withdrawn, not claimed as student fixes",
+    "The final correct version is accepted under the original assignment",
+    "Future submissions require a filled transcript of preceding turns",
+    "Input hashes and previous-turn hashes detect accidental history changes",
+    "External explanation ratings remain bound to the full transcript",
+    "Matching structured state never counts as verified prose or human learning"
+  ],
+  "new_teacher_dialogue_performed": false,
+  "independent_blind_review_performed": false,
+  "human_learning_effect_measured": false,
+  "limitations": [
+    "Executables are small local Python functions; no PostgreSQL/HTTP/concurrency claim.",
+    "Reviewer's actual prose and saved learning state must be assessed separately using the four-dimension rubric.",
+    "Hash chains verify record consistency, not provenance or reviewer identity.",
+    "The erroneous prior review in RC03 is explicitly fictional initial context."
+  ],
+  "temporary_containers_absent": true,
+  "new_cloud_or_hosted_jobs": 0,
+  "diff_check_exit": 0
+}

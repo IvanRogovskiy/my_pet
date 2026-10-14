@@ -1,0 +1,14 @@
+{
+  "purpose": "Diagnostic only, not a corrected model answer or a first-pass score",
+  "transform": "execution list joined with newline in memory; all other values unchanged",
+  "original_answer_sha256": "7d2528cf86f44b6276503da33271b4bc213d63a51b95c4da82c4d81e7f4e1930",
+  "diagnostic_result": {
+    "record_complete": true,
+    "case_id": "HS01",
+    "suite": "hints",
+    "structured_state_matches": null,
+    "semantic_assessment_required": true,
+    "context_independence": "declared; requires orchestrator/session evidence",
+    "limitation": "Matching state fields do not verify response or snapshot meaning. No learning outcome inferred."
+  }
+}

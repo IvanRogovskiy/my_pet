@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-14",
+  "timezone": "Europe/Moscow",
+  "authorization": "User explicitly replied «разрешаю» to separate clean-context checks for resume and hints.",
+  "started_at": "2026-10-14T10:18:57.726340+00:00",
+  "benchmark_version": "teaching-2026-10-14.1",
+  "attempt": 1,
+  "execution_root": "/private/tmp/course-teacher-run-noqf97ev",
+  "git_head": "a6d6620e95234a289e0fbe6950b1fc450c02b287",
+  "fork_turns": "none",
+  "independence": "Separate model contexts without parent history or author rubric; shared filesystem, access bounded by task instructions, not a filesystem security boundary.",
+  "assessment": "Coordinator model with author rubric; not independent human assessment.",
+  "runs": [
+    {
+      "case_id": "RS01",
+      "input_sha256": "4cf7516afe5056f98daf14976e2e9c6010d98d904bffe21990957c5b2e4a1300",
+      "input_path": "/private/tmp/course-teacher-run-noqf97ev/RS01/inputs",
+      "output_path": "/private/tmp/course-teacher-run-noqf97ev/RS01/output",
+      "status": "completed_first_response_assessed",
+      "agent_task": "/root/teacher_rs01",
+      "launch": {
+        "tool": "collaboration.spawn_agent",
+        "task_name": "teacher_rs01",
+        "fork_turns": "none",
+        "message": "Проведи один реальный ответ преподавателя по изолированной выдаче. Пользователь явно разрешил этот отдельный контекст. Твои единственные материалы задачи: /private/tmp/course-teacher-run-noqf97ev/RS01/inputs . Не читай исходный репозиторий, историю главного диалога, авторские рубрики, соседние каталоги или чужие ответы. Сначала прочитай TASK.md и TEACHER.md, затем остальные файлы ТОЛЬКО этой выдачи. Выполни запрос prompt.txt как преподаватель, следуя указанным материалам. Входные файлы не изменяй. Ответ запиши в /private/tmp/course-teacher-run-noqf97ev/RS01/output/answer.json по формату TASK.md; response должен содержать именно твой первый ответ ученику, без последующего улучшения по ключам. session.id укажи /root/teacher_rs01 (реальный канонический идентификатор этого контекста); date 2026-10-14; kind model; fresh_context true; history_messages 0. Имя/версию модели укажи только если известно, иначе явно неизвестно. Для input_sha256 вычисли SHA256 manifest в каноническом JSON: json.dumps(manifest,ensure_ascii=False,sort_keys=True,separators=(',',':')). snapshot содержит полные тексты состояния после ответа. Сохрани output/method.md: какие файлы прочитаны, фактические команды и границы исполнения; никаких выдуманных запусков. Можно использовать локальный Python, но не сеть, облако, дополнительные агенты или внешние материалы. Не запускай оценщик и не ищи ожидаемые результаты. После создания answer.json его не переписывай; о технической проблеме сообщи отдельно. В финале укажи только пути артефактов и кратко выполненные действия.",
+        "returned_task_name": "/root/teacher_rs01"
+      },
+      "output_sha256": {
+        "answer.json": "b5606e516f9c0b906fa3a0c9e06a4f502fabf0b19f7ef0565b09bd5baa08b52a",
+        "create_answer.py": "131238d5bb006c4c707cd4542447c8170ddb5872412a330b0a7ba8a467376e01",
+        "method.md": "dfe64620349cb6b6e2161a7246a6cf580ce596f5dad989e7f1c97507203dece7"
+      },
+      "structural_check_exit_code": 2,
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      }
+    },
+    {
+      "case_id": "RS02",
+      "input_sha256": "08b0310ba67d6b0e8f225574841d58d722ec56cd8fb5e2d2837245b6b7f8c0fd",
+      "input_path": "/private/tmp/course-teacher-run-noqf97ev/RS02/inputs",
+      "output_path": "/private/tmp/course-teacher-run-noqf97ev/RS02/output",
+      "status": "completed_first_response_assessed",
+      "agent_task": "/root/teacher_rs02",
+      "launch": {
+        "tool": "collaboration.spawn_agent",
+        "task_name": "teacher_rs02",
+        "fork_turns": "none",
+        "message": "Проведи один реальный ответ преподавателя по изолированной выдаче. Пользователь явно разрешил этот отдельный контекст. Твои единственные материалы задачи: /private/tmp/course-teacher-run-noqf97ev/RS02/inputs . Не читай исходный репозиторий, историю главного диалога, авторские рубрики, соседние каталоги или чужие ответы. Сначала прочитай TASK.md и TEACHER.md, затем остальные файлы ТОЛЬКО этой выдачи. Выполни запрос prompt.txt как преподаватель, следуя указанным материалам. Входные файлы не изменяй. Ответ запиши в /private/tmp/course-teacher-run-noqf97ev/RS02/output/answer.json по формату TASK.md; response должен содержать именно твой первый ответ ученику, без последующего улучшения по ключам. session.id укажи /root/teacher_rs02 (реальный канонический идентификатор этого контекста); date 2026-10-14; kind model; fresh_context true; history_messages 0. Имя/версию модели укажи только если известно, иначе явно неизвестно. Для input_sha256 вычисли SHA256 manifest в каноническом JSON: json.dumps(manifest,ensure_ascii=False,sort_keys=True,separators=(',',':')). snapshot содержит полные тексты состояния после ответа. Сохрани output/method.md: какие файлы прочитаны, фактические команды и границы исполнения; никаких выдуманных запусков. Можно использовать локальный Python, но не сеть, облако, дополнительные агенты или внешние материалы. Не запускай оценщик и не ищи ожидаемые результаты. После создания answer.json его не переписывай; о технической проблеме сообщи отдельно. В финале укажи только пути артефактов и кратко выполненные действия.",
+        "returned_task_name": "/root/teacher_rs02"
+      },
+      "output_sha256": {
+        "answer.json": "f0233e49ab2d53ab56d8ee0383b942fab560e8553b0b45b69a012919c2e4171f",
+        "create_artifacts.py": "0958b63976d37d24ff21bfe50c34084e9098d9f01289b826972919bc5710c1b8",
+        "method.md": "b5941084f972454ae447cc36c1205ee63e13376835c103daf6ad70628064082d"
+      },
+      "structural_check_exit_code": 2,
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      }
+    },
+    {
+      "case_id": "RS03",
+      "input_sha256": "89ecb9417f5f0d5c54ed734d14ad254378a1dde589f55cefb42f1c35d8664b8d",
+      "input_path": "/private/tmp/course-teacher-run-noqf97ev/RS03/inputs",
+      "output_path": "/private/tmp/course-teacher-run-noqf97ev/RS03/output",
+      "status": "completed_first_response_assessed",
+      "agent_task": "/root/teacher_rs03",
+      "launch": {
+        "tool": "collaboration.spawn_agent",
+        "task_name": "teacher_rs03",
+        "fork_turns": "none",
+        "message": "Проведи один реальный ответ преподавателя по изолированной выдаче. Пользователь явно разрешил этот отдельный контекст. Твои единственные материалы задачи: /private/tmp/course-teacher-run-noqf97ev/RS03/inputs . Не читай исходный репозиторий, историю главного диалога, авторские рубрики, соседние каталоги или чужие ответы. Сначала прочитай TASK.md и TEACHER.md, затем остальные файлы ТОЛЬКО этой выдачи. Выполни запрос prompt.txt как преподаватель, следуя указанным материалам. Входные файлы не изменяй. Ответ запиши в /private/tmp/course-teacher-run-noqf97ev/RS03/output/answer.json по формату TASK.md; response должен содержать именно твой первый ответ ученику, без последующего улучшения по ключам. session.id укажи /root/teacher_rs03 (реальный канонический идентификатор этого контекста); date 2026-10-14; kind model; fresh_context true; history_messages 0. Имя/версию модели укажи только если известно, иначе явно неизвестно. Для input_sha256 вычисли SHA256 manifest в каноническом JSON: json.dumps(manifest,ensure_ascii=False,sort_keys=True,separators=(',',':')). snapshot содержит полные тексты состояния после ответа. Сохрани output/method.md: какие файлы прочитаны, фактические команды и границы исполнения; никаких выдуманных запусков. Можно использовать локальный Python, но не сеть, облако, дополнительные агенты или внешние материалы. Не запускай оценщик и не ищи ожидаемые результаты. После создания answer.json его не переписывай; о технической проблеме сообщи отдельно. В финале укажи только пути артефактов и кратко выполненные действия.",
+        "returned_task_name": "/root/teacher_rs03"
+      },
+      "output_sha256": {
+        "answer.json": "307707c23062c5b60965fe30093f7502725c430531481f50fc49b418b99c0971",
+        "method.md": "8edb36893e6752e423f1de532db3d6fcc10c8eb958b6c762232e542a3038a298",
+        "response.txt": "3ebd7ccb417815ac3c007e4b80b40390555c0d9965c6d431a1a2d7c89a3243b6"
+      },
+      "structural_check_exit_code": 2,
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      }
+    },
+    {
+      "case_id": "HS01",
+      "input_sha256": "4aa968ab06b635a373f0bbc16037397f4c2808819492d45e0f3f745a919cbf74",
+      "input_path": "/private/tmp/course-teacher-run-noqf97ev/HS01/inputs",
+      "output_path": "/private/tmp/course-teacher-run-noqf97ev/HS01/output",
+      "status": "completed_first_response_assessed",
+      "agent_task": "/root/teacher_hs01",
+      "launch": {
+        "tool": "collaboration.spawn_agent",
+        "task_name": "teacher_hs01",
+        "fork_turns": "none",
+        "message": "Проведи один реальный ответ преподавателя по изолированной выдаче. Пользователь явно разрешил этот отдельный контекст. Твои единственные материалы задачи: /private/tmp/course-teacher-run-noqf97ev/HS01/inputs . Не читай исходный репозиторий, историю главного диалога, авторские рубрики, соседние каталоги или чужие ответы. Сначала прочитай TASK.md и TEACHER.md, затем остальные файлы ТОЛЬКО этой выдачи. Выполни запрос prompt.txt как преподаватель, следуя указанным материалам. Входные файлы не изменяй. Ответ запиши в /private/tmp/course-teacher-run-noqf97ev/HS01/output/answer.json по формату TASK.md; response должен содержать именно твой первый ответ ученику, без последующего улучшения по ключам. session.id укажи /root/teacher_hs01 (реальный канонический идентификатор этого контекста); date 2026-10-14; kind model; fresh_context true; history_messages 0. Имя/версию модели укажи только если известно, иначе явно неизвестно. Для input_sha256 вычисли SHA256 manifest в каноническом JSON: json.dumps(manifest,ensure_ascii=False,sort_keys=True,separators=(',',':')). Сохрани output/method.md: какие файлы прочитаны, фактические команды и границы исполнения; никаких выдуманных запусков. Можно использовать локальный Python, но не сеть, облако, дополнительные агенты или внешние материалы. Не запускай оценщик и не ищи ожидаемые результаты. После создания answer.json его не переписывай; о технической проблеме сообщи отдельно. В финале укажи только пути артефактов и кратко выполненные действия.",
+        "returned_task_name": "/root/teacher_hs01"
+      },
+      "output_sha256": {
+        "answer.json": "590ba4cdda167393db87766833020de9e15a35de08b5e63ab5b3245d31ee5a7d",
+        "method.md": "65dce80fc5ff7d104b13dc8c10f24c46dec37095ccc700683d954632e6c64725"
+      },
+      "structural_check_exit_code": 2,
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      }
+    },
+    {
+      "case_id": "HS02",
+      "input_sha256": "f8514f7526611aec2d97c5b52fe2de6a970ef4c16623e4a5c6a5f26124ef90f3",
+      "input_path": "/private/tmp/course-teacher-run-noqf97ev/HS02/inputs",
+      "output_path": "/private/tmp/course-teacher-run-noqf97ev/HS02/output",
+      "status": "completed_first_response_assessed",
+      "agent_task": "/root/teacher_hs02",
+      "launch": {
+        "tool": "collaboration.spawn_agent",
+        "task_name": "teacher_hs02",
+        "fork_turns": "none",
+        "message": "Проведи один реальный ответ преподавателя по изолированной выдаче. Пользователь явно разрешил этот отдельный контекст. Твои единственные материалы задачи: /private/tmp/course-teacher-run-noqf97ev/HS02/inputs . Не читай исходный репозиторий, историю главного диалога, авторские рубрики, соседние каталоги или чужие ответы. Сначала прочитай TASK.md и TEACHER.md, затем остальные файлы ТОЛЬКО этой выдачи. Выполни запрос prompt.txt как преподаватель, следуя указанным материалам. Входные файлы не изменяй. Ответ запиши в /private/tmp/course-teacher-run-noqf97ev/HS02/output/answer.json по формату TASK.md; response должен содержать именно твой первый ответ ученику, без последующего улучшения по ключам. session.id укажи /root/teacher_hs02 (реальный канонический идентификатор этого контекста); date 2026-10-14; kind model; fresh_context true; history_messages 0. Имя/версию модели укажи только если известно, иначе явно неизвестно. Для input_sha256 вычисли SHA256 manifest в каноническом JSON: json.dumps(manifest,ensure_ascii=False,sort_keys=True,separators=(',',':')). Сохрани output/method.md: какие файлы прочитаны, фактические команды и границы исполнения; никаких выдуманных запусков. Можно использовать локальный Python, но не сеть, облако, дополнительные агенты или внешние материалы. Не запускай оценщик и не ищи ожидаемые результаты. После создания answer.json его не переписывай; о технической проблеме сообщи отдельно. В финале укажи только пути артефактов и кратко выполненные действия.",
+        "returned_task_name": "/root/teacher_hs02"
+      },
+      "output_sha256": {
+        "answer.json": "3a4586e6774ac788a03e16cee1f99648c7689f7e63ae0ac99075433f1a5affa1",
+        "method.md": "b28a0fb3e96e73e2a4fbb6e3ad89cd55cf2075b4843e54afcd2ccf9b44a0de87"
+      },
+      "structural_check_exit_code": 2,
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 3,
+        "error": 0,
+        "unverified": 1
+      }
+    },
+    {
+      "case_id": "HS03",
+      "input_sha256": "929511b248125fc69a24c6da16e86fd2cdbf9e0b1e7e12e99757d6009a6552f7",
+      "input_path": "/private/tmp/course-teacher-run-noqf97ev/HS03/inputs",
+      "output_path": "/private/tmp/course-teacher-run-noqf97ev/HS03/output",
+      "status": "completed_first_response_assessed",
+      "agent_task": "/root/teacher_hs03",
+      "launch": {
+        "tool": "collaboration.spawn_agent",
+        "task_name": "teacher_hs03",
+        "fork_turns": "none",
+        "message": "Проведи один реальный ответ преподавателя по изолированной выдаче. Пользователь явно разрешил этот отдельный контекст. Твои единственные материалы задачи: /private/tmp/course-teacher-run-noqf97ev/HS03/inputs . Не читай исходный репозиторий, историю главного диалога, авторские рубрики, соседние каталоги или чужие ответы. Сначала прочитай TASK.md и TEACHER.md, затем остальные файлы ТОЛЬКО этой выдачи. Выполни запрос prompt.txt как преподаватель, следуя указанным материалам. Входные файлы не изменяй. Ответ запиши в /private/tmp/course-teacher-run-noqf97ev/HS03/output/answer.json по формату TASK.md; response должен содержать именно твой первый ответ ученику, без последующего улучшения по ключам. session.id укажи /root/teacher_hs03 (реальный канонический идентификатор этого контекста); date 2026-10-14; kind model; fresh_context true; history_messages 0. Имя/версию модели укажи только если известно, иначе явно неизвестно. Для input_sha256 вычисли SHA256 manifest в каноническом JSON: json.dumps(manifest,ensure_ascii=False,sort_keys=True,separators=(',',':')). Сохрани output/method.md: какие файлы прочитаны, фактические команды и границы исполнения; никаких выдуманных запусков. Можно использовать локальный Python, но не сеть, облако, дополнительные агенты или внешние материалы. Не запускай оценщик и не ищи ожидаемые результаты. После создания answer.json его не переписывай; о технической проблеме сообщи отдельно. В финале укажи только пути артефактов и кратко выполненные действия.",
+        "returned_task_name": "/root/teacher_hs03"
+      },
+      "output_sha256": {
+        "answer.json": "1e3f088948031cf4da30fb6fab01ed9e7cf9a9fbf32ff7c882f5a0033b4d1b42",
+        "create_answer.py": "1f9b98d8565c7fcff1da7590a38f0a814112730167153da2ebb97e3a11ad1c2e",
+        "method.md": "6c1b9ba728149552eb0834c12cdefca1888608c7696a6d2cecb0a85f2a950ccc"
+      },
+      "structural_check_exit_code": 2,
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      }
+    }
+  ],
+  "result_summary": {
+    "independent_contexts": 6,
+    "attempts_per_case": 1,
+    "original_format_passes": 0,
+    "original_format_failures": 6,
+    "resume_semantically_confirmed": 3,
+    "hints_fully_confirmed": 2,
+    "hints_with_unverified_criterion": 1,
+    "semantic_criteria_counts": {
+      "confirmed": 23,
+      "error": 0,
+      "unverified": 1,
+      "pending": 0
+    }
+  },
+  "evaluation_fix": "assessment_template now checks input/response identity, not the entire recording envelope. Raw structural failures and original answer hashes preserved.",
+  "completed_at": "2026-10-14T10:31:08.838505+00:00"
+}

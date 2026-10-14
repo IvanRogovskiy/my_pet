@@ -1,0 +1,18 @@
+{
+  "purpose": "Diagnostic only, not a corrected model answer or a first-pass score",
+  "transform": "execution list joined with newline in memory; all other values unchanged",
+  "original_answer_sha256": "b60807aee5179c544dd5af0637d2cd2f5394047a41eeba8ef038dca744eecaf2",
+  "diagnostic_result": {
+    "record_complete": true,
+    "case_id": "RS02",
+    "suite": "resume",
+    "structured_state_matches": {
+      "part": true,
+      "practice": true,
+      "issues": true
+    },
+    "semantic_assessment_required": true,
+    "context_independence": "declared; requires orchestrator/session evidence",
+    "limitation": "Matching state fields do not verify response or snapshot meaning. No learning outcome inferred."
+  }
+}

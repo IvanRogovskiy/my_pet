@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/usr/local/opt/python@3.12/bin/python3.12",
+    "-B",
+    "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+    "assess",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/HS01",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS01/answer.json",
+    "--assessment",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS01/semantic-assessment.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"case_id\": \"HS01\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 4,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Различает выход функции и состояние после исключения.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response прямо различает ValueError без обычного возвращаемого значения и сохранение исходного списка; возврат остатка относится только к успеху.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Один пример нехватки с ожидаемым неизменным списком.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Пример stock=[3], qty=5: ожидаются ValueError и неизменный [3]. Это вывод из условия, не заявленный запуск.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Просит ученика назвать ожидаемое поведение конкретного вызова.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Вопрос о stock=[3], qty=2 просит ученика самостоятельно назвать возврат и состояние списка. Это конкретный соседний случай.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Не выдаёт реализацию и не диагностирует ещё не предъявленный код.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"В ответе нет реализации reserve и обвинений в дефекте отсутствующего кода. Требуется объяснить поведение по данному C1.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+  "stderr": ""
+}

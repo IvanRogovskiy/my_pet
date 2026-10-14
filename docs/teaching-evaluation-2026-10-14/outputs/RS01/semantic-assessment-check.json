@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/usr/local/opt/python@3.12/bin/python3.12",
+    "-B",
+    "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+    "assess",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/RS01",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS01/answer.json",
+    "--assessment",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS01/semantic-assessment.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"case_id\": \"RS01\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 4,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Восстановлены текущая часть и полный маршрут из файлов без истории чата.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response: «Продолжаем практику 08/1, версия v1, по полному маршруту». snapshot.PROGRESS сохраняет полный маршрут 30/92; состояние взято из выданных файлов, а запуск выполнен с fork_turns=none.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Следующий шаг соответствует сохранённому действию: Продолжить самостоятельную реализацию reserve; попросить первую попытку, если она ещё не готова.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response просит «дописать функцию и прислать её с двумя примерами». Это первая самостоятельная сдача по assignment.md; заготовка pass не принята как выполненная работа.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Нет новой приёмки, выдуманного запуска или потери истории замечаний.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response: «Ревью пока не было»; recovered.issues пуст. snapshot сохраняет отсутствие runtime-доказательства. execution/method описывают только чтение; приёмки и запуска функции не заявлено.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Ответ даёт одно полезное действие; отсутствующие данные не заменены догадкой.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Следующее действие — предъявить функцию с двумя примерами из исходного задания. Готового решения нет; неизвестный номер следующей части не придуман. Развёрнутый текст practice отражает верное состояние, хотя не совпадает с буквальной меткой оценщика.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+  "stderr": ""
+}

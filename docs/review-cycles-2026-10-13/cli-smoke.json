@@ -1,0 +1,274 @@
+{
+  "purpose": "Synthetic CLI/score tests only; no real teacher conversation or human learning result.",
+  "checks": [
+    {
+      "check": "all authored functions",
+      "action": "validate",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC01 export 1",
+      "action": "export",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC01 completeness 1",
+      "action": "check",
+      "exit": 1,
+      "expected_exit": 1
+    },
+    {
+      "check": "RC01 export 2",
+      "action": "export",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC01 completeness 2",
+      "action": "check",
+      "exit": 1,
+      "expected_exit": 1
+    },
+    {
+      "check": "RC01 export 3",
+      "action": "export",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC01 completeness 3",
+      "action": "check",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC01 final score",
+      "action": "score",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC02 export 1",
+      "action": "export",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC02 completeness 1",
+      "action": "check",
+      "exit": 1,
+      "expected_exit": 1
+    },
+    {
+      "check": "RC02 export 2",
+      "action": "export",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC02 completeness 2",
+      "action": "check",
+      "exit": 1,
+      "expected_exit": 1
+    },
+    {
+      "check": "RC02 export 3",
+      "action": "export",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC02 completeness 3",
+      "action": "check",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC02 final score",
+      "action": "score",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC03 export 1",
+      "action": "export",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC03 completeness 1",
+      "action": "check",
+      "exit": 1,
+      "expected_exit": 1
+    },
+    {
+      "check": "RC03 export 2",
+      "action": "export",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC03 completeness 2",
+      "action": "check",
+      "exit": 1,
+      "expected_exit": 1
+    },
+    {
+      "check": "RC03 export 3",
+      "action": "export",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC03 completeness 3",
+      "action": "check",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "RC03 final score",
+      "action": "score",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "refuse existing export",
+      "action": "export",
+      "exit": 2,
+      "expected_exit": 2
+    },
+    {
+      "check": "refuse skipped turn",
+      "action": "export",
+      "exit": 2,
+      "expected_exit": 2
+    },
+    {
+      "check": "detect edited prior snapshot",
+      "action": "check",
+      "exit": 2,
+      "expected_exit": 2
+    },
+    {
+      "check": "reject wrong final acceptance decision",
+      "action": "score",
+      "exit": 1,
+      "expected_exit": 1
+    },
+    {
+      "check": "assessment template",
+      "action": "assessment-template",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "external ratings arithmetic",
+      "action": "score",
+      "exit": 0,
+      "expected_exit": 0
+    },
+    {
+      "check": "reject stale explanation assessment",
+      "action": "score",
+      "exit": 2,
+      "expected_exit": 2
+    }
+  ],
+  "results": {
+    "RC01": {
+      "synthetic_turns_matched": 3,
+      "semantic_assessment_performed": false
+    },
+    "RC02": {
+      "synthetic_turns_matched": 3,
+      "semantic_assessment_performed": false
+    },
+    "RC03": {
+      "synthetic_turns_matched": 3,
+      "semantic_assessment_performed": false
+    }
+  },
+  "authored_fixture_validation": {
+    "RC01": [
+      {
+        "turn": 1,
+        "observed": {
+          "C1": "error",
+          "C2": "error"
+        },
+        "matches": true
+      },
+      {
+        "turn": 2,
+        "observed": {
+          "C1": "confirmed",
+          "C2": "error"
+        },
+        "matches": true
+      },
+      {
+        "turn": 3,
+        "observed": {
+          "C1": "confirmed",
+          "C2": "confirmed"
+        },
+        "matches": true
+      }
+    ],
+    "RC02": [
+      {
+        "turn": 1,
+        "observed": {
+          "C1": "confirmed",
+          "C2": "confirmed",
+          "C3": "error"
+        },
+        "matches": true
+      },
+      {
+        "turn": 2,
+        "observed": {
+          "C1": "confirmed",
+          "C2": "error",
+          "C3": "confirmed"
+        },
+        "matches": true
+      },
+      {
+        "turn": 3,
+        "observed": {
+          "C1": "confirmed",
+          "C2": "confirmed",
+          "C3": "confirmed"
+        },
+        "matches": true
+      }
+    ],
+    "RC03": [
+      {
+        "turn": 1,
+        "observed": {
+          "C1": "confirmed"
+        },
+        "matches": true
+      },
+      {
+        "turn": 2,
+        "observed": {
+          "C1": "error"
+        },
+        "matches": true
+      },
+      {
+        "turn": 3,
+        "observed": {
+          "C1": "confirmed"
+        },
+        "matches": true
+      }
+    ]
+  },
+  "passed": true
+}

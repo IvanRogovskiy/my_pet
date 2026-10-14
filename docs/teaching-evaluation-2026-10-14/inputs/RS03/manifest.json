@@ -1,0 +1,19 @@
+{
+  "version": "teaching-2026-10-14.1",
+  "case_id": "RS03",
+  "suite": "resume",
+  "source_sha256": {
+    "SKILL.md": "7bf1a20a9a5bc6998b6be6969f01ce64db6beabbb7d999c25e925ec540ff972f",
+    "references/learning-workspace.md": "7375252b4cc57b5e4edce08b7789354584dcd9f829e98f6add017f782241c14d",
+    "references/practice-review.md": "986632c032b262ccc5baf25928e162059786d58fa6557ec53fc5a8f8d60c504e"
+  },
+  "sha256": {
+    "learning/PROGRESS.md": "ac12741bd7f2e4f50b3bdf0c4e1a846cfd5d54f8cf7a23c7b0db38e80e83ad7c",
+    "learning/NOTES.md": "48a645e4d8cfee6205394f1239d4df2f160e252c4464aefde8a7019a5e8a8ddc",
+    "assignment.md": "8d676ba5734b456015678d978edf9a48fa018d9f2883a95a52b51fbd29e96eaa",
+    "submission.py": "629aa3f460a82aff9ab2cbaeaa11cff7a4c9f967da9ee8eca618f2a1815713df",
+    "prompt.txt": "c7588121f5042ad00542bd28382382bd1df5ed44f0385b01185a22b725c78038",
+    "TEACHER.md": "fa96436b74827300849c85667223e849673d8046817f70ec23fdf70dba4aadb1",
+    "TASK.md": "fed36020df8ae5da466f214e886e0fdc466d427d4e9608b89f8735cb4562f886"
+  }
+}

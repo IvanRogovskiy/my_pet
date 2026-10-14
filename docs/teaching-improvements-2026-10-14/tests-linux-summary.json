@@ -1,0 +1,10 @@
+{
+  "command": "docker run --rm --pull=never --network none --name course-teaching-check-20261014 --label course.audit=teaching-20261014 --user 10001:10001 --env PYTHONDONTWRITEBYTECODE=1 --mount type=bind,source=/Users/ivanrogovskiy/Documents/tries/my_pet/backend-devops-theory,target=/workspace/backend-devops-theory,readonly --workdir /workspace --entrypoint python sha256:9f9ef3aae1e00e04295448895839e5f03933b84309297ad2942d8c5c8d827377 -B -m unittest discover -v -s backend-devops-theory/tests",
+  "tool_session_id": 9740,
+  "exit_code": 0,
+  "tests": 100,
+  "skipped": 0,
+  "elapsed_test_seconds": 4.383,
+  "evidence_kind": "Summary transcribed from actual tool output; not a full raw log",
+  "stage": "Full suite before final contract wording clarifications and document date updates; final focused run covers those changes."
+}

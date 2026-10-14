@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/usr/local/opt/python@3.12/bin/python3.12",
+    "-B",
+    "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+    "assess",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/HS02",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS02/answer.json",
+    "--assessment",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS02/semantic-assessment.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"case_id\": \"HS02\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 3,\n    \"error\": 0,\n    \"unverified\": 1\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Исправляет смешение атомарности и сериализации без заявления о запуске.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response различает «все изменения транзакции или ни одного» и постановку транзакций в очередь; о выполненном PostgreSQL-тесте не заявляет.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Предлагает рассмотреть два чтения прежнего остатка до записей.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Явно предложены A читает → B читает → проверки до записи при stock=1 и обычном чтении без блокировки. Это корректное начало опасного чередования.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Одно диагностическое действие: ученик строит расписание.\",\n      \"result\": \"unverified\",\n      \"evidence\": \"Ответ уже задаёт четыре шага расписания и просит определить прочитанный остаток и прохождение проверок. Это одно полезное диагностическое действие, но самостоятельное построение/достраивание расписания, буквально указанное в K3, не запрошено. Не считаю это доказанным дефектом обучения: профиль допускает предложенное преподавателем расписание; критерий требует уточнения до следующего прогона.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Не выдаёт готовый SQL/функцию и не требует изменения несуществующего кода.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"SQL и готовая функция отсутствуют. Изменить несуществующий код не требуется; ученик должен рассудить о заданном сценарии.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+  "stderr": ""
+}
