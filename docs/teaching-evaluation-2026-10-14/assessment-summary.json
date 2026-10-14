@@ -1,0 +1,105 @@
+{
+  "assessor": "Coordinator model, author-aware; not an independent human judgment",
+  "original_answers_unchanged": true,
+  "original_format_passes": 0,
+  "original_format_failures": 6,
+  "semantic_criteria_counts": {
+    "confirmed": 23,
+    "error": 0,
+    "unverified": 1,
+    "pending": 0
+  },
+  "rows": [
+    {
+      "case_id": "RS01",
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      },
+      "original_structural_exit_code": 2,
+      "response_sha256": "641c175bd9f1bfbd3649e4f3ad4875c8995a2f568c53793c71fd1ea8248ae219",
+      "answer_sha256": "e70b757975ec1aeebd9b29781f5bdbcd51ed593fcdc9b38dbd8f1051775b8e99",
+      "diagnostic_state_matches": {
+        "part": true,
+        "practice": false,
+        "issues": true
+      }
+    },
+    {
+      "case_id": "RS02",
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      },
+      "original_structural_exit_code": 2,
+      "response_sha256": "650ec2af8756aca44533379f8261c89c342c8e7f532ba10d19ef81130ccfbb0d",
+      "answer_sha256": "b60807aee5179c544dd5af0637d2cd2f5394047a41eeba8ef038dca744eecaf2",
+      "diagnostic_state_matches": {
+        "part": true,
+        "practice": true,
+        "issues": true
+      }
+    },
+    {
+      "case_id": "RS03",
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      },
+      "original_structural_exit_code": 2,
+      "response_sha256": "3ebd7ccb417815ac3c007e4b80b40390555c0d9965c6d431a1a2d7c89a3243b6",
+      "answer_sha256": "8d9732083a30d0ec880757d818267ce31ee4646af8b9d7fd597c4cece2b93133",
+      "diagnostic_state_matches": {
+        "part": true,
+        "practice": true,
+        "issues": true
+      }
+    },
+    {
+      "case_id": "HS01",
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      },
+      "original_structural_exit_code": 2,
+      "response_sha256": "e11d7eb7d45da06e717b71535206791cf1159d0b116272592b8214c5616b578e",
+      "answer_sha256": "7d2528cf86f44b6276503da33271b4bc213d63a51b95c4da82c4d81e7f4e1930",
+      "diagnostic_state_matches": null
+    },
+    {
+      "case_id": "HS02",
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 3,
+        "error": 0,
+        "unverified": 1
+      },
+      "original_structural_exit_code": 2,
+      "response_sha256": "e7541bbb8b7ff21ef71387f24f8e828d2cabd8509814241954ca506e5a751d1f",
+      "answer_sha256": "49087e5697d75f99a98c6264e2993d8482bd68f1e4ebcb5d7b22260e88cf4b7b",
+      "diagnostic_state_matches": null
+    },
+    {
+      "case_id": "HS03",
+      "semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      },
+      "original_structural_exit_code": 2,
+      "response_sha256": "d59e7536808e2b2987131479f6af44a951e1f50c57be5ae15d55ac55dcdb5a25",
+      "answer_sha256": "32afd05991991d7a55593ccacd149b4f8a106cf3993c1640090c3bba2db39fd1",
+      "diagnostic_state_matches": null
+    }
+  ],
+  "learner_effectiveness_measured": false
+}

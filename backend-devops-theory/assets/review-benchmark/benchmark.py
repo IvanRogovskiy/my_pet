@@ -41,7 +41,11 @@ def case_files(case):
 
 
 def export(destination, version=VERSION):
-    cases = cases_for(version)
+    return export_cases(destination, cases_for(version), version)
+
+
+def export_cases(destination, cases, version):
+    """Export an explicit dataset without changing the historical RV bundles."""
     if destination.exists() or destination.is_symlink():
         raise ValueError("export requires a new directory")
     destination.mkdir(parents=True, mode=0o700)
@@ -59,12 +63,17 @@ def export(destination, version=VERSION):
 
 
 def score(answer, assessment=None, version=VERSION):
+    return score_cases(answer, cases_for(version), version, assessment)
+
+
+def score_cases(answer, cases, version, assessment=None):
+    """Shared grader; corpus selection remains explicit at each CLI boundary."""
     if not isinstance(answer, dict) or not isinstance(answer.get("reviews"), list):
         raise ValueError("expected an object containing reviews array")
     reviews = answer.get("reviews", [])
     if answer.get("benchmark_version", version) != version:
         raise ValueError("answer belongs to a different benchmark version")
-    expected = {c["id"]:c for c in cases_for(version)}
+    expected = {c["id"]:c for c in cases}
     seen, rows, errors = set(), [], []
     tp = fp = fn = matches = 0
     false_alarms, missed_bugs, false_rejections = [], [], []

@@ -1,0 +1,25 @@
+{
+  "benchmark_version": "teaching-2026-10-14.1",
+  "case_id": "HS03",
+  "input_sha256": "929511b248125fc69a24c6da16e86fd2cdbf9e0b1e7e12e99757d6009a6552f7",
+  "prompt": "Понимаю: при отказе остаток должен сохраниться. Но мой тест падает. Помоги найти причину одним следующим шагом, функцию за меня не переписывай.",
+  "response": "Сделай один диагностический прогон с `stock = [1]` и `qty = 2`: в отладчике остановись перед `submission.py:2`, затем проследи значение `stock` сразу после этой строки и после перехвата `ValueError`. Так мы увидим, в какой момент меняется список и отменяет ли исключение это изменение. Пришли эти два значения.\n\nОпираюсь на код и твой журнал; сам функцию не запускал.",
+  "execution": [
+    "Среда: локальная файловая система; shell zsh; cwd /Users/ivanrogovskiy; локальный python3; дата 2026-10-14.",
+    "static_only: submission.py прочитан; reserve и тесты не запускались. evidence.txt — предоставленный журнал ученика, не мой запуск.",
+    "cat /private/tmp/course-teacher-run-noqf97ev/HS03/inputs/TASK.md /private/tmp/course-teacher-run-noqf97ev/HS03/inputs/TEACHER.md — успешно, exit_code 0.",
+    "rg --files /private/tmp/course-teacher-run-noqf97ev/HS03/inputs — успешно, exit_code 0; перечислены семь файлов выдачи.",
+    "python3 через heredoc прочитал manifest.json, prompt.txt, assignment.md, submission.py, evidence.txt только внутри inputs; успешно, exit_code 0; точная команда записана в method.md.",
+    "mkdir -p /private/tmp/course-teacher-run-noqf97ev/HS03/output — успешно, exit_code 0.",
+    "Локальный create_answer.py вычислил SHA256 канонического JSON manifest и записал первый ответ через эксклюзивное создание; результат выполнения фиксируется в method.md.",
+    "Сеть, облако, исходный репозиторий, соседние выдачи, авторские рубрики, оценщик и дополнительные агенты не использовались. Входные файлы не изменялись."
+  ],
+  "session": {
+    "id": "/root/teacher_hs03",
+    "name": "Codex; точное имя и версия модели неизвестны",
+    "date": "2026-10-14",
+    "kind": "model",
+    "fresh_context": true,
+    "history_messages": 0
+  }
+}

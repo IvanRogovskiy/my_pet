@@ -1,0 +1,27 @@
+{
+  "author": "coordinator, independent corroboration of supplied function, not a teacher rerun",
+  "first": {
+    "id": 1,
+    "payload": {
+      "amount": 10
+    }
+  },
+  "same_body_same_object": true,
+  "other_buyer": {
+    "id": 2,
+    "payload": {
+      "amount": 20
+    }
+  },
+  "independent_objects": true,
+  "entries": 2,
+  "changed_body_return": {
+    "id": 1,
+    "payload": {
+      "amount": 10
+    }
+  },
+  "changed_body_same_object": true,
+  "ValueError_raised": false,
+  "runtime": "local Python in memory; no PostgreSQL/Docker"
+}

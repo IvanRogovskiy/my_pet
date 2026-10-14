@@ -1,0 +1,19 @@
+test_answer_cannot_move_between_scenarios_or_inputs (test_teaching_benchmark.TeachingBenchmark.test_answer_cannot_move_between_scenarios_or_inputs) ... ok
+test_assessment_is_bound_to_verbatim_answer_and_rubric (test_teaching_benchmark.TeachingBenchmark.test_assessment_is_bound_to_verbatim_answer_and_rubric) ... ok
+test_assessment_requires_evidence_for_success_and_failure (test_teaching_benchmark.TeachingBenchmark.test_assessment_requires_evidence_for_success_and_failure) ... ok
+test_changed_extra_missing_and_symlink_inputs_rejected (test_teaching_benchmark.TeachingBenchmark.test_changed_extra_missing_and_symlink_inputs_rejected) ... ok
+test_empty_run_is_incomplete_and_paths_cannot_escape (test_teaching_benchmark.TeachingBenchmark.test_empty_run_is_incomplete_and_paths_cannot_escape) ... ok
+test_existing_context_or_blank_snapshot_is_not_restart (test_teaching_benchmark.TeachingBenchmark.test_existing_context_or_blank_snapshot_is_not_restart) ... ok
+test_export_never_overwrites_existing_or_symlink_destination (test_teaching_benchmark.TeachingBenchmark.test_export_never_overwrites_existing_or_symlink_destination) ... ok
+test_exports_all_scenarios_without_author_rubrics_or_answers (test_teaching_benchmark.TeachingBenchmark.test_exports_all_scenarios_without_author_rubrics_or_answers) ... ok
+test_fabricated_acceptance_and_wrong_part_are_visible (test_teaching_benchmark.TeachingBenchmark.test_fabricated_acceptance_and_wrong_part_are_visible) ... ok
+test_lost_open_issue_and_lost_closed_history_are_visible (test_teaching_benchmark.TeachingBenchmark.test_lost_open_issue_and_lost_closed_history_are_visible) ... ok
+test_rehashed_changed_scenario_cannot_claim_original_version (test_teaching_benchmark.TeachingBenchmark.test_rehashed_changed_scenario_cannot_claim_original_version) ... ok
+test_same_context_cannot_stand_for_three_new_sessions (test_teaching_benchmark.TeachingBenchmark.test_same_context_cannot_stand_for_three_new_sessions) ... ok
+test_semantic_assessment_accepts_original_response_with_invalid_envelope (test_teaching_benchmark.TeachingBenchmark.test_semantic_assessment_accepts_original_response_with_invalid_envelope) ... ok
+test_semantic_assessment_still_requires_exact_inputs_and_nonempty_response (test_teaching_benchmark.TeachingBenchmark.test_semantic_assessment_still_requires_exact_inputs_and_nonempty_response) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.201s
+
+OK

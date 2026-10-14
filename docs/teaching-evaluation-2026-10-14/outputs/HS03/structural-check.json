@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/usr/local/opt/python@3.12/bin/python3.12",
+    "-B",
+    "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+    "check",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/HS03",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS03/answer.json"
+  ],
+  "exit_code": 2,
+  "stdout": "",
+  "stderr": "Invalid input: verbatim response and execution description required\n"
+}

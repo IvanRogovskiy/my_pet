@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-14",
+  "timezone": "Europe/Moscow",
+  "branch": "codex/review-cycle-benchmark-2026-10-13",
+  "base_commit": "a6d6620e95234a289e0fbe6950b1fc450c02b287",
+  "working_tree_note": "Includes earlier uncommitted RC cycle changes; unrelated IDE and course-audit files left untouched.",
+  "python": "3.12.3 (main, Apr  9 2024, 08:09:14) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "platform": "macOS-26.6.2-x86_64-i386-64bit",
+  "checks": {
+    "linux_full": {
+      "passed": 100,
+      "failed": 0,
+      "skipped": 0
+    },
+    "final_macos_focused": {
+      "passed": 21,
+      "failed": 0
+    },
+    "cli_smoke": {
+      "checks": 58,
+      "all_expected_exit_codes": true,
+      "stage": "Before final contract wording clarifications; final exports and focused tests follow those clarifications."
+    },
+    "final_exports": 13,
+    "historical_exports": [
+      {
+        "version": "2026-10-06.1",
+        "files": 30,
+        "byte_identical_to_HEAD": true
+      },
+      {
+        "version": "2026-10-12.1",
+        "files": 53,
+        "byte_identical_to_HEAD": true
+      }
+    ],
+    "docker_audit_container_remaining": false
+  },
+  "datasets": {
+    "teaching": "teaching-2026-10-14.1",
+    "holdout": "holdout-2026-10-14.1"
+  },
+  "actual_teacher_runs": {
+    "resume": "completed_3_fresh_contexts_semantically_confirmed",
+    "hints": "completed_3_fresh_contexts_11_confirmed_1_unverified",
+    "holdout_comparison": "not_run"
+  },
+  "learner_transfer_results": "not_run_no_real_participant",
+  "synthetic_test_records_are_performance_evidence": false,
+  "prepared_inputs": [
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/RS01",
+      "input_sha256": "4cf7516afe5056f98daf14976e2e9c6010d98d904bffe21990957c5b2e4a1300",
+      "case_id": "RS01",
+      "status": "actual_first_response_recorded"
+    },
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/RS02",
+      "input_sha256": "08b0310ba67d6b0e8f225574841d58d722ec56cd8fb5e2d2837245b6b7f8c0fd",
+      "case_id": "RS02",
+      "status": "actual_first_response_recorded"
+    },
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/RS03",
+      "input_sha256": "89ecb9417f5f0d5c54ed734d14ad254378a1dde589f55cefb42f1c35d8664b8d",
+      "case_id": "RS03",
+      "status": "actual_first_response_recorded"
+    },
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/HS01",
+      "input_sha256": "4aa968ab06b635a373f0bbc16037397f4c2808819492d45e0f3f745a919cbf74",
+      "case_id": "HS01",
+      "status": "actual_first_response_recorded"
+    },
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/HS02",
+      "input_sha256": "f8514f7526611aec2d97c5b52fe2de6a970ef4c16623e4a5c6a5f26124ef90f3",
+      "case_id": "HS02",
+      "status": "actual_first_response_recorded"
+    },
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/HS03",
+      "input_sha256": "929511b248125fc69a24c6da16e86fd2cdbf9e0b1e7e12e99757d6009a6552f7",
+      "case_id": "HS03",
+      "status": "actual_first_response_recorded"
+    },
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/TR01",
+      "input_sha256": "05f1fd7f81a388d8d07b9cdb8dd8e8ad78aadb00312058fe3fe3e49483650e6c",
+      "case_id": "TR01",
+      "status": "prepared_no_response"
+    },
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/TR02",
+      "input_sha256": "fe2bdd47dc5bd711e2862bb3fbb14a5e491d1f5170365ea23d20e85ae2702061",
+      "case_id": "TR02",
+      "status": "prepared_no_response"
+    },
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/TR03",
+      "input_sha256": "06919b6fb6a1fdfc47872965c5aafdf592f9897fbba0d290128c029235920145",
+      "case_id": "TR03",
+      "status": "prepared_no_response"
+    },
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/TR04",
+      "input_sha256": "76db6900506c083917dc8b7959bb216055e32e25544a05edd8cf32db6feab2dc",
+      "case_id": "TR04",
+      "status": "prepared_no_response"
+    },
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/TR05",
+      "input_sha256": "6e4e7ce7ff3c0c501b27814272945952dcc2afeaf648b346bd31ad8dc456ffb9",
+      "case_id": "TR05",
+      "status": "prepared_no_response"
+    },
+    {
+      "path": "/private/tmp/course-teaching-ready-c0bk713t/TR06",
+      "input_sha256": "f738aa766b3534ab7f8b485336473c16dfcc0b8c5670c5ad21a9ab71e0859bb2",
+      "case_id": "TR06",
+      "status": "prepared_no_response"
+    }
+  ],
+  "prepared_control": {
+    "path": "/private/tmp/course-teaching-ready-c0bk713t/holdout",
+    "input_sha256": "c1b0b33d3e903d5738d6ebd1f0cfe09810e5e0c02916686b844c2deb5da012ca",
+    "version": "holdout-2026-10-14.1",
+    "status": "prepared_no_response"
+  },
+  "source_sha256": {
+    "backend-devops-theory/SKILL.md": "7bf1a20a9a5bc6998b6be6969f01ce64db6beabbb7d999c25e925ec540ff972f",
+    "backend-devops-theory/references/learning-workspace.md": "7375252b4cc57b5e4edce08b7789354584dcd9f829e98f6add017f782241c14d",
+    "backend-devops-theory/references/practice-review.md": "986632c032b262ccc5baf25928e162059786d58fa6557ec53fc5a8f8d60c504e",
+    "backend-devops-theory/references/transfer-practice.md": "4a2e6cf713757579d560858ad5402f7a36f16e99e49f290c22867d9aaaea7877",
+    "backend-devops-theory/references/course-maintenance.md": "b7f14b4197f4de4229d5acc906349c31ac23935a93460f18c3c17adbae027e0e",
+    "backend-devops-theory/assets/teaching-benchmark/teaching.py": "d8e782000a4bdd04c4259d226d5bbb3098f800d178dee7edce34c06e73b6c181",
+    "backend-devops-theory/assets/teaching-benchmark/teaching_cases.py": "31dba10bfb8347f1a09413dc1831cabaf0d6a7e7da306418294682e895ce0394",
+    "backend-devops-theory/assets/teaching-benchmark/README.md": "50ddd7ade041ce39b050ed5c4aae142d664b2a5ba6f190117f38fe48690d556b",
+    "backend-devops-theory/assets/review-benchmark/benchmark.py": "c0a026d30dc6bcee3b30a300165e316419d25441bc17f1dbee89f4048b124927",
+    "backend-devops-theory/assets/review-benchmark/holdout_corpus.py": "232b203284ac6e974be873c6acd60298030eb94b32358a8dad5281ce9d7229dc",
+    "backend-devops-theory/assets/review-benchmark/review_holdout.py": "fa2a60e59b2c03897d815ecaa32f3c2b494a7bbbf7686f36515aecbb3c2e29dd",
+    "backend-devops-theory/assets/review-benchmark/HOLDOUT.md": "97cb3d4bb5bffd00f3218e3b5116d7e9fc8fa79f49105f6b5592a7eff4671fbd",
+    "backend-devops-theory/tests/test_teaching_benchmark.py": "7c6a2a9e1aa5368ae5714651b8b55636f205fbabea26f9742d1455744b15bbee",
+    "backend-devops-theory/tests/test_review_holdout.py": "9f2db1d728b20a21070e1b35f2549df46c0f115d8f46339aae3f35971619a927",
+    "backend-devops-theory/assets/dialogue-benchmark/README.md": "0edfdff7373b0b3303ce1f125769585bad73985049c4b543c37bb2bdff509f32",
+    "backend-devops-theory/assets/review-benchmark/README.md": "112b0f80275502b310fcd4bf0e0d9d56955f870af1dfe0856b303d3ac618ca06"
+  },
+  "evidence_sha256": {
+    "cli-smoke.json": "c30a37c5e5bf13c77cfa1791052a8ece1e54d71877ff3e1a7b06ac71a7febbe1",
+    "tests-final-macos.txt": "0dbf1f9603101b321e4d7878ecf431ec871f4eb6ca4b2055778ef7d370f69f11",
+    "tests-linux-summary.json": "d34e606921e694d72f043500126aca53198b4f7a540a0d7474bcb390746cbf41",
+    "README.md": "9ce61e3eee1cd3e842403de6050c27ea144da08bac13f7db41ebfd7fd8b182e8"
+  },
+  "actual_teacher_report": "docs/teaching-evaluation-2026-10-14/README.md",
+  "actual_teacher_format_result": {
+    "passed": 0,
+    "failed": 6,
+    "first_answers_unchanged": true
+  },
+  "source_sha256_stage": "Prepared revision before the actual model run; later evaluator/documentation changes are recorded separately in the actual-run report."
+}

@@ -1,0 +1,201 @@
+{
+  "checks": 12,
+  "all_expected_outcomes": true,
+  "original_inputs_unchanged": true,
+  "original_agent_outputs_unchanged": true,
+  "distinct_context_ids": 6,
+  "checks_detail": [
+    {
+      "case_id": "RS01",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator/teaching.py",
+        "check",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/RS01",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS01/answer.json"
+      ],
+      "expected_exit_code": 2,
+      "actual_exit_code": 2,
+      "stdout": "",
+      "stderr": "Invalid input: verbatim response and execution description required\n"
+    },
+    {
+      "case_id": "RS01",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator-after/teaching.py",
+        "assess",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/RS01",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS01/answer.json",
+        "--assessment",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS01/semantic-assessment.json"
+      ],
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"RS01\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 4,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Восстановлены текущая часть и полный маршрут из файлов без истории чата.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response: «Продолжаем практику 08/1, версия v1, по полному маршруту». snapshot.PROGRESS сохраняет полный маршрут 30/92; состояние взято из выданных файлов, а запуск выполнен с fork_turns=none.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Следующий шаг соответствует сохранённому действию: Продолжить самостоятельную реализацию reserve; попросить первую попытку, если она ещё не готова.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response просит «дописать функцию и прислать её с двумя примерами». Это первая самостоятельная сдача по assignment.md; заготовка pass не принята как выполненная работа.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Нет новой приёмки, выдуманного запуска или потери истории замечаний.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response: «Ревью пока не было»; recovered.issues пуст. snapshot сохраняет отсутствие runtime-доказательства. execution/method описывают только чтение; приёмки и запуска функции не заявлено.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Ответ даёт одно полезное действие; отсутствующие данные не заменены догадкой.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Следующее действие — предъявить функцию с двумя примерами из исходного задания. Готового решения нет; неизвестный номер следующей части не придуман. Развёрнутый текст practice отражает верное состояние, хотя не совпадает с буквальной меткой оценщика.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "case_id": "RS02",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator/teaching.py",
+        "check",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/RS02",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS02/answer.json"
+      ],
+      "expected_exit_code": 2,
+      "actual_exit_code": 2,
+      "stdout": "",
+      "stderr": "Invalid input: verbatim response and execution description required\n"
+    },
+    {
+      "case_id": "RS02",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator-after/teaching.py",
+        "assess",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/RS02",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS02/answer.json",
+        "--assessment",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS02/semantic-assessment.json"
+      ],
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"RS02\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 4,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Восстановлены текущая часть и полный маршрут из файлов без истории чата.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response восстанавливает 08/2, v1 и полный маршрут; snapshot.PROGRESS содержит 30 тем / 92 части. R1 сохраняет прежний ID, следующая часть не выдана.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Следующий шаг соответствует сохранённому действию: Вернуться к R1: попросить расписание двух чтений и план защиты общего остатка; затем изменённый код и PostgreSQL evidence.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Предложено расписание двух чтений при stock=1, затем словами определить защиту общего остатка. В конце отдельно названы исправление и будущий реальный PostgreSQL-тест, как в сохранённом следующем шаге.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Нет новой приёмки, выдуманного запуска или потери истории замечаний.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response: «R1 остаётся открытым» и «запусков я не выполнял». snapshot различает статический дефект и непроверенные конкурентный исход/частичные эффекты. Практика не закрыта; историческое основание не выдано за runtime.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Ответ даёт одно полезное действие; отсутствующие данные не заменены догадкой.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Одно диагностическое упражнение — расписать A/B и объяснить защищаемую часть. PostgreSQL отложен до доступной среды; запрещённых облачных действий и готового SQL нет.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "case_id": "RS03",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator/teaching.py",
+        "check",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/RS03",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS03/answer.json"
+      ],
+      "expected_exit_code": 2,
+      "actual_exit_code": 2,
+      "stdout": "",
+      "stderr": "Invalid input: verbatim response and execution description required\n"
+    },
+    {
+      "case_id": "RS03",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator-after/teaching.py",
+        "assess",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/RS03",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS03/answer.json",
+        "--assessment",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS03/semantic-assessment.json"
+      ],
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"RS03\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 4,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Восстановлены текущая часть и полный маршрут из файлов без истории чата.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response восстанавливает 08/3 v1 и полный маршрут; recovered/snapshot согласованно сохраняют R1=closed, R2=open. Snapshot оставляет 30/92 и невыданную следующую теорию.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Следующий шаг соответствует сохранённому действию: Продолжить R2: проверить изменение тела при прежних buyer/key; сохранить закрытый R1 и повторить проверку независимости покупателей после исправления.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response показывает конфликт amount=10→99 при прежних buyer/key и просит назвать сравниваемые значения. После правки прямо запланирована повторная проверка R2 и независимости покупателей по R1.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Нет новой приёмки, выдуманного запуска или потери истории замечаний.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Исторический статический вывод R1 отделён от нового локального запуска Python. method.md содержит команду прямых вызовов submit и её результат; контрольное воспроизведение координатором совпало. R2 не закрыт, PostgreSQL/Docker не объявлены выполненными.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Ответ даёт одно полезное действие; отсутствующие данные не заменены догадкой.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Одна подсказка направляет на различение точного повтора и конфликта в существующей ветке. Готовой функции нет; два статуса замечаний и граница проверки в памяти сохранены.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "case_id": "HS01",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator/teaching.py",
+        "check",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/HS01",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS01/answer.json"
+      ],
+      "expected_exit_code": 2,
+      "actual_exit_code": 2,
+      "stdout": "",
+      "stderr": "Invalid input: verbatim response and execution description required\n"
+    },
+    {
+      "case_id": "HS01",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator-after/teaching.py",
+        "assess",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/HS01",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS01/answer.json",
+        "--assessment",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS01/semantic-assessment.json"
+      ],
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"HS01\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 4,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Различает выход функции и состояние после исключения.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response прямо различает ValueError без обычного возвращаемого значения и сохранение исходного списка; возврат остатка относится только к успеху.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Один пример нехватки с ожидаемым неизменным списком.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Пример stock=[3], qty=5: ожидаются ValueError и неизменный [3]. Это вывод из условия, не заявленный запуск.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Просит ученика назвать ожидаемое поведение конкретного вызова.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Вопрос о stock=[3], qty=2 просит ученика самостоятельно назвать возврат и состояние списка. Это конкретный соседний случай.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Не выдаёт реализацию и не диагностирует ещё не предъявленный код.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"В ответе нет реализации reserve и обвинений в дефекте отсутствующего кода. Требуется объяснить поведение по данному C1.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "case_id": "HS02",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator/teaching.py",
+        "check",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/HS02",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS02/answer.json"
+      ],
+      "expected_exit_code": 2,
+      "actual_exit_code": 2,
+      "stdout": "",
+      "stderr": "Invalid input: verbatim response and execution description required\n"
+    },
+    {
+      "case_id": "HS02",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator-after/teaching.py",
+        "assess",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/HS02",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS02/answer.json",
+        "--assessment",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS02/semantic-assessment.json"
+      ],
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"HS02\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 3,\n    \"error\": 0,\n    \"unverified\": 1\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Исправляет смешение атомарности и сериализации без заявления о запуске.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response различает «все изменения транзакции или ни одного» и постановку транзакций в очередь; о выполненном PostgreSQL-тесте не заявляет.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Предлагает рассмотреть два чтения прежнего остатка до записей.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Явно предложены A читает → B читает → проверки до записи при stock=1 и обычном чтении без блокировки. Это корректное начало опасного чередования.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Одно диагностическое действие: ученик строит расписание.\",\n      \"result\": \"unverified\",\n      \"evidence\": \"Ответ уже задаёт четыре шага расписания и просит определить прочитанный остаток и прохождение проверок. Это одно полезное диагностическое действие, но самостоятельное построение/достраивание расписания, буквально указанное в K3, не запрошено. Не считаю это доказанным дефектом обучения: профиль допускает предложенное преподавателем расписание; критерий требует уточнения до следующего прогона.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Не выдаёт готовый SQL/функцию и не требует изменения несуществующего кода.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"SQL и готовая функция отсутствуют. Изменить несуществующий код не требуется; ученик должен рассудить о заданном сценарии.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "case_id": "HS03",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator/teaching.py",
+        "check",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/HS03",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS03/answer.json"
+      ],
+      "expected_exit_code": 2,
+      "actual_exit_code": 2,
+      "stdout": "",
+      "stderr": "Invalid input: verbatim response and execution description required\n"
+    },
+    {
+      "case_id": "HS03",
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-B",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/evaluator-after/teaching.py",
+        "assess",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/HS03",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS03/answer.json",
+        "--assessment",
+        "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS03/semantic-assessment.json"
+      ],
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\n  \"case_id\": \"HS03\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 4,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Связывает строку мутации до проверки с остатком -1, не повторяет весь урок.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response связывает stock=[1], qty=2 с submission.py:2 и предлагает отследить момент изменения списка; это ровно строка stock[0] -= qty, объясняющая -1 в приложенном журнале. Полный урок не повторяется.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Отличает приложенный журнал от собственного запуска.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Последняя фраза: «Опираюсь на код и твой журнал; сам функцию не запускал». method.md также отмечает static_only. Предложенный будущий запуск не выдан за собственное доказательство.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Предлагает проследить состояние до вычитания и перед raise.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Предложены остановка перед вычитанием и наблюдение после строки/перехвата ValueError. Это достаточный эквивалент отслеживания изменения до отказа и его сохранения после исключения; попросил прислать два значения.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Сохраняет реализацию за учеником; не навязывает БД или новый контракт.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Исправленная реализация не выдана, БД и новые критерии не навязаны. Ученик выполняет один диагностический прогон и сам локализует причину.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+      "stderr": ""
+    }
+  ]
+}

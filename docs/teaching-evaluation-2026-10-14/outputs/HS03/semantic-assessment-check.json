@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/usr/local/opt/python@3.12/bin/python3.12",
+    "-B",
+    "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+    "assess",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/HS03",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS03/answer.json",
+    "--assessment",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/HS03/semantic-assessment.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"case_id\": \"HS03\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 4,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Связывает строку мутации до проверки с остатком -1, не повторяет весь урок.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response связывает stock=[1], qty=2 с submission.py:2 и предлагает отследить момент изменения списка; это ровно строка stock[0] -= qty, объясняющая -1 в приложенном журнале. Полный урок не повторяется.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Отличает приложенный журнал от собственного запуска.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Последняя фраза: «Опираюсь на код и твой журнал; сам функцию не запускал». method.md также отмечает static_only. Предложенный будущий запуск не выдан за собственное доказательство.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Предлагает проследить состояние до вычитания и перед raise.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Предложены остановка перед вычитанием и наблюдение после строки/перехвата ValueError. Это достаточный эквивалент отслеживания изменения до отказа и его сохранения после исключения; попросил прислать два значения.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Сохраняет реализацию за учеником; не навязывает БД или новый контракт.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Исправленная реализация не выдана, БД и новые критерии не навязаны. Ученик выполняет один диагностический прогон и сам локализует причину.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+  "stderr": ""
+}

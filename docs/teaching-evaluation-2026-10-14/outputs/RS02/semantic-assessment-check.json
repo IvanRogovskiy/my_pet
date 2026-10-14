@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/usr/local/opt/python@3.12/bin/python3.12",
+    "-B",
+    "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+    "assess",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/inputs/RS02",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS02/answer.json",
+    "--assessment",
+    "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-evaluation-2026-10-14/outputs/RS02/semantic-assessment.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"case_id\": \"RS02\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 4,\n    \"error\": 0,\n    \"unverified\": 0\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Восстановлены текущая часть и полный маршрут из файлов без истории чата.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response восстанавливает 08/2, v1 и полный маршрут; snapshot.PROGRESS содержит 30 тем / 92 части. R1 сохраняет прежний ID, следующая часть не выдана.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Следующий шаг соответствует сохранённому действию: Вернуться к R1: попросить расписание двух чтений и план защиты общего остатка; затем изменённый код и PostgreSQL evidence.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Предложено расписание двух чтений при stock=1, затем словами определить защиту общего остатка. В конце отдельно названы исправление и будущий реальный PostgreSQL-тест, как в сохранённом следующем шаге.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Нет новой приёмки, выдуманного запуска или потери истории замечаний.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response: «R1 остаётся открытым» и «запусков я не выполнял». snapshot различает статический дефект и непроверенные конкурентный исход/частичные эффекты. Практика не закрыта; историческое основание не выдано за runtime.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Ответ даёт одно полезное действие; отсутствующие данные не заменены догадкой.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Одно диагностическое упражнение — расписать A/B и объяснить защищаемую часть. PostgreSQL отложен до доступной среды; запрещённых облачных действий и готового SQL нет.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+  "stderr": ""
+}

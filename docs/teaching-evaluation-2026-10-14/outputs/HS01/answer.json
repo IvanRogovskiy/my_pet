@@ -1,0 +1,23 @@
+{
+  "benchmark_version": "teaching-2026-10-14.1",
+  "case_id": "HS01",
+  "input_sha256": "4aa968ab06b635a373f0bbc16037397f4c2808819492d45e0f3f745a919cbf74",
+  "prompt": "Я не понимаю условие: при нехватке нужно вернуть старый остаток или выбросить ошибку? Помоги разобраться, без кода решения.",
+  "response": "При нехватке нужно выбросить `ValueError`. Обычного возвращаемого значения в этом случае нет, а список должен остаться неизменным. Возвращать остаток требуется только при успешном резервировании.\n\nНапример, если `stock = [3]`, а `qty = 5`, запас недостаточен: ожидается `ValueError`, после отказа `stock` по-прежнему равен `[3]`.\n\nТеперь разбери соседний случай: при `stock = [3]` и `qty = 2` что должна вернуть функция и каким должен стать список?",
+  "execution": [
+    "Среда: локальный shell zsh; Darwin 25.6.0; Python 3.12.3; дата сессии 2026-10-14.",
+    "cat /private/tmp/course-teacher-run-noqf97ev/HS01/inputs/TASK.md /private/tmp/course-teacher-run-noqf97ev/HS01/inputs/TEACHER.md — exit_code 0; обе инструкции прочитаны первыми.",
+    "rg --files /private/tmp/course-teacher-run-noqf97ev/HS01/inputs — exit_code 0; найдены TASK.md, TEACHER.md, manifest.json, prompt.txt и assignment.md.",
+    "python3 (локальный heredoc) — exit_code 0; прочитаны manifest.json, prompt.txt и assignment.md.",
+    "static_only: выполнен текстовый анализ условия C1; код ученика отсутствует, reserve и тесты не запускались. Пример в ответе выведен из условия, это не результат исполнения.",
+    "Локальный Python вычислил SHA256 канонического JSON manifest.json; answer.json сохраняется однократно через exclusive-create. Сеть, облако, оценщик, исходный репозиторий, соседние каталоги и внешние материалы не использовались."
+  ],
+  "session": {
+    "id": "/root/teacher_hs01",
+    "name": "Модель и версия неизвестны",
+    "date": "2026-10-14",
+    "kind": "model",
+    "fresh_context": true,
+    "history_messages": 0
+  }
+}
