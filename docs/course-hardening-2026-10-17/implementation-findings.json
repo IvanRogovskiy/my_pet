@@ -1,0 +1,32 @@
+[
+  {
+    "id": "I01",
+    "finding": "A loopback release test was initially included in fast; macOS sandbox refused bind",
+    "resolution": "Moved it into runtime, reran full suite with loopback permission and then split suites; original failing fast log retained"
+  },
+  {
+    "id": "I02",
+    "finding": "Tightened part schema made the generic example placeholder invalid",
+    "resolution": "Example now uses a syntactically valid illustrative code and TASK explicitly requires replacing it; first issued correction bundle preserved"
+  },
+  {
+    "id": "I03",
+    "finding": "Original calibration launch omitted canonical-vs-byte SHA distinction",
+    "resolution": "First rating JSON preserved; both bindings are verified against the same exact issued payload; new exports include explicit TASK"
+  },
+  {
+    "id": "I04",
+    "finding": "First RS07 appended title to the otherwise correct part code",
+    "resolution": "New version 17.2 constrains the machine code; separate preregistered correction run; first 17.1 response remains unchanged"
+  },
+  {
+    "id": "I05",
+    "finding": "AD06 classified environment rather than authored hypothesis; both leave runtime unverified and request current source-bound evidence",
+    "resolution": "Keep 7/8 original classification result; explain taxonomy overlap separately instead of changing oracle after the run"
+  },
+  {
+    "id": "I06",
+    "finding": "First local backend audit overlapped yielded health check and was rejected by ownership lock",
+    "resolution": "Waited for health; separate sequential audit succeeded; both attempts recorded"
+  }
+]

@@ -6,7 +6,8 @@ import json
 from pathlib import Path
 import sys
 
-from teaching_cases import CASES, VERSION
+from teaching_cases import CASES, VERSION, LEGACY_VERSION, VERSIONS, cases_for
+from record_schema import record_schema, issue_statuses, validate as validate_schema
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -34,12 +35,13 @@ def teacher_profile():
     return profile, {name: hashlib.sha256(text.encode()).hexdigest() for name, text in texts.items()}
 
 
-def export(destination, identity):
-    if identity not in CASES:
+def export(destination, identity, version=VERSION):
+    cases = cases_for(version)
+    if identity not in cases:
         raise ValueError("unknown case_id")
     if destination.exists() or destination.is_symlink():
         raise ValueError("export requires a new directory")
-    case = CASES[identity]
+    case = cases[identity]
     files = dict(case["files"], **{"prompt.txt": case["prompt"] + "\n"})
     sources = {}
     if case["suite"] != "transfer":
@@ -59,7 +61,42 @@ def export(destination, identity):
         "Для transfer ответь как ученик, без подсказок; ответ агента обязательно обозначь симуляцией.\n"
         "Пути ссылок в TEACHER.md указывают на исходные материалы; отсутствующие здесь файлы не открывай.\n"
         "Никакие облачные/сетевые ресурсы не требуются. Новые агенты запускаются только по разрешению сессии.\n")
-    manifest = {"version": VERSION, "case_id": identity, "suite": case["suite"],
+    if version != LEGACY_VERSION:
+        files["response.schema.json"] = json.dumps(record_schema(version, identity, case["suite"]), ensure_ascii=False, indent=2) + "\n"
+        example = {"benchmark_version": version, "case_id": identity, "input_sha256": "0" * 64,
+                   "prompt": case["prompt"], "response": "ЗАМЕНИТЬ дословным ответом",
+                   "execution": "static_only: ЗАМЕНИТЬ фактическими действиями и границами проверки",
+                   "session": {"id": "ЗАМЕНИТЬ реальным ID", "name": "ЗАМЕНИТЬ известным обозначением модели",
+                               "date": "ЗАМЕНИТЬ датой", "kind": "model", "fresh_context": True, "history_messages": 0}}
+        if case["suite"] == "resume":
+            example["recovered"] = {"part": "ЗАМЕНИТЬ", "practice": "не проверено",
+                                    "practice_note": "ЗАМЕНИТЬ пояснением статуса",
+                                    "issues": {}, "next_step": "ЗАМЕНИТЬ"}
+            example["snapshot"] = {"PROGRESS.md": "ЗАМЕНИТЬ полным текстом", "NOTES.md": "ЗАМЕНИТЬ полным текстом"}
+            if version == "teaching-2026-10-17.2":
+                example["recovered"]["part"] = "01/1"
+        files["response.example.json"] = json.dumps(example, ensure_ascii=False, indent=2) + "\n"
+        files["TASK.md"] += (
+            "\n## Точный контракт записи этой редакции\n"
+            "Обязателен response.schema.json; response.example.json показывает только форму, а не правильный ответ. "
+            "Заменить все заполнители и нулевой input_sha256. execution — ОДНА строка JSON, не массив; "
+            "несколько действий перечислить внутри строки. Не добавлять поля вне схемы.\n"
+            "Для resume recovered.practice — только один литерал: не выдана / выдана / нужны исправления / "
+            "критерии выполнены / не проверено. Развёрнутое пояснение обязательно записать отдельно в practice_note; "
+            "не дописывать его к статусу. Значение выбирается по сохранённым фактам, схема не сообщает правильного статуса.\n"
+            "Сохрани первую запись без последующего исправления под оценщик.\n")
+    if "unknown" in issue_statuses(version):
+        files["TASK.md"] += (
+            "\nВ этой редакции recovered.issues допускает также unknown: статус замечания "
+            "не установлен из-за противоречащих/неполных свидетельств. Сохрани известные "
+            "утверждения и причину неопределённости в response и snapshot. Это не closed/withdrawn. "
+            "recovered.practice относится к текущей части; отложенные задания сохраняй отдельно в snapshot.\n")
+    if version == "teaching-2026-10-17.2":
+        files["TASK.md"] += (
+            "\nrecovered.part содержит только код части NN/N, например 09/1, без названия и пояснений. "
+            "Название и основания записывай в response, practice_note и snapshot. "
+            "01/1 в примере — демонстрация формы, замени его кодом из фактической учебной ситуации.\n")
+    manifest = {"version": version, "case_id": identity, "suite": case["suite"],
                 "source_sha256": sources,
                 "sha256": {name: hashlib.sha256(text.encode()).hexdigest() for name, text in files.items()}}
     destination.mkdir(parents=True, mode=0o700)
@@ -75,15 +112,18 @@ def bundle(path):
     if path.is_symlink() or (path / "manifest.json").is_symlink():
         raise ValueError("symlink bundle unsupported")
     manifest = json.loads((path / "manifest.json").read_text())
-    if not isinstance(manifest, dict) or manifest.get("version") != VERSION:
+    if not isinstance(manifest, dict) or manifest.get("version") not in VERSIONS:
         raise ValueError("wrong bundle version")
     identity = manifest.get("case_id")
-    if not isinstance(identity, str) or identity not in CASES:
+    cases = cases_for(manifest["version"])
+    if not isinstance(identity, str) or identity not in cases:
         raise ValueError("unknown case_id")
-    case = CASES[identity]
+    case = cases[identity]
     expected = set(case["files"]) | {"prompt.txt", "TASK.md"}
     if case["suite"] != "transfer":
         expected.add("TEACHER.md")
+    if manifest["version"] != LEGACY_VERSION:
+        expected.update(("response.schema.json", "response.example.json"))
     hashes = manifest.get("sha256")
     if manifest.get("suite") != case["suite"] or not isinstance(hashes, dict) or set(hashes) != expected:
         raise ValueError("bundle file allowlist/suite mismatch")
@@ -101,13 +141,16 @@ def bundle(path):
     for name, content in dict(case["files"], **{"prompt.txt": case["prompt"] + "\n"}).items():
         if (path / name).read_text() != content:
             raise ValueError("scenario differs from declared version")
+    if manifest["version"] != LEGACY_VERSION:
+        if json.loads((path / "response.schema.json").read_text()) != record_schema(manifest["version"], identity, case["suite"]):
+            raise ValueError("record schema differs from declared version")
     return manifest, case
 
 
 def identify_record(path, record):
     """Bind the original response to its inputs without grading its envelope."""
     manifest, case = bundle(path)
-    if (not isinstance(record, dict) or record.get("benchmark_version") != VERSION
+    if (not isinstance(record, dict) or record.get("benchmark_version") != manifest["version"]
             or record.get("case_id") != manifest["case_id"]
             or record.get("input_sha256") != digest(manifest)
             or record.get("prompt") != case["prompt"]):
@@ -119,6 +162,8 @@ def identify_record(path, record):
 
 def check(path, record):
     manifest, case = identify_record(path, record)
+    if manifest["version"] != LEGACY_VERSION:
+        validate_schema(record, record_schema(manifest["version"], manifest["case_id"], case["suite"]))
     if not nonempty(record.get("execution")):
         raise ValueError("verbatim response and execution description required")
     session = record.get("session")
@@ -132,10 +177,13 @@ def check(path, record):
         if not session["fresh_context"] or session["history_messages"] != 0:
             raise ValueError("resume requires declared new context without prior messages")
         recovered = record.get("recovered")
-        if (not isinstance(recovered, dict) or set(recovered) != {"part", "practice", "issues", "next_step"}
+        keys = {"part", "practice", "issues", "next_step"}
+        if manifest["version"] != LEGACY_VERSION:
+            keys.add("practice_note")
+        if (not isinstance(recovered, dict) or set(recovered) != keys
                 or any(not nonempty(recovered.get(k)) for k in ("part", "practice", "next_step"))
                 or not isinstance(recovered["issues"], dict)
-                or any(not nonempty(k) or v not in ("open", "closed", "withdrawn") for k, v in recovered["issues"].items())):
+                or any(not nonempty(k) or v not in issue_statuses(manifest["version"]) for k, v in recovered["issues"].items())):
             raise ValueError("recovered state required")
         snapshot = record.get("snapshot")
         if (not isinstance(snapshot, dict) or set(snapshot) != {"PROGRESS.md", "NOTES.md"}
@@ -152,7 +200,7 @@ def assessment_template(path, record):
     # Keep semantic assessment available for a real response whose recording
     # format failed check(). The original record remains unchanged and hashed.
     _, case = identify_record(path, record)
-    return {"benchmark_version": VERSION, "case_id": record["case_id"], "answer_sha256": digest(record),
+    return {"benchmark_version": record["benchmark_version"], "case_id": record["case_id"], "answer_sha256": digest(record),
             "assessor": {"name": "", "kind": ""},
             "criteria": [{"id": f"K{i}", "criterion": text, "result": "pending", "evidence": ""}
                          for i, text in enumerate(case["rubric"], 1)]}
@@ -163,6 +211,7 @@ def check_resume_run(index_path):
     if not isinstance(index, dict) or not isinstance(index.get("runs"), list):
         raise ValueError("index requires runs array")
     root, cases, sessions, rows = index_path.parent.resolve(), set(), set(), []
+    versions = set()
     for entry in index["runs"]:
         if not isinstance(entry, dict) or set(entry) != {"bundle", "answer"}:
             raise ValueError("run entry requires bundle and answer paths")
@@ -176,13 +225,17 @@ def check_resume_run(index_path):
             paths[key] = target
         record = json.loads(paths["answer"].read_text())
         result = check(paths["bundle"], record)
+        versions.add(record["benchmark_version"])
+        if len(versions) > 1:
+            raise ValueError("resume run cannot mix benchmark versions")
         identity, session_id = result["case_id"], record["session"]["id"]
         if result["suite"] != "resume" or identity in cases or session_id in sessions:
             raise ValueError("resume cases and context IDs must be distinct")
         cases.add(identity)
         sessions.add(session_id)
         rows.append(result)
-    expected = {key for key, case in CASES.items() if case["suite"] == "resume"}
+    version = next(iter(versions), VERSION)
+    expected = {key for key, case in cases_for(version).items() if case["suite"] == "resume"}
     return {"resume_cases": len(rows), "missing": sorted(expected - cases), "rows": rows,
             "structured_state_matches": all(all(row["structured_state_matches"].values()) for row in rows) and cases == expected,
             "semantic_assessment_required": True,
@@ -221,14 +274,17 @@ def main():
     parser.add_argument("answer", type=Path, nargs="?")
     parser.add_argument("--case")
     parser.add_argument("--assessment", type=Path)
+    parser.add_argument("--version", choices=tuple(VERSIONS))
     args = parser.parse_args()
     try:
+        if args.version and args.action not in ("list", "export"):
+            parser.error("--version only for list/export; checks use the frozen bundle version")
         if args.case and args.action != "export":
             parser.error("--case only for export")
         if args.assessment and args.action != "assess":
             parser.error("--assessment only for assess")
         if args.action == "list":
-            result = [{"id": key, "suite": value["suite"], "topic": value["topic"]} for key, value in CASES.items()]
+            result = [{"id": key, "suite": value["suite"], "topic": value["topic"]} for key, value in cases_for(args.version or VERSION).items()]
         else:
             if args.path is None:
                 parser.error("bundle path required")
@@ -237,7 +293,7 @@ def main():
             elif args.action == "export":
                 if args.case is None:
                     parser.error("--case required")
-                result = export(args.path, args.case)
+                result = export(args.path, args.case, args.version or VERSION)
             else:
                 if args.answer is None:
                     parser.error("answer path required")

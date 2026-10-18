@@ -1,0 +1,144 @@
+{
+  "benchmark_version": "holdout-2026-10-14.1",
+  "cases": 12,
+  "submitted": 12,
+  "missing": [],
+  "format_errors": [],
+  "rubric_matches": 12,
+  "code_defect_tp": 4,
+  "code_defect_fp": 0,
+  "code_defect_fn": 0,
+  "code_defect_precision": 1.0,
+  "code_defect_recall": 1.0,
+  "false_code_defect_claims": [],
+  "missed_code_defects": [],
+  "incorrect_rejections": [],
+  "explanation_assessment": {
+    "source": "external_assessment",
+    "assessor": null,
+    "assessed": 0,
+    "pending": [
+      "HC01",
+      "HC02",
+      "HC03",
+      "HC04",
+      "HC05",
+      "HC06",
+      "HC07",
+      "HC08",
+      "HC09",
+      "HC10",
+      "HC11",
+      "HC12"
+    ],
+    "complete": false,
+    "mean_scores": {
+      "accuracy": null,
+      "evidence": null,
+      "guidance": null,
+      "agency": null
+    },
+    "max_score": 2,
+    "rows": []
+  },
+  "human_review_required": true,
+  "rows": [
+    {
+      "case_id": "HC01",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    },
+    {
+      "case_id": "HC02",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    },
+    {
+      "case_id": "HC03",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    },
+    {
+      "case_id": "HC04",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    },
+    {
+      "case_id": "HC05",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    },
+    {
+      "case_id": "HC06",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    },
+    {
+      "case_id": "HC07",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    },
+    {
+      "case_id": "HC08",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    },
+    {
+      "case_id": "HC09",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    },
+    {
+      "case_id": "HC10",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    },
+    {
+      "case_id": "HC11",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    },
+    {
+      "case_id": "HC12",
+      "classification_matches": true,
+      "verdict_matches": true,
+      "criterion_matches": true,
+      "format_valid": true,
+      "explanation_verified": false
+    }
+  ],
+  "limitation": "Classification/format only. A matching label is not evidence that the explanation or reproduction is true."
+}

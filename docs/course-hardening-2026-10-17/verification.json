@@ -1,0 +1,198 @@
+{
+  "completed_checks_recorded_at_utc": "2026-10-17T20:25:15.589610+00:00",
+  "git_baseline": "a16c807b8faa2ee60e74d17fa441bf58333a08f8",
+  "working_tree": "Uncommitted changes; includes pre-existing changes. Source hashes describe the final local state, not the baseline commit.",
+  "checks": {
+    "fast_macos": {
+      "tests": 117,
+      "skipped": 0,
+      "python": "3.12.3",
+      "exit": 0,
+      "evidence": "tests-fast-macos-final-after-contract.txt"
+    },
+    "fast_linux": {
+      "tests": 117,
+      "skipped": 0,
+      "python": "3.12.14",
+      "exit": 0,
+      "evidence": "tests-fast-linux-final.txt"
+    },
+    "linux_runtime": {
+      "tests": 6,
+      "skipped": 0,
+      "exit": 0,
+      "evidence": "runtime-linux.json",
+      "capture": "summary of actual earlier execution, not a full raw log"
+    },
+    "backend": {
+      "cases": 4,
+      "probes": 12,
+      "exits_per_case": [
+        1,
+        0,
+        1
+      ],
+      "evidence": "backend/",
+      "stopped": true
+    },
+    "reproduction": {
+      "exit": 0,
+      "matches_results_json": true,
+      "reserved_fingerprint_checked": true,
+      "individual_backend_probes_checked": true
+    },
+    "frozen_evaluator_sources": {
+      "match_current_sources": true
+    },
+    "skill_validator": {
+      "result": "Skill is valid!",
+      "exit": 0,
+      "environment": "Linux Docker, Python 3.12.14, UID 10001, read-only repository, no network"
+    },
+    "workflow_yaml": {
+      "result": "parsed; triggers, jobs, permissions and matrix checked",
+      "parser": "PyYAML BaseLoader",
+      "hosted_workflow_run": false
+    },
+    "evidence_macos": {
+      "exit": 0,
+      "report": {
+        "teaching-reliability-2026-10-14": 518,
+        "course-hardening-2026-10-17": 159,
+        "compatibility": {
+          "legacy_v1": {
+            "format_rejected": 6,
+            "confirmed": 23,
+            "unverified": 1
+          },
+          "legacy_v2_records": 18
+        }
+      },
+      "capture": "Actual command output before final metadata-only report closure; no answer or rating regenerated."
+    },
+    "evidence_linux": {
+      "exit": 0,
+      "report": {
+        "teaching-reliability-2026-10-14": 518,
+        "course-hardening-2026-10-17": 159,
+        "compatibility": {
+          "legacy_v1": {
+            "format_rejected": 6,
+            "confirmed": 23,
+            "unverified": 1
+          },
+          "legacy_v2_records": 18
+        }
+      },
+      "capture": "Actual command output before final metadata-only report closure; no answer or rating regenerated."
+    }
+  },
+  "not_run": [
+    "Human learner pilot (excluded by user)",
+    "Hosted GitHub Actions",
+    "Python 3.11 matrix",
+    "Reserved control teacher responses"
+  ],
+  "source_sha256": {
+    ".github/workflows/course.yml": "daa98d13a10cc5e692f3d8263b4c3e87027cc00415d1ab1ec1b86853416fb042",
+    "backend-devops-theory/.gitignore": "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b",
+    "backend-devops-theory/SKILL.md": "7bf1a20a9a5bc6998b6be6969f01ce64db6beabbb7d999c25e925ec540ff972f",
+    "backend-devops-theory/agents/openai.yaml": "6b62245e6e1127131563ab31d37f5c758bbe7a6521beb8b93b0f848b88e5f1ca",
+    "backend-devops-theory/assets/backend-labs/Dockerfile": "79ad7eeac8dc86cf6cb2237bf6ff768b7501ccb2d81729ae1e7f35d7586a1e2d",
+    "backend-devops-theory/assets/backend-labs/README.md": "42be91aeb20ab1e66dd4ecf07adbd00b0350ad3e3c6aecafc2c33ec73c446842",
+    "backend-devops-theory/assets/backend-labs/lab.py": "6dfa818a9cecea436d88ebbbb3daef6f2bb5351026f4e1cbcd6ed2ff4f3fc523",
+    "backend-devops-theory/assets/backend-labs/probe.py": "eb47a9358a521ec4c0ffadf80a6ddfa0ac918de391d10f8a2ed8a883b2565557",
+    "backend-devops-theory/assets/backend-labs/stand.py": "d9377816fe4f91b70d29c084b10310ad4bd5af996f30cfab4d27e92394700607",
+    "backend-devops-theory/assets/backend-labs/templates.py": "869cd22239e03df0db17fb7d19bd38d42109374fdbb4d35b0061d3a409c2b882",
+    "backend-devops-theory/assets/dialogue-benchmark/README.md": "0edfdff7373b0b3303ce1f125769585bad73985049c4b543c37bb2bdff509f32",
+    "backend-devops-theory/assets/dialogue-benchmark/check.py": "ee1b9955871b5c233f24140850d9f21e22512924371830ef5e2907c1afc9c155",
+    "backend-devops-theory/assets/dialogue-benchmark/prompts.json": "4931abadfad6e63c5cfee71d7a49f34f038574cc446b278bfd8c00da28fde66b",
+    "backend-devops-theory/assets/examples/mechanisms.py": "3b83444c36e15141a503ca638291451bacc75891ad6576bc82a52d017a973960",
+    "backend-devops-theory/assets/examples/numeric_contract.py": "e902b029ee9ea5bfc6c5a05f89e2307aaf2701f36aa6c6198f8169d901fbc0c2",
+    "backend-devops-theory/assets/gitlab-validation/README.md": "bfa2c536a5a7cb6b741fc82b07e168f7becdf690c2482abd74305342ab5850a3",
+    "backend-devops-theory/assets/gitlab-validation/hosted.py": "8f49e99245b4943b5747665e5964c49d1d0096201a85417cb67569ae6ce393ce",
+    "backend-devops-theory/assets/icon.svg": "d80a4c3e0fd2efa7af88433a53b25a92c78a644175c6669dd78fee50fb53acf6",
+    "backend-devops-theory/assets/labs/BOOTSTRAP.md": "e4f3521968929c6b85b6e14f7ddf739f999273d9306c090778daaf2e585aae2b",
+    "backend-devops-theory/assets/labs/README.md": "56605be3d9668ad9e4b40cbbf03587c02bc7e41a7ffb2358e59e4233aa704e09",
+    "backend-devops-theory/assets/labs/bootstrap.py": "891bbe7d3960111324bdb5e61f30210438c992db551e0b292da65b9823412bb7",
+    "backend-devops-theory/assets/labs/bootstrap_checks.py": "9b1b301dd69fad02932139eb06ec9a062ec693a3240d9edcfa5c82c6e00c86f8",
+    "backend-devops-theory/assets/labs/catalog.py": "d6b12eb6210dd4bd1fe8e434bcb77d69a3b61030ed82a9ec11ea842f0ed4fb16",
+    "backend-devops-theory/assets/labs/infrastructure.py": "4a8fec251f8f741437a866ee12b75eec9456388e522cb3c4289e413759712f10",
+    "backend-devops-theory/assets/labs/lab.py": "d9edb53839850bb3cb1c7cb33679e929866c680876de037a6780edc731c52be7",
+    "backend-devops-theory/assets/labs/replay_probe.py": "3b9369ef03915c7788b2b8bf42d989c462644b2a3005a0d1e670bb736c410751",
+    "backend-devops-theory/assets/lesson-template.html": "f8b02644291012088f42c4afa5114f8fe844ce5b6b0531620891ccbd52fd4ba7",
+    "backend-devops-theory/assets/lesson-ui.css": "ffb0bb74f67ffd5ad6fcb799a4201894b98d8ebfe0b203ab434d6754339e5219",
+    "backend-devops-theory/assets/lesson-ui.js": "816c7263e04e6146e9b3ac1b96d21cbada9c0a7b71eabf620961455ea1cff8d9",
+    "backend-devops-theory/assets/network-lab/README.md": "d80676a322c4fefec24642edcf7a1c08cb0f97946de3d085d250388e7d6e96e6",
+    "backend-devops-theory/assets/network-lab/fixture.py": "4c78955ef1b01b3f4b7fa08e2c24148a7c469c7c942c35d0a4bbbf504c5c9fe9",
+    "backend-devops-theory/assets/network-lab/requirements.txt": "8b5c18678b29b5e8e0fb586a35ac1dce3ccd9da321e8f12ace0e118350b4e568",
+    "backend-devops-theory/assets/review-benchmark/ADVANCED.md": "99e5079ad115d7528bccf512c1d798a2a0dfb45b3b794ff89f9020f034868e55",
+    "backend-devops-theory/assets/review-benchmark/ASSESSMENT.md": "14783ee152675d486f6d94a289dd7b461970c2e8674235549fb6c5a9fae94f07",
+    "backend-devops-theory/assets/review-benchmark/CYCLES.md": "b99e6a0a287ef52a1a59f6facb102282ed077d2932b6da1852d3647f98418a6f",
+    "backend-devops-theory/assets/review-benchmark/HOLDOUT.md": "69ea5a2ed0dca518e4c12ade119017055353943010992d17847d74738cdb1ad3",
+    "backend-devops-theory/assets/review-benchmark/README.md": "185aebc60cfef378493571b70c2ea564a4e951c246913e92bfec3010e1ab7914",
+    "backend-devops-theory/assets/review-benchmark/advanced_corpus.py": "bae3bdad7e145f3a4a7ff574982ab7cbf08c65a4fc0301cfb8bee6dc0c7595cd",
+    "backend-devops-theory/assets/review-benchmark/assessment.py": "54a6d98a9ea687a0ed589e894051d52e4967bf82a066ecf2f70216fd04ca14a5",
+    "backend-devops-theory/assets/review-benchmark/audit_cases.py": "d9d97ea892ed1ac6160316c7f7eb12b20ccf34c9e7ac163dc5b6e66252d12f8b",
+    "backend-devops-theory/assets/review-benchmark/benchmark.py": "c0a026d30dc6bcee3b30a300165e316419d25441bc17f1dbee89f4048b124927",
+    "backend-devops-theory/assets/review-benchmark/calibration.py": "01df9313d4418e36a2cf8fde64f48f7bf7583cb22199ef99fc938ee3d386f486",
+    "backend-devops-theory/assets/review-benchmark/corpus.py": "f3993182c93be75b01fb500a65b7382ebea3e7a8e4f90be0385675c524237d5c",
+    "backend-devops-theory/assets/review-benchmark/cycle_corpus.py": "451bc895286c346b6ec571aad92fe24da6a35b03f018b8297c919624e44fa49e",
+    "backend-devops-theory/assets/review-benchmark/holdout_corpus.py": "232b203284ac6e974be873c6acd60298030eb94b32358a8dad5281ce9d7229dc",
+    "backend-devops-theory/assets/review-benchmark/review_advanced.py": "c01e972ae277ae11202c6a439a35d660e8163200ceebc32145354bda40cf92c4",
+    "backend-devops-theory/assets/review-benchmark/review_cycles.py": "fd04f45607018f3bc6581d1068b5bbe5ba1a20fe5f2aaed68605f270abe47e6f",
+    "backend-devops-theory/assets/review-benchmark/review_holdout.py": "fa2a60e59b2c03897d815ecaa32f3c2b494a7bbbf7686f36515aecbb3c2e29dd",
+    "backend-devops-theory/assets/teaching-benchmark/README.md": "5963acb16ce85db24e411e77cd9aba40bbd473009372d39c278ca6f34514da7c",
+    "backend-devops-theory/assets/teaching-benchmark/record_schema.py": "31df10bb90ee31180c8b41fcb16200002134e2f9466deb212820757ad26bcab5",
+    "backend-devops-theory/assets/teaching-benchmark/recovery_cases.py": "edd87ceacf089d41be5d55f543d3b1d2028e2c2eec52b0cb3406890fae2f6595",
+    "backend-devops-theory/assets/teaching-benchmark/teaching.py": "f6826ad80bf3c98ca09f03d1b95508bdacb405567b105974ed8704c829cb2e2a",
+    "backend-devops-theory/assets/teaching-benchmark/teaching_cases.py": "cadcda8be717e5a8577ff4cc24d9a18ff71842c69622ba8500939dc1942c7b70",
+    "backend-devops-theory/assets/teaching-benchmark/teaching_cases_v1.py": "31dba10bfb8347f1a09413dc1831cabaf0d6a7e7da306418294682e895ce0394",
+    "backend-devops-theory/references/business-contract.md": "f131f8476ee292085d9dd8c701d76adcf62222c1d0bacdf043d7bf4a49f631be",
+    "backend-devops-theory/references/course-ci.md": "85a0324b21419b609c16e2184c3f892fdce6d332dc1a356ce4c9601878c35653",
+    "backend-devops-theory/references/course-context.md": "d43fb4e5af19e2c91de2060d9cf2c03c2ef17ac45631bfa3cda2d4a0e78ccf83",
+    "backend-devops-theory/references/course-delivery.md": "a3abaaaa7db7e0fa9ea310a2105db30d824a19b7b3513c42053cfd098991b836",
+    "backend-devops-theory/references/course-maintenance.md": "1b64fb958c0c42a1322a3638803173d0b80c34dac84edc1a330bb274df083dd4",
+    "backend-devops-theory/references/curriculum-index.md": "b4f1a872117f6cf234dfb47db2d9f3989b3547ad7edae4f64214b83ccbd693c7",
+    "backend-devops-theory/references/electives.md": "7de8b2dbd7dfbd46ab6a4eacba100ce6592e645bf06702a43c553df834be0daf",
+    "backend-devops-theory/references/environment-guide.md": "dc1a48283f94e83664ae440dff88f31c976875cf11abb6133d4dee4cf8e53fd4",
+    "backend-devops-theory/references/fault-labs.md": "663de3d7a4db3e1a78df04c6010725378bcd84ef6ebf0257120478a15da90029",
+    "backend-devops-theory/references/gitlab-labs.md": "6f31af5b34e175420ab344fe5378b7513640b03c46401084913f1eb2713c25c5",
+    "backend-devops-theory/references/human-pilot.md": "7c5acf6e8e5abf06bdedecb565aed3a101db259359428954e51ae11f7c7b5d05",
+    "backend-devops-theory/references/learning-workspace.md": "7375252b4cc57b5e4edce08b7789354584dcd9f829e98f6add017f782241c14d",
+    "backend-devops-theory/references/lessons/08-transactions.md": "7cd2b97d3d5d510f47c5e2fe5369a56554ae3a5c7f3ef6197fe6aaae3a524e03",
+    "backend-devops-theory/references/lessons/14-asyncio.md": "0f8c6ccbaa632f68eaa9b7664445a4220bb7c95469d1e4257c34a9339486a8e2",
+    "backend-devops-theory/references/lessons/17-outbox.md": "3370446d1a9f0b4d1f98e0dbe4eefcbd437697efe992d7ae320603104329536c",
+    "backend-devops-theory/references/lessons/24-state-plan.md": "b9797c122297752b6ee42c7b56265c7f3e8a26ae1a871d1ba90bbb6c4dcefbcd",
+    "backend-devops-theory/references/lessons/26-compatible-release.md": "2894ee813780644fc03f5ad948cfd97a6f727431aa1dba7cfc131a0f1ee5c5e7",
+    "backend-devops-theory/references/lessons/29-recovery.md": "2c83b440ebd0d5fa49b84a40a0eeaaa12868b81e7e86d7817b181b013933afd9",
+    "backend-devops-theory/references/lessons/README.md": "fc65e0552cdc3a5a19fe4fa5a00ad4fcc7abb66349b2abc3d302e84082a5192a",
+    "backend-devops-theory/references/operations-labs.md": "cc29cacb74635f3fc9dc0a4a47b8370e1adc11a5e3daa3cf358811500f6e9253",
+    "backend-devops-theory/references/part-boundaries.md": "b5b1e269ddca0122d9ab2db5d45fa8452aaf1bf5cd57df3b4f214f9cb44e10cb",
+    "backend-devops-theory/references/practice-review.md": "986632c032b262ccc5baf25928e162059786d58fa6557ec53fc5a8f8d60c504e",
+    "backend-devops-theory/references/review-cases-01-12.md": "382746d449ed0bf5c545564533e18cf24c83a0da7b7ab08dd838b7968137ca14",
+    "backend-devops-theory/references/review-cases-13-19.md": "71c3bb015a2fa3fa10340ac336951b98b116ed75a5f877990ccfb34d95776c7f",
+    "backend-devops-theory/references/review-cases-20-30.md": "bee54bd87f52f0ddd2710aa6fad0962e6861ac1d8cbb102d7338b929086a0aaf",
+    "backend-devops-theory/references/topics-01-04.md": "96c25d588e3526d6065d2531f4396b1fb95680c68503647d64f02f928c13d399",
+    "backend-devops-theory/references/topics-05-09.md": "414890e3ec9fea8cb48f2af82d7d3e5255598c5d3a2f942df6030850357a40a6",
+    "backend-devops-theory/references/topics-10-12.md": "004cbca9c12a8889cce19c34d5641b8746da7783515c04f5f13a835cfa8702bb",
+    "backend-devops-theory/references/topics-13-19.md": "f781ec03d45f78b0a8e9c583f23703b038e1ce0b3a873b468efd82eae5fce55f",
+    "backend-devops-theory/references/topics-20-23.md": "d82b7da51fccccc676990c21b7ef00f4b975b0fe5a08fa6dbf39f6e0ec506c70",
+    "backend-devops-theory/references/topics-24-30.md": "2e845903e0ef98ce631188ed132e53f36e069353979305eb4dff656cbf830e32",
+    "backend-devops-theory/references/transfer-practice.md": "4a2e6cf713757579d560858ad5402f7a36f16e99e49f290c22867d9aaaea7877",
+    "backend-devops-theory/tests/test_advanced_review.py": "a1fcc50f1fd857e5ca678fba7ac8fcf3e02ffcf3224e31e842c499ea9e684dc8",
+    "backend-devops-theory/tests/test_course_ci.py": "78aab33725629836f833130a0fc590ed1ef39048fca25879f7451afdc3a103bd",
+    "backend-devops-theory/tests/test_course_revision.py": "5eef29bdb880fbbacddbccda4ecbfe7e0ec212d635aaa401bfcfc2547935a976",
+    "backend-devops-theory/tests/test_examples.py": "bbf5af81602d6e7dd586cd64938b46abb5d5a3caf205c8cb99663ab39da90ead",
+    "backend-devops-theory/tests/test_hosted_gitlab.py": "12585301ac3eece30cb2491e5b7d8ba1627839be106b7dec7514c7d9ab113dd0",
+    "backend-devops-theory/tests/test_labs.py": "c879e2b24681f22421e76f2d8f34460a43cacc447d128afe7d13f7ba8fa4f73c",
+    "backend-devops-theory/tests/test_materials.py": "7ca5ddd6b372135d40de148851b79087abcb5f69113be5a3cb63c21766bde317",
+    "backend-devops-theory/tests/test_new_stands.py": "acfb57cdc1d88d09f02d27e7554a6674ab8b458527f0a26605ce001594ab9778",
+    "backend-devops-theory/tests/test_review_benchmark.py": "c62d50c393955602500a64ae9e40090c1b60219eb18319a767afe0fd780af4a2",
+    "backend-devops-theory/tests/test_review_cycles.py": "465ed3d03fa5eb4f3352be521c8bc60749e2be29cefe4eb6d68a75ca256c364d",
+    "backend-devops-theory/tests/test_review_holdout.py": "9f2db1d728b20a21070e1b35f2549df46c0f115d8f46339aae3f35971619a927",
+    "backend-devops-theory/tests/test_teaching_benchmark.py": "7ed3e50054e85d05a7f358e9c219cced951789c0f4830792c7ac0afde7736ff8",
+    "scripts/course_ci.py": "d4560640f6d943fbe7a0db17ea4457bc53cd55a2d6cc7331f77ec0f6d7812077"
+  },
+  "source_hash_scope": "Skill source tree and CI entrypoints, excluding bytecode and .DS_Store. Historical report checks do not compare these hashes with future editable sources."
+}

@@ -1,0 +1,16 @@
+{
+  "benchmark_version": "teaching-2026-10-14.2",
+  "case_id": "HS03",
+  "input_sha256": "a9ddb8777e306c71dd15d3121ef1aa1daec21ce93bfe6cafdd9166010763938e",
+  "prompt": "Понимаю: при отказе остаток должен сохраниться. Но мой тест падает. Помоги найти причину одним следующим шагом, функцию за меня не переписывай.",
+  "response": "В `submission.py:2` список изменяется до проверки нехватки. Сделай один диагностический запуск с `stock=[1], qty=2`: выведи `stock` непосредственно до и после строки `stock[0] -= qty`, а затем в обработчике `ValueError`. Пришли эти три значения и объясни, меняет ли само исключение уже изменённый список.\n\nПо C1 после отказа ожидается `[1]`, а в твоём журнале получено `[-1]`. Это вывод по коду и присланному журналу; сам функцию я не запускал.",
+  "execution": "static_only: анализ submission.py и журнала ученика evidence.txt; reserve не запускалась, тесты функции не выполнялись. Среда: cwd=/Users/ivanrogovskiy, shell=zsh, Python 3.12.3, macOS-26.6.2-x86_64-i386-64bit. Команда 1:\npwd && rg --files -g '*' /private/tmp/course-reliability-s2a212up/repeats/hs03_2/input\nРезультат: exit_code=0, cwd=/Users/ivanrogovskiy, перечислено 9 файлов только input этой выдачи. Команда 2:\npython3 - <<'PY'\nfrom pathlib import Path\nroot=Path('/private/tmp/course-reliability-s2a212up/repeats/hs03_2/input')\nfor name in ['TASK.md','TEACHER.md','response.schema.json','manifest.json','assignment.md','prompt.txt','submission.py','evidence.txt','response.example.json']:\n    print(f'\\n===== {name} =====\\n{(root/name).read_text()}')\nPY\nРезультат: exit_code=0, прочитаны все 9 файлов выдачи. Команда 3:\npython3 - <<'PY'\nfrom pathlib import Path\nimport hashlib, json, platform, sys\nroot=Path('/private/tmp/course-reliability-s2a212up/repeats/hs03_2/input')\nmanifest=json.loads((root/'manifest.json').read_text())\ncanonical=json.dumps(manifest, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode('utf-8')\nprint('python=' + sys.version.split()[0])\nprint('platform=' + platform.platform())\nprint('input_sha256=' + hashlib.sha256(canonical).hexdigest())\nprint('prompt_repr=' + repr((root/'prompt.txt').read_text()))\nfor number,line in enumerate((root/'submission.py').read_text().splitlines(),1):\n    print(f'{number}: {line}')\nPY\nРезультат: exit_code=0, получены версия Python, платформа, канонический SHA-256 manifest.json a9ddb8777e306c71dd15d3121ef1aa1daec21ce93bfe6cafdd9166010763938e, точный prompt с одним завершающим LF и строки 1–5 submission.py. Это локальная обработка метаданных и чтение текста, не выполнение сдачи. Prompt записан без завершающего LF. Ответ составлен по TEACHER.md с одним диагностическим действием, без готовой реализации. Запись answer.json и method.md: tools.apply_patch, одна первичная запись. Сеть, Docker, PostgreSQL, авторский валидатор, репозиторий, соседние выдачи и прежние ответы не использовались.",
+  "session": {
+    "id": "/root/repeat_hs03_2",
+    "name": "Codex (точная версия модели недоступна)",
+    "date": "2026-10-14",
+    "kind": "model",
+    "fresh_context": true,
+    "history_messages": 0
+  }
+}

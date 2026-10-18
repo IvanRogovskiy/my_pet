@@ -1,0 +1,22 @@
+{
+  "capture": "Summary of actual exec/wait result, not a rerun or simulated result",
+  "command": "docker run --rm --network none --user 10001:10001 --read-only --tmpfs /tmp:rw,exec,mode=1777 -e PYTHONDONTWRITEBYTECODE=1 -v /Users/ivanrogovskiy/Documents/tries/my_pet:/workspace:ro -w /workspace --entrypoint python orderflow-course-audit-tools:local scripts/course_ci.py runtime",
+  "environment": {
+    "python": "3.12.14",
+    "cryptography": "50.0.2",
+    "uid": 10001,
+    "platform": "Linux Docker"
+  },
+  "tests": 6,
+  "skipped": 0,
+  "exit": 0,
+  "seconds": 2.135,
+  "checked": [
+    "TLS expired certificate and wrong host/CA outcomes",
+    "authenticated fixture stop",
+    "stale readiness rejection",
+    "loopback HTTP bad/reference cleanup",
+    "Linux permissions bad/reference/reset",
+    "GET does not write release state"
+  ]
+}

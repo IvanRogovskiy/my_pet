@@ -1,0 +1,9 @@
+{
+  "name": "Codex agent; exact model version not exposed",
+  "date": "2026-10-14",
+  "kind": "model",
+  "key_seen": false,
+  "tools": "Read assigned files; local Python/SQLite allowed, no network/Docker/PG. Shared filesystem with instruction-level read restriction.",
+  "source_sha256": "61850a69760da519924e1511c36ae55271e68298b3ab7b3a5bc112ddf3d0db9e",
+  "input_sha256": "c1b0b33d3e903d5738d6ebd1f0cfe09810e5e0c02916686b844c2deb5da012ca"
+}

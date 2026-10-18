@@ -1,0 +1,40 @@
+{
+  "case_id": "HS03",
+  "assessor": {
+    "name": "Codex coordinator; author-aware semantic review",
+    "kind": "model"
+  },
+  "counts": {
+    "pending": 0,
+    "confirmed": 4,
+    "error": 0,
+    "unverified": 0
+  },
+  "criteria": [
+    {
+      "id": "K1",
+      "criterion": "Связывает строку мутации до проверки с остатком -1, не повторяет весь урок.",
+      "result": "confirmed",
+      "evidence": "Указана submission.py:2 до проверки и связь ожидаемого [1] с полученным [-1], без повторения урока."
+    },
+    {
+      "id": "K2",
+      "criterion": "Отличает приложенный журнал от собственного запуска.",
+      "result": "confirmed",
+      "evidence": "«Сам функцию я не запускал», [-1] отнесён к журналу ученика; execution static_only."
+    },
+    {
+      "id": "K3",
+      "criterion": "Предлагает проследить состояние до вычитания и перед raise.",
+      "result": "confirmed",
+      "evidence": "Один запуск с наблюдением до и после вычитания и в обработчике ValueError; состояние после строки 2 предшествует raise, причина сохранения мутации остаётся вопросом ученику."
+    },
+    {
+      "id": "K4",
+      "criterion": "Сохраняет реализацию за учеником; не навязывает БД или новый контракт.",
+      "result": "confirmed",
+      "evidence": "Нет готовой функции, нового контракта или требования БД; запрошены три значения одного прогона."
+    }
+  ],
+  "automated_semantic_verification": false
+}

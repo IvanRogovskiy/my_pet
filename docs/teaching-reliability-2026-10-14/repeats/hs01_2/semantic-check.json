@@ -1,0 +1,40 @@
+{
+  "case_id": "HS01",
+  "assessor": {
+    "name": "Codex coordinator; author-aware semantic review",
+    "kind": "model"
+  },
+  "counts": {
+    "pending": 0,
+    "confirmed": 4,
+    "error": 0,
+    "unverified": 0
+  },
+  "criteria": [
+    {
+      "id": "K1",
+      "criterion": "Различает выход функции и состояние после исключения.",
+      "result": "confirmed",
+      "evidence": "ValueError и отсутствие обычного возврата явно отделены от неизменного списка."
+    },
+    {
+      "id": "K2",
+      "criterion": "Один пример нехватки с ожидаемым неизменным списком.",
+      "result": "confirmed",
+      "evidence": "Пример [3],5 завершается ожидаемым ValueError и сохраняет [3]; он не назван выполненным тестом."
+    },
+    {
+      "id": "K3",
+      "criterion": "Просит ученика назвать ожидаемое поведение конкретного вызова.",
+      "result": "confirmed",
+      "evidence": "Ученику дан [3],3 и вопрос о возврате/исключении и состоянии, без ответа за него."
+    },
+    {
+      "id": "K4",
+      "criterion": "Не выдаёт реализацию и не диагностирует ещё не предъявленный код.",
+      "result": "confirmed",
+      "evidence": "Нет реализации или диагноза непредъявленного кода, помощь относится к условию."
+    }
+  ],
+  "automated_semantic_verification": false
+}

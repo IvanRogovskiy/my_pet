@@ -1,0 +1,7 @@
+test_local_links_resolve (test_materials.Materials.test_local_links_resolve) ... ok
+test_topic_parts_and_prerequisites_match_index (test_materials.Materials.test_topic_parts_and_prerequisites_match_index) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.059s
+
+OK

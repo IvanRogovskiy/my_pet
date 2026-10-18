@@ -1,0 +1,16 @@
+{
+  "runs": [
+    {
+      "bundle": "rs01_3/input",
+      "answer": "rs01_3/output/answer.json"
+    },
+    {
+      "bundle": "rs02_3/input",
+      "answer": "rs02_3/output/answer.json"
+    },
+    {
+      "bundle": "rs03_3/input",
+      "answer": "rs03_3/output/answer.json"
+    }
+  ]
+}

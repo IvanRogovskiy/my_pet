@@ -1,0 +1,341 @@
+{
+  "version": "reliability-2026-10-14.1",
+  "created_utc": "2026-10-14T16:39:13.149502+00:00",
+  "base_commit": "a16c807b8faa2ee60e74d17fa441bf58333a08f8",
+  "working_branch": "codex/teaching-reliability-2026-10-14",
+  "repetitions": {
+    "RS01": 3,
+    "RS02": 3,
+    "RS03": 3,
+    "HS01": 3,
+    "HS02": 3,
+    "HS03": 3
+  },
+  "roundtrip": {
+    "runs": 1,
+    "turns": [
+      "initial actual teacher review",
+      "partial scope fix submitted to same teacher",
+      "pause; teacher writes files",
+      "new context reads only saved files and resumes"
+    ],
+    "synthetic_learner": true,
+    "initial_input_sha256": {
+      "assignment.md": "5b15a8f627c30534701060e04842270dbda6ff4c827dd2af5993f85808e91521",
+      "submission.py": "4fa0539bfd1186a61c1c5cbc10201a9ecc8fb15117a006f39e0b643bf8b28633",
+      "prompt.txt": "0bd93d28926718b52e945732b039efd59a2efeee1aec4ba37a6f572440c700e5",
+      "TEACHER.md": "fa96436b74827300849c85667223e849673d8046817f70ec23fdf70dba4aadb1"
+    },
+    "partial_submission_sha256": "629aa3f460a82aff9ab2cbaeaa11cff7a4c9f967da9ee8eca618f2a1815713df",
+    "turn2_delivered": true,
+    "turn3_delivered": true
+  },
+  "rv20_runs": 1,
+  "hc12_runs_per_profile": 1,
+  "profiles": {
+    "baseline": {
+      "manifest_sha256": "61850a69760da519924e1511c36ae55271e68298b3ab7b3a5bc112ddf3d0db9e",
+      "revision": "a6d6620e95234a289e0fbe6950b1fc450c02b287"
+    },
+    "candidate": {
+      "manifest_sha256": "5aef9381c9b77a8c807a8115bcb7748bb4fda46300691d1428edc7becf025cf5",
+      "revision": "a16c807b8faa2ee60e74d17fa441bf58333a08f8"
+    }
+  },
+  "rules": [
+    "Freeze all inputs before first response per suite",
+    "No retry to replace a failed first answer",
+    "No feedback from scorer until response frozen",
+    "Semantic assessments separate from format; coordinator knows rubric",
+    "Do not tune teacher against HC results; mark HC exposed after analysis",
+    "Keep model/tool variability and filesystem isolation limits visible"
+  ],
+  "run_root": "/private/tmp/course-reliability-s2a212up",
+  "launches": [
+    {
+      "agent": "/root/reliability_hc_baseline",
+      "fork_turns": "none",
+      "suite": "hc_baseline",
+      "input_root": "/private/tmp/course-reliability-s2a212up/hc_baseline",
+      "launched_utc": "2026-10-14T16:40:42.755449+00:00",
+      "source_visibility": "Only assigned TEACHER.md, metadata, input; no author files or sibling answers",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/reliability_hc_candidate",
+      "fork_turns": "none",
+      "suite": "hc_candidate",
+      "input_root": "/private/tmp/course-reliability-s2a212up/hc_candidate",
+      "launched_utc": "2026-10-14T16:40:42.755805+00:00",
+      "source_visibility": "Only assigned TEACHER.md, metadata, input; no author files or sibling answers",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/reliability_rv20",
+      "fork_turns": "none",
+      "suite": "rv20",
+      "input_root": "/private/tmp/course-reliability-s2a212up/rv20",
+      "launched_utc": "2026-10-14T16:40:42.755810+00:00",
+      "source_visibility": "Only assigned TEACHER.md, metadata, input; no author files or sibling answers",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/reliability_roundtrip_writer",
+      "fork_turns": "none",
+      "suite": "roundtrip_writer",
+      "input_root": "/private/tmp/course-reliability-s2a212up/roundtrip_writer",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_rs01_1",
+      "fork_turns": "none",
+      "suite": "repeats/rs01_1",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/rs01_1",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_rs02_1",
+      "fork_turns": "none",
+      "suite": "repeats/rs02_1",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/rs02_1",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_rs03_1",
+      "fork_turns": "none",
+      "suite": "repeats/rs03_1",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/rs03_1",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_hs01_1",
+      "fork_turns": "none",
+      "suite": "repeats/hs01_1",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/hs01_1",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_hs02_1",
+      "fork_turns": "none",
+      "suite": "repeats/hs02_1",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/hs02_1",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_hs03_1",
+      "fork_turns": "none",
+      "suite": "repeats/hs03_1",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/hs03_1",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_rs01_2",
+      "fork_turns": "none",
+      "suite": "repeats/rs01_2",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/rs01_2",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_rs02_2",
+      "fork_turns": "none",
+      "suite": "repeats/rs02_2",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/rs02_2",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_rs03_2",
+      "fork_turns": "none",
+      "suite": "repeats/rs03_2",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/rs03_2",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/reliability_roundtrip_reader",
+      "fork_turns": "none",
+      "suite": "roundtrip_reader",
+      "input_root": "/private/tmp/course-reliability-s2a212up/roundtrip_reader",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_hs01_2",
+      "fork_turns": "none",
+      "suite": "repeats/hs01_2",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/hs01_2",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_hs02_2",
+      "fork_turns": "none",
+      "suite": "repeats/hs02_2",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/hs02_2",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_hs03_2",
+      "fork_turns": "none",
+      "suite": "repeats/hs03_2",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/hs03_2",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_rs01_3",
+      "fork_turns": "none",
+      "suite": "repeats/rs01_3",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/rs01_3",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_rs02_3",
+      "fork_turns": "none",
+      "suite": "repeats/rs02_3",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/rs02_3",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_rs03_3",
+      "fork_turns": "none",
+      "suite": "repeats/rs03_3",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/rs03_3",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_hs01_3",
+      "fork_turns": "none",
+      "suite": "repeats/hs01_3",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/hs01_3",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_hs02_3",
+      "fork_turns": "none",
+      "suite": "repeats/hs02_3",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/hs02_3",
+      "first_answer_only": true
+    },
+    {
+      "agent": "/root/repeat_hs03_3",
+      "fork_turns": "none",
+      "suite": "repeats/hs03_3",
+      "input_root": "/private/tmp/course-reliability-s2a212up/repeats/hs03_3",
+      "first_answer_only": true
+    }
+  ],
+  "teaching_version": "teaching-2026-10-14.2",
+  "repeat_exports": [
+    {
+      "run_id": "rs01_1",
+      "case": "RS01",
+      "attempt": 1,
+      "input_sha256": "c0d25f9efc2ef4b2fbc34d194449072e6828b0d8685cdf5b67607ee7176b51ac"
+    },
+    {
+      "run_id": "rs02_1",
+      "case": "RS02",
+      "attempt": 1,
+      "input_sha256": "7f6e9807eee89c0405519760e0e5538f0ae4cdf6a1bf86dbef965449e32f59e2"
+    },
+    {
+      "run_id": "rs03_1",
+      "case": "RS03",
+      "attempt": 1,
+      "input_sha256": "4fe651bec219dbf27d8789719e52e652bc37d7a092b0366238957120a69fb103"
+    },
+    {
+      "run_id": "hs01_1",
+      "case": "HS01",
+      "attempt": 1,
+      "input_sha256": "9812fea695945e3f5a2190646809575f993d4adc9f4cfcd8e09b6efd22ea66c6"
+    },
+    {
+      "run_id": "hs02_1",
+      "case": "HS02",
+      "attempt": 1,
+      "input_sha256": "9258301a3f32f89cf60cf2c334a716757a82129d112faf7a8e7076d9ee317374"
+    },
+    {
+      "run_id": "hs03_1",
+      "case": "HS03",
+      "attempt": 1,
+      "input_sha256": "a9ddb8777e306c71dd15d3121ef1aa1daec21ce93bfe6cafdd9166010763938e"
+    },
+    {
+      "run_id": "rs01_2",
+      "case": "RS01",
+      "attempt": 2,
+      "input_sha256": "c0d25f9efc2ef4b2fbc34d194449072e6828b0d8685cdf5b67607ee7176b51ac"
+    },
+    {
+      "run_id": "rs02_2",
+      "case": "RS02",
+      "attempt": 2,
+      "input_sha256": "7f6e9807eee89c0405519760e0e5538f0ae4cdf6a1bf86dbef965449e32f59e2"
+    },
+    {
+      "run_id": "rs03_2",
+      "case": "RS03",
+      "attempt": 2,
+      "input_sha256": "4fe651bec219dbf27d8789719e52e652bc37d7a092b0366238957120a69fb103"
+    },
+    {
+      "run_id": "hs01_2",
+      "case": "HS01",
+      "attempt": 2,
+      "input_sha256": "9812fea695945e3f5a2190646809575f993d4adc9f4cfcd8e09b6efd22ea66c6"
+    },
+    {
+      "run_id": "hs02_2",
+      "case": "HS02",
+      "attempt": 2,
+      "input_sha256": "9258301a3f32f89cf60cf2c334a716757a82129d112faf7a8e7076d9ee317374"
+    },
+    {
+      "run_id": "hs03_2",
+      "case": "HS03",
+      "attempt": 2,
+      "input_sha256": "a9ddb8777e306c71dd15d3121ef1aa1daec21ce93bfe6cafdd9166010763938e"
+    },
+    {
+      "run_id": "rs01_3",
+      "case": "RS01",
+      "attempt": 3,
+      "input_sha256": "c0d25f9efc2ef4b2fbc34d194449072e6828b0d8685cdf5b67607ee7176b51ac"
+    },
+    {
+      "run_id": "rs02_3",
+      "case": "RS02",
+      "attempt": 3,
+      "input_sha256": "7f6e9807eee89c0405519760e0e5538f0ae4cdf6a1bf86dbef965449e32f59e2"
+    },
+    {
+      "run_id": "rs03_3",
+      "case": "RS03",
+      "attempt": 3,
+      "input_sha256": "4fe651bec219dbf27d8789719e52e652bc37d7a092b0366238957120a69fb103"
+    },
+    {
+      "run_id": "hs01_3",
+      "case": "HS01",
+      "attempt": 3,
+      "input_sha256": "9812fea695945e3f5a2190646809575f993d4adc9f4cfcd8e09b6efd22ea66c6"
+    },
+    {
+      "run_id": "hs02_3",
+      "case": "HS02",
+      "attempt": 3,
+      "input_sha256": "9258301a3f32f89cf60cf2c334a716757a82129d112faf7a8e7076d9ee317374"
+    },
+    {
+      "run_id": "hs03_3",
+      "case": "HS03",
+      "attempt": 3,
+      "input_sha256": "a9ddb8777e306c71dd15d3121ef1aa1daec21ce93bfe6cafdd9166010763938e"
+    }
+  ],
+  "repeat_inputs_frozen_utc": "2026-10-14T16:42:12.945112+00:00",
+  "evaluator_sha256": {
+    "teaching.py": "9f899c6f82da485fefa5d676a2357871844f9273d9b3b1aa5fca0670e8c88b4e",
+    "record_schema.py": "3132845bf5e9fe89cca60e10287681d439f72a38825220820a250ceb204c5bff",
+    "teaching_cases_v1.py": "31dba10bfb8347f1a09413dc1831cabaf0d6a7e7da306418294682e895ce0394",
+    "teaching_cases.py": "7d546a45209bc9498c39cee0e634b79ab855118efb708944d6a721e212b1621b"
+  }
+}

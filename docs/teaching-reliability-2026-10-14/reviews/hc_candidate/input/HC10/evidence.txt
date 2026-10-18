@@ -1,0 +1,1 @@
+Синтетический журнал: docker run завершился permission denied while connecting to Docker socket; контейнер не создан. Другой Linux-стенд не предоставлен. Секретов в пакете нет.

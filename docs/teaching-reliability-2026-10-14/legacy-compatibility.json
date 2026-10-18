@@ -1,0 +1,73 @@
+{
+  "legacy_cases_byte_identical": true,
+  "legacy_cases_sha256": "31dba10bfb8347f1a09413dc1831cabaf0d6a7e7da306418294682e895ce0394",
+  "old_records": [
+    {
+      "case": "RS01",
+      "old_format_result": "verbatim response and execution description required",
+      "old_semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      }
+    },
+    {
+      "case": "RS02",
+      "old_format_result": "verbatim response and execution description required",
+      "old_semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      }
+    },
+    {
+      "case": "RS03",
+      "old_format_result": "verbatim response and execution description required",
+      "old_semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      }
+    },
+    {
+      "case": "HS01",
+      "old_format_result": "verbatim response and execution description required",
+      "old_semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      }
+    },
+    {
+      "case": "HS02",
+      "old_format_result": "verbatim response and execution description required",
+      "old_semantic_counts": {
+        "pending": 0,
+        "confirmed": 3,
+        "error": 0,
+        "unverified": 1
+      }
+    },
+    {
+      "case": "HS03",
+      "old_format_result": "verbatim response and execution description required",
+      "old_semantic_counts": {
+        "pending": 0,
+        "confirmed": 4,
+        "error": 0,
+        "unverified": 0
+      }
+    }
+  ],
+  "current_tests": {
+    "command": "python3 -m unittest discover -s backend-devops-theory/tests -p test_teaching_benchmark.py -v",
+    "passed": 19,
+    "failed": 0,
+    "new_tests": 5,
+    "evidence": "Observed command output; summary, not complete raw stdout"
+  }
+}

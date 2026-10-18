@@ -1,0 +1,53 @@
+{
+  "selection_policy": "Fixed before second ratings: code defects, valid alternative, defective tests, environment and evidence limits; 8/44 reviews. No outcome-based replacement.",
+  "selection": [
+    {
+      "answer": "../teaching-reliability-2026-10-14/reviews/rv20/output/answer.json",
+      "assessment": "../teaching-reliability-2026-10-14/reviews/rv20/semantic-assessment.json",
+      "inputs": "../teaching-reliability-2026-10-14/reviews/rv20/input/RV01",
+      "case_id": "RV01"
+    },
+    {
+      "answer": "../teaching-reliability-2026-10-14/reviews/hc_candidate/output/answer.json",
+      "assessment": "../teaching-reliability-2026-10-14/reviews/hc_candidate/semantic-assessment.json",
+      "inputs": "../teaching-reliability-2026-10-14/reviews/hc_candidate/input/HC06",
+      "case_id": "HC06"
+    },
+    {
+      "answer": "../teaching-reliability-2026-10-14/reviews/rv20/output/answer.json",
+      "assessment": "../teaching-reliability-2026-10-14/reviews/rv20/semantic-assessment.json",
+      "inputs": "../teaching-reliability-2026-10-14/reviews/rv20/input/RV15",
+      "case_id": "RV15"
+    },
+    {
+      "answer": "../teaching-reliability-2026-10-14/reviews/hc_baseline/output/answer.json",
+      "assessment": "../teaching-reliability-2026-10-14/reviews/hc_baseline/semantic-assessment.json",
+      "inputs": "../teaching-reliability-2026-10-14/reviews/hc_baseline/input/HC10",
+      "case_id": "HC10"
+    },
+    {
+      "answer": "../teaching-reliability-2026-10-14/reviews/rv20/output/answer.json",
+      "assessment": "../teaching-reliability-2026-10-14/reviews/rv20/semantic-assessment.json",
+      "inputs": "../teaching-reliability-2026-10-14/reviews/rv20/input/RV08",
+      "case_id": "RV08"
+    },
+    {
+      "answer": "../teaching-reliability-2026-10-14/reviews/hc_candidate/output/answer.json",
+      "assessment": "../teaching-reliability-2026-10-14/reviews/hc_candidate/semantic-assessment.json",
+      "inputs": "../teaching-reliability-2026-10-14/reviews/hc_candidate/input/HC12",
+      "case_id": "HC12"
+    },
+    {
+      "answer": "../teaching-reliability-2026-10-14/reviews/rv20/output/answer.json",
+      "assessment": "../teaching-reliability-2026-10-14/reviews/rv20/semantic-assessment.json",
+      "inputs": "../teaching-reliability-2026-10-14/reviews/rv20/input/RV16",
+      "case_id": "RV16"
+    },
+    {
+      "answer": "../teaching-reliability-2026-10-14/reviews/hc_baseline/output/answer.json",
+      "assessment": "../teaching-reliability-2026-10-14/reviews/hc_baseline/semantic-assessment.json",
+      "inputs": "../teaching-reliability-2026-10-14/reviews/hc_baseline/input/HC03",
+      "case_id": "HC03"
+    }
+  ]
+}

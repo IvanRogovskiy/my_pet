@@ -1,0 +1,16 @@
+{
+  "benchmark_version": "teaching-2026-10-14.2",
+  "case_id": "HS03",
+  "input_sha256": "a9ddb8777e306c71dd15d3121ef1aa1daec21ce93bfe6cafdd9166010763938e",
+  "prompt": "Понимаю: при отказе остаток должен сохраниться. Но мой тест падает. Помоги найти причину одним следующим шагом, функцию за меня не переписывай.",
+  "response": "В submission.py:2 список изменяется до проверки нехватки в строке 3; ValueError сам по себе не отменяет это изменение. Один следующий шаг: повтори свой тест с stock=[1], qty=2, остановив выполнение в отладчике перед строкой 3, и сообщи значение stock в этот момент. Это вывод по чтению кода; результат [-1] взят из твоего журнала, саму функцию я не запускал.",
+  "execution": "static_only: прочитаны все 9 файлов выдачи командами rg --files --hidden /private/tmp/course-reliability-s2a212up/repeats/hs03_3/input и cat TASK.md, cat TEACHER.md, cat response.schema.json, cat manifest.json, cat evidence.txt, cat prompt.txt, cat submission.py, cat assignment.md, cat response.example.json (каждый cat — отдельная команда; cwd=/private/tmp/course-reliability-s2a212up/repeats/hs03_3/input). Среда: zsh, macOS-26.6.2-x86_64-i386-64bit, Python 3.12.3. Отдельный локальный запуск python3 - <<'PY' обработал только метаданные: вычислил SHA-256 канонического manifest.json через json.dumps(ensure_ascii=False, sort_keys=True, separators=(',', ':')), прочитал точный prompt и вывел среду; exit_code=0, input_sha256=a9ddb8777e306c71dd15d3121ef1aa1daec21ce93bfe6cafdd9166010763938e. По статическому анализу строк 2–4 изменение stock предшествует проверке и исключению. evidence.txt — синтетический журнал ученика, не собственное воспроизведение. submission.py не исполнялся, runtime-проверок C1 не было. Сеть, Docker и PostgreSQL не использовались; авторский валидатор, репозиторий и соседние выдачи не читались. Первая запись создана инструментом apply_patch без последующего исправления; реальные команды приведены в method.md.",
+  "session": {
+    "id": "/root/repeat_hs03_3",
+    "name": "Codex (точная версия модели не предоставлена)",
+    "date": "2026-10-14",
+    "kind": "model",
+    "fresh_context": true,
+    "history_messages": 0
+  }
+}

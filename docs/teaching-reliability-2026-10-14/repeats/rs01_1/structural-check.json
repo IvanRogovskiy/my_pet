@@ -1,0 +1,13 @@
+{
+  "record_complete": true,
+  "case_id": "RS01",
+  "suite": "resume",
+  "structured_state_matches": {
+    "part": true,
+    "practice": true,
+    "issues": true
+  },
+  "semantic_assessment_required": true,
+  "context_independence": "declared; requires orchestrator/session evidence",
+  "limitation": "Matching state fields do not verify response or snapshot meaning. No learning outcome inferred."
+}

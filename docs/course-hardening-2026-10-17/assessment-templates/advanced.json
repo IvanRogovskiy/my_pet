@@ -1,0 +1,188 @@
+{
+  "benchmark_version": "advanced-2026-10-17.1:development",
+  "answer_sha256": "31a31d780946f80d675a384c11ccb55769e5b4ef50d034b6a1529f02e4c309ba",
+  "assessor": {
+    "name": "",
+    "kind": ""
+  },
+  "reviews": [
+    {
+      "case_id": "AD01",
+      "status": "pending",
+      "ratings": {
+        "accuracy": null,
+        "evidence": null,
+        "guidance": null,
+        "agency": null
+      },
+      "notes": {
+        "accuracy": "",
+        "evidence": "",
+        "guidance": "",
+        "agency": ""
+      }
+    },
+    {
+      "case_id": "AD02",
+      "status": "pending",
+      "ratings": {
+        "accuracy": null,
+        "evidence": null,
+        "guidance": null,
+        "agency": null
+      },
+      "notes": {
+        "accuracy": "",
+        "evidence": "",
+        "guidance": "",
+        "agency": ""
+      }
+    },
+    {
+      "case_id": "AD03",
+      "status": "pending",
+      "ratings": {
+        "accuracy": null,
+        "evidence": null,
+        "guidance": null,
+        "agency": null
+      },
+      "notes": {
+        "accuracy": "",
+        "evidence": "",
+        "guidance": "",
+        "agency": ""
+      }
+    },
+    {
+      "case_id": "AD04",
+      "status": "pending",
+      "ratings": {
+        "accuracy": null,
+        "evidence": null,
+        "guidance": null,
+        "agency": null
+      },
+      "notes": {
+        "accuracy": "",
+        "evidence": "",
+        "guidance": "",
+        "agency": ""
+      }
+    },
+    {
+      "case_id": "AD05",
+      "status": "pending",
+      "ratings": {
+        "accuracy": null,
+        "evidence": null,
+        "guidance": null,
+        "agency": null
+      },
+      "notes": {
+        "accuracy": "",
+        "evidence": "",
+        "guidance": "",
+        "agency": ""
+      }
+    },
+    {
+      "case_id": "AD06",
+      "status": "pending",
+      "ratings": {
+        "accuracy": null,
+        "evidence": null,
+        "guidance": null,
+        "agency": null
+      },
+      "notes": {
+        "accuracy": "",
+        "evidence": "",
+        "guidance": "",
+        "agency": ""
+      }
+    },
+    {
+      "case_id": "AD07",
+      "status": "pending",
+      "ratings": {
+        "accuracy": null,
+        "evidence": null,
+        "guidance": null,
+        "agency": null
+      },
+      "notes": {
+        "accuracy": "",
+        "evidence": "",
+        "guidance": "",
+        "agency": ""
+      }
+    },
+    {
+      "case_id": "AD08",
+      "status": "pending",
+      "ratings": {
+        "accuracy": null,
+        "evidence": null,
+        "guidance": null,
+        "agency": null
+      },
+      "notes": {
+        "accuracy": "",
+        "evidence": "",
+        "guidance": "",
+        "agency": ""
+      }
+    }
+  ],
+  "defect_coverage": [
+    {
+      "case_id": "AD01",
+      "defect_id": "D1",
+      "criterion": "Повтор ошибочно глобален по token: другой tenant получает чужой результат или конфликт.",
+      "result": "pending",
+      "finding_indices": [],
+      "evidence": ""
+    },
+    {
+      "case_id": "AD01",
+      "defect_id": "D2",
+      "criterion": "dict(payload) копирует только верхний уровень: последующая мутация входного списка меняет историю.",
+      "result": "pending",
+      "finding_indices": [],
+      "evidence": ""
+    },
+    {
+      "case_id": "AD03",
+      "defect_id": "D1",
+      "criterion": "Проверка строк отдельно пропускает превышение суммарного спроса повторяющегося SKU.",
+      "result": "pending",
+      "finding_indices": [],
+      "evidence": ""
+    },
+    {
+      "case_id": "AD03",
+      "defect_id": "D2",
+      "criterion": "requests.sort меняет входной список, включая путь отказа.",
+      "result": "pending",
+      "finding_indices": [],
+      "evidence": ""
+    },
+    {
+      "case_id": "AD05",
+      "defect_id": "D1",
+      "criterion": "Тест принимает последовательный trace; запуск двух корутин не доказывает пересечение чтений.",
+      "result": "pending",
+      "finding_indices": [],
+      "evidence": ""
+    },
+    {
+      "case_id": "AD07",
+      "defect_id": "D1",
+      "criterion": "Строгое сравнение только timestamp пропускает большие id при равном timestamp.",
+      "result": "pending",
+      "finding_indices": [],
+      "evidence": ""
+    }
+  ]
+}

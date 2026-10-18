@@ -1,0 +1,10 @@
+{
+  "revision": "a6d6620e95234a289e0fbe6950b1fc450c02b287",
+  "source_sha256": {
+    "SKILL.md": "85d7f17118d5f7be3b829fed3c3fce6a8e9eef782fc4d588440b2ea624b270de",
+    "references/learning-workspace.md": "305c8e4ff61045e9970738a2ade936ab0973ff8e24233779a4056d5d470cea68",
+    "references/practice-review.md": "1127c91752c3a903547ba8ed83c85c1dfa36da52305aabfb35116821be59bde0"
+  },
+  "profile_sha256": "3fc4f090d514754bc891ca663f6d55c1830c05da3bb43e345ee9e907e4626d1e",
+  "scope": "generic review, workspace and hints sections only; author examples excluded"
+}

@@ -1,0 +1,449 @@
+{
+  "bundle_sha256": "2e433752ed8279af07b066c8fd5cb878106e0a8f0c598bfc924233f62538ccd2",
+  "runtime": {
+    "python": "3.12.3 (main, Apr  9 2024, 08:09:14) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "platform": "Darwin",
+    "uid": 501
+  },
+  "cases": {
+    "P01": [
+      {
+        "input": "True",
+        "actual": {
+          "return": true,
+          "type": "bool"
+        }
+      },
+      {
+        "input": "False",
+        "actual": {
+          "return": false,
+          "type": "bool"
+        }
+      },
+      {
+        "input": "0",
+        "actual": {
+          "return": 0,
+          "type": "int"
+        }
+      },
+      {
+        "input": "1",
+        "actual": {
+          "return": 1,
+          "type": "int"
+        }
+      },
+      {
+        "input": "10000000000000000000000000000000000000000000000000000000000000000000000",
+        "actual": {
+          "return": 10000000000000000000000000000000000000000000000000000000000000000000000,
+          "type": "int"
+        }
+      },
+      {
+        "input": "'1'",
+        "actual": {
+          "exception": "ValueError",
+          "message": "invalid money"
+        }
+      },
+      {
+        "input": "0.1",
+        "actual": {
+          "exception": "ValueError",
+          "message": "invalid money"
+        }
+      },
+      {
+        "input": "-1",
+        "actual": {
+          "exception": "ValueError",
+          "message": "invalid money"
+        }
+      },
+      {
+        "input": "None",
+        "actual": {
+          "exception": "ValueError",
+          "message": "invalid money"
+        }
+      }
+    ],
+    "P02": {
+      "count": 24,
+      "checks": [
+        {
+          "input": "0",
+          "expected": 0,
+          "actual": {
+            "return": 0,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "-0.00",
+          "expected": 0,
+          "actual": {
+            "return": 0,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "0.01",
+          "expected": 1,
+          "actual": {
+            "return": 1,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "1.23",
+          "expected": 123,
+          "actual": {
+            "return": 123,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "12.3400",
+          "expected": 1234,
+          "actual": {
+            "return": 1234,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "1e-2",
+          "expected": 1,
+          "actual": {
+            "return": 1,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "1e100",
+          "expected": 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+          "actual": {
+            "return": 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "0e-100",
+          "expected": 0,
+          "actual": {
+            "return": 0,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "1e+100",
+          "expected": 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+          "actual": {
+            "return": 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "99999999999999999999999999999999999999999999999999999999999999999999999999999999",
+          "expected": 9999999999999999999999999999999999999999999999999999999999999999999999999999999900,
+          "actual": {
+            "return": 9999999999999999999999999999999999999999999999999999999999999999999999999999999900,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "99999999999999999999999999999999999999999999999999999999999999999999999999999.00",
+          "expected": 9999999999999999999999999999999999999999999999999999999999999999999999999999900,
+          "actual": {
+            "return": 9999999999999999999999999999999999999999999999999999999999999999999999999999900,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "123456789012345678901234567890.12",
+          "expected": 12345678901234567890123456789012,
+          "actual": {
+            "return": 12345678901234567890123456789012,
+            "type": "int"
+          },
+          "pass": true
+        },
+        {
+          "input": "0.001",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "fraction of a cent"
+          },
+          "pass": true
+        },
+        {
+          "input": "1e-100",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "fraction of a cent"
+          },
+          "pass": true
+        },
+        {
+          "input": "-0.01",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "invalid"
+          },
+          "pass": true
+        },
+        {
+          "input": "-1e100",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "invalid"
+          },
+          "pass": true
+        },
+        {
+          "input": "NaN",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "invalid"
+          },
+          "pass": true
+        },
+        {
+          "input": "sNaN",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "invalid"
+          },
+          "pass": true
+        },
+        {
+          "input": "Infinity",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "invalid"
+          },
+          "pass": true
+        },
+        {
+          "input": "-Infinity",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "invalid"
+          },
+          "pass": true
+        },
+        {
+          "input": "",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "invalid"
+          },
+          "pass": true
+        },
+        {
+          "input": "abc",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "invalid"
+          },
+          "pass": true
+        },
+        {
+          "input": ".",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "invalid"
+          },
+          "pass": true
+        },
+        {
+          "input": "1.2.3",
+          "expected": "ValueError",
+          "actual": {
+            "exception": "ValueError",
+            "message": "invalid"
+          },
+          "pass": true
+        }
+      ]
+    },
+    "P03": {
+      "actual": {
+        "return": [
+          true,
+          false
+        ],
+        "type": "list"
+      },
+      "trace": [
+        "start1",
+        "end1",
+        "start2",
+        "end2"
+      ],
+      "max_active": 1,
+      "database_run": false
+    },
+    "P04": {
+      "double_return": {
+        "return": "demo-value",
+        "type": "str"
+      },
+      "real_secret_file_read": false,
+      "linux_uid10001_run": false
+    },
+    "P05": {
+      "rows": [
+        [
+          2,
+          200
+        ],
+        [
+          1,
+          100
+        ]
+      ],
+      "multiset_matches": true,
+      "test": {
+        "exception": "AssertionError",
+        "message": ""
+      }
+    },
+    "P06": {
+      "success": {
+        "return": null,
+        "type": "NoneType"
+      },
+      "success_trace": [
+        [
+          "effect_once",
+          "evt-1",
+          "p"
+        ],
+        [
+          "ack"
+        ]
+      ],
+      "failure": {
+        "exception": "RuntimeError",
+        "message": "fake failure"
+      },
+      "failure_trace": [
+        [
+          "effect_once",
+          "evt-1",
+          "p"
+        ]
+      ],
+      "crash_replay_run": false,
+      "database_broker_run": false
+    },
+    "P07": {
+      "harness": {
+        "exception": "KeyError",
+        "message": "'id'"
+      },
+      "callback_calls": [],
+      "status200": {
+        "return": 200,
+        "type": "int"
+      },
+      "status503": {
+        "exception": "ValueError",
+        "message": "unexpected HTTP status"
+      },
+      "tcp_tls_run": false
+    },
+    "P08": [
+      {
+        "before": {
+          "balance": 2,
+          "note": "preserve"
+        },
+        "amount": 3,
+        "actual": {
+          "exception": "ValueError",
+          "message": "insufficient"
+        },
+        "after": {
+          "balance": -1,
+          "note": "preserve"
+        },
+        "unchanged": false
+      },
+      {
+        "before": {
+          "balance": 0,
+          "note": "preserve"
+        },
+        "amount": 1,
+        "actual": {
+          "exception": "ValueError",
+          "message": "insufficient"
+        },
+        "after": {
+          "balance": -1,
+          "note": "preserve"
+        },
+        "unchanged": false
+      },
+      {
+        "before": {
+          "balance": 10,
+          "note": "preserve"
+        },
+        "amount": 3,
+        "actual": {
+          "return": 7,
+          "type": "int"
+        },
+        "after": {
+          "balance": 7,
+          "note": "preserve"
+        },
+        "unchanged": false
+      },
+      {
+        "before": {
+          "balance": 3,
+          "note": "preserve"
+        },
+        "amount": 3,
+        "actual": {
+          "return": 0,
+          "type": "int"
+        },
+        "after": {
+          "balance": 0,
+          "note": "preserve"
+        },
+        "unchanged": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/usr/local/opt/python@3.12/bin/python3.12",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "backend-devops-theory/tests",
+    "-p",
+    "test_materials.py",
+    "-v"
+  ],
+  "exit": 0,
+  "output_file": "materials-tests.txt"
+}

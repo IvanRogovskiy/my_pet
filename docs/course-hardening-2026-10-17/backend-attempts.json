@@ -1,0 +1,38 @@
+{
+  "stand": "/private/tmp/course-ci-20261017-xbi7lris/stand",
+  "attempts": [
+    {
+      "audit": "/private/tmp/course-ci-20261017-xbi7lris/backend",
+      "exit": 2,
+      "error": "Resource temporarily unavailable",
+      "cause": "Coordinator started audit before yielded health check released its stand lock. No student-defect result inferred.",
+      "next": "Run sequentially after health completes in a new audit directory"
+    },
+    {
+      "audit": "/private/tmp/course-ci-20261017-xbi7lris/backend-after-health",
+      "exit": 0,
+      "result": {
+        "B07": [
+          1,
+          0,
+          1
+        ],
+        "B08R": [
+          1,
+          0,
+          1
+        ],
+        "B08I": [
+          1,
+          0,
+          1
+        ],
+        "B17": [
+          1,
+          0,
+          1
+        ]
+      }
+    }
+  ]
+}

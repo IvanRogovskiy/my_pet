@@ -1,0 +1,37 @@
+{
+  "case": "B17",
+  "schema": "probe_b792323cdd2540fc963d674a2716a390",
+  "submission_sha256": "2296e1dd217b401655cb93d5aefb9ad77c0f73d39aa03643ae37358b2f1c4809",
+  "level": "real PostgreSQL and RabbitMQ / HTTP fixture as applicable",
+  "criteria": {
+    "crash_windows": true,
+    "broker_redelivery": true,
+    "single_effect": false,
+    "receipt_effect_rollback": true
+  },
+  "detail": {
+    "child_exits": [
+      17,
+      0,
+      18
+    ],
+    "deliveries_after_crash": [
+      {
+        "redelivered": true,
+        "event": "66769b7da5554d1cbaa820114461aabf"
+      },
+      {
+        "redelivered": false,
+        "event": "66769b7da5554d1cbaa820114461aabf"
+      }
+    ],
+    "effect_count": 3,
+    "receipts": 0,
+    "queue_pending": 0,
+    "queue": "course.probe_b792323cdd2540fc963d674a2716a390",
+    "injected_effect_error": true,
+    "receipt_after_effect_error": 0
+  },
+  "passed": false,
+  "exit": 1
+}

@@ -1,0 +1,97 @@
+[
+  {
+    "command": [
+      "/usr/local/opt/python@3.12/bin/python3.12",
+      "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+      "list",
+      "--version",
+      "teaching-2026-10-14.1"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "[\n  {\n    \"id\": \"RS01\",\n    \"suite\": \"resume\",\n    \"topic\": \"08/1\"\n  },\n  {\n    \"id\": \"RS02\",\n    \"suite\": \"resume\",\n    \"topic\": \"08/2\"\n  },\n  {\n    \"id\": \"RS03\",\n    \"suite\": \"resume\",\n    \"topic\": \"08/3\"\n  },\n  {\n    \"id\": \"HS01\",\n    \"suite\": \"hints\",\n    \"topic\": \"08/1\"\n  },\n  {\n    \"id\": \"HS02\",\n    \"suite\": \"hints\",\n    \"topic\": \"08/2\"\n  },\n  {\n    \"id\": \"HS03\",\n    \"suite\": \"hints\",\n    \"topic\": \"08/1\"\n  },\n  {\n    \"id\": \"TR01\",\n    \"suite\": \"transfer\",\n    \"topic\": \"07/2\"\n  },\n  {\n    \"id\": \"TR02\",\n    \"suite\": \"transfer\",\n    \"topic\": \"08/2\"\n  },\n  {\n    \"id\": \"TR03\",\n    \"suite\": \"transfer\",\n    \"topic\": \"08/3\"\n  },\n  {\n    \"id\": \"TR04\",\n    \"suite\": \"transfer\",\n    \"topic\": \"17/3\"\n  },\n  {\n    \"id\": \"TR05\",\n    \"suite\": \"transfer\",\n    \"topic\": \"25/2\"\n  },\n  {\n    \"id\": \"TR06\",\n    \"suite\": \"transfer\",\n    \"topic\": \"29/3\"\n  }\n]\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/usr/local/opt/python@3.12/bin/python3.12",
+      "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+      "list",
+      "--version",
+      "teaching-2026-10-14.2"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "[\n  {\n    \"id\": \"RS01\",\n    \"suite\": \"resume\",\n    \"topic\": \"08/1\"\n  },\n  {\n    \"id\": \"RS02\",\n    \"suite\": \"resume\",\n    \"topic\": \"08/2\"\n  },\n  {\n    \"id\": \"RS03\",\n    \"suite\": \"resume\",\n    \"topic\": \"08/3\"\n  },\n  {\n    \"id\": \"HS01\",\n    \"suite\": \"hints\",\n    \"topic\": \"08/1\"\n  },\n  {\n    \"id\": \"HS02\",\n    \"suite\": \"hints\",\n    \"topic\": \"08/2\"\n  },\n  {\n    \"id\": \"HS03\",\n    \"suite\": \"hints\",\n    \"topic\": \"08/1\"\n  },\n  {\n    \"id\": \"TR01\",\n    \"suite\": \"transfer\",\n    \"topic\": \"07/2\"\n  },\n  {\n    \"id\": \"TR02\",\n    \"suite\": \"transfer\",\n    \"topic\": \"08/2\"\n  },\n  {\n    \"id\": \"TR03\",\n    \"suite\": \"transfer\",\n    \"topic\": \"08/3\"\n  },\n  {\n    \"id\": \"TR04\",\n    \"suite\": \"transfer\",\n    \"topic\": \"17/3\"\n  },\n  {\n    \"id\": \"TR05\",\n    \"suite\": \"transfer\",\n    \"topic\": \"25/2\"\n  },\n  {\n    \"id\": \"TR06\",\n    \"suite\": \"transfer\",\n    \"topic\": \"29/3\"\n  }\n]\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/usr/local/opt/python@3.12/bin/python3.12",
+      "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+      "export",
+      "/private/tmp/course-reliability-s2a212up/legacy-cli",
+      "--case",
+      "RS01",
+      "--version",
+      "teaching-2026-10-14.1"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "{\n  \"path\": \"/private/tmp/course-reliability-s2a212up/legacy-cli\",\n  \"input_sha256\": \"4cf7516afe5056f98daf14976e2e9c6010d98d904bffe21990957c5b2e4a1300\",\n  \"case_id\": \"RS01\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/usr/local/opt/python@3.12/bin/python3.12",
+      "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+      "check",
+      "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-reliability-2026-10-14/repeats/rs01_1/input",
+      "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-reliability-2026-10-14/repeats/rs01_1/output/answer.json"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "{\n  \"record_complete\": true,\n  \"case_id\": \"RS01\",\n  \"suite\": \"resume\",\n  \"structured_state_matches\": {\n    \"part\": true,\n    \"practice\": true,\n    \"issues\": true\n  },\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"declared; requires orchestrator/session evidence\",\n  \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/usr/local/opt/python@3.12/bin/python3.12",
+      "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+      "check",
+      "docs/teaching-evaluation-2026-10-14/inputs/HS02",
+      "docs/teaching-evaluation-2026-10-14/outputs/HS02/answer.json"
+    ],
+    "expected_exit": 2,
+    "exit": 2,
+    "stdout": "",
+    "stderr": "Invalid input: verbatim response and execution description required\n"
+  },
+  {
+    "command": [
+      "/usr/local/opt/python@3.12/bin/python3.12",
+      "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+      "assess",
+      "docs/teaching-evaluation-2026-10-14/inputs/HS02",
+      "docs/teaching-evaluation-2026-10-14/outputs/HS02/answer.json",
+      "--assessment",
+      "docs/teaching-evaluation-2026-10-14/outputs/HS02/semantic-assessment.json"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "{\n  \"case_id\": \"HS02\",\n  \"assessor\": {\n    \"name\": \"Codex coordinator /root; author-aware model assessment, exact model version unavailable\",\n    \"kind\": \"model\"\n  },\n  \"counts\": {\n    \"pending\": 0,\n    \"confirmed\": 3,\n    \"error\": 0,\n    \"unverified\": 1\n  },\n  \"criteria\": [\n    {\n      \"id\": \"K1\",\n      \"criterion\": \"Исправляет смешение атомарности и сериализации без заявления о запуске.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"response различает «все изменения транзакции или ни одного» и постановку транзакций в очередь; о выполненном PostgreSQL-тесте не заявляет.\"\n    },\n    {\n      \"id\": \"K2\",\n      \"criterion\": \"Предлагает рассмотреть два чтения прежнего остатка до записей.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"Явно предложены A читает → B читает → проверки до записи при stock=1 и обычном чтении без блокировки. Это корректное начало опасного чередования.\"\n    },\n    {\n      \"id\": \"K3\",\n      \"criterion\": \"Одно диагностическое действие: ученик строит расписание.\",\n      \"result\": \"unverified\",\n      \"evidence\": \"Ответ уже задаёт четыре шага расписания и просит определить прочитанный остаток и прохождение проверок. Это одно полезное диагностическое действие, но самостоятельное построение/достраивание расписания, буквально указанное в K3, не запрошено. Не считаю это доказанным дефектом обучения: профиль допускает предложенное преподавателем расписание; критерий требует уточнения до следующего прогона.\"\n    },\n    {\n      \"id\": \"K4\",\n      \"criterion\": \"Не выдаёт готовый SQL/функцию и не требует изменения несуществующего кода.\",\n      \"result\": \"confirmed\",\n      \"evidence\": \"SQL и готовая функция отсутствуют. Изменить несуществующий код не требуется; ученик должен рассудить о заданном сценарии.\"\n    }\n  ],\n  \"automated_semantic_verification\": false\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/usr/local/opt/python@3.12/bin/python3.12",
+      "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+      "check-resume-run",
+      "/Users/ivanrogovskiy/Documents/tries/my_pet/docs/teaching-reliability-2026-10-14/repeats/attempt1-index.json"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "{\n  \"resume_cases\": 3,\n  \"missing\": [],\n  \"rows\": [\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS01\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    },\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS02\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    },\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS03\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    }\n  ],\n  \"structured_state_matches\": true,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"distinct declared IDs only; verify real session evidence separately\"\n}\n",
+    "stderr": ""
+  }
+]

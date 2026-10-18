@@ -1,0 +1,35 @@
+{
+  "benchmark_version": "teaching-2026-10-17.1",
+  "case_id": "RS05",
+  "answer_sha256": "da0a949ea4f3e243d9164f8dacda31d72548e924bbe9e20e2ab7e3b7cf6768f3",
+  "assessor": {
+    "name": "",
+    "kind": ""
+  },
+  "criteria": [
+    {
+      "id": "K1",
+      "criterion": "Повреждение PROGRESS замечено, 08/3 v1 восстановлено из assignment и review-02.",
+      "result": "pending",
+      "evidence": ""
+    },
+    {
+      "id": "K2",
+      "criterion": "Исторические R1 closed / R2 open и полный маршрут сохранены в снимке.",
+      "result": "pending",
+      "evidence": ""
+    },
+    {
+      "id": "K3",
+      "criterion": "Запрошено исправление R2 без ненужного восстановления всей истории у ученика.",
+      "result": "pending",
+      "evidence": ""
+    },
+    {
+      "id": "K4",
+      "criterion": "Источник восстановления указан; новая приёмка или исторический запуск от своего имени не заявлены.",
+      "result": "pending",
+      "evidence": ""
+    }
+  ]
+}
