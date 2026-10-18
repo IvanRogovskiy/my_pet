@@ -1,0 +1,7 @@
+{
+  "status": "stopped",
+  "root": "/private/tmp/course-ci-20261017-xbi7lris/stand",
+  "exit": 0,
+  "command": "python3 backend-devops-theory/assets/backend-labs/stand.py stop /private/tmp/course-ci-20261017-xbi7lris/stand",
+  "volumes_preserved": true
+}

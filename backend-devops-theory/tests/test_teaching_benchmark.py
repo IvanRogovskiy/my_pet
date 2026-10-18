@@ -9,13 +9,13 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "assets/teaching-benchmark"))
 import teaching
-from teaching_cases import CASES, VERSION
+from teaching_cases import CASES, VERSION, LEGACY_VERSION, PREVIOUS_VERSION, RECOVERY_VERSION, cases_for
 
 
 def synthetic_record(path):
     manifest, case = teaching.bundle(path)
     identity = manifest["case_id"]
-    result = {"benchmark_version": VERSION, "case_id": identity,
+    result = {"benchmark_version": manifest["version"], "case_id": identity,
               "input_sha256": teaching.digest(manifest), "prompt": case["prompt"],
               "response": "Synthetic validator fixture; not a teacher response.",
               "execution": "Synthetic fixture, no teacher session run.",
@@ -23,6 +23,8 @@ def synthetic_record(path):
                           "kind": "self_review", "fresh_context": True, "history_messages": 0}}
     if case["suite"] == "resume":
         result["recovered"] = dict(deepcopy(case["expected"]), next_step="Synthetic next step")
+        if manifest["version"] != LEGACY_VERSION:
+            result["recovered"]["practice_note"] = "Synthetic explanation, separate from status"
         result["snapshot"] = {name: case["files"]["learning/" + name] for name in ("PROGRESS.md", "NOTES.md")}
     return result
 
@@ -39,11 +41,11 @@ class TeachingBenchmark(unittest.TestCase):
         return path, synthetic_record(path)
 
     def test_exports_all_scenarios_without_author_rubrics_or_answers(self):
-        self.assertEqual(len(CASES), 12)
+        self.assertEqual(len(CASES), 16)
         for identity, case in CASES.items():
             path, record = self.export(identity)
             manifest, _ = teaching.bundle(path)
-            self.assertEqual(set(manifest["sha256"]), set(case["files"]) | {"TASK.md", "prompt.txt"} |
+            self.assertEqual(set(manifest["sha256"]), set(case["files"]) | {"TASK.md", "prompt.txt", "response.schema.json", "response.example.json"} |
                              ({"TEACHER.md"} if case["suite"] != "transfer" else set()))
             for statement in case["rubric"]:
                 self.assertNotIn(statement, "\n".join(p.read_text() for p in path.rglob("*") if p.is_file()))
@@ -129,7 +131,7 @@ class TeachingBenchmark(unittest.TestCase):
 
     def test_same_context_cannot_stand_for_three_new_sessions(self):
         entries = []
-        for identity in ("RS01", "RS02", "RS03"):
+        for identity in (key for key, case in CASES.items() if case["suite"] == "resume"):
             path, record = self.export(identity)
             answer = self.root / (identity + ".json")
             answer.write_text(json.dumps(record))
@@ -149,7 +151,7 @@ class TeachingBenchmark(unittest.TestCase):
         index.write_text('{"runs": []}')
         report = teaching.check_resume_run(index)
         self.assertFalse(report["structured_state_matches"])
-        self.assertEqual(report["missing"], ["RS01", "RS02", "RS03"])
+        self.assertEqual(report["missing"], [f"RS{i:02}" for i in range(1, 8)])
         index.write_text('{"runs": [{"bundle": "../outside", "answer": "a.json"}]}')
         with self.assertRaisesRegex(ValueError, "escapes"):
             teaching.check_resume_run(index)
@@ -201,6 +203,121 @@ class TeachingBenchmark(unittest.TestCase):
                              ("prompt", "Altered prompt"), ("response", " ")):
             with self.subTest(field=field), self.assertRaises(ValueError):
                 teaching.assessment_template(path, dict(record, **{field: value}))
+
+    def test_explicit_schema_rejects_list_execution_and_conflated_practice(self):
+        path, record = self.export("RS01")
+        for mutate in ("execution", "practice", "missing_note", "extra_field"):
+            changed = deepcopy(record)
+            if mutate == "execution":
+                changed["execution"] = ["static_only"]
+            elif mutate == "practice":
+                changed["recovered"]["practice"] += "; работа начата"
+            elif mutate == "missing_note":
+                del changed["recovered"]["practice_note"]
+            else:
+                changed["unexpected"] = True
+            with self.subTest(mutation=mutate), self.assertRaises(ValueError):
+                teaching.check(path, changed)
+        record["recovered"]["practice_note"] = "Первая попытка ещё не сдана; это пояснение, а не новый статус."
+        self.assertTrue(all(teaching.check(path, record)["structured_state_matches"].values()))
+
+    def test_legacy_records_and_rubric_are_not_reinterpreted(self):
+        old = self.root / "legacy"
+        teaching.export(old, "HS02", LEGACY_VERSION)
+        record = synthetic_record(old)
+        self.assertTrue(teaching.check(old, record)["record_complete"])
+        self.assertNotIn("response.schema.json", teaching.bundle(old)[0]["sha256"])
+        rubric = teaching.assessment_template(old, record)
+        self.assertEqual(rubric["criteria"][2]["criterion"], "Одно диагностическое действие: ученик строит расписание.")
+        new, current = self.export("HS02")
+        self.assertNotEqual(rubric["criteria"][2]["criterion"], teaching.assessment_template(new, current)["criteria"][2]["criterion"])
+        record["execution"] = ["Original malformed journal"]
+        with self.assertRaises(ValueError):
+            teaching.check(old, record)
+        self.assertEqual(teaching.assessment_template(old, record)["benchmark_version"], LEGACY_VERSION)
+
+    def test_rehashed_schema_cannot_weaken_published_contract(self):
+        path, record = self.export()
+        target = path / "response.schema.json"
+        schema = json.loads(target.read_text())
+        del schema["properties"]["execution"]["type"]
+        target.write_text(json.dumps(schema))
+        manifest = json.loads((path / "manifest.json").read_text())
+        manifest["sha256"][target.name] = teaching.hashlib.sha256(target.read_bytes()).hexdigest()
+        (path / "manifest.json").write_text(json.dumps(manifest))
+        record["input_sha256"] = teaching.digest(manifest)
+        with self.assertRaisesRegex(ValueError, "schema differs"):
+            teaching.check(path, record)
+
+    def test_new_example_is_explicit_shape_not_a_passing_answer(self):
+        path, _ = self.export("RS03")
+        example = json.loads((path / "response.example.json").read_text())
+        teaching.validate_schema(example, json.loads((path / "response.schema.json").read_text()))
+        with self.assertRaisesRegex(ValueError, "issued inputs"):
+            teaching.check(path, example)
+
+    def test_resume_run_cannot_mix_versions(self):
+        entries = []
+        for identity, version in (("RS01", LEGACY_VERSION), ("RS02", VERSION)):
+            path = self.root / identity
+            teaching.export(path, identity, version)
+            answer = self.root / (identity + ".json")
+            answer.write_text(json.dumps(synthetic_record(path)))
+            entries.append({"bundle": identity, "answer": answer.name})
+        index = self.root / "index.json"
+        index.write_text(json.dumps({"runs": entries}))
+        with self.assertRaisesRegex(ValueError, "mix benchmark versions"):
+            teaching.check_resume_run(index)
+
+    def test_previous_run_still_requires_only_its_original_three_cases(self):
+        for version in (LEGACY_VERSION, PREVIOUS_VERSION):
+            base = self.root / version
+            entries = []
+            for identity in ("RS01", "RS02", "RS03"):
+                path = base / identity
+                teaching.export(path, identity, version)
+                answer = base / (identity + ".json")
+                answer.write_text(json.dumps(synthetic_record(path)))
+                entries.append({"bundle": identity, "answer": answer.name})
+            index = base / "index.json"
+            index.write_text(json.dumps({"runs": entries}))
+            self.assertTrue(teaching.check_resume_run(index)["structured_state_matches"])
+            self.assertEqual(len(cases_for(version)), 12)
+
+    def test_unknown_is_not_closed_or_withdrawn_and_does_not_rewrite_old_schema(self):
+        path, record = self.export("RS06")
+        self.assertTrue(all(teaching.check(path, record)["structured_state_matches"].values()))
+        for claimed in ("closed", "withdrawn", "open"):
+            changed = deepcopy(record)
+            changed["recovered"]["issues"]["R2"] = claimed
+            self.assertFalse(teaching.check(path, changed)["structured_state_matches"]["issues"])
+        old = self.root / "previous"
+        teaching.export(old, "RS03", PREVIOUS_VERSION)
+        before = synthetic_record(old)
+        before["recovered"]["issues"]["R2"] = "unknown"
+        with self.assertRaises(ValueError):
+            teaching.check(old, before)
+
+    def test_recovery_failures_cannot_be_hidden_by_fabricated_acceptance(self):
+        for identity in ("RS04", "RS05", "RS06", "RS07"):
+            path, record = self.export(identity)
+            record["recovered"]["practice"] = "критерии выполнены"
+            self.assertFalse(teaching.check(path, record)["structured_state_matches"]["practice"])
+        self.assertNotIn("submission.py", CASES["RS04"]["files"])
+        self.assertIn("learning/review-02.md", CASES["RS05"]["files"])
+
+    def test_part_code_contract_is_explicit_without_reinterpreting_first_recovery_run(self):
+        path, record = self.export("RS07")
+        record["recovered"]["part"] = "09/1 — модульные тесты"
+        with self.assertRaisesRegex(ValueError, "part"):
+            teaching.check(path, record)
+        old = self.root / "first-recovery"
+        teaching.export(old, "RS07", RECOVERY_VERSION)
+        first = synthetic_record(old)
+        first["recovered"]["part"] = "09/1 — модульные тесты"
+        report = teaching.check(old, first)
+        self.assertTrue(report["record_complete"])
+        self.assertFalse(report["structured_state_matches"]["part"])
 
 
 if __name__ == "__main__":

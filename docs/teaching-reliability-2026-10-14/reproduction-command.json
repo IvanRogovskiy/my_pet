@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/usr/local/opt/python@3.12/bin/python3.12",
+    "docs/teaching-reliability-2026-10-14/reproduce.py"
+  ],
+  "exit": 0,
+  "stdout_file": "reproduction.json",
+  "stderr": ""
+}

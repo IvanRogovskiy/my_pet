@@ -1,0 +1,26 @@
+[
+  {
+    "label": "rv20",
+    "manifest_files": 52,
+    "input_mismatches": [],
+    "profile_matches_frozen_source": true,
+    "source_provenance_matches": true,
+    "original_answer_sha256": "464ac5a7ed90f435c65bff04a67e790f8b3c95566606466c1cc5893342c217e8"
+  },
+  {
+    "label": "hc_baseline",
+    "manifest_files": 29,
+    "input_mismatches": [],
+    "profile_matches_frozen_source": true,
+    "source_provenance_matches": true,
+    "original_answer_sha256": "31c0f79944a404756743b358e1669c1de738c3a395a492efb0794c8d6e440d0a"
+  },
+  {
+    "label": "hc_candidate",
+    "manifest_files": 29,
+    "input_mismatches": [],
+    "profile_matches_frozen_source": true,
+    "source_provenance_matches": true,
+    "original_answer_sha256": "08142a266409a7eb45aefc548c7d3d7afa96fe9ecb7ae198f845c53b95e9d3ad"
+  }
+]

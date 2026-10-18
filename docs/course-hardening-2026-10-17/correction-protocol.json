@@ -1,0 +1,9 @@
+{
+  "reason": "First RS07 recovered the right part semantically but appended its title to a machine field; format now explicitly requires NN/N. No original response/rubric changed.",
+  "case": "RS07",
+  "version": "teaching-2026-10-17.2",
+  "attempts": 1,
+  "expected_session": "/root/recovery_rs07_contract",
+  "input_sha256": "fd2fa4c0c955d000dcba4acbad211cd1289cbb3388ae4fe04ac168b517ba397a",
+  "replaces_first_attempt": false
+}

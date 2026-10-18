@@ -1,0 +1,48 @@
+{
+  "assessor": {
+    "name": "Codex coordinator; author-aware model assessment",
+    "kind": "model"
+  },
+  "synthetic_learner": true,
+  "teacher_responses": 4,
+  "contexts": 2,
+  "answer_sha256": "c597c07271aa76c3d779873d0b08394d08fae242469687765d6d7a0f9440bf53",
+  "saved_files_transferred_byte_identically": 16,
+  "changed_learning_files_after_resume": [
+    "PROGRESS.md"
+  ],
+  "criteria": [
+    {
+      "id": "RT1",
+      "result": "confirmed",
+      "evidence": "initial-input contains no learning/. Writer turn1 creates PROGRESS/NOTES, identifies and reproduces R1/R2, saves actual review and submission snapshots."
+    },
+    {
+      "id": "RT2",
+      "result": "confirmed",
+      "evidence": "after-turn2/output/turn2.json closes R1 only after local checks and leaves R2 open with the same ID; separate review2 and revision1 are saved."
+    },
+    {
+      "id": "RT3",
+      "result": "confirmed",
+      "evidence": "paused/learning/PROGRESS.md records route 30/92, 08/3 v1, paused state, latest submission SHA and next R2 step; evidence files copied into learning/evidence; no runtime invented on pause."
+    },
+    {
+      "id": "RT4",
+      "result": "confirmed",
+      "evidence": "Fresh reader /root/reliability_roundtrip_reader received only the 16 hashed saved files and generic profile, no parent chat. It restored 08/3 v1 and R1 closed/R2 open; transferred bytes match writer files."
+    },
+    {
+      "id": "RT5",
+      "result": "confirmed",
+      "evidence": "Reader response asks for R2 fix and regression checks, explicitly attributes prior executions to writer; output/learning changes only PROGRESS to resumed and does not accept the practice or advance the route."
+    }
+  ],
+  "limitations": [
+    "One scripted synthetic learner conversation, not human learning",
+    "Instruction-level filesystem isolation, shared underlying workspace",
+    "Saved reviews inside learning are legitimate persisted records; no API chat history was transferred",
+    "Metadata describes available model family only, not pinned exact model version",
+    "No case with damaged state, missing submission or changed route was run"
+  ]
+}

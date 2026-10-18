@@ -1,0 +1,215 @@
+{
+  "fresh_context_launches": 23,
+  "fork_turns_none": true,
+  "raw_artifact_copies": [
+    {
+      "suite": "repeats/rs01_1",
+      "files_identical": 12,
+      "answer_sha256": "9d3afef8ecd320a670ccafcdcab41851f7410567448e3070bab7e033cd2e9d4c"
+    },
+    {
+      "suite": "repeats/rs02_1",
+      "files_identical": 12,
+      "answer_sha256": "d3c249d526734682a85876d3b992acac5061e98905f883d1f2370925112935f5"
+    },
+    {
+      "suite": "repeats/rs03_1",
+      "files_identical": 12,
+      "answer_sha256": "f105d6b5e0040156eb739270b528d7e2ead91b185fb1ff63c5333782aab97c4b"
+    },
+    {
+      "suite": "repeats/hs01_1",
+      "files_identical": 9,
+      "answer_sha256": "1db076c5c7508959afaf24eb0eee982f410692f247e6656427b62b412d59aab3"
+    },
+    {
+      "suite": "repeats/hs02_1",
+      "files_identical": 9,
+      "answer_sha256": "60d101dac6a109334035bf5ccc54e226f8063be6f36fc72f38cd74725fcb48a9"
+    },
+    {
+      "suite": "repeats/hs03_1",
+      "files_identical": 11,
+      "answer_sha256": "fe83d1efdb4be4d6baf500be5310551b621546d476c01e778d5444004e279505"
+    },
+    {
+      "suite": "repeats/rs01_2",
+      "files_identical": 12,
+      "answer_sha256": "24f6e9283720d54beca55567d0336618f6257618aeca3cfa824145baf4d29efc"
+    },
+    {
+      "suite": "repeats/rs02_2",
+      "files_identical": 12,
+      "answer_sha256": "a07443d752ff9a7776d5d5bde002fb8372315c280250cd1b2c3a1e7953d7ba9c"
+    },
+    {
+      "suite": "repeats/rs03_2",
+      "files_identical": 12,
+      "answer_sha256": "2ee8456db22fc760ee5a4a2b8f49bd0eca23c8b3ea12a0638fbdd7c3bb6fbb3d"
+    },
+    {
+      "suite": "repeats/hs01_2",
+      "files_identical": 9,
+      "answer_sha256": "2db242afe51c6c5a18b2d828b2486a54dae55a8f66d69492190fb165291fbde2"
+    },
+    {
+      "suite": "repeats/hs02_2",
+      "files_identical": 9,
+      "answer_sha256": "dc8d97853e0b84f714ffdf71e21743ee71cf0caf2d7b286295544b8564fc39d5"
+    },
+    {
+      "suite": "repeats/hs03_2",
+      "files_identical": 11,
+      "answer_sha256": "63ec3104087e1706fa0acd4ed3e44395f9f4186b6b641be859219bbc8e458421"
+    },
+    {
+      "suite": "repeats/rs01_3",
+      "files_identical": 12,
+      "answer_sha256": "e099aff238b354503441e8c56ad8a39ffd74acd699b59dba4187e1a009980603"
+    },
+    {
+      "suite": "repeats/rs02_3",
+      "files_identical": 12,
+      "answer_sha256": "4a5a0cb7b92cd8c1fce7e49c18bf4600d1e941ff26beebc1d266e46a7c29d8a7"
+    },
+    {
+      "suite": "repeats/rs03_3",
+      "files_identical": 12,
+      "answer_sha256": "57c97220c2f7291eea2cf6f3daab2810b742e436278c240c2c8deb5509918aee"
+    },
+    {
+      "suite": "repeats/hs01_3",
+      "files_identical": 9,
+      "answer_sha256": "9cd46d455621b9b3f9fc2c8573dcccb4a288415ac89b63e950f210974d585f21"
+    },
+    {
+      "suite": "repeats/hs02_3",
+      "files_identical": 9,
+      "answer_sha256": "da16d654aa56ee765fdbfa0ba41db29ee50f9f24b31e4869c7a8c29a58796d31"
+    },
+    {
+      "suite": "repeats/hs03_3",
+      "files_identical": 11,
+      "answer_sha256": "865557baa60bddb3f3661f23724670e64640e377d5aeeb953e7d5be3c20d8e0e"
+    },
+    {
+      "suite": "reviews/rv20",
+      "files_identical": 57,
+      "answer_sha256": "464ac5a7ed90f435c65bff04a67e790f8b3c95566606466c1cc5893342c217e8"
+    },
+    {
+      "suite": "reviews/hc_baseline",
+      "files_identical": 34,
+      "answer_sha256": "31c0f79944a404756743b358e1669c1de738c3a395a492efb0794c8d6e440d0a"
+    },
+    {
+      "suite": "reviews/hc_candidate",
+      "files_identical": 37,
+      "answer_sha256": "08142a266409a7eb45aefc548c7d3d7afa96fe9ecb7ae198f845c53b95e9d3ad"
+    },
+    {
+      "suite": "roundtrip/paused",
+      "files_identical": 23
+    },
+    {
+      "suite": "roundtrip/resumed",
+      "files_identical": 32
+    }
+  ],
+  "roundtrip_resume_input_files_identical_to_pause": 16,
+  "roundtrip_output_learning_changes": [
+    "PROGRESS.md"
+  ],
+  "production_evaluators_match_frozen_snapshots": true,
+  "legacy_cases_match_base_blob": true,
+  "old_report_files_match_base_blobs": 94,
+  "source_sha256": {
+    "backend-devops-theory/assets/teaching-benchmark/teaching.py": "9f899c6f82da485fefa5d676a2357871844f9273d9b3b1aa5fca0670e8c88b4e",
+    "backend-devops-theory/assets/teaching-benchmark/teaching_cases.py": "7d546a45209bc9498c39cee0e634b79ab855118efb708944d6a721e212b1621b",
+    "backend-devops-theory/assets/teaching-benchmark/teaching_cases_v1.py": "31dba10bfb8347f1a09413dc1831cabaf0d6a7e7da306418294682e895ce0394",
+    "backend-devops-theory/assets/teaching-benchmark/record_schema.py": "3132845bf5e9fe89cca60e10287681d439f72a38825220820a250ceb204c5bff",
+    "backend-devops-theory/assets/teaching-benchmark/README.md": "d9cfb3b81d79312f2479e3d8da4a923258ff30b1417a30074754e1e068efc6ba",
+    "backend-devops-theory/tests/test_teaching_benchmark.py": "408d4770efa4d5cf70c0ebb90699e55e5229ee91d01f72e9c1aa3bf754492a0b",
+    "backend-devops-theory/references/course-maintenance.md": "69aefc5720afbb9af085b1038d1eb289ccaceff326a6e77114ca222eb038bc17",
+    "backend-devops-theory/assets/review-benchmark/HOLDOUT.md": "69ea5a2ed0dca518e4c12ade119017055353943010992d17847d74738cdb1ad3"
+  },
+  "checks": {
+    "teaching_unit_tests": {
+      "command": "python3 -m unittest discover -s backend-devops-theory/tests -p test_teaching_benchmark.py -v",
+      "passed": 19,
+      "failed": 0,
+      "new_tests": 5,
+      "evidence": "Observed command output; summary, not complete raw stdout"
+    },
+    "materials": {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "backend-devops-theory/tests",
+        "-p",
+        "test_materials.py",
+        "-v"
+      ],
+      "exit": 0,
+      "output_file": "materials-tests.txt"
+    },
+    "reproduction": {
+      "command": [
+        "/usr/local/opt/python@3.12/bin/python3.12",
+        "docs/teaching-reliability-2026-10-14/reproduce.py"
+      ],
+      "exit": 0,
+      "stdout_file": "reproduction.json",
+      "stderr": ""
+    },
+    "cli_expected_exits_passed": 9,
+    "git_diff_check": {
+      "exit": 0,
+      "stdout": "",
+      "stderr": "",
+      "scope": "tracked modifications; raw new artifacts preserved byte for byte"
+    }
+  },
+  "raw_artifact_whitespace_preserved": [
+    {
+      "path": "repeats/rs01_1/output/method.md",
+      "trailing_space_lines": [],
+      "blank_line_at_eof": true
+    },
+    {
+      "path": "repeats/rs01_2/output/method.md",
+      "trailing_space_lines": [],
+      "blank_line_at_eof": true
+    },
+    {
+      "path": "repeats/rs01_3/output/method.md",
+      "trailing_space_lines": [],
+      "blank_line_at_eof": true
+    },
+    {
+      "path": "repeats/rs02_1/output/answer.json",
+      "trailing_space_lines": [],
+      "blank_line_at_eof": true
+    },
+    {
+      "path": "repeats/rs02_1/output/method.md",
+      "trailing_space_lines": [],
+      "blank_line_at_eof": true
+    },
+    {
+      "path": "repeats/rs03_1/output/method.md",
+      "trailing_space_lines": [],
+      "blank_line_at_eof": true
+    }
+  ],
+  "limits": [
+    "Semantic judgments are from author-aware coordinator model",
+    "Fresh contexts share filesystem; read restrictions are instructions",
+    "Exact model version not pinned",
+    "Three repetitions of identical cases do not measure generalization",
+    "Human learner pilot not run"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "record_complete": true,
+  "case_id": "HS02",
+  "suite": "hints",
+  "structured_state_matches": null,
+  "semantic_assessment_required": true,
+  "context_independence": "declared; requires orchestrator/session evidence",
+  "limitation": "Matching state fields do not verify response or snapshot meaning. No learning outcome inferred."
+}

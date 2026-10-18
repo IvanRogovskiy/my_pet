@@ -1,0 +1,63 @@
+{
+  "stand_root": "/private/tmp/course-ci-20261017-xbi7lris/stand",
+  "owner": "8e616ee358a44d78b0ee764ee1bee18c",
+  "resources": {
+    "ofstand-8e616ee358a4-net": {
+      "kind": "network",
+      "identity": "72e09dd77abbcb5ec190c5bd2c534e3174261e94950ad5aa708c724dbe5b308b"
+    },
+    "ofstand-8e616ee358a4-pg-data": {
+      "kind": "volume",
+      "identity": "ofstand-8e616ee358a4-pg-data"
+    },
+    "ofstand-8e616ee358a4-pg": {
+      "kind": "container",
+      "identity": "618adbcb84489cf2b2ab071e8c66483d2490e9c0bca839a28ce01e5d9e63fe14"
+    },
+    "ofstand-8e616ee358a4-mq-data": {
+      "kind": "volume",
+      "identity": "ofstand-8e616ee358a4-mq-data"
+    },
+    "ofstand-8e616ee358a4-mq": {
+      "kind": "container",
+      "identity": "3457d469d5cd6915fdbfcfd7f49bb0427bfa3de3650374b4d6f29e97fd952cee"
+    }
+  },
+  "preflight": {
+    "host_free_gib": 6.4,
+    "docker_memory_gib": 7.67,
+    "architecture": "aarch64",
+    "server_version": "24.0.5"
+  },
+  "client_image_id": "sha256:6368766c15b5f1dbdcb7f919a775d86f4895105f6309f7f53b566ee9bf2e3b2e",
+  "dockerfile_sha256": "79ad7eeac8dc86cf6cb2237bf6ff768b7501ccb2d81729ae1e7f35d7586a1e2d",
+  "audit_exits": {
+    "B07": [
+      1,
+      0,
+      1
+    ],
+    "B08R": [
+      1,
+      0,
+      1
+    ],
+    "B08I": [
+      1,
+      0,
+      1
+    ],
+    "B17": [
+      1,
+      0,
+      1
+    ]
+  },
+  "source_sha256": {
+    "backend-devops-theory/assets/backend-labs/stand.py": "d9377816fe4f91b70d29c084b10310ad4bd5af996f30cfab4d27e92394700607",
+    "backend-devops-theory/assets/backend-labs/templates.py": "869cd22239e03df0db17fb7d19bd38d42109374fdbb4d35b0061d3a409c2b882",
+    "backend-devops-theory/assets/backend-labs/probe.py": "eb47a9358a521ec4c0ffadf80a6ddfa0ac918de391d10f8a2ed8a883b2565557",
+    "backend-devops-theory/assets/backend-labs/lab.py": "6dfa818a9cecea436d88ebbbb3daef6f2bb5351026f4e1cbcd6ed2ff4f3fc523"
+  },
+  "scope": "New isolated local stand. PostgreSQL/RabbitMQ/HTTP real runtime. Not learner progress or GitHub-hosted CI."
+}

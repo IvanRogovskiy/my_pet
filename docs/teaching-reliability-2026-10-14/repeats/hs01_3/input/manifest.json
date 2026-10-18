@@ -1,0 +1,18 @@
+{
+  "version": "teaching-2026-10-14.2",
+  "case_id": "HS01",
+  "suite": "hints",
+  "source_sha256": {
+    "SKILL.md": "7bf1a20a9a5bc6998b6be6969f01ce64db6beabbb7d999c25e925ec540ff972f",
+    "references/learning-workspace.md": "7375252b4cc57b5e4edce08b7789354584dcd9f829e98f6add017f782241c14d",
+    "references/practice-review.md": "986632c032b262ccc5baf25928e162059786d58fa6557ec53fc5a8f8d60c504e"
+  },
+  "sha256": {
+    "assignment.md": "9a4128a5190a83a39349a939d3ee68584d89691b16e2adc24a429f958b92dd0c",
+    "prompt.txt": "9e9492086bbec7832a120731e0054bb3625ed2e5e4e71e2e1c406d63de359029",
+    "TEACHER.md": "fa96436b74827300849c85667223e849673d8046817f70ec23fdf70dba4aadb1",
+    "TASK.md": "57c246015054bbf8356668942252f591932d53be4284a0879186711ed7ad99a7",
+    "response.schema.json": "d5aa1268786099ec0be63fc98126d4396d63704357a319f7b519e5ff61b81379",
+    "response.example.json": "4b9f799b9b4b9bd8dd6265cfb1847c118deb4a4a993aaed50f3aa23edd1db863"
+  }
+}

@@ -1,0 +1,85 @@
+name: Course checks
+
+on:
+  push:
+    paths: ['backend-devops-theory/**', 'scripts/course_ci.py', 'docs/**', '.github/workflows/course.yml']
+  pull_request:
+    paths: ['backend-devops-theory/**', 'scripts/course_ci.py', 'docs/**', '.github/workflows/course.yml']
+  workflow_dispatch:
+    inputs:
+      runtime:
+        description: 'Run Linux permissions, loopback and real TLS checks'
+        type: boolean
+        default: false
+      backend:
+        description: 'Run isolated PostgreSQL/RabbitMQ bad/reference/reset labs'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: course-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONDONTWRITEBYTECODE: '1'
+
+jobs:
+  fast:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-15]
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python scripts/course_ci.py fast
+      - run: python scripts/course_ci.py evidence
+
+  runtime:
+    if: github.event_name == 'workflow_dispatch' && inputs.runtime
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r backend-devops-theory/assets/network-lab/requirements.txt
+      - run: python scripts/course_ci.py runtime
+
+  backend:
+    if: github.event_name == 'workflow_dispatch' && inputs.backend
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      COURSE_STAND: ${{ runner.temp }}/course-stand
+      COURSE_AUDIT: ${{ runner.temp }}/course-backend-audit
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
+        with:
+          python-version: '3.12'
+      - run: python backend-devops-theory/assets/backend-labs/stand.py setup "$COURSE_STAND"
+      - run: python backend-devops-theory/assets/backend-labs/stand.py check "$COURSE_STAND"
+      - run: python backend-devops-theory/assets/backend-labs/lab.py audit "$COURSE_AUDIT" --stand "$COURSE_STAND"
+      - name: Stop this job's owned containers
+        if: always()
+        shell: bash
+        run: |
+          if [ -f "$COURSE_STAND/stand.json" ]; then
+            python backend-devops-theory/assets/backend-labs/stand.py stop "$COURSE_STAND"
+          fi

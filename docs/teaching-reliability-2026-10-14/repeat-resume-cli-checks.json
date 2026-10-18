@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "/usr/local/opt/python@3.12/bin/python3.12",
+      "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+      "check-resume-run",
+      "docs/teaching-reliability-2026-10-14/repeats/attempt2-index.json"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "{\n  \"resume_cases\": 3,\n  \"missing\": [],\n  \"rows\": [\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS01\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    },\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS02\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    },\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS03\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    }\n  ],\n  \"structured_state_matches\": true,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"distinct declared IDs only; verify real session evidence separately\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/usr/local/opt/python@3.12/bin/python3.12",
+      "backend-devops-theory/assets/teaching-benchmark/teaching.py",
+      "check-resume-run",
+      "docs/teaching-reliability-2026-10-14/repeats/attempt3-index.json"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "stdout": "{\n  \"resume_cases\": 3,\n  \"missing\": [],\n  \"rows\": [\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS01\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    },\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS02\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    },\n    {\n      \"record_complete\": true,\n      \"case_id\": \"RS03\",\n      \"suite\": \"resume\",\n      \"structured_state_matches\": {\n        \"part\": true,\n        \"practice\": true,\n        \"issues\": true\n      },\n      \"semantic_assessment_required\": true,\n      \"context_independence\": \"declared; requires orchestrator/session evidence\",\n      \"limitation\": \"Matching state fields do not verify response or snapshot meaning. No learning outcome inferred.\"\n    }\n  ],\n  \"structured_state_matches\": true,\n  \"semantic_assessment_required\": true,\n  \"context_independence\": \"distinct declared IDs only; verify real session evidence separately\"\n}\n",
+    "stderr": ""
+  }
+]

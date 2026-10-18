@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "benchmark_version": {
+      "const": "teaching-2026-10-17.1"
+    },
+    "case_id": {
+      "const": "RS07"
+    },
+    "input_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "response": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "execution": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "session": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "date": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "kind": {
+          "enum": [
+            "human",
+            "model",
+            "self_review"
+          ]
+        },
+        "fresh_context": {
+          "type": "boolean"
+        },
+        "history_messages": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "date",
+        "kind",
+        "fresh_context",
+        "history_messages"
+      ],
+      "additionalProperties": false
+    },
+    "recovered": {
+      "type": "object",
+      "properties": {
+        "part": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "practice": {
+          "enum": [
+            "не выдана",
+            "выдана",
+            "нужны исправления",
+            "критерии выполнены",
+            "не проверено"
+          ]
+        },
+        "practice_note": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "issues": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "additionalProperties": {
+            "enum": [
+              "open",
+              "closed",
+              "withdrawn",
+              "unknown"
+            ]
+          }
+        },
+        "next_step": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "part",
+        "practice",
+        "practice_note",
+        "issues",
+        "next_step"
+      ],
+      "additionalProperties": false
+    },
+    "snapshot": {
+      "type": "object",
+      "properties": {
+        "PROGRESS.md": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "NOTES.md": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "PROGRESS.md",
+        "NOTES.md"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "benchmark_version",
+    "case_id",
+    "input_sha256",
+    "prompt",
+    "response",
+    "execution",
+    "session",
+    "recovered",
+    "snapshot"
+  ],
+  "additionalProperties": false
+}

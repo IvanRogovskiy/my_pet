@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-17",
+  "recovery": [
+    {
+      "case": "RS04",
+      "input_sha256": "11d34ed2749fc0ba498e16617edacbbb1ca1653bf4f1f9a92774a6870dfc7b39",
+      "attempts": 1,
+      "expected_session": "/root/recovery_rs04"
+    },
+    {
+      "case": "RS05",
+      "input_sha256": "d156de8c67c3800f757876c15a6167f012fe234fd31cc07cd85277ca8ca7c9ad",
+      "attempts": 1,
+      "expected_session": "/root/recovery_rs05"
+    },
+    {
+      "case": "RS06",
+      "input_sha256": "d5d6a63284dc9508b75052591465f752d4e4d2e474560bde415b9fdc5abfbb23",
+      "attempts": 1,
+      "expected_session": "/root/recovery_rs06"
+    },
+    {
+      "case": "RS07",
+      "input_sha256": "02a3adbbb6912972d16c331cf38d6d01df8e16178452831ea5f1fdbc5d728197",
+      "attempts": 1,
+      "expected_session": "/root/recovery_rs07"
+    }
+  ],
+  "advanced": {
+    "development_cases": 8,
+    "reserved_control_cases": 4,
+    "development_attempts": 1,
+    "control_attempts": 0,
+    "input_sha256": "578388a5d6989ec553125a785d281cc96ac65f4137ddf903b6c6b9f9696a8af3",
+    "reserved_fingerprint": "0ad9e5547257afe919017d52eb05d98dae1d7f35e42599c05d3d8ae7cf924667"
+  },
+  "calibration": {
+    "selected_reviews": 8,
+    "attempts": 1,
+    "session": "/root/blind_calibration"
+  },
+  "rules": [
+    "First answers preserved, no score-guided replacement",
+    "No real learner",
+    "Fresh contexts, shared filesystem with instructed read boundaries",
+    "Control set not delivered to any teacher during development",
+    "Semantic judgments remain separate from structure and classification"
+  ]
+}
